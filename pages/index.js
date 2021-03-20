@@ -8,6 +8,10 @@ export default function Home() {
   const { userContext } = useContext(userContextFile);
   console.log("yo", userContext);
 
+  const handleGoogleClick = (e) => {
+    console.log("e", e);
+  };
+
   return (
     <div className={styles.container}>
       <Head>
@@ -17,6 +21,10 @@ export default function Home() {
 
       <main className={styles.main}>
         <Test />
+        <p>Google Connect</p>
+        <button type="button" onClick={handleGoogleClick}>
+          Google
+        </button>
       </main>
 
       <footer className={styles.footer}>
