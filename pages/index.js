@@ -2,15 +2,17 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import { useContext } from "react";
 import userContextFile from "../contexts/userContext";
-import { useSession, getSession } from "next-auth/client";
+import { useSession, getSession, signIn } from "next-auth/client";
 
 export default function Home() {
   const { userContext } = useContext(userContextFile);
-  console.log("yo", userContext);
 
   const [session, loading] = useSession();
 
   const handleGoogleClick = (e) => {
+    e.preventDefault();
+    console.log("env var test", process.env.NEXT_PUBLIC_PUBLISHABLE_KEY);
+    signIn("google");
     console.log("e", e);
     console.log("session", session);
   };

@@ -1,5 +1,6 @@
 import NextAuth from "next-auth";
 import Providers from "next-auth/providers";
+import customAdapter from "./custom_adapter/custom_adapter";
 
 export default NextAuth({
   // Configure one or more authentication providers
@@ -10,4 +11,5 @@ export default NextAuth({
     }),
     // ...add more providers here
   ],
+  adapter: customAdapter,
 });
