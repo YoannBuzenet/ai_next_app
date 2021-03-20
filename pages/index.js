@@ -1,15 +1,18 @@
 import Head from "next/head";
-import Test from "../components/AppWrapper";
 import styles from "../styles/Home.module.css";
 import { useContext } from "react";
 import userContextFile from "../contexts/userContext";
+import { useSession, getSession } from "next-auth/client";
 
 export default function Home() {
   const { userContext } = useContext(userContextFile);
   console.log("yo", userContext);
 
+  const [session, loading] = useSession();
+
   const handleGoogleClick = (e) => {
     console.log("e", e);
+    console.log("session", session);
   };
 
   return (
@@ -20,7 +23,6 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <Test />
         <p>Google Connect</p>
         <button type="button" onClick={handleGoogleClick}>
           Google
