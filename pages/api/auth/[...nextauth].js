@@ -1,7 +1,6 @@
 import NextAuth from "next-auth";
 import Providers from "next-auth/providers";
-import customAdapter from "./custom_adapter/custom_adapter";
-import Adapters from "next-auth/adapters";
+import axios from "axios";
 
 const callbacks = {};
 callbacks.signIn = async function signIn(user, account, metadata) {
@@ -16,6 +15,13 @@ callbacks.signIn = async function signIn(user, account, metadata) {
       avatar: user.image,
     };
 
+    axios
+      .post(`${process.env.CENTRAL_API_URL}/api/users/getAndRegisterIfNeeded`, {
+        passphrase: "test",
+      })
+      .catch((err) => console.log("error while pinging API : ", err));
+
+    // fetch data from back end and add it here in accessToken
     user.accessToken = console.log("google user", googleUser);
     return true;
   }

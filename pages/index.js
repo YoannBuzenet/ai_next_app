@@ -17,6 +17,10 @@ export default function Home() {
     console.log("session", session);
   };
 
+  const handleDisplaySession = () => {
+    console.log("session", session);
+  };
+
   return (
     <div className={styles.container}>
       <Head>
@@ -28,6 +32,10 @@ export default function Home() {
         <p>Google Connect</p>
         <button type="button" onClick={handleGoogleClick}>
           Google
+        </button>
+        <p>Log Session</p>
+        <button type="button" onClick={handleDisplaySession}>
+          Log
         </button>
       </main>
 
