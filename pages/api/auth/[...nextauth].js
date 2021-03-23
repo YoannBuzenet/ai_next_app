@@ -9,19 +9,32 @@ callbacks.signIn = async function signIn(user, account, metadata) {
   console.log("metadata", metadata);
   if (account.provider === "google") {
     const googleUser = {
-      id: metadata.id,
+      googleId: metadata.id,
       login: metadata.login,
-      name: metadata.name,
+      fullName: metadata.name,
+      firstName: metadata.given_name,
+      lastName: metadata.family_name,
       avatar: user.image,
+      userLocale: metadata.locale,
+      accessToken: account.accessToken,
+      refreshToken: account.refreshToken,
+      expiresIn: account.expires_in,
+    };
+
+    const finalUserObject = {
+      user: googleUser,
+      passphrase: process.env.FRONT_APP_PASSPHRASE,
+      provider: "google",
     };
 
     axios
-      .post(`${process.env.CENTRAL_API_URL}/api/users/getAndRegisterIfNeeded`, {
-        passphrase: "test",
-      })
+      .post(
+        `${process.env.CENTRAL_API_URL}/api/users/loginAndRegisterIfNeeded`,
+        finalUserObject
+      )
       .catch((err) => console.log("error while pinging API : ", err));
 
-    // fetch data from back end and add it here in accessToken
+    // fetch data from back end and add it here in user object
     user.accessToken = console.log("google user", googleUser);
     return true;
   }
