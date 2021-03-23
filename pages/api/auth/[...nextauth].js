@@ -9,6 +9,7 @@ callbacks.signIn = async function signIn(user, account, metadata) {
   console.log("metadata", metadata);
   if (account.provider === "google") {
     const googleUser = {
+      email: metadata.email,
       googleId: metadata.id,
       login: metadata.login,
       fullName: metadata.name,
