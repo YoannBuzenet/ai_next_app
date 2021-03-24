@@ -27,18 +27,24 @@ export default function Login() {
         <title>Login</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <div className="container">
-        <main className={styles.main}>
-          <p>Google Connect</p>
-          <button type="button" onClick={handleGoogleClick}>
-            Google
-          </button>
-          <p>Log Session</p>
-          <button type="button" onClick={handleDisplaySession}>
-            Log
-          </button>
-        </main>
+      <div className="globalGradient">
+        <div className="container">
+          <main className={styles.main}>
+            <h1>Sign in or Create your Account</h1>
+            <p>Google Connect</p>
+            <button type="button" onClick={handleGoogleClick}>
+              Google
+            </button>
+            <p>Log Session</p>
+            <button type="button" onClick={handleDisplaySession}>
+              Log
+            </button>
+            <p>
+              By proceeding, you are agreeing to Cursive's Terms of Service and
+              Privacy Notice
+            </p>
+          </main>
+        </div>
       </div>
     </>
   );

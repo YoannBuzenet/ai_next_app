@@ -82,6 +82,19 @@ main {
   margin-top: 2rem;
 }
 
+.globalGradient {
+  background: rgb(28, 100, 242);
+  background: linear-gradient(
+    149deg,
+    rgb(184 224 247 / 80%) 54%,
+    rgb(71 123 222 / 80%)
+  );
+}
+
+h1 {
+  font-size: 30px;
+}
+
 @media only screen and (max-width: 1024px) {
   .container {
     width: 80%;
