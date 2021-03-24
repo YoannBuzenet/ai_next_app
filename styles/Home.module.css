@@ -41,7 +41,7 @@
   text-decoration: none;
 }
 
-.CTA-button {
+.CTAButton {
   padding-left: 3.5rem;
   padding-right: 3.5rem;
   padding-top: 1.5rem;
@@ -61,7 +61,7 @@
   background-color: rgba(63, 131, 248, 0.8);
   transition: background-color 0.5s;
 }
-.CTA-button:hover {
+.CTAButton:hover {
   background-color: rgba(63, 131, 248, 0.8);
   transition: background-color 0.5s;
 }
@@ -242,7 +242,7 @@ h2.punchline {
 
 /***FOURTH LINER ***/
 
-.fourth-liner {
+.fourthLiner {
   background-color: #161e2e;
   color: white;
   height: 600px;
@@ -250,12 +250,12 @@ h2.punchline {
   padding-bottom: 30rem;
 }
 
-.fourth-liner p {
+.fourthLiner p {
   font-size: 2rem;
   text-align: center;
 }
 
-.fourth-liner .tick-box {
+.fourthLiner .tickBox {
   margin-left: 156px;
   margin-right: 156px;
   display: flex;
@@ -263,18 +263,18 @@ h2.punchline {
   font-size: 1.8rem;
 }
 
-.tick-box > div {
+.tickBox > div {
   width: 30%;
 }
 
-.tick-box > div > div {
+.tickBox > div > div {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   margin-top: 10px;
 }
 
-.tick-box > div > div svg {
+.tickBox > div > div svg {
   margin-right: 10px;
 }
 
@@ -285,43 +285,43 @@ h3.punchline {
 }
 
 @media only screen and (max-width: 1400px) {
-  .fourth-liner .tick-box {
+  .fourthLiner .tickBox {
     margin-left: 0;
     margin-right: 0;
   }
 }
 @media only screen and (max-width: 1024px) {
-  .fourth-liner {
+  .fourthLiner {
     padding-top: 25rem;
   }
-  .fourth-liner .tick-box {
+  .fourthLiner .tickBox {
     justify-content: space-around;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .fourth-liner {
+  .fourthLiner {
     padding-top: 10rem;
     height: auto;
     padding-bottom: 5rem;
   }
-  .fourth-liner .tick-box {
+  .fourthLiner .tickBox {
     flex-direction: column;
     align-items: center;
   }
-  .tick-box > div {
+  .tickBox > div {
     width: 50%;
   }
 }
 
 /***FIFTH LINER ***/
 
-.fifth-liner {
+.fifthLiner {
   padding: 5rem 0;
   background-color: rgb(249, 250, 251);
 }
 
-.fifth-liner > div {
+.fifthLiner > div {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -329,23 +329,23 @@ h3.punchline {
   margin: 0 auto;
 }
 
-.fifth-liner a.CTA-button {
+.fifthLiner a.CTAButton {
   margin-top: 0;
 }
 
-.fifth-liner p {
+.fifthLiner p {
   font-size: 2.8rem;
   font-weight: 700;
 }
 
 @media only screen and (max-width: 1400px) {
-  .fifth-liner > div {
+  .fifthLiner > div {
     flex-direction: column;
     text-align: left;
   }
 }
 @media only screen and (max-width: 768px) {
-  .fifth-liner p {
+  .fifthLiner p {
     text-align: center;
   }
 }

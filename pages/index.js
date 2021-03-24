@@ -74,7 +74,7 @@ export default function Home() {
         </div>
         <div className={styles.thirdLiner}>
           <div className="container">
-            <h2 className="punchline">
+            <h2 className={styles.punchline}>
               Fix your prices. Let the customers do the rest.
             </h2>
             <p>
@@ -88,14 +88,14 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="fourth-liner">
+        <div className={styles.fourthLiner}>
           <div className="container">
-            <h3 className="punchline">Sync with MKM</h3>
+            <h3 className={styles.punchline}>Sync with MKM</h3>
             <p>
               Cards are automatically transferred to your MKM account, ready to
               be sold.
             </p>
-            <div className="tick-box">
+            <div className={styles.tickBox}>
               <div>
                 <div>
                   <Icon.Check />
@@ -153,13 +153,13 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="fifth-liner">
+        <div className={styles.fifthLiner}>
           <div>
             <div className="container">
               <p>Contact us and get a demo</p>
             </div>
             <Link href="/getStarted">
-              <a className="CTA-button">Get Started</a>
+              <a className={styles.CTAButton}>Get Started</a>
             </Link>
           </div>
         </div>
