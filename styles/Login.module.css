@@ -2,3 +2,7 @@
   height: calc(100vh - 64px);
   text-align: center;
 }
+
+.images:hover {
+  cursor: pointer;
+}

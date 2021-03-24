@@ -3,7 +3,7 @@ import Link from "next/link";
 import styles from "../styles/Home.module.css";
 import { useContext } from "react";
 import userContextFile from "../contexts/userContext";
-import { useSession, getSession, signIn } from "next-auth/client";
+import { useSession, getSession } from "next-auth/client";
 import Footer from "../components/Footer";
 import * as Icon from "react-feather";
 

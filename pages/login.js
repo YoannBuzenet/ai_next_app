@@ -1,9 +1,11 @@
 import Head from "next/head";
 import Link from "next/link";
-import { useSession, getSession } from "next-auth/client";
+import Image from "next/image";
+import { useSession, getSession, signIn } from "next-auth/client";
 import { useContext } from "react";
 import userContextFile from "../contexts/userContext";
 import styles from "../styles/Login.module.css";
+import { useIntl, FormattedMessage } from "react-intl";
 
 export default function Login() {
   const { userContext } = useContext(userContextFile);
@@ -11,7 +13,6 @@ export default function Login() {
 
   const handleGoogleClick = (e) => {
     e.preventDefault();
-    console.log("env var test", process.env.NEXT_PUBLIC_PUBLISHABLE_KEY);
     signIn("google");
     console.log("e", e);
     console.log("session", session);
@@ -21,20 +22,32 @@ export default function Login() {
     console.log("session", session);
   };
 
+  const Intl = useIntl();
+
+  // TRANSLATIONS
+  const translatedHead = Intl.formatMessage({
+    id: "page.login.title",
+    defaultMessage: "Sign In",
+  });
+
   return (
     <>
       <Head>
-        <title>Login</title>
+        <title>{translatedHead}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="globalGradient">
         <div className="container">
           <main className={styles.main}>
             <h1>Sign in or Create your Account</h1>
-            <p>Google Connect</p>
-            <button type="button" onClick={handleGoogleClick}>
-              Google
-            </button>
+            <Image
+              src="/pictures/googleButtons/size2/btn_google_signin_light_normal_web@2x.png"
+              alt="Connect With Google"
+              onClick={handleGoogleClick}
+              height={92}
+              width={382}
+              className={styles.images}
+            />
             <p>Log Session</p>
             <button type="button" onClick={handleDisplaySession}>
               Log

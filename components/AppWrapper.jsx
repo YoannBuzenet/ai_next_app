@@ -5,6 +5,8 @@ import IsResponsiveMenuDisplayedContextFile from "../contexts/menuDisplayed";
 import DefinitionsContextFile from "../contexts/definitions";
 import TransparentDivContextFile from "../contexts/transparentDiv";
 import AppLangContextFile from "../contexts/selectedAppLang";
+import { IntlProvider } from "react-intl";
+import English from "../translations/en.json";
 
 const AppWrapper = ({ children }) => {
   const [userContext, setUserContext] = useState({ test: "test" });
@@ -16,10 +18,14 @@ const AppWrapper = ({ children }) => {
   const [isTransparentDivDisplayed, setIsTransparentDivDisplayed] = useState(
     false
   );
+
+  // App Language initialization
+
+  // to do : allow app to start on local storage for language langFromLocalStorage || defaultLanguage,
   const [currentLang, setCurrentLang] = useState({
     picture: "",
-    locale: "",
-    translationsForUsersLocale: "",
+    locale: "en-US",
+    translationsForUsersLocale: English,
     langID: 0,
   });
 
@@ -64,6 +70,7 @@ const AppWrapper = ({ children }) => {
     isTransparentDivDisplayed,
     setIsTransparentDivDisplayed: handleSetContextTransparentDiv,
   };
+
   const contextCurrentLang = {
     currentLang,
     setCurrentLang: handleSetContextCurrentLang,
@@ -78,7 +85,12 @@ const AppWrapper = ({ children }) => {
               <IsResponsiveMenuDisplayedContextFile.Provider
                 value={contextResponsiveMenu}
               >
-                {children}
+                <IntlProvider
+                  locale={currentLang.locale}
+                  messages={currentLang.translationsForUsersLocale}
+                >
+                  {children}
+                </IntlProvider>
               </IsResponsiveMenuDisplayedContextFile.Provider>
             </AppLangContextFile.Provider>
           </DefinitionsContextFile.Provider>
