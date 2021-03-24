@@ -1,0 +1,26 @@
+/**********************/
+/********Footer*******/
+/**********************/
+
+.footer {
+  background-color: rgb(249, 250, 251);
+  color: rgb(159, 166, 178);
+  padding-bottom: 6rem;
+}
+.footer > div {
+  border-top: 1px solid rgba(210, 214, 220, 0.5);
+}
+
+.footer span {
+  font-size: 1.8rem;
+}
+
+.footerContent {
+  padding-top: 2rem;
+}
+
+@media only screen and (max-width: 1400px) {
+  .footer span {
+    font-size: 1.4rem;
+  }
+}

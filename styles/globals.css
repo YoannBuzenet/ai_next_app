@@ -14,3 +14,76 @@ a {
 * {
   box-sizing: border-box;
 }
+
+/**********************/
+/*******GENERAL*******/
+/**********************/
+:root {
+  --line-height: 2.4rem;
+}
+* {
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 70%;
+  margin: 0 auto;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  overflow: hidden;
+}
+
+.blackDiv {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: -100px;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 2;
+}
+
+.popUpContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 6rem;
+  border-radius: 6px;
+  background-color: rgb(244, 245, 247);
+  z-index: 3;
+}
+
+.popUpContainer p:first-child {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+.popUpContainer p:nth-of-type(2) {
+  font-size: 1.6rem;
+}
+
+.popUpContainer .CTA-button {
+  margin-top: 2rem;
+}
+
+@media only screen and (max-width: 1024px) {
+  .container {
+    width: 80%;
+  }
+}

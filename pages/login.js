@@ -1,6 +1,9 @@
+import Head from "next/head";
+import Link from "next/link";
 import { useSession, getSession } from "next-auth/client";
 import { useContext } from "react";
 import userContextFile from "../contexts/userContext";
+import styles from "../styles/Login.module.css";
 
 export default function Login() {
   const { userContext } = useContext(userContextFile);
