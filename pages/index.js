@@ -4,7 +4,7 @@ import styles from "../styles/Home.module.css";
 import { useContext } from "react";
 import userContextFile from "../contexts/userContext";
 import { useSession, getSession } from "next-auth/client";
-import Footer from "../components/Footer";
+
 import * as Icon from "react-feather";
 
 export default function Home() {
@@ -158,14 +158,12 @@ export default function Home() {
             <div className="container">
               <p>Contact us and get a demo</p>
             </div>
-            <Link href="/getStarted">
+            <Link href="/login">
               <a className={styles.CTAButton}>Get Started</a>
             </Link>
           </div>
         </div>
       </main>
-
-      <Footer />
     </>
   );
 }

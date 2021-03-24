@@ -39,23 +39,23 @@ export default function Login() {
       <div className="globalGradient">
         <div className="container">
           <main className={styles.main}>
-            <h1>Sign in or Create your Account</h1>
-            <Image
-              src="/pictures/googleButtons/size2/btn_google_signin_light_normal_web@2x.png"
-              alt="Connect With Google"
-              onClick={handleGoogleClick}
-              height={92}
-              width={382}
-              className={styles.images}
-            />
-            <p>Log Session</p>
-            <button type="button" onClick={handleDisplaySession}>
-              Log
-            </button>
-            <p>
-              By proceeding, you are agreeing to Cursive's Terms of Service and
-              Privacy Notice
-            </p>
+            <div>
+              <h1 className="h1Common">Sign in or Create your Account</h1>
+              <Image
+                src="/pictures/googleButtons/size2/btn_google_signin_light_normal_web@2x.png"
+                alt="Connect With Google"
+                onClick={handleGoogleClick}
+                height={92}
+                width={382}
+                className={styles.images}
+              />
+              <div className={styles.agreeingTermsAndServices}>
+                <p>
+                  By proceeding, you are agreeing to Cursive's Terms of Service
+                  and Privacy Notice
+                </p>
+              </div>
+            </div>
           </main>
         </div>
       </div>

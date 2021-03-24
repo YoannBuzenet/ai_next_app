@@ -1,8 +1,15 @@
 .main {
-  height: calc(100vh - 64px);
   text-align: center;
+  height: calc(100vh - 166px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .images:hover {
   cursor: pointer;
+}
+
+.agreeingTermsAndServices {
+  margin: 50px;
 }

@@ -95,6 +95,14 @@ h1 {
   font-size: 30px;
 }
 
+p {
+  font-size: 16px;
+}
+
+.h1Common {
+  margin: 50px;
+}
+
 @media only screen and (max-width: 1024px) {
   .container {
     width: 80%;
