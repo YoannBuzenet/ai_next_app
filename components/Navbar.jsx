@@ -1,13 +1,14 @@
 import React from "react";
 import Link from "next/link";
+import styles from "../styles/Navbar.module.css";
 
 const Navbar = () => {
   return (
     <div>
-      <nav className="navbar">
+      <nav className={styles.navbar}>
         <div className="container">
-          <div className="menu-elements">
-            <div className="left-navbar">
+          <div className={styles.menuElements}>
+            <div className={styles.leftNavbar}>
               <Link href="/">
                 <a>
                   <span>MTG INTERFACE</span>

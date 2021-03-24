@@ -13,7 +13,7 @@ export default function Home() {
   const [session, loading] = useSession();
 
   return (
-    <div className="container">
+    <>
       <Head>
         <title>TextFlow - Just Generate</title>
         <link rel="icon" href="/favicon.ico" />
@@ -166,6 +166,6 @@ export default function Home() {
       </main>
 
       <Footer />
-    </div>
+    </>
   );
 }

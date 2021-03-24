@@ -1,0 +1,55 @@
+/**********************/
+/********NAVBAR*******/
+/**********************/
+
+.navbar {
+  padding: 2rem 0;
+  font-size: 1.6rem;
+  background-color: white;
+  border-bottom: 1px solid rgb(210, 214, 220);
+}
+
+.leftNavbar {
+  display: flex;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+}
+.navbar ul li {
+  width: 125px;
+  font-weight: 500;
+}
+
+.menuElements {
+  display: flex;
+  justify-content: space-between;
+}
+
+.menuElements a > span {
+  font-size: 2rem;
+  font-weight: 300;
+}
+.menuElements a > span:hover {
+  font-size: 2rem;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: black;
+}
+.navbar ul a:hover {
+  /* text-decoration: underline; */
+  border-bottom: 3px solid black;
+}
+
+@media only screen and (max-width: 768px) {
+  .menuElements {
+    display: flex;
+    flex-direction: column;
+  }
+  .navbar ul li {
+    margin-top: 2rem;
+  }
+}
