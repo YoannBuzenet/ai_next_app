@@ -1,12 +1,6 @@
 import React from "react";
 
 export default React.createContext({
-  allDefinitions: {
-    allRuleTypes: [],
-    allRuleBehaviours: [],
-    allPriceGuidePossibilities: [],
-    allFormats: [],
-    allMKMSets: [],
-  },
+  allDefinitions: {},
   setAllDefinitions: (value) => {},
 });
