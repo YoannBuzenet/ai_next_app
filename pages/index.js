@@ -43,26 +43,26 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="second-liner">
+        <div className={styles.secondLiner}>
           <div className="container">
-            <div className="cards-container">
-              <div className="card">
-                <span className="card-title">Buy what you want</span>
+            <div className={styles.cardsContainer}>
+              <div className={styles.card}>
+                <span className={styles.cardTitle}>Buy what you want</span>
                 <span>
                   Fix your buying prices only on the cards you want. If you want
                   to buy everything, we've got you covered !
                 </span>
               </div>
-              <div className="card">
-                <span className="card-title">Save your time</span>
+              <div className={styles.card}>
+                <span className={styles.cardTitle}>Save your time</span>
                 <span>
                   {" "}
                   Customers list their cards themselves. You just have to
                   receive them, check the condition, and validate.
                 </span>
               </div>
-              <div className="card">
-                <span className="card-title">Sync with MKM</span>
+              <div className={styles.card}>
+                <span className={styles.cardTitle}>Sync with MKM</span>
                 <span>
                   Once the customer did agree with your price and grading, you
                   just click one button. All the cards are directly for sale on
@@ -72,7 +72,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="third-liner">
+        <div className={styles.thirdLiner}>
           <div className="container">
             <h2 className="punchline">
               Fix your prices. Let the customers do the rest.
