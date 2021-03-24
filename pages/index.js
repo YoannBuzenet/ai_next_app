@@ -20,25 +20,25 @@ export default function Home() {
       </Head>
 
       <main>
-        <div style={styles.firstLiner}>
+        <div className={styles.firstLiner}>
           <div className="container">
-            <div style={styles.firstLiner}>
-              <div style={styles.softwareImage}>
+            <div className={styles.firstLiner}>
+              <div className={styles.softwareImage}>
                 <img src="/images/software_front.png" />
               </div>
-              <div style={styles.mainTitle}>
-                <div style={styles.leftContent}>
-                  <h1 style={styles.mainPunchline}>
+              <div className={styles.mainTitle}>
+                <div className={styles.leftContent}>
+                  <h1 className={styles.mainPunchline}>
                     Buying cards has never been so easy
                   </h1>
                   <p>Get your own buying interface.</p>
-                  <div style={styles.ctaMain}>
+                  <div className={styles.ctaMain}>
                     <Link href="/getStarted">
                       <a type="button">Get Started</a>
                     </Link>
                   </div>
                 </div>
-                <div style={styles.rightContent}></div>
+                <div className={styles.rightContent}></div>
               </div>
             </div>
           </div>
