@@ -3,26 +3,29 @@
 /**********************/
 
 /***FIRST LINER ***/
-.main-title {
+.mainTitle {
   display: flex;
   justify-content: center;
 }
 
-.left-content,
-.right-content {
+.leftContent {
   width: 50%;
 }
 
-.left-content p {
+.rightContent {
+  width: 50%;
+}
+
+.leftContent p {
   font-size: 2rem;
   margin-top: 20px;
 }
 
-.cta-main {
+.ctaMain {
   margin-top: 32px;
 }
 
-.left-content a,
+.leftContent a,
 .CTA-button {
   padding-left: 3.5rem;
   padding-right: 3.5rem;
@@ -39,22 +42,22 @@
   text-decoration: none;
 }
 
-.left-content a:hover,
+.leftContent a:hover,
 .CTA-button:hover {
   background-color: rgba(63, 131, 248, 0.8);
   transition: background-color 0.5s;
 }
 
-.main-punchline {
+.mainPunchline {
   font-size: 6.4rem;
   margin-bottom: 0;
 }
-.first-liner {
+.firstLiner {
   padding: 3rem 0;
   position: relative;
 }
 
-.first-liner .software-image img {
+.firstLiner .softwareImage img {
   position: absolute;
   width: 1200px;
   transform: rotate(-5deg);
@@ -64,7 +67,7 @@
 }
 
 @media only screen and (max-width: 1400px) {
-  .first-liner .software-image img {
+  .firstLiner .softwareImage img {
     position: absolute;
     width: 1200px;
     right: -650px;
@@ -73,33 +76,33 @@
   }
 }
 @media only screen and (max-width: 1024px) {
-  .first-liner .software-image img {
+  .firstLiner .softwareImage img {
     display: none;
   }
 
-  .main-punchline {
+  .mainPunchline {
     text-align: center;
   }
-  .right-content {
+  .rightContent {
     display: none;
   }
-  .left-content {
+  .leftContent {
     width: 100%;
     text-align: center;
   }
 }
 @media only screen and (max-width: 768px) {
-  .first-liner .software-image img {
+  .firstLiner .softwareImage img {
     display: none;
   }
 }
 @media only screen and (max-width: 640px) {
-  .first-liner .software-image img {
+  .firstLiner .softwareImage img {
     display: none;
   }
 }
 @media only screen and (max-width: 550px) {
-  .main-punchline {
+  .mainPunchline {
     font-size: 3rem;
   }
 }

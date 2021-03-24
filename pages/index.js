@@ -13,32 +13,30 @@ export default function Home() {
   const [session, loading] = useSession();
 
   return (
-    <div className={styles.container}>
+    <div className="container">
       <Head>
         <title>TextFlow - Just Generate</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main>
-        <div className="first-liner">
+        <div style={styles.firstLiner}>
           <div className="container">
-            <div className="first-liner">
-              <div className="software-image">
+            <div style={styles.firstLiner}>
+              <div>
                 <img src="/images/software_front.png" />
               </div>
-              <div className="main-title">
-                <div className="left-content">
-                  <h1 className="main-punchline">
-                    Buying cards has never been so easy
-                  </h1>
+              <div>
+                <div>
+                  <h1>Buying cards has never been so easy</h1>
                   <p>Get your own buying interface.</p>
-                  <div className="cta-main">
+                  <div>
                     <Link href="/getStarted">
                       <a type="button">Get Started</a>
                     </Link>
                   </div>
                 </div>
-                <div className="right-content"></div>
+                <div></div>
               </div>
             </div>
           </div>
