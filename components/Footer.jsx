@@ -2,9 +2,9 @@ import style from "../styles/Footer.module.css";
 
 const Footer = () => {
   return (
-    <footer className="footer">
+    <footer className={style.footer}>
       <div className="container">
-        <div className="footerContent">
+        <div className={style.footerContent}>
           <span>© 2021 TextFlow, Inc. All rights reserved.</span>
         </div>
       </div>
