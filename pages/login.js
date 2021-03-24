@@ -28,16 +28,18 @@ export default function Login() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
-        <p>Google Connect</p>
-        <button type="button" onClick={handleGoogleClick}>
-          Google
-        </button>
-        <p>Log Session</p>
-        <button type="button" onClick={handleDisplaySession}>
-          Log
-        </button>
-      </main>
+      <div className="container">
+        <main className={styles.main}>
+          <p>Google Connect</p>
+          <button type="button" onClick={handleGoogleClick}>
+            Google
+          </button>
+          <p>Log Session</p>
+          <button type="button" onClick={handleDisplaySession}>
+            Log
+          </button>
+        </main>
+      </div>
     </>
   );
 }
