@@ -51,7 +51,7 @@ export default function Login() {
               />
               <div className={styles.agreeingTermsAndServices}>
                 <p>
-                  By proceeding, you are agreeing to Cursive's Terms of Service
+                  By proceeding, you are agreeing to Cursify's Terms of Service
                   and Privacy Notice
                 </p>
               </div>

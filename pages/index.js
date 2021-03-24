@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>TextFlow - Just Generate</title>
+        <title>Cursify - Generate Marketing Copy in one click</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -29,11 +29,11 @@ export default function Home() {
               <div className={styles.mainTitle}>
                 <div className={styles.leftContent}>
                   <h1 className={styles.mainPunchline}>
-                    Buying cards has never been so easy
+                    Generate Marketing Copy in seconds
                   </h1>
-                  <p>Get your own buying interface.</p>
+                  <p>One click and you're in.</p>
                   <div className={styles.ctaMain}>
-                    <Link href="/getStarted">
+                    <Link href="/login">
                       <a type="button">Get Started</a>
                     </Link>
                   </div>
@@ -47,26 +47,24 @@ export default function Home() {
           <div className="container">
             <div className={styles.cardsContainer}>
               <div className={styles.card}>
-                <span className={styles.cardTitle}>Buy what you want</span>
+                <span className={styles.cardTitle}>Choose your category</span>
                 <span>
-                  Fix your buying prices only on the cards you want. If you want
-                  to buy everything, we've got you covered !
+                  Facebook Ad ? Blog Intro ? Product Description ? We have more
+                  than 40 categories.
                 </span>
               </div>
               <div className={styles.card}>
-                <span className={styles.cardTitle}>Save your time</span>
+                <span className={styles.cardTitle}>Give it a few words</span>
                 <span>
-                  {" "}
-                  Customers list their cards themselves. You just have to
-                  receive them, check the condition, and validate.
+                  What do you want the AI to talk about ? Give it a few words to
+                  show it the way.
                 </span>
               </div>
               <div className={styles.card}>
-                <span className={styles.cardTitle}>Sync with MKM</span>
+                <span className={styles.cardTitle}>And just click</span>
                 <span>
-                  Once the customer did agree with your price and grading, you
-                  just click one button. All the cards are directly for sale on
-                  MKM !
+                  AI generates relevant text based on what you entered. You can
+                  directly copy it and use it !
                 </span>
               </div>
             </div>
@@ -75,13 +73,12 @@ export default function Home() {
         <div className={styles.thirdLiner}>
           <div className="container">
             <h2 className={styles.punchline}>
-              Fix your prices. Let the customers do the rest.
+              Give a few words. Let the AI do the rest.
             </h2>
             <p>
-              MTG Interface enables you to fix all your buying prices for any
-              MTG card : regular, foil, signed, in any condition or language.
-              Your customers just have to connect, check your prices, and sell
-              you their cards.
+              Cursify uses technology based on AI. Thanks to Deep Learning, it
+              is able to make connections that have never been done before. With
+              just a few words, it can create specific text just for you.
             </p>
             <div>
               <img src="/images/sampleBasket.png" />
@@ -90,64 +87,65 @@ export default function Home() {
         </div>
         <div className={styles.fourthLiner}>
           <div className="container">
-            <h3 className={styles.punchline}>Sync with MKM</h3>
+            <h3 className={styles.punchline}>Just generate and use it</h3>
             <p>
-              Cards are automatically transferred to your MKM account, ready to
-              be sold.
+              Words are automatically generated thanks to the Deep Learning
+              algorithm. Relevant marketing text are generated for you on the
+              fly.
             </p>
             <div className={styles.tickBox}>
               <div>
                 <div>
                   <Icon.Check />
-                  <span>Buying prices</span>
+                  <span>Facebook Ad</span>
                 </div>
                 <div>
                   <Icon.Check />
-                  <span>MKM Prices up-to-date</span>
+                  <span>Blog Title</span>
                 </div>
                 <div>
                   <Icon.Check />
-                  <span>Manage Sell Requests</span>
+                  <span>Blog Idea</span>
                 </div>
                 <div>
                   <Icon.Check />
-                  <span>Manage Customers</span>
-                </div>
-              </div>
-              <div>
-                <div>
-                  <Icon.Check />
-                  <span>Sell Automatically</span>
-                </div>
-                <div>
-                  <Icon.Check />
-                  <span>Automatic prices</span>
-                </div>
-                <div>
-                  <Icon.Check />
-                  <span>Daily follow-up</span>
-                </div>
-                <div>
-                  <Icon.Check />
-                  <span>Update anytime</span>
+                  <span>Blog Intro</span>
                 </div>
               </div>
               <div>
                 <div>
                   <Icon.Check />
-                  <span>Automatic Mailing</span>
+                  <span>Product Description</span>
                 </div>
                 <div>
                   <Icon.Check />
-                  <span>PDF Generation</span>
+                  <span>Google Ad</span>
                 </div>
                 <div>
                   <Icon.Check />
-                  <span>International App</span>
+                  <span>Instagram Caption</span>
                 </div>
                 <div>
                   <Icon.Check />
-                  <span>MKM follow-up</span>
+                  <span>Follow-up Email</span>
+                </div>
+              </div>
+              <div>
+                <div>
+                  <Icon.Check />
+                  <span>Video Title</span>
+                </div>
+                <div>
+                  <Icon.Check />
+                  <span>Linkedin Ads</span>
+                </div>
+                <div>
+                  <Icon.Check />
+                  <span>Landing Page Catch Phrase</span>
+                </div>
+                <div>
+                  <Icon.Check />
+                  <span>Confirmation email</span>
                 </div>
               </div>
             </div>

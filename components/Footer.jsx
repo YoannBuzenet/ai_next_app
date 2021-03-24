@@ -5,7 +5,7 @@ const Footer = () => {
     <footer className={style.footer}>
       <div className="container">
         <div className={style.footerContent}>
-          <span>© 2021 TextFlow, Inc. All rights reserved.</span>
+          <span>© 2021 Cursify, Inc. All rights reserved.</span>
         </div>
       </div>
     </footer>

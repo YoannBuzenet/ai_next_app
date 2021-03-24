@@ -11,7 +11,7 @@ const Navbar = () => {
             <div className={styles.leftNavbar}>
               <Link href="/">
                 <a>
-                  <span>MTG INTERFACE</span>
+                  <span>CURSIFY</span>
                 </a>
               </Link>
             </div>
