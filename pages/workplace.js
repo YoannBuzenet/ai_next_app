@@ -6,8 +6,14 @@ import userContextFile from "../contexts/userContext";
 import styles from "../styles/Workplace.module.css";
 
 export default function Workplace() {
+  // Checker si logé, sinon redirect
+
   const { userContext } = useContext(userContextFile);
   const [session, loading] = useSession();
 
-  return null;
+  const sendDataToBackEnd = () => {
+    console.log("pinging the back end...");
+  };
+
+  return <>Workplace</>;
 }
