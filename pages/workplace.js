@@ -31,6 +31,8 @@ export default function Workplace() {
     setUserInputs({});
   };
 
+  console.log("user inputs", userInputs);
+
   return (
     <>
       <p>Workplace</p>
