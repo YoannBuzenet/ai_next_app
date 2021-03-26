@@ -18,13 +18,15 @@ const HeartWorkPlace = ({
     );
   } else {
     return (
-      <div>
-        <h2>{categoryObject?.name}</h2>
+      <div className={style.rightDivContainer}>
+        <div className={style.categoryTitle}>
+          <h2>{categoryObject?.name}</h2>
+        </div>
         <div className={style.formContainer}>
           {categoryObject.inputs.map((input, index) => (
-            <div key={index}>
+            <div key={index} className={style.oneInput}>
+              <p>{input.label}</p>
               <TextField
-                label={input.label}
                 placeholder={input.placeholder}
                 value={userInputs?.[input.name] || ""}
                 onChange={(e) =>

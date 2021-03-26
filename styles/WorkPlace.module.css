@@ -1,4 +1,7 @@
 .workplaceMenu {
+  border-right: 1px solid rgb(221, 220, 220);
+  border-left: 1px solid rgb(221, 220, 220);
+  border-bottom: 1px solid rgb(221, 220, 220);
 }
 
 .workToolsglobalContainer {
@@ -8,12 +11,19 @@
 
 .leftDiv {
   width: 300px;
-  background-color: red;
+  border-right: 1px solid rgb(221, 220, 220);
+  border-left: 1px solid rgb(221, 220, 220);
+  border-bottom: 1px solid rgb(221, 220, 220);
 }
 
 .rightDiv {
-  background-color: blue;
   flex-grow: 1;
+  background: rgb(28, 100, 242);
+  background: linear-gradient(
+    149deg,
+    rgb(184 224 247 / 80%) 54%,
+    rgb(71 123 222 / 80%)
+  );
 }
 
 @media only screen and (max-width: 768px) {

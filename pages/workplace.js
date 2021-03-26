@@ -45,8 +45,8 @@ export default function Workplace() {
 
   return (
     <>
-      <p>Workplace</p>
       <div className={styles.workplaceMenu}>
+        <p>Workplace</p>
         <button
           type="button"
           onClick={(e) => setIsDisplayedTools(!isDisplayedTools)}
