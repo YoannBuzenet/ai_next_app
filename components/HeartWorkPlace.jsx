@@ -5,7 +5,15 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
   button: {
+    color: "white",
+    fontWeight: 400,
+    fontSize: 16,
+    textTransform: "none",
     backgroundColor: "#477bde",
+    "&:hover": {
+      backgroundColor: "#1c64f2",
+      boxShadow: "none",
+    },
   },
 }));
 

@@ -17,15 +17,16 @@ export const categoriesDefinition = {
       {
         name: "value1",
         maxLengthInput: 100,
-        label: "VP L",
-        placeholder: "VP PH",
+        label: "What is your company/product name ?",
+        placeholder: "Example : Uber",
         inputType: "small",
       },
       {
         name: "value2",
         maxLengthInput: 100,
-        label: "VP L2",
-        placeholder: "VP PH2",
+        label: "What is your company about ?",
+        placeholder:
+          "Example : We connect drivers to people who wants to go somewhere.",
         inputType: "textarea",
       },
     ],
@@ -37,8 +38,8 @@ export const categoriesDefinition = {
       {
         name: "value",
         maxLengthInput: 100,
-        label: "BT L",
-        placeholder: "BT PH",
+        label: "What is this blog ticket about ?",
+        placeholder: "Example : Hiking in Netherlands",
         inputType: "textarea",
       },
     ],
@@ -50,8 +51,9 @@ export const categoriesDefinition = {
       {
         name: "value",
         maxLengthInput: 100,
-        label: "IC L",
-        placeholder: "IC PH",
+        label: "What is your caption about ?",
+        placeholder:
+          "Example : Went to the beach yesterday - it was so beautiful.",
         inputType: "textarea",
       },
     ],
@@ -63,8 +65,8 @@ export const categoriesDefinition = {
       {
         name: "value",
         maxLengthInput: 100,
-        label: "BI L",
-        placeholder: "BI PH",
+        label: "What is your blog about ?",
+        placeholder: "Example : My blog is about cooking specific pizzas !",
         inputType: "textarea",
       },
     ],
