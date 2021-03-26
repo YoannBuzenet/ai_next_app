@@ -30,7 +30,7 @@ const HeartWorkPlace = ({
   if (categoryObject === null) {
     return (
       <div className={style.noCategoryDiv}>
-        <p>Welcome on Cursify !</p>
+        <h1>Welcome on Cursify !</h1>
         <p>Please choose a category.</p>
       </div>
     );

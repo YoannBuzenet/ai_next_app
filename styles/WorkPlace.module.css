@@ -1,7 +1,20 @@
 .workplaceMenu {
-  border-right: 1px solid rgb(221, 220, 220);
   border-left: 1px solid rgb(221, 220, 220);
   border-bottom: 1px solid rgb(221, 220, 220);
+  min-height: 40px;
+}
+
+.workplaceMenu > div {
+  display: flex;
+  padding-top: 10px;
+  cursor: pointer;
+  margin-left: 25px;
+}
+.workplaceMenu > div > p {
+  margin: 0;
+}
+.workplaceMenu > div:hover {
+  font-weight: 600;
 }
 
 .workToolsglobalContainer {

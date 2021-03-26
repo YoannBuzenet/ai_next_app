@@ -7,6 +7,8 @@ import userContextFile from "../contexts/userContext";
 import styles from "../styles/Workplace.module.css";
 import { categoriesDefinition } from "../definitions/categories";
 import HeartWorkPlace from "../components/HeartWorkPlace";
+import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
+import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 
 export default function Workplace() {
   // TODO 2nd step
@@ -20,6 +22,7 @@ export default function Workplace() {
 
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [userInputs, setUserInputs] = useState({});
+  const [AIResults, setAIResults] = useState(["test", "test2"]);
 
   const sendDataToBackEnd = () => {
     let arrayofuserInputs = [];
@@ -46,13 +49,19 @@ export default function Workplace() {
   return (
     <>
       <div className={styles.workplaceMenu}>
-        <p>Workplace</p>
-        <button
-          type="button"
-          onClick={(e) => setIsDisplayedTools(!isDisplayedTools)}
-        >
-          Tools
-        </button>
+        <div>
+          {isDisplayedTools && (
+            <ArrowBackIosIcon style={{ marginTop: "1px", marginLeft: "5px" }} />
+          )}
+          <p onClick={(e) => setIsDisplayedTools(!isDisplayedTools)}>
+            {isDisplayedTools ? "Hide categories" : "Display categories"}
+          </p>
+          {!isDisplayedTools && (
+            <ArrowForwardIosIcon
+              style={{ marginTop: "1px", marginLeft: "5px" }}
+            />
+          )}
+        </div>
       </div>
       <div className={styles.workToolsglobalContainer}>
         {isDisplayedTools && (
