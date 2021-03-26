@@ -12,6 +12,8 @@ export default function Home() {
 
   const [session, loading] = useSession();
 
+  console.log("session user", session);
+
   return (
     <>
       <Head>
