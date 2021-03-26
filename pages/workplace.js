@@ -21,6 +21,8 @@ export default function Workplace() {
   const [selectedCategory, setSelectedCategory] = useState(null);
 
   const sendDataToBackEnd = () => {
+    const finalPayload = { categoryID: selectedCategory };
+    console.log("we build the final payload here. Here :", finalPayload);
     console.log("pinging the back end...");
   };
 
@@ -44,6 +46,7 @@ export default function Workplace() {
         <div className={styles.rightDiv}>
           <HeartWorkPlace
             categoryObject={categoriesDefinition?.[selectedCategory] || null}
+            sendDataToBackEnd={sendDataToBackEnd}
           />
         </div>
       </div>
