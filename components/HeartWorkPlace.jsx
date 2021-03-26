@@ -32,6 +32,7 @@ const HeartWorkPlace = ({
                 onChange={(e) =>
                   setUserInputs({ ...userInputs, [input.name]: e.target.value })
                 }
+                fullWidth
               />
             </div>
           ))}

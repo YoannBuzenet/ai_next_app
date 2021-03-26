@@ -27,6 +27,11 @@
 
 .oneInput p {
   margin: 0;
+  margin-bottom: 5px;
+  font-size: 2rem;
+  font-weight: 600;
+  color: rgb(126, 124, 124);
+  text-transform: uppercase;
 }
 
 @media only screen and (max-width: 1400px) {
