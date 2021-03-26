@@ -69,6 +69,7 @@ export default function Workplace() {
             sendDataToBackEnd={sendDataToBackEnd}
             userInputs={userInputs}
             setUserInputs={setUserInputs}
+            selectedCategory={selectedCategory}
           />
         </div>
       </div>

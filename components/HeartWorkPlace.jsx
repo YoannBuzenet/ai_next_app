@@ -3,6 +3,7 @@ import TextField from "@material-ui/core/TextField";
 
 const HeartWorkPlace = ({
   categoryObject,
+  selectedCategory,
   sendDataToBackEnd,
   userInputs,
   setUserInputs,
@@ -18,11 +19,13 @@ const HeartWorkPlace = ({
   } else {
     return (
       <div>
-        Workplace
+        <h2>{categoryObject?.name}</h2>
         <div className={style.formContainer}>
           {categoryObject.inputs.map((input, index) => (
             <div key={index}>
               <TextField
+                label={input.label}
+                placeholder={input.placeholder}
                 value={userInputs?.[input.name] || ""}
                 onChange={(e) =>
                   setUserInputs({ ...userInputs, [input.name]: e.target.value })

@@ -2,62 +2,73 @@ export const categoriesDefinition = {
   1: {
     inputs: [
       {
-        name: "test",
+        name: "value",
         maxLengthInput: 100,
-        placeholder: "",
+        label: "PH L",
+        placeholder: "PD PH",
         inputType: "textarea",
       },
     ],
     categoryId: 1,
+    name: "Product Description",
   },
   2: {
     inputs: [
       {
-        name: "test2",
+        name: "value1",
         maxLengthInput: 100,
-        placeholder: "",
+        label: "VP L",
+        placeholder: "VP PH",
         inputType: "small",
       },
       {
-        name: "test3",
+        name: "value2",
         maxLengthInput: 100,
-        placeholder: "",
+        label: "VP L2",
+        placeholder: "VP PH2",
         inputType: "textarea",
       },
     ],
     categoryId: 2,
+    name: "Value Proposition",
   },
   3: {
     inputs: [
       {
-        name: "test4",
+        name: "value",
         maxLengthInput: 100,
-        placeholder: "",
+        label: "BT L",
+        placeholder: "BT PH",
         inputType: "textarea",
       },
     ],
     categoryId: 3,
+    name: "Blog Title",
   },
   4: {
     inputs: [
       {
-        name: "test5",
+        name: "value",
         maxLengthInput: 100,
-        placeholder: "",
+        label: "IC L",
+        placeholder: "IC PH",
         inputType: "textarea",
       },
     ],
     categoryId: 4,
+    name: "Instagram Caption",
   },
   5: {
     inputs: [
       {
-        name: "test6",
+        name: "value",
         maxLengthInput: 100,
-        placeholder: "",
+        label: "BI L",
+        placeholder: "BI PH",
         inputType: "textarea",
       },
     ],
     categoryId: 5,
+    name: "Blog Intro",
   },
 };
