@@ -15,6 +15,7 @@ import UserCheck from "../services/userCheck";
 
 export async function getServerSideProps(context) {
   const session = await getSession(context);
+  //TODO STEP2 : check if Subscribed too
   const isLoggedUser = UserCheck.isUserLogged(session?.user?.isLoggedUntil);
 
   if (!isLoggedUser) {
@@ -32,7 +33,6 @@ export async function getServerSideProps(context) {
 
 function Workplace() {
   // TODO 2nd step
-  // Checker si logé, sinon redirect
   // si on start avec isMobile = true, isDisplayedTools est true et le bouton pour le cacher disparait
   const { userContext } = useContext(userContextFile);
   const [session, loading] = useSession();
