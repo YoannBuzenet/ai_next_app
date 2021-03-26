@@ -1,3 +1,6 @@
+.workplaceContainer {
+}
+
 .workplaceMenu {
   border-left: 1px solid rgb(221, 220, 220);
   border-bottom: 1px solid rgb(221, 220, 220);
@@ -7,14 +10,15 @@
 .workplaceMenu > div {
   display: flex;
   padding-top: 10px;
-  cursor: pointer;
+
   margin-left: 25px;
 }
 .workplaceMenu > div > p {
   margin: 0;
 }
-.workplaceMenu > div:hover {
+.workplaceMenu > div > p:hover {
   font-weight: 600;
+  cursor: pointer;
 }
 
 .workToolsglobalContainer {
@@ -37,6 +41,23 @@
     rgb(184 224 247 / 80%) 54%,
     rgb(71 123 222 / 80%)
   );
+  padding-bottom: 5rem;
+}
+
+.resultsDivContainer {
+  margin-left: 25px;
+}
+
+.resultsDivContainer .resultTitle {
+  background-color: white;
+  padding: 3rem;
+  width: 80%;
+  margin: auto;
+}
+
+.resultsDivContainer .resultTitle h1 {
+  margin: 0;
+  margin-bottom: 20px;
 }
 
 @media only screen and (max-width: 768px) {

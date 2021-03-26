@@ -9,6 +9,7 @@ import { categoriesDefinition } from "../definitions/categories";
 import HeartWorkPlace from "../components/HeartWorkPlace";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
+import APIResult from "../components/APIResult";
 
 export default function Workplace() {
   // TODO 2nd step
@@ -17,7 +18,7 @@ export default function Workplace() {
 
   const { userContext } = useContext(userContextFile);
   const [session, loading] = useSession();
-
+  const [isLoadingAPIResults, setIsLoadingAPIResults] = useState(false);
   const [isDisplayedTools, setIsDisplayedTools] = useState(true);
 
   const [selectedCategory, setSelectedCategory] = useState(null);
@@ -47,11 +48,14 @@ export default function Workplace() {
   console.log("user inputs", userInputs);
 
   return (
-    <>
+    <div className={styles.workplaceContainer}>
       <div className={styles.workplaceMenu}>
         <div>
           {isDisplayedTools && (
-            <ArrowBackIosIcon style={{ marginTop: "1px", marginLeft: "5px" }} />
+            <ArrowBackIosIcon
+              style={{ marginTop: "1px", marginLeft: "5px" }}
+              onClick={(e) => setIsDisplayedTools(!isDisplayedTools)}
+            />
           )}
           <p onClick={(e) => setIsDisplayedTools(!isDisplayedTools)}>
             {isDisplayedTools ? "Hide categories" : "Display categories"}
@@ -59,6 +63,7 @@ export default function Workplace() {
           {!isDisplayedTools && (
             <ArrowForwardIosIcon
               style={{ marginTop: "1px", marginLeft: "5px" }}
+              onClick={(e) => setIsDisplayedTools(!isDisplayedTools)}
             />
           )}
         </div>
@@ -80,8 +85,19 @@ export default function Workplace() {
             setUserInputs={setUserInputs}
             selectedCategory={selectedCategory}
           />
+          {/* API Result display */}
+          {Array.isArray(AIResults) && AIResults.length > 0 && (
+            <div className={styles.resultsDivContainer}>
+              <div className={styles.resultTitle}>
+                <h1>Results</h1>
+                {AIResults.map((result, index) => (
+                  <APIResult index={index} initialText={result} />
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </div>
-    </>
+    </div>
   );
 }
