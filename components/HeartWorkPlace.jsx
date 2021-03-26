@@ -21,9 +21,8 @@ const HeartWorkPlace = ({
         Workplace
         <div className={style.formContainer}>
           {categoryObject.inputs.map((input, index) => (
-            <div>
+            <div key={index}>
               <TextField
-                key={index}
                 value={userInputs?.[input.name] || ""}
                 onChange={(e) =>
                   setUserInputs({ ...userInputs, [input.name]: e.target.value })

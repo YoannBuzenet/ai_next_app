@@ -22,7 +22,17 @@ export default function Workplace() {
   const [userInputs, setUserInputs] = useState({});
 
   const sendDataToBackEnd = () => {
-    const finalPayload = { categoryID: selectedCategory };
+    let arrayofuserInputs = [];
+    for (const userInput in userInputs) {
+      arrayofuserInputs = [
+        ...arrayofuserInputs,
+        { [userInput]: userInputs[userInput] },
+      ];
+    }
+    const finalPayload = {
+      categoryID: selectedCategory,
+      userInputs: arrayofuserInputs,
+    };
     console.log("we build the final payload here. Here :", finalPayload);
     console.log("pinging the back end...");
   };
