@@ -103,6 +103,12 @@ p {
   margin: 50px;
 }
 
+/* Material UI Inputs */
+/* .MuiTextField-root input,
+.MuiTextField-root textarea {
+  font-size: 2rem !important;
+} */
+
 @media only screen and (max-width: 1024px) {
   .container {
     width: 80%;

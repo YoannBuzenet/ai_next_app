@@ -27,12 +27,16 @@ const HeartWorkPlace = ({
             <div key={index} className={style.oneInput}>
               <p>{input.label}</p>
               <TextField
+                InputProps={{ style: { fontSize: 20 } }} // font size of input text
                 placeholder={input.placeholder}
                 value={userInputs?.[input.name] || ""}
                 onChange={(e) =>
                   setUserInputs({ ...userInputs, [input.name]: e.target.value })
                 }
                 fullWidth
+                variant="outlined"
+                multiline={input.inputType === "textarea" ? true : false}
+                rows={input.inputType === "textarea" ? 7 : 1}
               />
             </div>
           ))}
