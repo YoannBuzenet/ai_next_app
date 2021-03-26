@@ -1,12 +1,15 @@
 import Head from "next/head";
 import Link from "next/link";
+import CategorySelector from "../components/CategorySelector";
 import { useSession, getSession } from "next-auth/client";
 import { useContext, useState } from "react";
 import userContextFile from "../contexts/userContext";
 import styles from "../styles/Workplace.module.css";
 
 export default function Workplace() {
+  // TODO 2nd step
   // Checker si logé, sinon redirect
+  // si on start avec isMobile = true, isDisplayedTools est true et le bouton pour le cacher disparait
 
   const { userContext } = useContext(userContextFile);
   const [session, loading] = useSession();
@@ -29,8 +32,12 @@ export default function Workplace() {
         </button>
       </div>
       <div className={styles.workToolsglobalContainer}>
-        {isDisplayedTools && <div>div de gauche</div>}
-        <div>div de droite</div>
+        {isDisplayedTools && (
+          <div className={styles.leftDiv}>
+            <CategorySelector />
+          </div>
+        )}
+        <div className={styles.rightDiv}>div de droite</div>
       </div>
     </>
   );

@@ -1,3 +1,26 @@
+.workplaceMenu {
+}
+
 .workToolsglobalContainer {
   display: flex;
+  min-height: calc(100vh - 200px);
+}
+
+.leftDiv {
+  width: 300px;
+  background-color: red;
+}
+
+.rightDiv {
+  background-color: blue;
+  flex-grow: 1;
+}
+
+@media only screen and (max-width: 768px) {
+  .workToolsglobalContainer {
+    flex-direction: column;
+  }
+  .leftDiv {
+    width: 100%;
+  }
 }
