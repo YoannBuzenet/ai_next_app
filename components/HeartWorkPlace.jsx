@@ -1,5 +1,13 @@
 import style from "../styles/HeartWorkPlace.module.css";
 import TextField from "@material-ui/core/TextField";
+import Button from "@material-ui/core/Button";
+import { makeStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles((theme) => ({
+  button: {
+    backgroundColor: "#477bde",
+  },
+}));
 
 const HeartWorkPlace = ({
   categoryObject,
@@ -8,6 +16,8 @@ const HeartWorkPlace = ({
   userInputs,
   setUserInputs,
 }) => {
+  const classes = useStyles();
+
   console.log("categoryObject", categoryObject);
   if (categoryObject === null) {
     return (
@@ -27,7 +37,7 @@ const HeartWorkPlace = ({
             <div key={index} className={style.oneInput}>
               <p>{input.label}</p>
               <TextField
-                InputProps={{ style: { fontSize: 20 } }} // font size of input text
+                InputProps={{ style: { fontSize: 20 } }}
                 placeholder={input.placeholder}
                 value={userInputs?.[input.name] || ""}
                 onChange={(e) =>
@@ -40,10 +50,15 @@ const HeartWorkPlace = ({
               />
             </div>
           ))}
+          <Button
+            onClick={sendDataToBackEnd}
+            className={classes.button}
+            variant="contained"
+            size="large"
+          >
+            Create
+          </Button>
         </div>
-        <button type="button" onClick={sendDataToBackEnd}>
-          Create
-        </button>
       </div>
     );
   }
