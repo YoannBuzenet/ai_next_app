@@ -38,7 +38,7 @@ export default function Workplace() {
       <div className={styles.workToolsglobalContainer}>
         {isDisplayedTools && (
           <div className={styles.leftDiv}>
-            <CategorySelector />
+            <CategorySelector handleSelectCategory={setSelectedCategory} />
           </div>
         )}
         <div className={styles.rightDiv}>
