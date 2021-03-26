@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
+import Router from "next/router";
 import CategorySelector from "../components/CategorySelector";
 import { useSession, getSession } from "next-auth/client";
 import { useContext, useState } from "react";
@@ -10,12 +11,29 @@ import HeartWorkPlace from "../components/HeartWorkPlace";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import APIResult from "../components/APIResult";
+import UserCheck from "../services/userCheck";
 
-export default function Workplace() {
+export async function getServerSideProps(context) {
+  const session = await getSession(context);
+  const isLoggedUser = UserCheck.isUserLogged(session?.user?.isLoggedUntil);
+
+  if (!isLoggedUser) {
+    return {
+      redirect: {
+        destination: "/",
+        permanent: false,
+      },
+      props: {},
+    };
+  } else {
+    return { props: {} };
+  }
+}
+
+function Workplace() {
   // TODO 2nd step
   // Checker si logé, sinon redirect
   // si on start avec isMobile = true, isDisplayedTools est true et le bouton pour le cacher disparait
-
   const { userContext } = useContext(userContextFile);
   const [session, loading] = useSession();
   const [isLoadingAPIResults, setIsLoadingAPIResults] = useState(false);
@@ -101,3 +119,5 @@ export default function Workplace() {
     </div>
   );
 }
+
+export default Workplace;

@@ -13,13 +13,9 @@ export default function Login() {
 
   const handleGoogleClick = (e) => {
     e.preventDefault();
-    signIn("google");
-    console.log("e", e);
-    console.log("session", session);
-  };
-
-  const handleDisplaySession = () => {
-    console.log("session", session);
+    signIn("google", {
+      callbackUrl: `${process.env.NEXT_PUBLIC_URL_ABSOLUTE_THIS_WEBSITE}/workplace`,
+    });
   };
 
   const Intl = useIntl();

@@ -9,5 +9,5 @@ export default function MyAccount() {
   const { userContext } = useContext(userContextFile);
   const [session, loading] = useSession();
 
-  return null;
+  return <>My Account</>;
 }

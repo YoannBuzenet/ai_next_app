@@ -39,7 +39,7 @@ callbacks.signIn = async function signIn(user, account, metadata) {
     // console.log("data from API", userData.data);
 
     // fetch data from back end and add it here in user object
-    user.data = userDataFromAPI.data;
+    user = { user, ...userDataFromAPI.data };
 
     userData = userDataFromAPI.data;
     return true;
@@ -58,7 +58,7 @@ callbacks.jwt = async function jwt(token, user) {
 
 callbacks.session = async function session(session, token) {
   // we can fetch info from back end here to add it to the session
-  session.userData = userData;
+  session.user = userData;
   session.accessToken = token.accessToken;
   return session;
 };
