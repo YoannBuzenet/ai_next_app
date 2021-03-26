@@ -5,6 +5,7 @@ import { useSession, getSession } from "next-auth/client";
 import { useContext, useState } from "react";
 import userContextFile from "../contexts/userContext";
 import styles from "../styles/Workplace.module.css";
+import { categoriesDefinition } from "../definitions/categories";
 
 export default function Workplace() {
   // TODO 2nd step
@@ -15,6 +16,8 @@ export default function Workplace() {
   const [session, loading] = useSession();
 
   const [isDisplayedTools, setIsDisplayedTools] = useState(true);
+
+  const [selectedCategory, setSelectedCategory] = useState(null);
 
   const sendDataToBackEnd = () => {
     console.log("pinging the back end...");
