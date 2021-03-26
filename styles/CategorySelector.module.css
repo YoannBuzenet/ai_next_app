@@ -1,0 +1,18 @@
+.container {
+  margin-left: 25px;
+}
+
+.container h2 {
+  font-size: 20px;
+}
+
+.categoryPropositionsContainer p {
+  margin: 0;
+  margin-top: 5px;
+  margin-left: 8px;
+}
+
+.categoryPropositionsContainer p:hover {
+  font-weight: 600;
+  cursor: pointer;
+}

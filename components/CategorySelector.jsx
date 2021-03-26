@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import styles from "../styles/Category.module.css";
+import styles from "../styles/CategorySelector.module.css";
 import Category from "./Category";
 
 const CategorySelector = ({ handleSelectCategory, resetUserInputs }) => {

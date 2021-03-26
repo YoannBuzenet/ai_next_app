@@ -5,7 +5,8 @@ export const categoriesDefinition = {
         name: "value",
         maxLengthInput: 100,
         label: "Describe shortly your product",
-        placeholder: "Example : We are a consulting firm around Berlin.",
+        placeholder:
+          "Example : Data analytics software for small and medium businesses.",
         inputType: "textarea",
       },
     ],
