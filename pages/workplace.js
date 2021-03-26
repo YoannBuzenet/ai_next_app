@@ -6,6 +6,7 @@ import { useContext, useState } from "react";
 import userContextFile from "../contexts/userContext";
 import styles from "../styles/Workplace.module.css";
 import { categoriesDefinition } from "../definitions/categories";
+import HeartWorkPlace from "../components/HeartWorkPlace";
 
 export default function Workplace() {
   // TODO 2nd step
@@ -40,7 +41,11 @@ export default function Workplace() {
             <CategorySelector />
           </div>
         )}
-        <div className={styles.rightDiv}>div de droite</div>
+        <div className={styles.rightDiv}>
+          <HeartWorkPlace
+            categoryObject={categoriesDefinition?.[selectedCategory] || null}
+          />
+        </div>
       </div>
     </>
   );
