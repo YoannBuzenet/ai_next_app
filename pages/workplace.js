@@ -19,11 +19,16 @@ export default function Workplace() {
   const [isDisplayedTools, setIsDisplayedTools] = useState(true);
 
   const [selectedCategory, setSelectedCategory] = useState(null);
+  const [userInputs, setUserInputs] = useState({});
 
   const sendDataToBackEnd = () => {
     const finalPayload = { categoryID: selectedCategory };
     console.log("we build the final payload here. Here :", finalPayload);
     console.log("pinging the back end...");
+  };
+
+  const resetUserInputs = () => {
+    setUserInputs({});
   };
 
   return (
@@ -40,13 +45,18 @@ export default function Workplace() {
       <div className={styles.workToolsglobalContainer}>
         {isDisplayedTools && (
           <div className={styles.leftDiv}>
-            <CategorySelector handleSelectCategory={setSelectedCategory} />
+            <CategorySelector
+              handleSelectCategory={setSelectedCategory}
+              resetUserInputs={resetUserInputs}
+            />
           </div>
         )}
         <div className={styles.rightDiv}>
           <HeartWorkPlace
             categoryObject={categoriesDefinition?.[selectedCategory] || null}
             sendDataToBackEnd={sendDataToBackEnd}
+            userInputs={userInputs}
+            setUserInputs={setUserInputs}
           />
         </div>
       </div>

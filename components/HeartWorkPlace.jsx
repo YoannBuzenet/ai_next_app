@@ -1,7 +1,12 @@
 import style from "../styles/HeartWorkPlace.module.css";
 import TextField from "@material-ui/core/TextField";
 
-const HeartWorkPlace = ({ categoryObject, sendDataToBackEnd }) => {
+const HeartWorkPlace = ({
+  categoryObject,
+  sendDataToBackEnd,
+  userInputs,
+  setUserInputs,
+}) => {
   console.log("categoryObject", categoryObject);
   if (categoryObject === null) {
     return (
@@ -15,7 +20,7 @@ const HeartWorkPlace = ({ categoryObject, sendDataToBackEnd }) => {
       <div>
         Workplace
         <div className={style.formContainer}>
-          {categoryObject.inputs.map((input) => (
+          {categoryObject.inputs.map((input, index) => (
             <div>
               <TextField />
             </div>
