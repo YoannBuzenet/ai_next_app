@@ -1,7 +1,21 @@
+.titleContainer {
+  padding: 3rem 0;
+}
+.titleContainer h1 {
+  text-align: center;
+  margin: 0;
+}
+
 .catchphrase {
 }
 
 .pricesContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.pricesContainer > div {
+  margin: 1rem 3rem;
 }
 
 .onePriceDiv {
