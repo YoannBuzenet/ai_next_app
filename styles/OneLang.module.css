@@ -1,5 +1,5 @@
 .langIsSelected {
-  background-color: rgb(216, 216, 219) !important;
+  /* background-color: rgb(216, 216, 219) !important; */
   font-weight: 600;
   display: flex;
 }
@@ -20,4 +20,5 @@
 
 .iconContainer svg {
   font-size: 20px;
+  margin-left: 10px;
 }
