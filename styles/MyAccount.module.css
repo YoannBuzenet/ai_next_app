@@ -1,0 +1,7 @@
+.myAccountContainer h1 {
+  margin: 0;
+}
+
+.main {
+  height: calc(100vh - 166px);
+}

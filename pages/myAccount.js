@@ -6,26 +6,34 @@ import userContextFile from "../contexts/userContext";
 import styles from "../styles/MyAccount.module.css";
 import UserCheck from "../services/userCheck";
 
-export async function getServerSideProps(context) {
-  const session = await getSession(context);
-  const isLoggedUser = UserCheck.isUserLogged(session?.user?.isLoggedUntil);
-
-  if (!isLoggedUser) {
-    return {
-      redirect: {
-        destination: "/",
-        permanent: false,
-      },
-      props: {},
-    };
-  } else {
-    return { props: {} };
-  }
-}
+// export async function getServerSideProps(context) {
+//   const session = await getSession(context);
+//   const isLoggedUser = UserCheck.isUserLogged(session?.user?.isLoggedUntil);
+//   if (!isLoggedUser) {
+//     return {
+//       redirect: {
+//         destination: "/",
+//         permanent: false,
+//       },
+//       props: {},
+//     };
+//   } else {
+//     return { props: {} };
+//   }
+// }
 
 export default function MyAccount() {
   const { userContext } = useContext(userContextFile);
   const [session, loading] = useSession();
 
-  return <>My Account</>;
+  return (
+    <div className={styles.myAccountContainer}>
+      <div className="globalGradient">
+        <div className="container">
+          <h1>My Account</h1>
+          <main className={styles.main}></main>
+        </div>
+      </div>
+    </div>
+  );
 }
