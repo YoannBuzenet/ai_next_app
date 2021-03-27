@@ -89,7 +89,10 @@ function Workplace() {
               onClick={(e) => setIsDisplayedTools(!isDisplayedTools)}
             />
           )}
-          <p onClick={(e) => setIsDisplayedTools(!isDisplayedTools)}>
+          <p
+            className={styles.categorySelector}
+            onClick={(e) => setIsDisplayedTools(!isDisplayedTools)}
+          >
             {isDisplayedTools ? "Hide categories" : "Display categories"}
           </p>
           {!isDisplayedTools && (
@@ -99,7 +102,7 @@ function Workplace() {
             />
           )}
         </div>
-        <div>
+        <div className={styles.workplaceMenuLangPicker}>
           <p>Input & Output Language</p>
           <KeyboardArrowDownIcon
             style={{ marginTop: "1px", marginLeft: "5px" }}

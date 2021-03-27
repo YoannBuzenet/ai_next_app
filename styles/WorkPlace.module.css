@@ -6,6 +6,7 @@
   border-bottom: 1px solid rgb(221, 220, 220);
   min-height: 40px;
   display: flex;
+  justify-content: space-between;
 }
 
 .workplaceMenu > div {
@@ -16,9 +17,22 @@
 .workplaceMenu > div > p {
   margin: 0;
 }
-.workplaceMenu > div > p:hover {
+.workplaceMenu > div > .categorySelector:hover {
   font-weight: 600;
   cursor: pointer;
+}
+.workplaceMenuLangPicker {
+  position: relative;
+  margin-right: 100px;
+  padding-right: 15px;
+  padding-left: 20px;
+}
+.workplaceMenuLangPicker:hover {
+  cursor: pointer;
+  background-color: rgb(233, 233, 235);
+}
+
+.workplaceMenuLangPicker p {
 }
 
 .workToolsglobalContainer {
