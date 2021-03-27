@@ -15,6 +15,7 @@ import APIResult from "../components/APIResult";
 import UserCheck from "../services/userCheck";
 import axios from "axios";
 import LangPicker from "../components/LangPicker";
+import { langDictionnary } from "../definitions/langDictionnary";
 
 // export async function getServerSideProps(context) {
 //   const session = await getSession(context);
@@ -111,7 +112,12 @@ function Workplace() {
           onMouseLeave={() => setIsDisplayedLangPicker(false)}
           // Do activate this feature only on mobile
         >
-          <p>Input & Output Language</p>
+          <p>
+            Input & Output Language :{" "}
+            <span className={styles.selectedLangBold}>
+              {langDictionnary[langSelected]}
+            </span>
+          </p>
           <KeyboardArrowDownIcon
             style={{ marginTop: "1px", marginLeft: "5px" }}
           />

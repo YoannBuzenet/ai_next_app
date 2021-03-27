@@ -32,6 +32,10 @@
   background-color: rgb(233, 233, 235);
 }
 
+.selectedLangBold {
+  font-weight: 600;
+}
+
 .workplaceMenuLangPicker p {
 }
 
