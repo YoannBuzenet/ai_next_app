@@ -30,7 +30,7 @@ const HeartWorkPlace = ({
 
   let isOneUserInputTooShort = false;
   for (const oneInput in userInputs) {
-    if (userInputs[oneInput].length) {
+    if (userInputs[oneInput].length < 20) {
       isOneUserInputTooShort = true;
     }
   }

@@ -26,7 +26,7 @@ export default function Home() {
           <div className="container">
             <div className={styles.firstLiner}>
               <div className={styles.softwareImage}>
-                <img src="/images/software_front.png" />
+                <img src="/pictures/screenshots/cursifyWorkplaceEN.png" />
               </div>
               <div className={styles.mainTitle}>
                 <div className={styles.leftContent}>
@@ -83,7 +83,7 @@ export default function Home() {
               just a few words, it can create specific text just for you.
             </p>
             <div>
-              <img src="/images/sampleBasket.png" />
+              <img src="/pictures/screenshots/productDescriptionEN.png" />
             </div>
           </div>
         </div>
