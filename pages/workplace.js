@@ -14,6 +14,7 @@ import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import APIResult from "../components/APIResult";
 import UserCheck from "../services/userCheck";
 import axios from "axios";
+import LangPicker from "../components/LangPicker";
 
 // export async function getServerSideProps(context) {
 //   const session = await getSession(context);
@@ -45,6 +46,7 @@ function Workplace() {
   const [userInputs, setUserInputs] = useState({});
   const [AIResults, setAIResults] = useState([]);
   const [langSelected, setLangSelected] = useState("en-US");
+  const [isDisplayedLangPicker, setIsDisplayedLangPicker] = useState(false);
 
   const sendDataToBackEnd = async () => {
     setIsLoadingAPIResults(true);
@@ -102,11 +104,21 @@ function Workplace() {
             />
           )}
         </div>
-        <div className={styles.workplaceMenuLangPicker}>
+        <div
+          className={styles.workplaceMenuLangPicker}
+          onMouseEnter={() => setIsDisplayedLangPicker(true)}
+          onMouseLeave={() => setIsDisplayedLangPicker(false)}
+        >
           <p>Input & Output Language</p>
           <KeyboardArrowDownIcon
             style={{ marginTop: "1px", marginLeft: "5px" }}
           />
+          {isDisplayedLangPicker && (
+            <LangPicker
+              langSelected={langSelected}
+              setLangSelected={setLangSelected}
+            />
+          )}
         </div>
       </div>
       <div className={styles.workToolsglobalContainer}>
