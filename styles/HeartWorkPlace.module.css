@@ -45,7 +45,7 @@
 }
 
 .loaderElements {
-  width: 500px;
+  width: 700px;
   text-align: center;
 }
 
@@ -56,6 +56,9 @@
 
 .loaderParagraphs {
   margin-top: 2rem;
+}
+
+.proTip {
 }
 
 @media only screen and (max-width: 1400px) {

@@ -28,6 +28,12 @@ const HeartWorkPlace = ({
 }) => {
   const classes = useStyles();
 
+  let isOneUserInputTooShort = false;
+  for (const oneInput in userInputs) {
+    if (userInputs[oneInput].length) {
+      isOneUserInputTooShort = true;
+    }
+  }
   console.log("categoryObject", categoryObject);
   if (categoryObject === null) {
     return (
@@ -82,6 +88,11 @@ const HeartWorkPlace = ({
                 <div className={style.loaderParagraphs}>
                   <p>Please wait ...</p>
                   <p>Our computers are working for you !</p>
+                  {isOneUserInputTooShort && (
+                    <p className={style.proTip}>
+                      Protip to get better results : try adding more words
+                    </p>
+                  )}
                 </div>
               </div>
             </div>
