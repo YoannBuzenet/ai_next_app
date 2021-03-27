@@ -18,4 +18,5 @@
 
 .langPickerContainer li:hover {
   background-color: rgb(233, 233, 235);
+  font-weight: 600;
 }

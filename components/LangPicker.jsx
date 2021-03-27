@@ -15,10 +15,10 @@ const LangPicker = ({
   return (
     <div className={styles.langPickerContainer}>
       <ul>
-        <li onClick={() => handleClick("en-US")}>
+        <li onClick={(e) => handleClick(e, "en-US")}>
           <p>English</p>
         </li>
-        <li onClick={() => handleClick("fr-FR")}>
+        <li onClick={(e) => handleClick(e, "fr-FR")}>
           <p>French</p>
         </li>
       </ul>

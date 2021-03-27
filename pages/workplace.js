@@ -80,6 +80,7 @@ function Workplace() {
   };
 
   console.log("user inputs", userInputs);
+  console.log("lang selected", langSelected);
 
   return (
     <div className={styles.workplaceContainer}>
