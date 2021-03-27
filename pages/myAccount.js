@@ -30,7 +30,12 @@ export default function MyAccount() {
     <div className={styles.myAccountContainer}>
       <div className="globalGradient">
         <div className="container">
-          <h1>My Account</h1>
+          <div className="global-white-background">
+            <h1>My Account</h1>
+          </div>
+          <div className="global-white-background marginTop20">
+            Ceci est une autre div
+          </div>
           <main className={styles.main}></main>
         </div>
       </div>

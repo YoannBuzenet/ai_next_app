@@ -108,6 +108,17 @@ p {
   margin: 50px;
 }
 
+.global-white-background {
+  background-color: white;
+  padding: 3rem;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.marginTop20 {
+  margin-top: 20px;
+}
+
 /* Material UI Inputs */
 /* .MuiTextField-root input,
 .MuiTextField-root textarea {
