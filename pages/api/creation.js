@@ -2,9 +2,9 @@ import axios from "axios";
 
 export default async (req, res) => {
   const objectToSend = {
-    category: "",
+    category: req.body.categoryID,
     lang: "",
-    userInput: "",
+    userInput: req.body.userInputs,
     passphrase: process.env.FRONT_APP_PASSPHRASE,
   };
 

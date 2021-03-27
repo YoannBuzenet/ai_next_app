@@ -10,6 +10,7 @@ import { categoriesDefinition } from "../definitions/categories";
 import HeartWorkPlace from "../components/HeartWorkPlace";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
+import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import APIResult from "../components/APIResult";
 import UserCheck from "../services/userCheck";
 import axios from "axios";
@@ -43,6 +44,7 @@ function Workplace() {
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [userInputs, setUserInputs] = useState({});
   const [AIResults, setAIResults] = useState([]);
+  const [langSelected, setLangSelected] = useState("en-US");
 
   const sendDataToBackEnd = async () => {
     setIsLoadingAPIResults(true);
@@ -56,6 +58,7 @@ function Workplace() {
     const finalPayload = {
       categoryID: selectedCategory,
       userInputs: arrayofuserInputs,
+      lang: langSelected,
       user: session.user,
     };
     console.log("we build the final payload here. Here :", finalPayload);
@@ -95,6 +98,12 @@ function Workplace() {
               onClick={(e) => setIsDisplayedTools(!isDisplayedTools)}
             />
           )}
+        </div>
+        <div>
+          <p>Input & Output Language</p>
+          <KeyboardArrowDownIcon
+            style={{ marginTop: "1px", marginLeft: "5px" }}
+          />
         </div>
       </div>
       <div className={styles.workToolsglobalContainer}>

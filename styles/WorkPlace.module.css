@@ -5,12 +5,12 @@
   border-left: 1px solid rgb(221, 220, 220);
   border-bottom: 1px solid rgb(221, 220, 220);
   min-height: 40px;
+  display: flex;
 }
 
 .workplaceMenu > div {
   display: flex;
   padding-top: 10px;
-
   margin-left: 25px;
 }
 .workplaceMenu > div > p {
