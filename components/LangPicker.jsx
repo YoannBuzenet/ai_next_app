@@ -10,7 +10,6 @@ const LangPicker = ({
 }) => {
   const handleClick = (e, lang) => {
     setLangSelected(lang);
-    setIsDisplayedLangPicker(false);
   };
 
   return (
