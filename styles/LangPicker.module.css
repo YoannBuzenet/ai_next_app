@@ -11,9 +11,6 @@
   list-style: none;
   padding-right: 15px;
   padding-left: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
 .langPickerContainer li:hover {

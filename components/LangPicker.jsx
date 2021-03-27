@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import styles from "../styles/LangPicker.module.css";
+import OneLang from "./inputLangChoice/oneLang";
 
 const LangPicker = ({
   langSelected,
@@ -15,12 +16,20 @@ const LangPicker = ({
   return (
     <div className={styles.langPickerContainer}>
       <ul>
-        <li onClick={(e) => handleClick(e, "en-US")}>
-          <p>English</p>
-        </li>
-        <li onClick={(e) => handleClick(e, "fr-FR")}>
-          <p>French</p>
-        </li>
+        <OneLang
+          handleClick
+          langSelected={langSelected}
+          handleClick={handleClick}
+          langKey="en-US"
+          langName="English"
+        />
+        <OneLang
+          handleClick
+          langSelected={langSelected}
+          handleClick={handleClick}
+          langKey="fr-FR"
+          langName="French"
+        />
       </ul>
     </div>
   );
