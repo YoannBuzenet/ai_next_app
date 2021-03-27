@@ -23,6 +23,7 @@ const HeartWorkPlace = ({
   sendDataToBackEnd,
   userInputs,
   setUserInputs,
+  isLoadingAPIResults,
 }) => {
   const classes = useStyles();
 
@@ -40,33 +41,39 @@ const HeartWorkPlace = ({
         <div className={style.categoryTitle}>
           <h2>{categoryObject?.name}</h2>
         </div>
-        <div className={style.formContainer}>
-          {categoryObject.inputs.map((input, index) => (
-            <div key={index} className={style.oneInput}>
-              <p>{input.label}</p>
-              <TextField
-                InputProps={{ style: { fontSize: 20 } }}
-                placeholder={input.placeholder}
-                value={userInputs?.[input.name] || ""}
-                onChange={(e) =>
-                  setUserInputs({ ...userInputs, [input.name]: e.target.value })
-                }
-                fullWidth
-                variant="outlined"
-                multiline={input.inputType === "textarea" ? true : false}
-                rows={input.inputType === "textarea" ? 7 : 1}
-              />
-            </div>
-          ))}
-          <Button
-            onClick={sendDataToBackEnd}
-            className={classes.button}
-            variant="contained"
-            size="large"
-          >
-            Create
-          </Button>
-        </div>
+        {!isLoadingAPIResults && (
+          <div className={style.formContainer}>
+            {categoryObject.inputs.map((input, index) => (
+              <div key={index} className={style.oneInput}>
+                <p>{input.label}</p>
+                <TextField
+                  InputProps={{ style: { fontSize: 20 } }}
+                  placeholder={input.placeholder}
+                  value={userInputs?.[input.name] || ""}
+                  onChange={(e) =>
+                    setUserInputs({
+                      ...userInputs,
+                      [input.name]: e.target.value,
+                    })
+                  }
+                  fullWidth
+                  variant="outlined"
+                  multiline={input.inputType === "textarea" ? true : false}
+                  rows={input.inputType === "textarea" ? 7 : 1}
+                />
+              </div>
+            ))}
+            <Button
+              onClick={sendDataToBackEnd}
+              className={classes.button}
+              variant="contained"
+              size="large"
+            >
+              Create
+            </Button>
+          </div>
+        )}
+        {isLoadingAPIResults && <div>Loading</div>}
       </div>
     );
   }

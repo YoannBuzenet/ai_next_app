@@ -8,21 +8,21 @@ import UserCheck from "../services/userCheck";
 import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
 
-// export async function getServerSideProps(context) {
-//   const session = await getSession(context);
-//   const isLoggedUser = UserCheck.isUserLogged(session?.user?.isLoggedUntil);
-//   if (!isLoggedUser) {
-//     return {
-//       redirect: {
-//         destination: "/",
-//         permanent: false,
-//       },
-//       props: {},
-//     };
-//   } else {
-//     return { props: {} };
-//   }
-// }
+export async function getServerSideProps(context) {
+  const session = await getSession(context);
+  const isLoggedUser = UserCheck.isUserLogged(session?.user?.isLoggedUntil);
+  if (!isLoggedUser) {
+    return {
+      redirect: {
+        destination: "/",
+        permanent: false,
+      },
+      props: {},
+    };
+  } else {
+    return { props: {} };
+  }
+}
 
 export default function MyAccount() {
   const { userContext } = useContext(userContextFile);

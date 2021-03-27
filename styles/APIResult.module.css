@@ -12,8 +12,9 @@
 
 .iconContainer {
   margin-left: 15px;
-  margin-top: 5px;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
 }
 
 .icons {

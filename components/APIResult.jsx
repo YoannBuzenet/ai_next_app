@@ -18,6 +18,8 @@ const APIResult = ({ index, initialText }) => {
           fullWidth
           variant="outlined"
           className={styles.resulText}
+          rows={currentText.length / 100 + 1}
+          multiline={currentText.length > 100}
         />
       </div>
       <div className={styles.iconContainer}>

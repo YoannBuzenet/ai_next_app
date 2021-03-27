@@ -12,24 +12,25 @@ import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import APIResult from "../components/APIResult";
 import UserCheck from "../services/userCheck";
+import axios from "axios";
 
-export async function getServerSideProps(context) {
-  const session = await getSession(context);
-  //TODO STEP2 : check if Subscribed too
-  const isLoggedUser = UserCheck.isUserLogged(session?.user?.isLoggedUntil);
+// export async function getServerSideProps(context) {
+//   const session = await getSession(context);
+//   //TODO STEP2 : check if Subscribed too
+//   const isLoggedUser = UserCheck.isUserLogged(session?.user?.isLoggedUntil);
 
-  if (!isLoggedUser) {
-    return {
-      redirect: {
-        destination: "/",
-        permanent: false,
-      },
-      props: {},
-    };
-  } else {
-    return { props: {} };
-  }
-}
+//   if (!isLoggedUser) {
+//     return {
+//       redirect: {
+//         destination: "/",
+//         permanent: false,
+//       },
+//       props: {},
+//     };
+//   } else {
+//     return { props: {} };
+//   }
+// }
 
 function Workplace() {
   // TODO 2nd step
@@ -41,9 +42,10 @@ function Workplace() {
 
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [userInputs, setUserInputs] = useState({});
-  const [AIResults, setAIResults] = useState(["test", "test2"]);
+  const [AIResults, setAIResults] = useState([]);
 
-  const sendDataToBackEnd = () => {
+  const sendDataToBackEnd = async () => {
+    setIsLoadingAPIResults(true);
     let arrayofuserInputs = [];
     for (const userInput in userInputs) {
       arrayofuserInputs = [
@@ -54,13 +56,22 @@ function Workplace() {
     const finalPayload = {
       categoryID: selectedCategory,
       userInputs: arrayofuserInputs,
+      user: session.user,
     };
     console.log("we build the final payload here. Here :", finalPayload);
-    console.log("pinging the back end...");
+    axios
+      .post("/api/creation", finalPayload)
+      .then((resp) => {
+        console.log("resp after posting to next API", resp);
+        setIsLoadingAPIResults(false);
+        setAIResults(resp.data);
+      })
+      .catch((err) => console.log("error after posting to next", err));
   };
 
   const resetUserInputs = () => {
     setUserInputs({});
+    setAIResults([]);
   };
 
   console.log("user inputs", userInputs);
@@ -102,6 +113,7 @@ function Workplace() {
             userInputs={userInputs}
             setUserInputs={setUserInputs}
             selectedCategory={selectedCategory}
+            isLoadingAPIResults={isLoadingAPIResults}
           />
           {/* API Result display */}
           {Array.isArray(AIResults) && AIResults.length > 0 && (
