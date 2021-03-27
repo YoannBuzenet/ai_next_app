@@ -36,11 +36,7 @@
 .rightDiv {
   flex-grow: 1;
   background: rgb(28, 100, 242);
-  background: linear-gradient(
-    149deg,
-    rgb(184 224 247 / 80%) 54%,
-    rgb(71 123 222 / 80%)
-  );
+  background: var(--background-gradient);
   padding-bottom: 5rem;
 }
 

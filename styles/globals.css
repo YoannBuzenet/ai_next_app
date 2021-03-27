@@ -20,6 +20,11 @@ a {
 /**********************/
 :root {
   --line-height: 2.4rem;
+  --background-gradient: linear-gradient(
+    149deg,
+    rgb(184 224 247 / 80%) 54%,
+    rgb(71 123 222 / 80%)
+  );
 }
 * {
   box-sizing: border-box;
