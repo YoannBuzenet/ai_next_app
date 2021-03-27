@@ -90,7 +90,7 @@ export default function Home() {
         <div className={styles.fourthLiner}>
           <div className="container">
             <h3 className={styles.punchline}>Just generate and use it</h3>
-            <p>
+            <p className={styles.explaination}>
               Words are automatically generated thanks to the Deep Learning
               algorithm. Relevant marketing text are generated for you on the
               fly.

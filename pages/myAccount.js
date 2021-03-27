@@ -5,6 +5,8 @@ import { useContext } from "react";
 import userContextFile from "../contexts/userContext";
 import styles from "../styles/MyAccount.module.css";
 import UserCheck from "../services/userCheck";
+import Button from "@material-ui/core/Button";
+import { makeStyles } from "@material-ui/core/styles";
 
 // export async function getServerSideProps(context) {
 //   const session = await getSession(context);
@@ -26,17 +28,48 @@ export default function MyAccount() {
   const { userContext } = useContext(userContextFile);
   const [session, loading] = useSession();
 
+  const handleSignOut = () => {
+    signOut({ callbackUrl: process.env.NEXT_PUBLIC_URL_ABSOLUTE_THIS_WEBSITE });
+  };
+
+  const useStyles = makeStyles((theme) => ({
+    button: {
+      color: "white",
+      fontWeight: 400,
+      fontSize: 16,
+      textTransform: "none",
+      backgroundColor: "#f02213",
+      "&:hover": {
+        backgroundColor: "#b81004",
+        boxShadow: "none",
+      },
+    },
+  }));
+
+  const classes = useStyles();
+
   return (
     <div className={styles.myAccountContainer}>
       <div className="globalGradient">
         <div className="container">
-          <div className="global-white-background">
-            <h1>My Account</h1>
-          </div>
-          <div className="global-white-background marginTop20">
-            Ceci est une autre div
-          </div>
-          <main className={styles.main}></main>
+          <main className={styles.main}>
+            <div className="global-white-background">
+              <h1>My Account</h1>
+            </div>
+            <div className="global-white-background marginTop20">
+              <div className={styles.signOutContainer}>
+                <p>Log out Account</p>
+                <Button
+                  onClick={handleSignOut}
+                  className={classes.button}
+                  variant="contained"
+                  size="large"
+                >
+                  Sign Out
+                </Button>
+              </div>
+            </div>
+          </main>
         </div>
       </div>
     </div>

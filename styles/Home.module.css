@@ -255,6 +255,10 @@ h2.punchline {
   text-align: center;
 }
 
+.fourthLiner .explaination {
+  margin: 2rem auto;
+}
+
 .fourthLiner .tickBox {
   margin-left: 156px;
   margin-right: 156px;

@@ -6,3 +6,24 @@
 .main {
   height: calc(100vh - 166px);
 }
+
+.signOutContainer {
+  display: flex;
+  place-items: baseline;
+}
+
+.signOutContainer p {
+  width: 20%;
+}
+
+@media only screen and (max-width: 768px) {
+  .signOutContainer {
+    flex-direction: column;
+  }
+  .signOutContainer button {
+    margin-top: 30px;
+  }
+  .signOutContainer p {
+    width: 100%;
+  }
+}
