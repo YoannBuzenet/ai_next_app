@@ -108,6 +108,7 @@ function Workplace() {
           className={styles.workplaceMenuLangPicker}
           onMouseEnter={() => setIsDisplayedLangPicker(true)}
           onMouseLeave={() => setIsDisplayedLangPicker(false)}
+          // Do activate this feature only on mobile
         >
           <p>Input & Output Language</p>
           <KeyboardArrowDownIcon
@@ -117,6 +118,7 @@ function Workplace() {
             <LangPicker
               langSelected={langSelected}
               setLangSelected={setLangSelected}
+              setIsDisplayedLangPicker={setIsDisplayedLangPicker}
             />
           )}
         </div>

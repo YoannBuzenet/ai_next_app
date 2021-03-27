@@ -77,4 +77,7 @@
   .leftDiv {
     width: 100%;
   }
+  .workplaceMenuLangPicker {
+    margin-right: 10px;
+  }
 }

@@ -1,3 +1,21 @@
 .langPickerContainer {
   position: absolute;
+  top: 40px;
+  left: 0;
+}
+
+.langPickerContainer li {
+  width: 233.812px;
+  height: 42px;
+  background-color: white;
+  list-style: none;
+  padding-right: 15px;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.langPickerContainer li:hover {
+  background-color: rgb(233, 233, 235);
 }
