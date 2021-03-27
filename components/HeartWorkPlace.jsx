@@ -2,6 +2,7 @@ import style from "../styles/HeartWorkPlace.module.css";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
+import CircularIndeterminate from "./Loader";
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -73,7 +74,19 @@ const HeartWorkPlace = ({
             </Button>
           </div>
         )}
-        {isLoadingAPIResults && <div>Loading</div>}
+        {isLoadingAPIResults && (
+          <div className="global-white-background marginTop20">
+            <div className={style.loaderContainer}>
+              <div className={style.loaderElements}>
+                <CircularIndeterminate size={150} />
+                <div className={style.loaderParagraphs}>
+                  <p>Please wait ...</p>
+                  <p>Our computers are working for you !</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     );
   }
