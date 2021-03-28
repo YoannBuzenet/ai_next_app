@@ -22,6 +22,9 @@ export async function getServerSideProps(context) {
   //TODO STEP2 : check if Subscribed too
   const isLoggedUser = UserCheck.isUserLogged(session?.user?.isLoggedUntil);
 
+  console.log("user is :", session);
+  console.log("user is logged ? :", isLoggedUser);
+
   if (!isLoggedUser) {
     return {
       redirect: {
