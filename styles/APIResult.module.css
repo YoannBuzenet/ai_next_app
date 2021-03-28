@@ -3,8 +3,12 @@
   display: flex;
 }
 
+.allResultCTAContainer {
+  display: flex;
+}
+
 .resulTextContainer {
-  width: 90%;
+  width: 80%;
 }
 .resulText {
   font-weight: 600;
@@ -24,4 +28,10 @@
 
 .iconContainer:hover svg {
   color: rgb(28, 100, 242);
+}
+
+.makeMoreContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

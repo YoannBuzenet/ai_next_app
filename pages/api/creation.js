@@ -2,17 +2,17 @@ import axios from "axios";
 
 export default async (req, res) => {
   let idUser;
-  if (req.body.user.provider === "google") {
+  if (req?.body?.user?.provider === "google") {
     idUser = req.body.user.googleId;
   }
 
   const objectToSend = {
-    category: req.body.categoryID,
-    lang: req.body.lang,
-    userInput: req.body.userInputs,
+    category: req?.body?.categoryID,
+    lang: req?.body?.lang,
+    userInput: req?.body?.userInputs,
     passphrase: process.env.FRONT_APP_PASSPHRASE,
     idUser: idUser,
-    provider: req.body.user.provider,
+    provider: req?.body?.user?.provider,
   };
 
   try {

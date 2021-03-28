@@ -17,26 +17,23 @@ import axios from "axios";
 import LangPicker from "../components/LangPicker";
 import { langDictionnary } from "../definitions/langDictionnary";
 
-export async function getServerSideProps(context) {
-  const session = await getSession(context);
-  //TODO STEP2 : check if Subscribed too
-  const isLoggedUser = UserCheck.isUserLogged(session?.user?.isLoggedUntil);
+// export async function getServerSideProps(context) {
+//   const session = await getSession(context);
+//   //TODO STEP2 : check if Subscribed too
+//   const isLoggedUser = UserCheck.isUserLogged(session?.user?.isLoggedUntil);
 
-  console.log("user is :", session);
-  console.log("user is logged ? :", isLoggedUser);
-
-  if (!isLoggedUser) {
-    return {
-      redirect: {
-        destination: "/",
-        permanent: false,
-      },
-      props: {},
-    };
-  } else {
-    return { props: {} };
-  }
-}
+//   if (!isLoggedUser) {
+//     return {
+//       redirect: {
+//         destination: "/",
+//         permanent: false,
+//       },
+//       props: {},
+//     };
+//   } else {
+//     return { props: {} };
+//   }
+// }
 
 function Workplace() {
   // TODO 2nd step
@@ -48,7 +45,7 @@ function Workplace() {
 
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [userInputs, setUserInputs] = useState({});
-  const [AIResults, setAIResults] = useState([]);
+  const [AIResults, setAIResults] = useState(["test"]);
   const [langSelected, setLangSelected] = useState("en-US");
   const [isDisplayedLangPicker, setIsDisplayedLangPicker] = useState(false);
 
@@ -76,6 +73,48 @@ function Workplace() {
       .then((resp) => {
         console.log("resp after posting to next API", resp);
         setAIResults([...resp.data.response]);
+        setIsLoadingAPIResults(false);
+      })
+      .catch((err) => {
+        console.log("error after posting to next", err);
+        setIsLoadingAPIResults(false);
+      });
+  };
+
+  const createRequestFromResults = async (e, textToSend) => {
+    setIsLoadingAPIResults(true);
+
+    const numberOfInputsInCategory =
+      categoriesDefinition[selectedCategory].inputs.length;
+
+    const userInputsCopy = { ...userInputs };
+
+    if (numberOfInputsInCategory === 1) {
+      userInputsCopy.value = textToSend;
+    } else {
+      userInputsCopy.value2 = textToSend;
+    }
+
+    let arrayofuserInputs = [];
+    for (const userInput in userInputsCopy) {
+      arrayofuserInputs = [
+        ...arrayofuserInputs,
+        { [userInput]: userInputsCopy[userInput] },
+      ];
+    }
+
+    const finalPayload = {
+      categoryID: selectedCategory,
+      userInputs: arrayofuserInputs,
+      lang: langSelected,
+      user: session.user,
+    };
+
+    axios
+      .post("/api/creation", finalPayload)
+      .then((resp) => {
+        console.log("resp after posting REMATCH to next API", resp);
+        setAIResults([...AIResults, ...resp.data.response]);
         setIsLoadingAPIResults(false);
       })
       .catch((err) => {
@@ -163,7 +202,11 @@ function Workplace() {
               <div className={styles.resultTitle}>
                 <h1>Results</h1>
                 {AIResults.map((result, index) => (
-                  <APIResult index={index} initialText={result} />
+                  <APIResult
+                    index={index}
+                    initialText={result}
+                    createRequestFromResults={createRequestFromResults}
+                  />
                 ))}
               </div>
             </div>
