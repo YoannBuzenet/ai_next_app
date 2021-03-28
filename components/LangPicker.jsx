@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import styles from "../styles/LangPicker.module.css";
-import OneLang from "./inputLangChoice/oneLang";
+import OneLang from "./inputLangChoice/OneLang";
 
 const LangPicker = ({
   langSelected,
