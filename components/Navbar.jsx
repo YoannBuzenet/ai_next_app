@@ -29,7 +29,7 @@ const Navbar = () => {
               {!UserCheck.isUserLogged(session?.user?.isLoggedUntil) && (
                 <li>
                   <Link href="/login">
-                    <a>Get Started</a>
+                    <a>Sign In</a>
                   </Link>
                 </li>
               )}

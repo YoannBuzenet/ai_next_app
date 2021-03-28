@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Cursify - Generate Marketing Copy in one click</title>
+        <title>Cursify - Generate Creative Content in one click</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -65,8 +65,8 @@ export default function Home() {
               <div className={styles.card}>
                 <span className={styles.cardTitle}>And just click</span>
                 <span>
-                  AI generates relevant text based on what you entered. You can
-                  directly copy it and use it !
+                  AI generates creative and relevant text based on what you
+                  entered. You can directly copy it and use it !
                 </span>
               </div>
             </div>
@@ -92,8 +92,8 @@ export default function Home() {
             <h3 className={styles.punchline}>Just generate and use it</h3>
             <p className={styles.explaination}>
               Words are automatically generated thanks to the Deep Learning
-              algorithm. Relevant marketing text are generated for you on the
-              fly.
+              algorithm. Creative and relevant marketing text are generated for
+              you on the fly.
             </p>
             <div className={styles.tickBox}>
               <div>
