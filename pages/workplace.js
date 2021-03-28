@@ -45,7 +45,7 @@ function Workplace() {
 
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [userInputs, setUserInputs] = useState({});
-  const [AIResults, setAIResults] = useState(["test"]);
+  const [AIResults, setAIResults] = useState([]);
   const [langSelected, setLangSelected] = useState("en-US");
   const [isDisplayedLangPicker, setIsDisplayedLangPicker] = useState(false);
 
