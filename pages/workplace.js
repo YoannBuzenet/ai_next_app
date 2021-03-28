@@ -5,7 +5,7 @@ import CategorySelector from "../components/CategorySelector";
 import { useSession, getSession } from "next-auth/client";
 import { useContext, useState } from "react";
 import userContextFile from "../contexts/userContext";
-import styles from "../styles/Workplace.module.css";
+import styles from "../styles/WorkPlace.module.css";
 import { categoriesDefinition } from "../definitions/categories";
 import HeartWorkPlace from "../components/HeartWorkPlace";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
