@@ -30,6 +30,14 @@
 
   "page.workplace.inputOutput": "Langue Entrée & Sortie : ",
 
+  "compo.heartWorkPlace.button.create": "Créer",
+  "compo.heartWorkPlace.noCategory.title": "Bienvenue sur Cursify",
+  "compo.heartWorkPlace.noCategory.paragraph1": "Sélectionnez un thème sur la gauche pour commencer !",
+  "compo.heartWorkPlace.noCategory.paragraph2": "Le contenu sera complètement généré par l'IA.",
+  "compo.heartWorkPlace.loading.pleaseWait": "Chargement...",
+  "compo.heartWorkPlace.loading.computerAreWorking": "L'IA prépare le contenu...",
+  "compo.heartWorkPlace.loading.proTipsAddMoreWords": "Astuce pour de meilleurs résultats : essayez d'ajouter plus de mots",
+
   "page.login.head.title": "Se connecter / S'inscrire",
   "page.login.title": "Se connecter ou Créer un compte",
   "page.login.legalNotice": "En vous inscrivant, vous acceptez les conditions de vente de Cursify.",

@@ -2,6 +2,15 @@
   text-align: center;
 }
 
+.noCategoryDiv p {
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+.explainationParagraphs {
+  margin-top: 50px;
+}
+
 .rightDivContainer {
   margin-left: 25px;
 }

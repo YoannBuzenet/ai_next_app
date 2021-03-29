@@ -3,6 +3,7 @@ import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
 import CircularIndeterminate from "./Loader";
+import { FormattedMessage } from "react-intl";
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -38,9 +39,26 @@ const HeartWorkPlace = ({
   if (categoryObject === null) {
     return (
       <div className={style.noCategoryDiv}>
-        <h1>Welcome on Cursify</h1>
-        <p>Please select a category to get started !</p>
-        <p>Content will be fully AI generated.</p>
+        <h1>
+          <FormattedMessage
+            id="compo.heartWorkPlace.noCategory.title"
+            defaultMessage="Welcome on Cursify"
+          />
+        </h1>
+        <div className={style.explainationParagraphs}>
+          <p>
+            <FormattedMessage
+              id="compo.heartWorkPlace.noCategory.paragraph1"
+              defaultMessage="Please select a category on the left to get started."
+            />
+          </p>
+          <p>
+            <FormattedMessage
+              id="compo.heartWorkPlace.noCategory.paragraph2"
+              defaultMessage="Content will be fully AI generated."
+            />
+          </p>
+        </div>
       </div>
     );
   } else {
@@ -51,33 +69,40 @@ const HeartWorkPlace = ({
         </div>
         {!isLoadingAPIResults && (
           <div className={style.formContainer}>
-            {categoryObject.inputs.map((input, index) => (
-              <div key={index} className={style.oneInput}>
-                <p>{input.label}</p>
-                <TextField
-                  InputProps={{ style: { fontSize: 20 } }}
-                  placeholder={input.placeholder}
-                  value={userInputs?.[input.name] || ""}
-                  onChange={(e) =>
-                    setUserInputs({
-                      ...userInputs,
-                      [input.name]: e.target.value,
-                    })
-                  }
-                  fullWidth
-                  variant="outlined"
-                  multiline={input.inputType === "textarea" ? true : false}
-                  rows={input.inputType === "textarea" ? 7 : 1}
-                />
-              </div>
-            ))}
+            {categoryObject.inputs.map((input, index) => {
+              //yo
+              console.log("translate here");
+              return (
+                <div key={index} className={style.oneInput}>
+                  <p>{input.label}</p>
+                  <TextField
+                    InputProps={{ style: { fontSize: 20 } }}
+                    placeholder={input.placeholder}
+                    value={userInputs?.[input.name] || ""}
+                    onChange={(e) =>
+                      setUserInputs({
+                        ...userInputs,
+                        [input.name]: e.target.value,
+                      })
+                    }
+                    fullWidth
+                    variant="outlined"
+                    multiline={input.inputType === "textarea" ? true : false}
+                    rows={input.inputType === "textarea" ? 7 : 1}
+                  />
+                </div>
+              );
+            })}
             <Button
               onClick={sendDataToBackEnd}
               className={classes.button}
               variant="contained"
               size="large"
             >
-              Create
+              <FormattedMessage
+                id="compo.heartWorkPlace.button.create"
+                defaultMessage="Create"
+              />
             </Button>
           </div>
         )}
@@ -87,11 +112,24 @@ const HeartWorkPlace = ({
               <div className={style.loaderElements}>
                 <CircularIndeterminate size={150} />
                 <div className={style.loaderParagraphs}>
-                  <p>Please wait ...</p>
-                  <p>Our computers are working for you !</p>
+                  <p>
+                    <FormattedMessage
+                      id="compo.heartWorkPlace.loading.pleaseWait"
+                      defaultMessage="Please wait ..."
+                    />
+                  </p>
+                  <p>
+                    <FormattedMessage
+                      id="compo.heartWorkPlace.loading.computerAreWorking"
+                      defaultMessage="Our computers are working for you !"
+                    />
+                  </p>
                   {isOneUserInputTooShort && (
                     <p className={style.proTip}>
-                      Protip to get better results : try adding more words
+                      <FormattedMessage
+                        id="compo.heartWorkPlace.loading.proTipsAddMoreWords"
+                        defaultMessage="Protip to get better results : try adding more words"
+                      />
                     </p>
                   )}
                 </div>

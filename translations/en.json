@@ -30,6 +30,14 @@
 
   "page.workplace.inputOutput": "Input & Output Language :",
 
+  "compo.heartWorkPlace.button.create": "Create",
+  "compo.heartWorkPlace.noCategory.title": "Welcome on Cursify",
+  "compo.heartWorkPlace.noCategory.paragraph1": "Please select a category on the left to get started.",
+  "compo.heartWorkPlace.noCategory.paragraph2": "Content will be fully AI generated.",
+  "compo.heartWorkPlace.loading.pleaseWait": "Please wait ...",
+  "compo.heartWorkPlace.loading.computerAreWorking": "Our computers are working for you !",
+  "compo.heartWorkPlace.loading.proTipsAddMoreWords": "Protip to get better results : try adding more words",
+
   "page.login.head.title": "Sign In / Register",
   "page.login.title": "Sign in or Create your Account",
   "page.login.legalNotice": "By proceeding, you are agreeing to Cursify's Terms of Service.",

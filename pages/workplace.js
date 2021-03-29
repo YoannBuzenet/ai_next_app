@@ -18,23 +18,23 @@ import axios from "axios";
 import LangPicker from "../components/LangPicker";
 import { langDictionnary } from "../definitions/langDictionnary";
 
-export async function getServerSideProps(context) {
-  const session = await getSession(context);
-  //TODO STEP2 : check if Subscribed too
-  const isLoggedUser = UserCheck.isUserLogged(session?.user?.isLoggedUntil);
+// export async function getServerSideProps(context) {
+//   const session = await getSession(context);
+//   //TODO STEP2 : check if Subscribed too
+//   const isLoggedUser = UserCheck.isUserLogged(session?.user?.isLoggedUntil);
 
-  if (!isLoggedUser) {
-    return {
-      redirect: {
-        destination: "/",
-        permanent: false,
-      },
-      props: {},
-    };
-  } else {
-    return { props: {} };
-  }
-}
+//   if (!isLoggedUser) {
+//     return {
+//       redirect: {
+//         destination: "/",
+//         permanent: false,
+//       },
+//       props: {},
+//     };
+//   } else {
+//     return { props: {} };
+//   }
+// }
 
 function Workplace() {
   // TODO 2nd step
