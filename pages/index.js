@@ -46,6 +46,8 @@ export default function Home(props) {
 
   const [session, loading] = useSession();
 
+  console.log("curent lang", currentLang);
+
   return (
     <>
       <Head>

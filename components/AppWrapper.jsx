@@ -114,7 +114,7 @@ const AppWrapper = ({ children }) => {
                 >
                   <IntlProvider
                     locale={currentLang.locale}
-                    messages={currentLang.translationsForUsersLocale}
+                    messages={currentLang.translatedText}
                   >
                     {isTransparentDivDisplayed && <TransparentDiv />}
                     {children}
