@@ -8,7 +8,7 @@ import { useSession, getSession } from "next-auth/client";
 import { langInApp } from "../definitions/langs";
 
 import * as Icon from "react-feather";
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage, useIntl } from "react-intl";
 
 export async function getServerSideProps(context) {
   // We check headers from Request to see languages from user browser
@@ -46,12 +46,17 @@ export default function Home(props) {
 
   const [session, loading] = useSession();
 
-  console.log("curent lang", currentLang);
+  const Intl = useIntl();
+
+  const translatedPageTitle = Intl.formatMessage({
+    id: "page.index.pageTitle",
+    defaultMessage: "Cursify - AI that creates your content",
+  });
 
   return (
     <>
       <Head>
-        <title>Cursify - Generate Creative Content in one click</title>
+        <title>{translatedPageTitle}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -96,17 +101,31 @@ export default function Home(props) {
           <div className="container">
             <div className={styles.cardsContainer}>
               <div className={styles.card}>
-                <span className={styles.cardTitle}>Choose your category</span>
+                <span className={styles.cardTitle}>
+                  <FormattedMessage
+                    id="page.index.firstCase.slogan"
+                    defaultMessage="Choose your category"
+                  />
+                </span>
                 <span>
-                  Facebook Ad ? Blog Intro ? Product Description ? We have more
-                  than 40 categories.
+                  <FormattedMessage
+                    id="page.index.firstCase.explaination"
+                    defaultMessage="Facebook Ad ? Blog Intro ? Product Description ? We have more than 40 categories."
+                  />
                 </span>
               </div>
               <div className={styles.card}>
-                <span className={styles.cardTitle}>Give it a few words</span>
+                <span className={styles.cardTitle}>
+                  <FormattedMessage
+                    id="page.index.secondCase.slogan"
+                    defaultMessage="Give it a few words"
+                  />
+                </span>
                 <span>
-                  What do you want the AI to talk about ? Give it a few words to
-                  show it the way.
+                  <FormattedMessage
+                    id="page.index.secondCase.explaination"
+                    defaultMessage="Give it a few words"
+                  />
                 </span>
               </div>
               <div className={styles.card}>

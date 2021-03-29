@@ -1,8 +1,13 @@
 {
-  "page.index.firstLiner.punchline": "Generate Marketing Copy in seconds",
+  "page.index.pageTitle": "Cursify - AI that creates your content",
+  "page.index.firstLiner.punchline": "AI that generates your content in seconds",
   "page.index.firstLiner.paragraph": "One click and you're in.",
   "page.login.title": "Sign In",
   "page.index.firstLiner.CTA": "Get Started",
+  "page.index.firstCase.slogan": "Choose your category",
+  "page.index.firstCase.explaination": "Facebook Ad ? Blog Intro ? Product Description ? We have more than 40 categories.",
+  "page.index.secondCase.slogan": "Give it a few words",
+  "page.index.secondCase.explaination": "What do you want the AI to talk about ? Give it a few words to show it the way.",
 
   "navbar.menu.signin": "Sign In",
   "navbar.menu.myAccount": "My Account"

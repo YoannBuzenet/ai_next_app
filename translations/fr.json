@@ -1,8 +1,13 @@
 {
-  "page.index.firstLiner.punchline": "Créez du contenu en quelques secondes",
+  "page.index.pageTitle": "Cursify - L'IA qui crée votre contenu",
+  "page.index.firstLiner.punchline": "L'IA qui crée votre contenu en quelques secondes",
   "page.index.firstLiner.paragraph": "Un clic et c'est prêt !",
   "page.login.title": "Se connecter",
   "page.index.firstLiner.CTA": "Commencer",
+  "page.index.firstCase.slogan": "Choisissez votre thème",
+  "page.index.firstCase.explaination": "Accroche pour Facebook ? Idée de blog ? Description de produit ? Nous avons plus de 40 thèmes.",
+  "page.index.secondCase.slogan": "Écrivez quelques mots",
+  "page.index.secondCase.explaination": "De quoi voulez-vous que l'IA parle ? Écrivez quelques mots pour lui montrer la voie.",
 
   "navbar.menu.signin": "Se connecter",
   "navbar.menu.myAccount": "Mon compte"
