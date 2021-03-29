@@ -129,10 +129,17 @@ export default function Home(props) {
                 </span>
               </div>
               <div className={styles.card}>
-                <span className={styles.cardTitle}>And just click</span>
+                <span className={styles.cardTitle}>
+                  <FormattedMessage
+                    id="page.index.thirdCase.slogan"
+                    defaultMessage="And just click"
+                  />
+                </span>
                 <span>
-                  AI generates creative and relevant text based on what you
-                  entered. You can directly copy it and use it !
+                  <FormattedMessage
+                    id="page.index.thirdCase.explaination"
+                    defaultMessage="AI generates creative and relevant text based on what you entered. You can directly copy it and use it !"
+                  />
                 </span>
               </div>
             </div>
