@@ -1,22 +1,49 @@
 import Head from "next/head";
 import Link from "next/link";
 import styles from "../styles/Home.module.css";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import userContextFile from "../contexts/userContext";
 import selectedAppLangContext from "../contexts/selectedAppLang";
 import { useSession, getSession } from "next-auth/client";
+import { langInApp } from "../definitions/langs";
 
 import * as Icon from "react-feather";
 
-export default function Home() {
+export async function getServerSideProps(context) {
+  // We check headers from Request to see languages from user browser
+  const { req } = context;
+
+  const headersAcceptLanguages = req?.headers?.["accept-language"];
+
+  let language = {};
+
+  if (headersAcceptLanguages !== undefined) {
+    const allLanguages = headersAcceptLanguages.split(";");
+    language = allLanguages[0];
+    console.log("typeof language", typeof language);
+    language = language.split(",");
+    language = language[0];
+  }
+
+  return {
+    props: {
+      userLangFromReqHeaders: language,
+    },
+  };
+}
+
+export default function Home(props) {
   const { userContext } = useContext(userContextFile);
   const { currentLang, setCurrentLang } = useContext(selectedAppLangContext);
 
-  console.log("current Lang", currentLang);
+  useEffect(() => {
+    if (currentLang.hasOwnProperty("isDefault")) {
+      setCurrentLang(langInApp[props?.userLangFromReqHeaders]);
+      window.localStorage.setItem("lang", props?.userLangFromReqHeaders);
+    }
+  }, []);
 
   const [session, loading] = useSession();
-
-  console.log("session user", session);
 
   return (
     <>

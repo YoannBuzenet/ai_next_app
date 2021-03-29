@@ -8,6 +8,7 @@ import AppLangContextFile from "../contexts/selectedAppLang";
 import AreFlagsDisplayed from "../contexts/areFlagsDisplayed";
 import { IntlProvider } from "react-intl";
 import { langInApp } from "../definitions/langs";
+import TransparentDiv from "../components/TransparentDiv";
 
 const AppWrapper = ({ children }) => {
   const [userContext, setUserContext] = useState({ test: "test" });
@@ -34,9 +35,11 @@ const AppWrapper = ({ children }) => {
       appInitialLang = langInApp[langSavedInLocalStorage];
     } else {
       appInitialLang = langInApp["en-US"];
+      appInitialLang.isDefault = true;
     }
   } else {
     appInitialLang = langInApp["en-US"];
+    appInitialLang.isDefault = true;
   }
 
   const [currentLang, setCurrentLang] = useState(appInitialLang);
@@ -57,7 +60,10 @@ const AppWrapper = ({ children }) => {
     setIsTransparentDivDisplayed(transparentDiv);
   };
   const handleSetContextCurrentLang = (currentLang) => {
-    setCurrentLang(currentLang);
+    if (Object.keys(langInApp).includes(currentLang.locale)) {
+      setCurrentLang(currentLang);
+    }
+    return;
   };
   const handleSetAreFlagsDisplayed = (areFlagDisplayed) => {
     setAreFlagsDisplayed(areFlagDisplayed);
@@ -110,6 +116,7 @@ const AppWrapper = ({ children }) => {
                     locale={currentLang.locale}
                     messages={currentLang.translationsForUsersLocale}
                   >
+                    {isTransparentDivDisplayed && <TransparentDiv />}
                     {children}
                   </IntlProvider>
                 </IsResponsiveMenuDisplayedContextFile.Provider>
