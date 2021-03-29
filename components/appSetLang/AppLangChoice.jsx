@@ -7,8 +7,8 @@ import styles from "../../styles/AppLangChoice.module.css";
 import { langInApp } from "../../definitions/langs";
 
 const AppLangChoice = ({
-  top = "22",
-  topArrowMenu = "8",
+  top = "3",
+  topArrowMenu = "5",
   marginLeft = "0",
   lineHeightSelectAppLang = "25",
   topSelectAppLangFlags = "22",
@@ -40,6 +40,7 @@ const AppLangChoice = ({
 
   const urlPicture = "/pictures/flags/25X13/" + currentLang.picture + ".png";
 
+  // Updating directly the DOM because DOm from SSR can be different from data in memory, and HTML can miss an update sometimes.
   if (typeof window !== "undefined") {
     const urlFlagDOM = window.document.getElementById("currentFlag")?.src;
     if (

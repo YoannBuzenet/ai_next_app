@@ -50,7 +50,17 @@
     display: flex;
     flex-direction: column;
   }
+
+  .navbar ul {
+    display: flex;
+  }
+
   .navbar ul li {
     margin-top: 2rem;
+    width: 50%;
+  }
+
+  .navbar ul li:last-child {
+    position: relative;
   }
 }

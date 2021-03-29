@@ -29,12 +29,6 @@ const arrayLangsInApp = [
     langID: 1,
     locale: "fr-FR",
   },
-  {
-    translatedText: {},
-    picture: "IT",
-    langID: 1,
-    locale: "fr-FR",
-  },
 ];
 
 module.exports = { langInApp, arrayLangsInApp };

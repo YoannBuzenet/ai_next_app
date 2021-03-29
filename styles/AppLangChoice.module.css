@@ -36,6 +36,7 @@
   z-index: 2;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
+  background-color: white;
   width: 35px;
   right: 12px;
   left: -5px;
@@ -46,4 +47,12 @@
   cursor: pointer;
   padding: 3px;
   background-color: var(--background-color);
+  margin-left: 2px;
+}
+
+@media only screen and (max-width: 768px) {
+  .currentAppLang {
+    position: absolute;
+    right: 0;
+  }
 }
