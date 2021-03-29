@@ -4,6 +4,7 @@ import styles from "../styles/Navbar.module.css";
 import { useSession, getSession } from "next-auth/client";
 import UserCheck from "../services/userCheck";
 import AppLangChoice from "./appSetLang/AppLangChoice";
+import { FormattedMessage } from "react-intl";
 
 const Navbar = () => {
   const [session, loading] = useSession();
@@ -30,14 +31,24 @@ const Navbar = () => {
               {!UserCheck.isUserLogged(session?.user?.isLoggedUntil) && (
                 <li>
                   <Link href="/login">
-                    <a>Sign In</a>
+                    <a>
+                      <FormattedMessage
+                        id="navbar.menu.signin"
+                        defaultMessage="Sign In"
+                      />
+                    </a>
                   </Link>
                 </li>
               )}
               {UserCheck.isUserLogged(session?.user?.isLoggedUntil) && (
                 <li>
                   <Link href="/myAccount">
-                    <a>My Account</a>
+                    <a>
+                      <FormattedMessage
+                        id="navbar.menu.myAccount"
+                        defaultMessage="My Account"
+                      />
+                    </a>
                   </Link>
                 </li>
               )}

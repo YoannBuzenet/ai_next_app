@@ -1,4 +1,9 @@
 {
   "page.index.firstLiner.punchline": "Generate Marketing Copy in seconds",
-  "page.login.title": "Sign In"
+  "page.index.firstLiner.paragraph": "One click and you're in.",
+  "page.login.title": "Sign In",
+  "page.index.firstLiner.CTA": "Get Started",
+
+  "navbar.menu.signin": "Sign In",
+  "navbar.menu.myAccount": "My Account"
 }

@@ -70,10 +70,20 @@ export default function Home(props) {
                       defaultMessage="Generate Marketing Copy in seconds"
                     />
                   </h1>
-                  <p>One click and you're in.</p>
+                  <p>
+                    <FormattedMessage
+                      id="page.index.firstLiner.paragraph"
+                      defaultMessage="One click and you're in."
+                    />
+                  </p>
                   <div className={styles.ctaMain}>
                     <Link href="/login">
-                      <a type="button">Get Started</a>
+                      <a type="button">
+                        <FormattedMessage
+                          id="page.index.firstLiner.CTA"
+                          defaultMessage="Get Started"
+                        />
+                      </a>
                     </Link>
                   </div>
                 </div>

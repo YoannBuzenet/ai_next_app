@@ -1,4 +1,9 @@
 {
   "page.index.firstLiner.punchline": "Créez du contenu en quelques secondes",
-  "page.login.title": "Se connecter"
+  "page.index.firstLiner.paragraph": "Un clic et c'est prêt !",
+  "page.login.title": "Se connecter",
+  "page.index.firstLiner.CTA": "Commencer",
+
+  "navbar.menu.signin": "Se connecter",
+  "navbar.menu.myAccount": "Mon compte"
 }
