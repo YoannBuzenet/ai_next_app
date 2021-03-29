@@ -10,7 +10,8 @@
   "page.index.secondCase.explaination": "What do you want the AI to talk about ? Give it a few words to show it the way.",
   "page.index.thirdCase.slogan": "And just click",
   "page.index.thirdCase.explaination": "AI generates creative and relevant text based on what you entered. You can directly copy it and use it !",
-
+  "page.index.thirdLiner.slogan": "Give a few words. Let the AI do the rest.",
+  "page.index.thirdLiner.explaination": "Cursify uses technology based on AI. Thanks to Deep Learning, it is able to make connections that have never been done before. With just a few words, it can create specific text just for you.",
   "navbar.menu.signin": "Sign In",
   "navbar.menu.myAccount": "My Account"
 }

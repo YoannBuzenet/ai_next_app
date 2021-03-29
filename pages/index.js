@@ -148,12 +148,16 @@ export default function Home(props) {
         <div className={styles.thirdLiner}>
           <div className="container">
             <h2 className={styles.punchline}>
-              Give a few words. Let the AI do the rest.
+              <FormattedMessage
+                id="page.index.thirdLiner.slogan"
+                defaultMessage="Give a few words. Let the AI do the rest."
+              />
             </h2>
             <p>
-              Cursify uses technology based on AI. Thanks to Deep Learning, it
-              is able to make connections that have never been done before. With
-              just a few words, it can create specific text just for you.
+              <FormattedMessage
+                id="page.index.thirdLiner.explaination"
+                defaultMessage="Cursify uses technology based on AI. Thanks to Deep Learning, it is able to make connections that have never been done before. With just a few words, it can create specific text just for you."
+              />
             </p>
             <div>
               <img src="/pictures/screenshots/productDescriptionEN.png" />

@@ -10,7 +10,8 @@
   "page.index.secondCase.explaination": "De quoi voulez-vous que l'IA parle ? Écrivez quelques mots pour lui montrer la voie.",
   "page.index.thirdCase.slogan": "Et cliquez !",
   "page.index.thirdCase.explaination": "L'IA génère du contenu créatif basé sur votre texte. Vous pouvez le copier et directement l'utiliser",
-
+  "page.index.thirdLiner.slogan": "Donnez quelques mots à l'IA. Laissez la faire le reste.",
+  "page.index.thirdLiner.explaination": "Cursify utilise une technologie basée sur l'intelligence artificielle. Capable de créer des connections jamais faites jusqu'alors, elle crée des phrases pertinentes avec seulement quelques mots.",
   "navbar.menu.signin": "Se connecter",
   "navbar.menu.myAccount": "Mon compte"
 }
