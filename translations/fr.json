@@ -2,7 +2,6 @@
   "page.index.pageTitle": "Cursify - L'IA qui crée votre contenu",
   "page.index.firstLiner.punchline": "L'IA qui crée votre contenu en quelques secondes",
   "page.index.firstLiner.paragraph": "Un clic et c'est prêt !",
-  "page.login.title": "Se connecter",
   "page.index.firstLiner.CTA": "Commencer",
   "page.index.firstCase.slogan": "Choisissez votre thème",
   "page.index.firstCase.explaination": "Accroche pour Facebook ? Idée de blog ? Description de produit ? Nous avons plus de 40 thèmes.",
@@ -28,6 +27,10 @@
   "page.index.fourthLiner.tickbox12": "Email de confirmation",
   "page.index.fifthLiner.title": "Intéressé(e) ? Testez le gratuitement",
   "page.index.fifthLiner.button.title": "Commencer",
+
+  "page.login.head.title": "Se connecter / S'inscrire",
+  "page.login.title": "Se connecter ou Créer un compte",
+  "page.login.legalNotice": "En vous inscrivant, vous acceptez les conditions de vente de Cursify.",
 
   "navbar.menu.signin": "Se connecter",
   "navbar.menu.myAccount": "Mon compte",

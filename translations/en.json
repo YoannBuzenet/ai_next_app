@@ -2,7 +2,6 @@
   "page.index.pageTitle": "Cursify - AI that creates your content",
   "page.index.firstLiner.punchline": "AI that generates your content in seconds",
   "page.index.firstLiner.paragraph": "One click and you're in.",
-  "page.login.title": "Sign In",
   "page.index.firstLiner.CTA": "Get Started",
   "page.index.firstCase.slogan": "Choose your category",
   "page.index.firstCase.explaination": "Facebook Ad ? Blog Intro ? Product Description ? We have more than 40 categories.",
@@ -28,6 +27,10 @@
   "page.index.fourthLiner.tickbox12": "Confirmation email",
   "page.index.fifthLiner.title": "Try it now for free",
   "page.index.fifthLiner.button.title": "Get Started",
+
+  "page.login.head.title": "Sign In / Register",
+  "page.login.title": "Sign in or Create your Account",
+  "page.login.legalNotice": "By proceeding, you are agreeing to Cursify's Terms of Service.",
 
   "navbar.menu.signin": "Sign In",
   "navbar.menu.myAccount": "My Account",
