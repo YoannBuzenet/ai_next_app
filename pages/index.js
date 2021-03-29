@@ -166,65 +166,131 @@ export default function Home(props) {
         </div>
         <div className={styles.fourthLiner}>
           <div className="container">
-            <h3 className={styles.punchline}>Just generate and use it</h3>
+            <h3 className={styles.punchline}>
+              <FormattedMessage
+                id="page.index.fourthLiner.slogan"
+                defaultMessage="Just generate and use it"
+              />
+            </h3>
             <p className={styles.explaination}>
-              Words are automatically generated thanks to the Deep Learning
-              algorithm. Creative and relevant marketing text are generated for
-              you on the fly.
+              <FormattedMessage
+                id="page.index.fourthLiner.explaination"
+                defaultMessage="Words are automatically generated thanks to the Deep Learning algorithm. Creative and relevant marketing text are generated for you on the fly."
+              />
             </p>
             <div className={styles.tickBox}>
               <div>
                 <div>
                   <Icon.Check />
-                  <span>Facebook Ad</span>
+                  <span>
+                    <FormattedMessage
+                      id="page.index.fourthLiner.tickbox1"
+                      defaultMessage="Facebook Ads"
+                    />
+                  </span>
                 </div>
                 <div>
                   <Icon.Check />
-                  <span>Blog Title</span>
+                  <span>
+                    <FormattedMessage
+                      id="page.index.fourthLiner.tickbox2"
+                      defaultMessage="Blog Title"
+                    />
+                  </span>
                 </div>
                 <div>
                   <Icon.Check />
-                  <span>Blog Idea</span>
+                  <span>
+                    <FormattedMessage
+                      id="page.index.fourthLiner.tickbox3"
+                      defaultMessage="Blog Idea"
+                    />
+                  </span>
                 </div>
                 <div>
                   <Icon.Check />
-                  <span>Blog Intro</span>
+                  <span>
+                    <FormattedMessage
+                      id="page.index.fourthLiner.tickbox4"
+                      defaultMessage="Blog Intro"
+                    />
+                  </span>
                 </div>
               </div>
               <div>
                 <div>
                   <Icon.Check />
-                  <span>Product Description</span>
+                  <span>
+                    <FormattedMessage
+                      id="page.index.fourthLiner.tickbox5"
+                      defaultMessage="Product Description"
+                    />
+                  </span>
                 </div>
                 <div>
                   <Icon.Check />
-                  <span>Google Ad</span>
+                  <span>
+                    <FormattedMessage
+                      id="page.index.fourthLiner.tickbox6"
+                      defaultMessage="Google Ad"
+                    />
+                  </span>
                 </div>
                 <div>
                   <Icon.Check />
-                  <span>Instagram Caption</span>
+                  <span>
+                    <FormattedMessage
+                      id="page.index.fourthLiner.tickbox7"
+                      defaultMessage="Instagram Caption"
+                    />
+                  </span>
                 </div>
                 <div>
                   <Icon.Check />
-                  <span>Follow-up Email</span>
+                  <span>
+                    <FormattedMessage
+                      id="page.index.fourthLiner.tickbox8"
+                      defaultMessage="Follow-up Email"
+                    />
+                  </span>
                 </div>
               </div>
               <div>
                 <div>
                   <Icon.Check />
-                  <span>Video Title</span>
+                  <span>
+                    <FormattedMessage
+                      id="page.index.fourthLiner.tickbox9"
+                      defaultMessage="Video Title"
+                    />
+                  </span>
                 </div>
                 <div>
                   <Icon.Check />
-                  <span>Linkedin Ads</span>
+                  <span>
+                    <FormattedMessage
+                      id="page.index.fourthLiner.tickbox10"
+                      defaultMessage="Linkedin Ads"
+                    />
+                  </span>
                 </div>
                 <div>
                   <Icon.Check />
-                  <span>Landing Page Catch Phrase</span>
+                  <span>
+                    <FormattedMessage
+                      id="page.index.fourthLiner.tickbox11"
+                      defaultMessage="Landing Page Catch Phrase"
+                    />
+                  </span>
                 </div>
                 <div>
                   <Icon.Check />
-                  <span>Confirmation email</span>
+                  <span>
+                    <FormattedMessage
+                      id="page.index.fourthLiner.tickbox12"
+                      defaultMessage="Confirmation email"
+                    />
+                  </span>
                 </div>
               </div>
             </div>
@@ -233,10 +299,20 @@ export default function Home(props) {
         <div className={styles.fifthLiner}>
           <div>
             <div className="container">
-              <p>Contact us and get a demo</p>
+              <p>
+                <FormattedMessage
+                  id="page.index.fifthLiner.title"
+                  defaultMessage="Try it now for free"
+                />
+              </p>
             </div>
             <Link href="/login">
-              <a className={styles.CTAButton}>Get Started</a>
+              <a className={styles.CTAButton}>
+                <FormattedMessage
+                  id="page.index.fifthLiner.button.title"
+                  defaultMessage="Get Started"
+                />
+              </a>
             </Link>
           </div>
         </div>

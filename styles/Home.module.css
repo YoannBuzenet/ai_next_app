@@ -348,8 +348,21 @@ h3.punchline {
     text-align: left;
   }
 }
+@media only screen and (max-width: 1024px) {
+  .fifthLiner a.CTAButton {
+    margin-top: 20px;
+  }
+  .fifthLiner p {
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+  }
+}
 @media only screen and (max-width: 768px) {
   .fifthLiner p {
     text-align: center;
+  }
+  .fifthLiner a.CTAButton {
+    margin-top: 30px;
   }
 }

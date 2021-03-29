@@ -12,6 +12,25 @@
   "page.index.thirdCase.explaination": "L'IA génère du contenu créatif basé sur votre texte. Vous pouvez le copier et directement l'utiliser",
   "page.index.thirdLiner.slogan": "Donnez quelques mots à l'IA. Laissez la faire le reste.",
   "page.index.thirdLiner.explaination": "Cursify utilise une technologie basée sur l'intelligence artificielle. Capable de créer des connections jamais faites jusqu'alors, elle crée des phrases pertinentes avec seulement quelques mots.",
+  "page.index.fourthLiner.slogan": "Cliquez, Générez, Utilisez",
+  "page.index.fourthLiner.explaination": "Les phrases sont automatiquement crées grâce un algorithme de Deep Learning. L'IA génère du texte pertinent, créatif, et ciblé, en un clic.",
+  "page.index.fourthLiner.tickbox1": "Accroches Facebook",
+  "page.index.fourthLiner.tickbox2": "Titres de blogs",
+  "page.index.fourthLiner.tickbox3": "Idées pour bloguer",
+  "page.index.fourthLiner.tickbox4": "Intros de blogs",
+  "page.index.fourthLiner.tickbox5": "Description de produit",
+  "page.index.fourthLiner.tickbox6": "Accroche Google",
+  "page.index.fourthLiner.tickbox7": "Story Instagram",
+  "page.index.fourthLiner.tickbox8": "Email de suivi",
+  "page.index.fourthLiner.tickbox9": "Titre de vidéo",
+  "page.index.fourthLiner.tickbox10": "Accroche Linkedin",
+  "page.index.fourthLiner.tickbox11": "Slogan de vente",
+  "page.index.fourthLiner.tickbox12": "Email de confirmation",
+  "page.index.fifthLiner.title": "Intéressé(e) ? Testez le gratuitement",
+  "page.index.fifthLiner.button.title": "Commencer",
+
   "navbar.menu.signin": "Se connecter",
-  "navbar.menu.myAccount": "Mon compte"
+  "navbar.menu.myAccount": "Mon compte",
+
+  "footer.copyright": "© 2021 Cursify. Tous droits réservés."
 }

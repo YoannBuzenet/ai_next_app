@@ -12,6 +12,25 @@
   "page.index.thirdCase.explaination": "AI generates creative and relevant text based on what you entered. You can directly copy it and use it !",
   "page.index.thirdLiner.slogan": "Give a few words. Let the AI do the rest.",
   "page.index.thirdLiner.explaination": "Cursify uses technology based on AI. Thanks to Deep Learning, it is able to make connections that have never been done before. With just a few words, it can create specific text just for you.",
+  "page.index.fourthLiner.slogan": "Just generate and use it",
+  "page.index.fourthLiner.explaination": "Words are automatically generated thanks to the Deep Learning algorithm. Creative and relevant marketing text are generated for you on the fly.",
+  "page.index.fourthLiner.tickbox1": "Facebook Ads",
+  "page.index.fourthLiner.tickbox2": "Blog Title",
+  "page.index.fourthLiner.tickbox3": "Blog Idea",
+  "page.index.fourthLiner.tickbox4": "Blog Intro",
+  "page.index.fourthLiner.tickbox5": "Product Description",
+  "page.index.fourthLiner.tickbox6": "Google Ad",
+  "page.index.fourthLiner.tickbox7": "Instagram Caption",
+  "page.index.fourthLiner.tickbox8": "Follow-up Email",
+  "page.index.fourthLiner.tickbox9": "Video Title",
+  "page.index.fourthLiner.tickbox10": "Linkedin Ads",
+  "page.index.fourthLiner.tickbox11": "Landing Page Catch Phrase",
+  "page.index.fourthLiner.tickbox12": "Confirmation email",
+  "page.index.fifthLiner.title": "Try it now for free",
+  "page.index.fifthLiner.button.title": "Get Started",
+
   "navbar.menu.signin": "Sign In",
-  "navbar.menu.myAccount": "My Account"
+  "navbar.menu.myAccount": "My Account",
+
+  "footer.copyright": "© 2021 Cursify, Inc. All rights reserved."
 }
