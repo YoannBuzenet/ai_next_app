@@ -1,1 +1,4 @@
-{ "page.login.title": "S'inscrire / Se connecter" }
+{
+  "page.index.firstLiner.punchline": "Créez du contenu en quelques secondes",
+  "page.login.title": "Se connecter"
+}

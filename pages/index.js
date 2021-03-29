@@ -8,6 +8,7 @@ import { useSession, getSession } from "next-auth/client";
 import { langInApp } from "../definitions/langs";
 
 import * as Icon from "react-feather";
+import { FormattedMessage } from "react-intl";
 
 export async function getServerSideProps(context) {
   // We check headers from Request to see languages from user browser
@@ -62,7 +63,10 @@ export default function Home(props) {
               <div className={styles.mainTitle}>
                 <div className={styles.leftContent}>
                   <h1 className={styles.mainPunchline}>
-                    Generate Marketing Copy in seconds
+                    <FormattedMessage
+                      id="page.index.firstLiner.punchline"
+                      defaultMessage="Generate Marketing Copy in seconds"
+                    />
                   </h1>
                   <p>One click and you're in.</p>
                   <div className={styles.ctaMain}>

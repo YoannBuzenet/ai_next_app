@@ -24,6 +24,7 @@ const AppLangChoice = ({
   );
 
   const handleClick = (event, lang) => {
+    setIsTransparentDivDisplayed(false);
     setCurrentLang({
       locale: lang.locale,
       translatedText: lang.translatedText,
@@ -35,7 +36,7 @@ const AppLangChoice = ({
 
   const handleClickDisplayFlags = (event) => {
     setAreFlagsDisplayed(!areFlagsDisplayed);
-    setIsTransparentDivDisplayed(true);
+    setIsTransparentDivDisplayed(!isTransparentDivDisplayed);
   };
 
   console.log("isTransparentDivDisplayed", isTransparentDivDisplayed);

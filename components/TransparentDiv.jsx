@@ -20,9 +20,7 @@ const TransparentDiv = () => {
   console.log("transparent div maggle");
 
   return (
-    <div className="transparentDiv" onClick={(e) => closeEverything(e)}>
-      Transparent Div
-    </div>
+    <div className="transparentDiv" onClick={(e) => closeEverything(e)}></div>
   );
 };
 
