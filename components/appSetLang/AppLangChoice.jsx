@@ -1,6 +1,8 @@
 import React, { useContext, useState } from "react";
-import SelectAppLangContext from "../context/selectedAppLang";
-import config from "../services/config";
+import SelectAppLangContext from "../../contexts/selectedAppLang";
+import AreFlagsDisplayedContext from "../../contexts/areFlagsDisplayed";
+import transparentDivContext from "../../contexts/transparentDiv";
+import { arrayLangsInApp } from "../../definitions/langs";
 import styles from "../../styles/AppLangChoice.module.css";
 
 const AppLangChoice = ({
@@ -11,8 +13,13 @@ const AppLangChoice = ({
   topSelectAppLangFlags = "22",
 }) => {
   const { currentLang, setCurrentLang } = useContext(SelectAppLangContext);
-
-  const [areFlagsDisplayed, setAreFlagsDisplayed] = useState(false);
+  const {
+    isTransparentDivDisplayed,
+    setIsTransparentDivDisplayed,
+  } = useContext(transparentDivContext);
+  const { areFlagsDisplayed, setAreFlagsDisplayed } = useContext(
+    AreFlagsDisplayedContext
+  );
 
   const handleClick = (event, lang) => {
     setCurrentLang({
@@ -26,9 +33,8 @@ const AppLangChoice = ({
 
   const handleClickDisplayFlags = (event) => {
     setAreFlagsDisplayed(!areFlagsDisplayed);
+    setIsTransparentDivDisplayed(true);
   };
-
-  const adjustesStyle = isAuthenticated ? { lineHeight: "61px" } : null;
 
   return (
     <>
@@ -38,9 +44,9 @@ const AppLangChoice = ({
           onClick={(e) => handleClickDisplayFlags(e)}
         ></div>
       )}
-      <div className="current-app-lang" style={adjustesStyle}>
+      <div className={styles.currentAppLang}>
         <div
-          className="current-lang-flag"
+          className={styles.currentLangFlag}
           style={{ top: top + "px", marginLeft: marginLeft + "px" }}
           onClick={(e) => handleClickDisplayFlags(e)}
         >
@@ -49,32 +55,30 @@ const AppLangChoice = ({
             alt={currentLang.picture + " flag"}
           />
           <span
-            className="arrow-menu arrow-app-lang"
+            className={styles.arrowMenu}
             style={{ top: topArrowMenu + "px" }}
           ></span>
 
           {areFlagsDisplayed && (
             <div
-              className={"set-lang-choosing lang-select-applevel"}
+              className={styles.setLangChoosing}
               style={{
                 lineHeight: lineHeightSelectAppLang + "px",
                 top: topSelectAppLangFlags + "px",
               }}
             >
-              {config.websiteDefaultLanguageArrayLangAvailables.map(
-                (lang, index) => (
-                  <div
-                    className="flag-drop-down"
-                    key={index}
-                    onClick={(event) => handleClick(event, lang)}
-                  >
-                    <img
-                      src={"pictures/flags/25X13/" + lang.picture + ".png"}
-                      alt={lang.picture + " flag"}
-                    />
-                  </div>
-                )
-              )}
+              {arrayLangsInApp.map((lang, index) => (
+                <div
+                  className={styles.flagDropDown}
+                  key={index}
+                  onClick={(event) => handleClick(event, lang)}
+                >
+                  <img
+                    src={"pictures/flags/25X13/" + lang.picture + ".png"}
+                    alt={lang.picture + " flag"}
+                  />
+                </div>
+              ))}
             </div>
           )}
         </div>

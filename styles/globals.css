@@ -87,6 +87,15 @@ main {
   margin-top: 2rem;
 }
 
+.transparentDiv {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 6;
+}
+
 .globalGradient {
   background: rgb(28, 100, 242);
   background: linear-gradient(

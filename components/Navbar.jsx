@@ -3,6 +3,7 @@ import Link from "next/link";
 import styles from "../styles/Navbar.module.css";
 import { useSession, getSession } from "next-auth/client";
 import UserCheck from "../services/userCheck";
+import AppLangChoice from "./appSetLang/AppLangChoice";
 
 const Navbar = () => {
   const [session, loading] = useSession();
@@ -40,6 +41,9 @@ const Navbar = () => {
                   </Link>
                 </li>
               )}
+              <li>
+                <AppLangChoice />
+              </li>
             </ul>
           </div>
         </div>

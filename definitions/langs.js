@@ -16,4 +16,19 @@ const langInApp = {
   },
 };
 
-module.exports = { langInApp };
+const arrayLangsInApp = [
+  {
+    translatedText: English,
+    picture: "EN.png",
+    langID: 0,
+    locale: "en-US",
+  },
+  {
+    translatedText: French,
+    picture: "FR.png",
+    langID: 1,
+    locale: "fr-FR",
+  },
+];
+
+module.exports = { langInApp, arrayLangsInApp };
