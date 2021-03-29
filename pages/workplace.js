@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import Router from "next/router";
+import { FormattedMessage } from "react-intl";
 import CategorySelector from "../components/CategorySelector";
 import { useSession, getSession } from "next-auth/client";
 import { useContext, useState } from "react";
@@ -161,7 +162,10 @@ function Workplace() {
           // Do activate this feature only on mobile
         >
           <p>
-            Input & Output Language :{" "}
+            <FormattedMessage
+              id="page.workplace.inputOutput"
+              defaultMessage="Input & Output Language :"
+            />
             <span className={styles.selectedLangBold}>
               {langDictionnary[langSelected]}
             </span>

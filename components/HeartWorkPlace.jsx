@@ -40,6 +40,7 @@ const HeartWorkPlace = ({
       <div className={style.noCategoryDiv}>
         <h1>Welcome on Cursify</h1>
         <p>Please select a category to get started !</p>
+        <p>Content will be fully AI generated.</p>
       </div>
     );
   } else {
