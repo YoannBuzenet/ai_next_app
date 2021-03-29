@@ -3,12 +3,16 @@ import Link from "next/link";
 import styles from "../styles/Home.module.css";
 import { useContext } from "react";
 import userContextFile from "../contexts/userContext";
+import selectedAppLangContext from "../contexts/selectedAppLang";
 import { useSession, getSession } from "next-auth/client";
 
 import * as Icon from "react-feather";
 
 export default function Home() {
   const { userContext } = useContext(userContextFile);
+  const { currentLang, setCurrentLang } = useContext(selectedAppLangContext);
+
+  console.log("current Lang", currentLang);
 
   const [session, loading] = useSession();
 

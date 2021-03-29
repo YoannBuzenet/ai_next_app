@@ -6,7 +6,7 @@ import DefinitionsContextFile from "../contexts/definitions";
 import TransparentDivContextFile from "../contexts/transparentDiv";
 import AppLangContextFile from "../contexts/selectedAppLang";
 import { IntlProvider } from "react-intl";
-import English from "../translations/en.json";
+import { langInApp } from "../definitions/langs";
 
 const AppWrapper = ({ children }) => {
   const [userContext, setUserContext] = useState({ test: "test" });
@@ -21,13 +21,23 @@ const AppWrapper = ({ children }) => {
 
   // App Language initialization
 
-  // to do : allow app to start on local storage for language langFromLocalStorage || defaultLanguage,
-  const [currentLang, setCurrentLang] = useState({
-    picture: "",
-    locale: "en-US",
-    translationsForUsersLocale: English,
-    langID: 0,
-  });
+  let appInitialLang;
+  let langSavedInLocalStorage;
+  if (typeof window !== "undefined") {
+    langSavedInLocalStorage = window.localStorage.getItem("lang");
+  }
+
+  if (langSavedInLocalStorage) {
+    if (langInApp?.[langSavedInLocalStorage] !== undefined) {
+      appInitialLang = langInApp[langSavedInLocalStorage];
+    } else {
+      appInitialLang = langInApp["en-US"];
+    }
+  } else {
+    appInitialLang = langInApp["en-US"];
+  }
+
+  const [currentLang, setCurrentLang] = useState(appInitialLang.locale);
 
   const handleSetContextUser = (contextData) => {
     setUserContext(contextData);
