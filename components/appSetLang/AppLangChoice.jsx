@@ -51,7 +51,7 @@ const AppLangChoice = ({
           onClick={(e) => handleClickDisplayFlags(e)}
         >
           <img
-            src={"pictures/flags/25X13/" + currentLang.picture + ".png"}
+            src={"/pictures/flags/25X13/" + currentLang.picture + ".png"}
             alt={currentLang.picture + " flag"}
           />
           <span
@@ -74,7 +74,7 @@ const AppLangChoice = ({
                   onClick={(event) => handleClick(event, lang)}
                 >
                   <img
-                    src={"pictures/flags/25X13/" + lang.picture + ".png"}
+                    src={"/pictures/flags/25X13/" + lang.picture + ".png"}
                     alt={lang.picture + " flag"}
                   />
                 </div>

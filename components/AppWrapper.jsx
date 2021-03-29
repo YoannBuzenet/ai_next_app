@@ -39,7 +39,7 @@ const AppWrapper = ({ children }) => {
     appInitialLang = langInApp["en-US"];
   }
 
-  const [currentLang, setCurrentLang] = useState(appInitialLang.locale);
+  const [currentLang, setCurrentLang] = useState(appInitialLang);
 
   const handleSetContextUser = (contextData) => {
     setUserContext(contextData);
