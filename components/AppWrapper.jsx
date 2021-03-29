@@ -5,12 +5,14 @@ import IsResponsiveMenuDisplayedContextFile from "../contexts/menuDisplayed";
 import DefinitionsContextFile from "../contexts/definitions";
 import TransparentDivContextFile from "../contexts/transparentDiv";
 import AppLangContextFile from "../contexts/selectedAppLang";
+import AreFlagsDisplayed from "../contexts/areFlagsDisplayed";
 import { IntlProvider } from "react-intl";
 import { langInApp } from "../definitions/langs";
 
 const AppWrapper = ({ children }) => {
   const [userContext, setUserContext] = useState({ test: "test" });
   const [isBlackDivDisplayed, setIsBlackDivDisplayed] = useState(false);
+  const [areFlagsDisplayed, setAreFlagsDisplayed] = useState(false);
   const [isResponsiveMenuDisplayed, setIsResponsiveMenuDisplayed] = useState(
     false
   );
@@ -57,6 +59,9 @@ const AppWrapper = ({ children }) => {
   const handleSetContextCurrentLang = (currentLang) => {
     setCurrentLang(currentLang);
   };
+  const handleSetAreFlagsDisplayed = (areFlagDisplayed) => {
+    setAreFlagsDisplayed(areFlagDisplayed);
+  };
 
   const contextProps = {
     userContext,
@@ -86,22 +91,29 @@ const AppWrapper = ({ children }) => {
     setCurrentLang: handleSetContextCurrentLang,
   };
 
+  const contextAreFlagsDisplayed = {
+    areFlagsDisplayed,
+    setAreFlagsDisplayed: handleSetAreFlagsDisplayed,
+  };
+
   return (
     <UserContextFile.Provider value={contextProps}>
       <BlackDivContextFile.Provider value={contextBlackDiv}>
         <TransparentDivContextFile.Provider value={contextTransparentDiv}>
           <DefinitionsContextFile.Provider value={contextAllDefinitions}>
             <AppLangContextFile.Provider value={contextCurrentLang}>
-              <IsResponsiveMenuDisplayedContextFile.Provider
-                value={contextResponsiveMenu}
-              >
-                <IntlProvider
-                  locale={currentLang.locale}
-                  messages={currentLang.translationsForUsersLocale}
+              <AreFlagsDisplayed.Provider value={contextAreFlagsDisplayed}>
+                <IsResponsiveMenuDisplayedContextFile.Provider
+                  value={contextResponsiveMenu}
                 >
-                  {children}
-                </IntlProvider>
-              </IsResponsiveMenuDisplayedContextFile.Provider>
+                  <IntlProvider
+                    locale={currentLang.locale}
+                    messages={currentLang.translationsForUsersLocale}
+                  >
+                    {children}
+                  </IntlProvider>
+                </IsResponsiveMenuDisplayedContextFile.Provider>
+              </AreFlagsDisplayed.Provider>
             </AppLangContextFile.Provider>
           </DefinitionsContextFile.Provider>
         </TransparentDivContextFile.Provider>
