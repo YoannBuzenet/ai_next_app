@@ -1,9 +1,10 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import SelectAppLangContext from "../../contexts/selectedAppLang";
 import AreFlagsDisplayedContext from "../../contexts/areFlagsDisplayed";
 import transparentDivContext from "../../contexts/transparentDiv";
 import { arrayLangsInApp } from "../../definitions/langs";
 import styles from "../../styles/AppLangChoice.module.css";
+import { langInApp } from "../../definitions/langs";
 
 const AppLangChoice = ({
   top = "22",
@@ -17,6 +18,7 @@ const AppLangChoice = ({
     isTransparentDivDisplayed,
     setIsTransparentDivDisplayed,
   } = useContext(transparentDivContext);
+
   const { areFlagsDisplayed, setAreFlagsDisplayed } = useContext(
     AreFlagsDisplayedContext
   );
@@ -24,11 +26,11 @@ const AppLangChoice = ({
   const handleClick = (event, lang) => {
     setCurrentLang({
       locale: lang.locale,
-      translationsForUsersLocale: lang.translationsForUsersLocale,
+      translatedText: lang.translatedText,
       picture: lang.picture,
       langID: lang.langID,
     });
-    window.localStorage.setItem("appLang", lang.locale);
+    window.localStorage.setItem("lang", lang.locale);
   };
 
   const handleClickDisplayFlags = (event) => {
@@ -36,14 +38,43 @@ const AppLangChoice = ({
     setIsTransparentDivDisplayed(true);
   };
 
+  const urlPicture = "/pictures/flags/25X13/" + currentLang.picture + ".png";
+
+  if (typeof window !== "undefined") {
+    const urlFlagDOM = window.document.getElementById("currentFlag")?.src;
+    if (
+      urlFlagDOM !== urlPicture &&
+      urlFlagDOM !== null &&
+      urlFlagDOM !== undefined
+    ) {
+      document.getElementById("currentFlag").src = urlPicture;
+    }
+  }
+
+  useEffect(() => {
+    // App Language initialization
+    let appInitialLang;
+    let langSavedInLocalStorage;
+
+    langSavedInLocalStorage = window.localStorage.getItem("lang");
+
+    if (langSavedInLocalStorage) {
+      if (langInApp?.[langSavedInLocalStorage] !== undefined) {
+        appInitialLang = langInApp[langSavedInLocalStorage];
+      } else {
+        appInitialLang = langInApp["en-US"];
+      }
+    } else {
+      appInitialLang = langInApp["en-US"];
+    }
+
+    setCurrentLang({ ...appInitialLang });
+  }, []);
+
+  console.log("urlPicture", urlPicture);
+
   return (
     <>
-      {areFlagsDisplayed && (
-        <div
-          className="transparent-div"
-          onClick={(e) => handleClickDisplayFlags(e)}
-        ></div>
-      )}
       <div className={styles.currentAppLang}>
         <div
           className={styles.currentLangFlag}
@@ -51,8 +82,9 @@ const AppLangChoice = ({
           onClick={(e) => handleClickDisplayFlags(e)}
         >
           <img
-            src={"/pictures/flags/25X13/" + currentLang.picture + ".png"}
+            src={urlPicture}
             alt={currentLang.picture + " flag"}
+            id="currentFlag"
           />
           <span
             className={styles.arrowMenu}

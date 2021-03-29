@@ -17,6 +17,8 @@ const TransparentDiv = () => {
     setAreFlagsDisplayed(false);
   };
 
+  console.log("transparent div maggle");
+
   return (
     <div className="transparentDiv" onClick={(e) => closeEverything(e)}>
       Transparent Div
