@@ -1,4 +1,7 @@
 {
+  "generic.lang.english": "Anglais",
+  "generic.lang.french": "Français",
+
   "page.index.pageTitle": "Cursify - L'IA qui crée votre contenu",
   "page.index.firstLiner.punchline": "L'IA qui crée votre contenu en quelques secondes",
   "page.index.firstLiner.paragraph": "Un clic et c'est prêt !",
@@ -40,6 +43,8 @@
 
   "compo.CategorySelector.selectCategory": "Choisissez un thème",
   "compo.CategorySelector.mostPopular": "Les plus populaires",
+
+  "compo.apiResult.makeMore": "Recréer",
 
   "page.login.head.title": "Se connecter / S'inscrire",
   "page.login.title": "Se connecter ou Créer un compte",

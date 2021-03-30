@@ -6,6 +6,7 @@ import IconButton from "@material-ui/core/IconButton";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
+import { FormattedMessage } from "react-intl";
 
 const APIResult = ({ index, initialText, createRequestFromResults }) => {
   const [currentText, setCurrentText] = useState(initialText);
@@ -57,7 +58,10 @@ const APIResult = ({ index, initialText, createRequestFromResults }) => {
             size="large"
             onClick={(e) => createRequestFromResults(e, currentText)}
           >
-            Make More
+            <FormattedMessage
+              id="compo.apiResult.makeMore"
+              defaultMessage="Make More"
+            />
           </Button>
         </div>
       </div>

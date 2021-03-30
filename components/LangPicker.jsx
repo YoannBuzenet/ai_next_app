@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import styles from "../styles/LangPicker.module.css";
 import OneLang from "./inputLangChoice/OneLang";
+import { useIntl } from "react-intl";
 
 const LangPicker = ({
   langSelected,
@@ -12,6 +13,15 @@ const LangPicker = ({
     setLangSelected(lang);
   };
 
+  const translatedEnglish = intl.formatMessage({
+    id: "generic.lang.english",
+    defaultMessage: "English",
+  });
+  const translatedFrench = intl.formatMessage({
+    id: "generic.lang.french",
+    defaultMessage: "French",
+  });
+
   return (
     <div className={styles.langPickerContainer}>
       <ul>
@@ -20,14 +30,14 @@ const LangPicker = ({
           langSelected={langSelected}
           handleClick={handleClick}
           langKey="en-US"
-          langName="English"
+          langName={translatedEnglish}
         />
         <OneLang
           handleClick
           langSelected={langSelected}
           handleClick={handleClick}
           langKey="fr-FR"
-          langName="French"
+          langName={translatedFrench}
         />
       </ul>
     </div>
