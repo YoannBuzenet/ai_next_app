@@ -13,6 +13,8 @@ const LangPicker = ({
     setLangSelected(lang);
   };
 
+  const intl = useIntl();
+
   const translatedEnglish = intl.formatMessage({
     id: "generic.lang.english",
     defaultMessage: "English",
