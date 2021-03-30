@@ -66,7 +66,12 @@ const HeartWorkPlace = ({
     return (
       <div className={style.rightDivContainer}>
         <div className={style.categoryTitle}>
-          <h2>{categoryObject?.name}</h2>
+          <h2>
+            <FormattedMessage
+              id={categoryObject?.name.id}
+              defaultMessage={categoryObject?.name.defaultMessage}
+            />
+          </h2>
         </div>
         {!isLoadingAPIResults && (
           <div className={style.formContainer}>
