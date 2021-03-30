@@ -146,7 +146,17 @@ function Workplace() {
             className={styles.categorySelector}
             onClick={(e) => setIsDisplayedTools(!isDisplayedTools)}
           >
-            {isDisplayedTools ? "Hide categories" : "Display categories"}
+            {isDisplayedTools ? (
+              <FormattedMessage
+                id="page.workplace.hideCategories"
+                defaultMessage="Hide categories"
+              />
+            ) : (
+              <FormattedMessage
+                id="page.workplace.displayCategories"
+                defaultMessage="Display categories"
+              />
+            )}
           </p>
           {!isDisplayedTools && (
             <ArrowForwardIosIcon

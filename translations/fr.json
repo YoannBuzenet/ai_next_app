@@ -36,6 +36,8 @@
   "page.myAccount.logOugButton": "Déconnexion",
 
   "page.workplace.inputOutput": "Langue Entrée & Sortie : ",
+  "page.workplace.displayCategories": "Afficher les thèmes",
+  "page.workplace.hideCategories": "Cacher les thèmes",
 
   "compo.heartWorkPlace.button.create": "Créer",
   "compo.heartWorkPlace.noCategory.title": "Bienvenue sur Cursify",
