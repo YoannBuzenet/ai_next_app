@@ -7,6 +7,7 @@ import styles from "../styles/MyAccount.module.css";
 import UserCheck from "../services/userCheck";
 import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
+import { FormattedMessage } from "react-intl";
 
 export async function getServerSideProps(context) {
   const session = await getSession(context);
@@ -54,18 +55,31 @@ export default function MyAccount() {
         <div className="container">
           <main className={styles.main}>
             <div className="global-white-background">
-              <h1>My Account</h1>
+              <h1>
+                <FormattedMessage
+                  id="page.myAccount.title"
+                  defaultMessage="My Account"
+                />
+              </h1>
             </div>
             <div className="global-white-background marginTop20">
               <div className={styles.signOutContainer}>
-                <p>Log out Account</p>
+                <p>
+                  <FormattedMessage
+                    id="page.myAccount.logOutLabel"
+                    defaultMessage="Log out Account"
+                  />
+                </p>
                 <Button
                   onClick={handleSignOut}
                   className={classes.button}
                   variant="contained"
                   size="large"
                 >
-                  Sign Out
+                  <FormattedMessage
+                    id="page.myAccount.logOugButton"
+                    defaultMessage="Sign Out"
+                  />
                 </Button>
               </div>
             </div>

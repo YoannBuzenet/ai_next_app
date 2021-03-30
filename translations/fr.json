@@ -31,6 +31,10 @@
   "page.index.fifthLiner.title": "Intéressé(e) ? Testez le gratuitement",
   "page.index.fifthLiner.button.title": "Commencer",
 
+  "page.myAccount.title": "Mon compte",
+  "page.myAccount.logOutLabel": "Me déconnecter",
+  "page.myAccount.logOugButton": "Déconnexion",
+
   "page.workplace.inputOutput": "Langue Entrée & Sortie : ",
 
   "compo.heartWorkPlace.button.create": "Créer",
