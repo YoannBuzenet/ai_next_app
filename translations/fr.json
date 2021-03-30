@@ -38,6 +38,9 @@
   "compo.heartWorkPlace.loading.computerAreWorking": "L'IA prépare le contenu...",
   "compo.heartWorkPlace.loading.proTipsAddMoreWords": "Astuce pour de meilleurs résultats : essayez d'ajouter plus de mots",
 
+  "compo.CategorySelector.selectCategory": "Choisissez un thème",
+  "compo.CategorySelector.mostPopular": "Les plus populaires",
+
   "page.login.head.title": "Se connecter / S'inscrire",
   "page.login.title": "Se connecter ou Créer un compte",
   "page.login.legalNotice": "En vous inscrivant, vous acceptez les conditions de vente de Cursify.",
@@ -45,5 +48,23 @@
   "navbar.menu.signin": "Se connecter",
   "navbar.menu.myAccount": "Mon compte",
 
-  "footer.copyright": "© 2021 Cursify. Tous droits réservés."
+  "footer.copyright": "© 2021 Cursify. Tous droits réservés.",
+
+  "categories.id1.categorylabel": "Description Produit",
+  "categories.id1.label": "Décrivez votre produit",
+  "categories.id1.placeholder": "Exemple : Un logiciel de gestion de paie pour les petites et moyennes entreprises",
+  "categories.id2.categorylabel": "Proposition de valeur",
+  "categories.id2.label": "Quel est le nom de votre entreprise ou de votre produit ?",
+  "categories.id2.placeholder": "Exemple : Cursify",
+  "categories.id2.label2": "Décrivez votre produit",
+  "categories.id2.placeholder2": "Exemple : Une entreprise de production de contenu avec via Intelligence Artificielle",
+  "categories.id3.categorylabel": "Titre de billet de blog",
+  "categories.id3.label": "De quoi parlera ce billet de blog ? ",
+  "categories.id3.placeholder": "Exemple : Mieux gérer son argent",
+  "categories.id4.categorylabel": "Légende Instagram",
+  "categories.id4.label": "De quoi parle cette légende ?",
+  "categories.id4.placeholder": "Exemple : Je suis allé mangé avec les filles hier !",
+  "categories.id5.categorylabel": "Intro de blog",
+  "categories.id5.label": "De quoi parle votre blog ?",
+  "categories.id5.placeholder": "Example : Investir dans l'immobillier"
 }

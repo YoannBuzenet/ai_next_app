@@ -38,6 +38,9 @@
   "compo.heartWorkPlace.loading.computerAreWorking": "Our computers are working for you !",
   "compo.heartWorkPlace.loading.proTipsAddMoreWords": "Protip to get better results : try adding more words",
 
+  "compo.CategorySelector.selectCategory": "Select your category",
+  "compo.CategorySelector.mostPopular": "Most Popular",
+
   "page.login.head.title": "Sign In / Register",
   "page.login.title": "Sign in or Create your Account",
   "page.login.legalNotice": "By proceeding, you are agreeing to Cursify's Terms of Service.",
@@ -45,5 +48,23 @@
   "navbar.menu.signin": "Sign In",
   "navbar.menu.myAccount": "My Account",
 
-  "footer.copyright": "© 2021 Cursify, Inc. All rights reserved."
+  "footer.copyright": "© 2021 Cursify, Inc. All rights reserved.",
+
+  "categories.id1.categorylabel": "Product Description",
+  "categories.id1.label": "Describe shortly your product",
+  "categories.id1.placeholder": "Example : Data analytics software for small and medium businesses.",
+  "categories.id2.categorylabel": "Value Proposition",
+  "categories.id2.label": "What is your company/product name ?",
+  "categories.id2.placeholder": "Example : Uber",
+  "categories.id2.label2": "What is your company about ?",
+  "categories.id2.placeholder2": "Example : We connect drivers to people who wants to go somewhere.",
+  "categories.id3.categorylabel": "Blog Title",
+  "categories.id3.label": "What is this blog ticket about ?",
+  "categories.id3.placeholder": "Example : Hiking in Netherlands",
+  "categories.id4.categorylabel": "Instagram Caption",
+  "categories.id4.label": "What is your caption about ?",
+  "categories.id4.placeholder": "Example : Went to the beach yesterday - it was so beautiful.",
+  "categories.id5.categorylabel": "Blog Intro",
+  "categories.id5.label": "What is your blog about ?",
+  "categories.id5.placeholder": "Example : My blog is about cooking specific pizzas !"
 }

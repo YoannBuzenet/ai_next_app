@@ -3,7 +3,7 @@ import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
 import CircularIndeterminate from "./Loader";
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage, useIntl } from "react-intl";
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -28,6 +28,7 @@ const HeartWorkPlace = ({
   isLoadingAPIResults,
 }) => {
   const classes = useStyles();
+  const intl = useIntl();
 
   let isOneUserInputTooShort = false;
   for (const oneInput in userInputs) {
@@ -35,7 +36,7 @@ const HeartWorkPlace = ({
       isOneUserInputTooShort = true;
     }
   }
-  console.log("categoryObject", categoryObject);
+
   if (categoryObject === null) {
     return (
       <div className={style.noCategoryDiv}>
@@ -70,14 +71,21 @@ const HeartWorkPlace = ({
         {!isLoadingAPIResults && (
           <div className={style.formContainer}>
             {categoryObject.inputs.map((input, index) => {
-              //yo
-              console.log("translate here");
+              const translatedLabel = intl.formatMessage({
+                id: input.label.id,
+                defaultMessage: input.label.defaultMessage,
+              });
+              const translatedPlaceholder = intl.formatMessage({
+                id: input.placeholder.id,
+                defaultMessage: input.placeholder.defaultMessage,
+              });
+
               return (
                 <div key={index} className={style.oneInput}>
-                  <p>{input.label}</p>
+                  <p>{translatedLabel}</p>
                   <TextField
                     InputProps={{ style: { fontSize: 20 } }}
-                    placeholder={input.placeholder}
+                    placeholder={translatedPlaceholder}
                     value={userInputs?.[input.name] || ""}
                     onChange={(e) =>
                       setUserInputs({
