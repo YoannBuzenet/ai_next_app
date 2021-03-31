@@ -20,6 +20,8 @@ a {
 /**********************/
 :root {
   --line-height: 2.4rem;
+  --primary-color: #3f51b5;
+  --primary-color-hover: rgb(90, 108, 214);
   --background-gradient: linear-gradient(
     149deg,
     rgb(184 224 247 / 80%) 54%,

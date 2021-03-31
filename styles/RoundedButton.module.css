@@ -1,0 +1,26 @@
+button.roundedButton {
+  border-radius: 20px;
+  background-color: white;
+  padding: 0.2rem 1.2rem;
+  text-transform: none;
+  min-width: 0;
+  font-size: 16px;
+  transition: background-color 2s;
+}
+
+button.roundedButton:hover {
+}
+
+button.selectedRoundedButton {
+  border-radius: 20px;
+  padding: 0.2rem 1.2rem;
+  text-transform: none;
+  min-width: 0;
+  font-size: 16px;
+  background-color: var(--primary-color);
+}
+
+button.selectedRoundedButton:hover {
+  background-color: var(--primary-color-hover);
+  transition: background-color 0.25s;
+}

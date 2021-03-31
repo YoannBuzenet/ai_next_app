@@ -1,4 +1,4 @@
-export const categoriesDefinition = {
+const categoriesDefinition = {
   1: {
     inputs: [
       {
@@ -121,3 +121,37 @@ export const categoriesDefinition = {
     name: { id: "categories.id5.categorylabel", defaultMessage: "Blog Intro" },
   },
 };
+
+const listOfCategories = [
+  {
+    name: {
+      id: "categories.id1.categorylabel",
+      defaultMessage: "Product Description",
+    },
+    categoryId: 1,
+  },
+  {
+    name: {
+      id: "categories.id2.categorylabel",
+      defaultMessage: "Value Proposition",
+    },
+    categoryId: 2,
+  },
+  {
+    name: { id: "categories.id3.categorylabel", defaultMessage: "Blog Title" },
+    categoryId: 3,
+  },
+  {
+    name: {
+      id: "categories.id4.categorylabel",
+      defaultMessage: "Instagram Caption",
+    },
+    categoryId: 4,
+  },
+  {
+    name: { id: "categories.id5.categorylabel", defaultMessage: "Blog Intro" },
+    categoryId: 5,
+  },
+];
+
+module.exports = { categoriesDefinition, listOfCategories };
