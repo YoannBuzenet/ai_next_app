@@ -13,14 +13,14 @@ export default function SimpleCard({
   cardNameDefault,
   cardDescriptionId,
   cardDescriptionDefault,
-  cardLogoUrl,
-  cardExplaination,
+  urlLogo,
 }) {
   const bull = <span>•</span>;
 
   return (
     <Card className={styles.card}>
       <CardContent>
+        <img src={urlLogo} />
         <Typography color="textSecondary">
           <FormattedMessage id={cardNameId} defaultMessage={cardNameDefault} />
         </Typography>

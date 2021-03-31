@@ -133,6 +133,7 @@ const listOfCategories = [
       defaultMessage: "",
     },
     parentCategory: "Marketing",
+    urlLogo: "",
     categoryId: 1,
   },
   {
@@ -145,6 +146,7 @@ const listOfCategories = [
       defaultMessage: "",
     },
     parentCategory: "Marketing",
+    urlLogo: "",
     categoryId: 2,
   },
   {
@@ -154,6 +156,7 @@ const listOfCategories = [
       defaultMessage: "",
     },
     parentCategory: "Blog",
+    urlLogo: "",
     categoryId: 3,
   },
   {
@@ -166,6 +169,7 @@ const listOfCategories = [
       defaultMessage: "",
     },
     parentCategory: "Instagram",
+    urlLogo: "",
     categoryId: 4,
   },
   {
@@ -175,6 +179,7 @@ const listOfCategories = [
       defaultMessage: "",
     },
     parentCategory: "Blog",
+    urlLogo: "",
     categoryId: 5,
   },
 ];

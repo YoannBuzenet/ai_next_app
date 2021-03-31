@@ -64,6 +64,7 @@ export default function template() {
                   cardNameDefault={category.name.defaultMessage}
                   cardDescriptionId={category.description.id}
                   cardDescriptionDefault={category.description.defaultMessage}
+                  urlLogo={category.urlLogo}
                 />
               ))}
             </div>
