@@ -45,7 +45,7 @@ export default function template() {
       </div>
       <div>
         Category list (object avec logo, title, description)
-        <div>
+        <div className={styles.cardsContainer}>
           {listOfCategories.map((category) => (
             <Card />
           ))}
