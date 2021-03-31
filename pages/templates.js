@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import Button from "@material-ui/core/Button";
 import styles from "../styles/template.module.css";
 import RoundedButton from "../components/Base/RoundedButton";
+import {
+  categoriesDefinition,
+  listOfCategories,
+} from "../definitions/categories";
+import Card from "../components/Card";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -39,7 +43,14 @@ export default function template() {
           isSelected={categoryButtonSelected === "FacebookAds"}
         />
       </div>
-      <div>Category list (object avec logo, title, description)</div>
+      <div>
+        Category list (object avec logo, title, description)
+        <div>
+          {listOfCategories.map((category) => (
+            <Card />
+          ))}
+        </div>
+      </div>
     </div>
   );
 }

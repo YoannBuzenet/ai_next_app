@@ -128,6 +128,7 @@ const listOfCategories = [
       id: "categories.id1.categorylabel",
       defaultMessage: "Product Description",
     },
+    parentCategory: "Marketing",
     categoryId: 1,
   },
   {
@@ -135,10 +136,12 @@ const listOfCategories = [
       id: "categories.id2.categorylabel",
       defaultMessage: "Value Proposition",
     },
+    parentCategory: "Marketing",
     categoryId: 2,
   },
   {
     name: { id: "categories.id3.categorylabel", defaultMessage: "Blog Title" },
+    parentCategory: "Blog",
     categoryId: 3,
   },
   {
@@ -146,10 +149,12 @@ const listOfCategories = [
       id: "categories.id4.categorylabel",
       defaultMessage: "Instagram Caption",
     },
+    parentCategory: "Instagram",
     categoryId: 4,
   },
   {
     name: { id: "categories.id5.categorylabel", defaultMessage: "Blog Intro" },
+    parentCategory: "Blog",
     categoryId: 5,
   },
 ];
