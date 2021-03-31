@@ -22,6 +22,7 @@ a {
   --line-height: 2.4rem;
   --primary-color: #3f51b5;
   --primary-color-hover: rgb(90, 108, 214);
+  --light-grey-background: rgb(249, 250, 251);
   --background-gradient: linear-gradient(
     149deg,
     rgb(184 224 247 / 80%) 54%,
@@ -129,6 +130,10 @@ p {
 
 .marginTop20 {
   margin-top: 20px;
+}
+
+.genericBackground {
+  background-color: var(--light-grey-background);
 }
 
 /* Material UI Inputs */

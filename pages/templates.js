@@ -21,34 +21,36 @@ export default function template() {
   const [categoryButtonSelected, setCategoryButtonSelected] = useState("");
 
   return (
-    <div className="container">
-      <div className={styles.selectTemplate}>
-        <div>Select a template to get started</div>
-        <div>search + request</div>
-      </div>
-      <div>
-        <RoundedButton
-          name="All"
-          handleClick={(e) => setCategoryButtonSelected("all")}
-          isSelected={categoryButtonSelected === "all"}
-        />
-        <RoundedButton
-          name="Marketing"
-          handleClick={(e) => setCategoryButtonSelected("Marketing")}
-          isSelected={categoryButtonSelected === "Marketing"}
-        />
-        <RoundedButton
-          name="Facebook Ads"
-          handleClick={(e) => setCategoryButtonSelected("FacebookAds")}
-          isSelected={categoryButtonSelected === "FacebookAds"}
-        />
-      </div>
-      <div>
-        Category list (object avec logo, title, description)
-        <div className={styles.cardsContainer}>
-          {listOfCategories.map((category) => (
-            <Card />
-          ))}
+    <div className="genericBackground">
+      <div className="container">
+        <div className={styles.selectTemplate}>
+          <div>Select a template to get started</div>
+          <div>search + request</div>
+        </div>
+        <div>
+          <RoundedButton
+            name="All"
+            handleClick={(e) => setCategoryButtonSelected("all")}
+            isSelected={categoryButtonSelected === "all"}
+          />
+          <RoundedButton
+            name="Marketing"
+            handleClick={(e) => setCategoryButtonSelected("Marketing")}
+            isSelected={categoryButtonSelected === "Marketing"}
+          />
+          <RoundedButton
+            name="Facebook Ads"
+            handleClick={(e) => setCategoryButtonSelected("FacebookAds")}
+            isSelected={categoryButtonSelected === "FacebookAds"}
+          />
+        </div>
+        <div>
+          Category list (object avec logo, title, description)
+          <div className={styles.cardsContainer}>
+            {listOfCategories.map((category) => (
+              <Card />
+            ))}
+          </div>
         </div>
       </div>
     </div>
