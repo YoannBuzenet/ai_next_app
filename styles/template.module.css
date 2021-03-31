@@ -1,15 +1,21 @@
+.title {
+  font-size: 18px;
+}
 .selectTemplate {
   display: flex;
   justify-content: space-between;
+  padding-top: 20px;
 }
 
 .cardsContainer {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .globalCardsContainer {
   display: flex;
+
   flex-direction: column;
   min-height: 800px;
 }

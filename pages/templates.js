@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import styles from "../styles/template.module.css";
 import RoundedButton from "../components/Base/RoundedButton";
+import TextField from "@material-ui/core/TextField";
 import {
   categoriesDefinition,
   listOfCategories,
@@ -17,15 +18,25 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function template() {
-  const classes = useStyles();
   const [categoryButtonSelected, setCategoryButtonSelected] = useState("");
 
   return (
     <div className="genericBackground">
       <div className="container80">
         <div className={styles.selectTemplate}>
-          <div>Select a template to get started</div>
-          <div>search + request</div>
+          <div>
+            <span className={styles.title}>
+              Select a template to get started
+            </span>
+          </div>
+          <div>
+            <TextField
+              id="outlined-search"
+              label="Search field"
+              type="search"
+              variant="outlined"
+            />
+          </div>
         </div>
         <div>
           <RoundedButton
@@ -45,7 +56,6 @@ export default function template() {
           />
         </div>
         <div>
-          Category list (object avec logo, title, description)
           <div className={styles.globalCardsContainer}>
             <div className={styles.cardsContainer}>
               {listOfCategories.map((category) => (
