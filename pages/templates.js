@@ -46,13 +46,16 @@ export default function template() {
         </div>
         <div>
           Category list (object avec logo, title, description)
-          <div className={styles.cardsContainer}>
-            {listOfCategories.map((category) => (
-              <Card
-                cardNameId={category.name.id}
-                cardNameDefault={category.name.defaultMessage}
-              />
-            ))}
+          <div className={styles.globalCardsContainer}>
+            <div className={styles.cardsContainer}>
+              {listOfCategories.map((category) => (
+                <Card
+                  cardNameId={category.name.id}
+                  cardNameDefault={category.name.defaultMessage}
+                />
+              ))}
+            </div>
+            <div className={styles.greyCompletingDiv}></div>
           </div>
         </div>
       </div>

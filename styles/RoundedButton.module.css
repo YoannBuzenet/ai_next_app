@@ -5,10 +5,12 @@ button.roundedButton {
   text-transform: none;
   min-width: 0;
   font-size: 16px;
-  transition: background-color 2s;
+  transition: background-color 0.25s;
 }
 
 button.roundedButton:hover {
+  background-color: white;
+  transition: background-color 0.25s;
 }
 
 button.selectedRoundedButton {
@@ -18,9 +20,10 @@ button.selectedRoundedButton {
   min-width: 0;
   font-size: 16px;
   background-color: var(--primary-color);
+  transition: background-color 0.25s;
 }
 
 button.selectedRoundedButton:hover {
   background-color: var(--primary-color-hover);
-  transition: background-color 0.25s;
+  transition: background-color 0.5s;
 }
