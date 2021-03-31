@@ -11,6 +11,8 @@ import { FormattedMessage } from "react-intl";
 export default function SimpleCard({
   cardNameId,
   cardNameDefault,
+  cardDescriptionId,
+  cardDescriptionDefault,
   cardLogoUrl,
   cardExplaination,
 }) {
@@ -22,7 +24,12 @@ export default function SimpleCard({
         <Typography color="textSecondary">
           <FormattedMessage id={cardNameId} defaultMessage={cardNameDefault} />
         </Typography>
-        <Typography variant="body2" component="p"></Typography>
+        <Typography variant="body2" component="p">
+          <FormattedMessage
+            id={cardDescriptionId}
+            defaultMessage={cardDescriptionDefault}
+          />
+        </Typography>
       </CardContent>
     </Card>
   );
