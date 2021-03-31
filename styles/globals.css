@@ -47,6 +47,14 @@ body {
   width: 70%;
   margin: 0 auto;
 }
+.container80 {
+  width: 80%;
+  margin: 0 auto;
+}
+.container90 {
+  width: 90%;
+  margin: 0 auto;
+}
 
 ul {
   margin: 0;
@@ -145,5 +153,13 @@ p {
 @media only screen and (max-width: 1024px) {
   .container {
     width: 80%;
+  }
+  .container80 {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .container90 {
+    width: 80%;
+    margin: 0 auto;
   }
 }

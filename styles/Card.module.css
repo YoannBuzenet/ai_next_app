@@ -4,6 +4,7 @@
   margin-top: 30px;
   cursor: pointer;
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+  height: 150px;
 }
 
 .card:hover {

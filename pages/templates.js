@@ -22,7 +22,7 @@ export default function template() {
 
   return (
     <div className="genericBackground">
-      <div className="container">
+      <div className="container80">
         <div className={styles.selectTemplate}>
           <div>Select a template to get started</div>
           <div>search + request</div>
@@ -48,7 +48,10 @@ export default function template() {
           Category list (object avec logo, title, description)
           <div className={styles.cardsContainer}>
             {listOfCategories.map((category) => (
-              <Card />
+              <Card
+                cardNameId={category.name.id}
+                cardNameDefault={category.name.defaultMessage}
+              />
             ))}
           </div>
         </div>
