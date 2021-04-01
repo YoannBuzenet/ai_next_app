@@ -249,7 +249,7 @@ const listOfCategories = [
       defaultMessage:
         "Create relevant stories that will engage your customers.",
     },
-    parentCategory: "Marketing",
+    parentCategory: "FacebookAds",
     urlLogo: "",
     categoryId: 6,
   },

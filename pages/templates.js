@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function template() {
-  const [categoryButtonSelected, setCategoryButtonSelected] = useState("");
+  const [categoryButtonSelected, setCategoryButtonSelected] = useState("all");
 
   return (
     <div className="genericBackground templates">
@@ -60,16 +60,24 @@ export default function template() {
         <div>
           <div className={styles.globalCardsContainer}>
             <div className={styles.cardsContainer}>
-              {listOfCategories.map((category) => (
-                <Card
-                  cardNameId={category.name.id}
-                  cardNameDefault={category.name.defaultMessage}
-                  cardDescriptionId={category.description.id}
-                  cardDescriptionDefault={category.description.defaultMessage}
-                  urlLogo={category.urlLogo}
-                  categoryID={category.categoryId}
-                />
-              ))}
+              {listOfCategories
+                .filter((card) => {
+                  if (categoryButtonSelected !== "all") {
+                    return card.parentCategory === categoryButtonSelected;
+                  } else {
+                    return card;
+                  }
+                })
+                .map((category) => (
+                  <Card
+                    cardNameId={category.name.id}
+                    cardNameDefault={category.name.defaultMessage}
+                    cardDescriptionId={category.description.id}
+                    cardDescriptionDefault={category.description.defaultMessage}
+                    urlLogo={category.urlLogo}
+                    categoryID={category.categoryId}
+                  />
+                ))}
             </div>
             <div className={styles.greyCompletingDiv}></div>
           </div>
