@@ -19,6 +19,20 @@ export default function Text() {
   const [AIResults, setAIResults] = useState([
     { content: "test", date: DateTime.now().setLocale("en") },
   ]);
+  const [outputNumber, setOutputNumber] = useState(3);
+
+  const handleOuputNumber = (e) => {
+    let numberToSet;
+    const number = parseInt(e.target.value);
+    if (e.target.value === "") {
+      numberToSet = "";
+    } else if (isNaN(number)) {
+      numberToSet = 1;
+    } else {
+      numberToSet = number;
+    }
+    setOutputNumber(numberToSet);
+  };
 
   const categoryObject = categoriesDefinition[selectedCategoryID];
 
@@ -125,6 +139,8 @@ export default function Text() {
                       id="outlined-basic"
                       variant="outlined"
                       size="small"
+                      onChange={handleOuputNumber}
+                      value={outputNumber}
                     />
                   </div>
                   <Button
