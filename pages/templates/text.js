@@ -8,6 +8,7 @@ import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
 import ArrowRightAltIcon from "@material-ui/icons/ArrowRightAlt";
 import AIResultV2 from "../../components/AIResultV2";
+import { DateTime } from "luxon";
 
 export default function Text() {
   const intl = useIntl();
@@ -15,7 +16,9 @@ export default function Text() {
     SelectedCategoryId
   );
   const [userInputs, setUserInputs] = useState({});
-  const [AIResults, setAIResults] = useState([]);
+  const [AIResults, setAIResults] = useState([
+    { content: "test", date: DateTime.now().setLocale("en") },
+  ]);
 
   const categoryObject = categoriesDefinition[selectedCategoryID];
 
@@ -81,6 +84,7 @@ export default function Text() {
                         </p>
                       </div>
                       <TextField
+                        className="inputUserTextGeneration"
                         InputProps={{ styles: { fontSize: 20 } }}
                         placeholder={translatedPlaceholder}
                         value={userInputs?.[input.name] || ""}
@@ -151,7 +155,10 @@ export default function Text() {
               </div>
             )}
             {AIResults.map((result) => (
-              <AIResultV2 />
+              <AIResultV2
+                currentText={result.content}
+                timeSinceGeneration={result.date}
+              />
             ))}
           </div>
         </div>

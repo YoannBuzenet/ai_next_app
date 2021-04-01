@@ -1,0 +1,33 @@
+.oneResult {
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgb(221, 220, 220);
+}
+
+.mainText {
+  font-weight: 500;
+  font-size: 1.8rem;
+}
+
+.firstLine {
+  display: flex;
+}
+
+.firstLine p {
+  font-size: 1.1rem;
+  color: rgb(221, 220, 220);
+  margin: 0;
+  line-height: 30px;
+}
+
+.iconContainer {
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+.icons {
+  font-size: 1rem !important;
+}
+
+.iconContainer svg {
+  color: rgb(221, 220, 220);
+}

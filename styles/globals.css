@@ -149,6 +149,10 @@ p {
   font-size: 1.6rem;
 }
 
+.TextZone .inputUserTextGeneration .MuiTextField-root {
+  line-height: 24px;
+}
+
 .TextZone .outputContainer .MuiTextField-root {
   width: 130px;
 }

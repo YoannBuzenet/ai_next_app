@@ -16,7 +16,7 @@
 }
 
 .spaceContainer {
-  min-height: 550px;
+  min-height: 500px;
 }
 
 .headlineContainer {
@@ -24,6 +24,8 @@
   display: flex;
   width: 98%;
   margin: auto;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgb(221, 220, 220);
 }
 
 .headlinePicture {
