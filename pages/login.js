@@ -3,12 +3,10 @@ import Link from "next/link";
 import Image from "next/image";
 import { useSession, getSession, signIn } from "next-auth/client";
 import { useContext } from "react";
-import userContextFile from "../contexts/userContext";
 import styles from "../styles/Login.module.css";
 import { useIntl, FormattedMessage } from "react-intl";
 
 export default function Login() {
-  const { userContext } = useContext(userContextFile);
   const [session, loading] = useSession();
 
   const handleGoogleClick = (e) => {

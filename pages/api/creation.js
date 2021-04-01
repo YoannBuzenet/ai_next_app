@@ -13,6 +13,7 @@ export default async (req, res) => {
     passphrase: process.env.FRONT_APP_PASSPHRASE,
     idUser: idUser,
     provider: req?.body?.user?.provider,
+    numberOfOutput: req?.body?.numberOfOutputs,
   };
 
   try {

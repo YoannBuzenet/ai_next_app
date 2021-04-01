@@ -18,7 +18,7 @@ const AIResultV2 = ({ currentText, timeSinceGeneration }) => {
           </IconButton>
         </div>
       </div>
-      <p className={styles.mainText}>API result</p>
+      <p className={styles.mainText}>{currentText}</p>
     </div>
   );
 };

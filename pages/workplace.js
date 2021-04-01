@@ -5,7 +5,6 @@ import { FormattedMessage } from "react-intl";
 import CategorySelector from "../components/CategorySelector";
 import { useSession, getSession } from "next-auth/client";
 import { useContext, useState } from "react";
-import userContextFile from "../contexts/userContext";
 import styles from "../styles/WorkPlace.module.css";
 import { categoriesDefinition } from "../definitions/categories";
 import HeartWorkPlace from "../components/HeartWorkPlace";
@@ -39,7 +38,6 @@ export async function getServerSideProps(context) {
 function Workplace() {
   // TODO 2nd step
   // si on start avec isMobile = true, isDisplayedTools est true et le bouton pour le cacher disparait
-  const { userContext } = useContext(userContextFile);
   const [session, loading] = useSession();
   const [isLoadingAPIResults, setIsLoadingAPIResults] = useState(false);
   const [isDisplayedTools, setIsDisplayedTools] = useState(true);

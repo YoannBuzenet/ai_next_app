@@ -41,7 +41,6 @@ export default function Text() {
 
   const sendDataToBackEnd = async () => {
     setIsLoadingAPIResults(true);
-    setAIResults([]);
     let arrayofuserInputs = [];
     for (const userInput in userInputs) {
       arrayofuserInputs = [
@@ -54,6 +53,7 @@ export default function Text() {
       userInputs: arrayofuserInputs,
       lang: langSelected,
       user: session.user,
+      numberOfOutput: outputNumber,
     };
     console.log("we build the final payload here. Here :", finalPayload);
     axios
@@ -211,7 +211,7 @@ export default function Text() {
             )}
             {AIResults.map((result) => (
               <AIResultV2
-                currentText={result.content}
+                currentText={result.currentText}
                 timeSinceGeneration={result.date}
               />
             ))}
