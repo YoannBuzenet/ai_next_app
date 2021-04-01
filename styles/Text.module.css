@@ -16,16 +16,20 @@
 }
 
 .spaceContainer {
-  min-height: 600px;
+  min-height: 550px;
 }
 
 .headlineContainer {
   padding-top: 3rem;
   display: flex;
+  width: 98%;
+  margin: auto;
 }
 
 .headlinePicture {
   margin-right: 2rem;
+  width: 75px;
+  background-color: red;
 }
 
 .headlineTitle {
@@ -39,12 +43,29 @@
   color: rgb(124, 124, 124);
 }
 
+.lineAboveText {
+  display: flex;
+  justify-content: space-between;
+}
+
+.lineAboveText .counter {
+  font-size: 1.2rem;
+  color: rgb(124, 124, 124);
+}
+
+.oneInput p {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
 .buttonContainer {
-  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+  height: 40px;
 }
 
 .noResults {
   text-align: center;
   font-size: 1.8rem;
-  font-weight: 600;
+  font-weight: 500;
 }

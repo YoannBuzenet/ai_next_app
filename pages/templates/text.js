@@ -26,6 +26,7 @@ export default function Text() {
       color: "white",
       fontWeight: 400,
       fontSize: 16,
+      marginLeft: "20px",
       textTransform: "none",
       backgroundColor: "#477bde",
       "&:hover": {
@@ -38,7 +39,7 @@ export default function Text() {
   const classes = useStyles();
   return (
     <div>
-      <div className="container80">
+      <div className="container80 TextZone">
         <div className={styles.headlineContainer}>
           <div className={styles.headlinePicture}>image</div>
           <div className={styles.headlineText}>
@@ -72,7 +73,13 @@ export default function Text() {
 
                   return (
                     <div key={index} className={styles.oneInput}>
-                      <p>{translatedLabel}</p>
+                      <div className={styles.lineAboveText}>
+                        <p>{translatedLabel}</p>
+                        <p className={styles.counter}>
+                          {userInputs?.[input.name]?.length || 0}/
+                          {input.maxLengthInput}
+                        </p>
+                      </div>
                       <TextField
                         InputProps={{ styles: { fontSize: 20 } }}
                         placeholder={translatedPlaceholder}
@@ -88,13 +95,34 @@ export default function Text() {
                         multiline={
                           input.inputType === "textarea" ? true : false
                         }
-                        rows={input.inputType === "textarea" ? 7 : 1}
+                        rows={input.inputType === "textarea" ? 5 : 2}
                       />
                     </div>
                   );
                 })}
                 <div className={styles.spaceContainer}></div>
                 <div className={styles.buttonContainer}>
+                  <div
+                    className="outputContainer"
+                    style={{ position: "relative" }}
+                  >
+                    <span
+                      style={{
+                        position: "absolute",
+                        top: "12px",
+                        right: "12px",
+                        fontSize: "14px",
+                        color: "#7c7c7c",
+                      }}
+                    >
+                      Outputs
+                    </span>
+                    <TextField
+                      id="outlined-basic"
+                      variant="outlined"
+                      size="small"
+                    />
+                  </div>
                   <Button
                     onClick={(e) => console.log("sending data to back end")}
                     className={classes.button}

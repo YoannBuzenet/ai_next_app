@@ -145,10 +145,13 @@ p {
 }
 
 /* Material UI Inputs */
-/* .MuiTextField-root input,
-.MuiTextField-root textarea {
-  font-size: 2rem !important;
-} */
+.TextZone div.MuiInputBase-root {
+  font-size: 1.6rem;
+}
+
+.TextZone .outputContainer .MuiTextField-root {
+  width: 130px;
+}
 
 @media only screen and (max-width: 1024px) {
   .container {
