@@ -9,6 +9,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import ArrowRightAltIcon from "@material-ui/icons/ArrowRightAlt";
 import AIResultV2 from "../../components/AIResultV2";
 import { DateTime } from "luxon";
+import axios from "axios";
+import { useSession, getSession } from "next-auth/client";
 
 export default function Text() {
   const intl = useIntl();
@@ -20,6 +22,9 @@ export default function Text() {
     { content: "test", date: DateTime.now().setLocale("en") },
   ]);
   const [outputNumber, setOutputNumber] = useState(3);
+  const [isLoadingAPIResults, setIsLoadingAPIResults] = useState(false);
+  const [langSelected, setLangSelected] = useState("en-US");
+  const [session, loading] = useSession();
 
   const handleOuputNumber = (e) => {
     let numberToSet;
@@ -32,6 +37,40 @@ export default function Text() {
       numberToSet = number;
     }
     setOutputNumber(numberToSet);
+  };
+
+  const sendDataToBackEnd = async () => {
+    setIsLoadingAPIResults(true);
+    setAIResults([]);
+    let arrayofuserInputs = [];
+    for (const userInput in userInputs) {
+      arrayofuserInputs = [
+        ...arrayofuserInputs,
+        { [userInput]: userInputs[userInput] },
+      ];
+    }
+    const finalPayload = {
+      categoryID: selectedCategoryID,
+      userInputs: arrayofuserInputs,
+      lang: langSelected,
+      user: session.user,
+    };
+    console.log("we build the final payload here. Here :", finalPayload);
+    axios
+      .post("/api/creation", finalPayload)
+      .then((resp) => {
+        console.log("resp after posting to next API", resp);
+        const resultsWithDates = resp.data.response.map((result) => ({
+          currentText: result,
+          date: DateTime.now().setLocale("en"),
+        }));
+        setAIResults([...resultsWithDates]);
+        setIsLoadingAPIResults(false);
+      })
+      .catch((err) => {
+        console.log("error after posting to next", err);
+        setIsLoadingAPIResults(false);
+      });
   };
 
   const categoryObject = categoriesDefinition[selectedCategoryID];
@@ -144,7 +183,7 @@ export default function Text() {
                     />
                   </div>
                   <Button
-                    onClick={(e) => console.log("sending data to back end")}
+                    onClick={(e) => sendDataToBackEnd()}
                     className={classes.button}
                     variant="contained"
                     size="small"
