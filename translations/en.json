@@ -49,6 +49,7 @@
 
   "compo.text.button.generateAIContent": "Generate AI Content",
   "compo.text.noResults": "Results will be displayed here.",
+  "compo.text.numberOfOutputs": "Outputs",
 
   "compo.CategorySelector.selectCategory": "Select your category",
   "compo.CategorySelector.mostPopular": "Most Popular",

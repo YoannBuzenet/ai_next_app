@@ -174,7 +174,10 @@ export default function Text() {
                         color: "#7c7c7c",
                       }}
                     >
-                      Outputs
+                      <FormattedMessage
+                        id="compo.text.numberOfOutputs"
+                        defaultMessage="Outputs"
+                      />
                     </span>
                     <TextField
                       id="outlined-basic"

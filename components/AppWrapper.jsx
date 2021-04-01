@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import SelectedCategoryContext from "../contexts/selectedCategoryContext";
 import BlackDivContextFile from "../contexts/blackDiv";
+import UserContextFile from "../contexts/userContext";
 import IsResponsiveMenuDisplayedContextFile from "../contexts/menuDisplayed";
 import DefinitionsContextFile from "../contexts/definitions";
 import TransparentDivContextFile from "../contexts/transparentDiv";
@@ -11,6 +12,7 @@ import { langInApp } from "../definitions/langs";
 import TransparentDiv from "../components/TransparentDiv";
 
 const AppWrapper = ({ children }) => {
+  const [userContext, setUserContext] = useState({});
   const [selectedCategoryID, setSelectedCategoryID] = useState(1);
   const [isBlackDivDisplayed, setIsBlackDivDisplayed] = useState(false);
   const [areFlagsDisplayed, setAreFlagsDisplayed] = useState(false);
@@ -44,6 +46,10 @@ const AppWrapper = ({ children }) => {
 
   const [currentLang, setCurrentLang] = useState(appInitialLang);
 
+  const handleSetContextUser = (contextData) => {
+    setUserContext(contextData);
+  };
+
   const handleSetCategoryID = (categoryID) => {
     setSelectedCategoryID(categoryID);
   };
@@ -67,6 +73,11 @@ const AppWrapper = ({ children }) => {
   };
   const handleSetAreFlagsDisplayed = (areFlagDisplayed) => {
     setAreFlagsDisplayed(areFlagDisplayed);
+  };
+
+  const contextUserProps = {
+    userContext,
+    setUserContext: handleSetContextUser,
   };
 
   const contextProps = {
@@ -103,29 +114,31 @@ const AppWrapper = ({ children }) => {
   };
 
   return (
-    <SelectedCategoryContext.Provider value={contextProps}>
-      <BlackDivContextFile.Provider value={contextBlackDiv}>
-        <TransparentDivContextFile.Provider value={contextTransparentDiv}>
-          <DefinitionsContextFile.Provider value={contextAllDefinitions}>
-            <AppLangContextFile.Provider value={contextCurrentLang}>
-              <AreFlagsDisplayed.Provider value={contextAreFlagsDisplayed}>
-                <IsResponsiveMenuDisplayedContextFile.Provider
-                  value={contextResponsiveMenu}
-                >
-                  <IntlProvider
-                    locale={currentLang.locale}
-                    messages={currentLang.translatedText}
+    <UserContextFile.Provider value={contextUserProps}>
+      <SelectedCategoryContext.Provider value={contextProps}>
+        <BlackDivContextFile.Provider value={contextBlackDiv}>
+          <TransparentDivContextFile.Provider value={contextTransparentDiv}>
+            <DefinitionsContextFile.Provider value={contextAllDefinitions}>
+              <AppLangContextFile.Provider value={contextCurrentLang}>
+                <AreFlagsDisplayed.Provider value={contextAreFlagsDisplayed}>
+                  <IsResponsiveMenuDisplayedContextFile.Provider
+                    value={contextResponsiveMenu}
                   >
-                    {isTransparentDivDisplayed && <TransparentDiv />}
-                    {children}
-                  </IntlProvider>
-                </IsResponsiveMenuDisplayedContextFile.Provider>
-              </AreFlagsDisplayed.Provider>
-            </AppLangContextFile.Provider>
-          </DefinitionsContextFile.Provider>
-        </TransparentDivContextFile.Provider>
-      </BlackDivContextFile.Provider>
-    </SelectedCategoryContext.Provider>
+                    <IntlProvider
+                      locale={currentLang.locale}
+                      messages={currentLang.translatedText}
+                    >
+                      {isTransparentDivDisplayed && <TransparentDiv />}
+                      {children}
+                    </IntlProvider>
+                  </IsResponsiveMenuDisplayedContextFile.Provider>
+                </AreFlagsDisplayed.Provider>
+              </AppLangContextFile.Provider>
+            </DefinitionsContextFile.Provider>
+          </TransparentDivContextFile.Provider>
+        </BlackDivContextFile.Provider>
+      </SelectedCategoryContext.Provider>
+    </UserContextFile.Provider>
   );
 };
 
