@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import UserContextFile from "../contexts/userContext";
+import SelectedCategoryContext from "../contexts/selectedCategoryContext";
 import BlackDivContextFile from "../contexts/blackDiv";
 import IsResponsiveMenuDisplayedContextFile from "../contexts/menuDisplayed";
 import DefinitionsContextFile from "../contexts/definitions";
@@ -11,7 +11,7 @@ import { langInApp } from "../definitions/langs";
 import TransparentDiv from "../components/TransparentDiv";
 
 const AppWrapper = ({ children }) => {
-  const [userContext, setUserContext] = useState({ test: "test" });
+  const [selectedCategoryID, setSelectedCategoryID] = useState(1);
   const [isBlackDivDisplayed, setIsBlackDivDisplayed] = useState(false);
   const [areFlagsDisplayed, setAreFlagsDisplayed] = useState(false);
   const [isResponsiveMenuDisplayed, setIsResponsiveMenuDisplayed] = useState(
@@ -44,8 +44,8 @@ const AppWrapper = ({ children }) => {
 
   const [currentLang, setCurrentLang] = useState(appInitialLang);
 
-  const handleSetContextUser = (contextData) => {
-    setUserContext(contextData);
+  const handleSetCategoryID = (categoryID) => {
+    setSelectedCategoryID(categoryID);
   };
   const handleSetContextBlackDiv = (blackDiv) => {
     setIsBlackDivDisplayed(blackDiv);
@@ -70,8 +70,8 @@ const AppWrapper = ({ children }) => {
   };
 
   const contextProps = {
-    userContext,
-    setUserContext: handleSetContextUser,
+    selectedCategoryID,
+    setSelectedCategoryID: handleSetCategoryID,
   };
   const contextBlackDiv = {
     isBlackDivDisplayed,
@@ -103,7 +103,7 @@ const AppWrapper = ({ children }) => {
   };
 
   return (
-    <UserContextFile.Provider value={contextProps}>
+    <SelectedCategoryContext.Provider value={contextProps}>
       <BlackDivContextFile.Provider value={contextBlackDiv}>
         <TransparentDivContextFile.Provider value={contextTransparentDiv}>
           <DefinitionsContextFile.Provider value={contextAllDefinitions}>
@@ -125,7 +125,7 @@ const AppWrapper = ({ children }) => {
           </DefinitionsContextFile.Provider>
         </TransparentDivContextFile.Provider>
       </BlackDivContextFile.Provider>
-    </UserContextFile.Provider>
+    </SelectedCategoryContext.Provider>
   );
 };
 

@@ -1,6 +1,6 @@
 import React from "react";
 
 export default React.createContext({
-  userContext: {},
-  setUserContext: (value) => {},
+  selectedCategoryID: 1,
+  setSelectedCategoryID: (value) => {},
 });

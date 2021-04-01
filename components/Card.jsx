@@ -21,10 +21,10 @@ export default function SimpleCard({
     <Card className={styles.card}>
       <CardContent>
         <img src={urlLogo} />
-        <Typography color="textSecondary">
+        <Typography className={styles.cardTitle}>
           <FormattedMessage id={cardNameId} defaultMessage={cardNameDefault} />
         </Typography>
-        <Typography variant="body2" component="p">
+        <Typography className={styles.cardDescription}>
           <FormattedMessage
             id={cardDescriptionId}
             defaultMessage={cardDescriptionDefault}
