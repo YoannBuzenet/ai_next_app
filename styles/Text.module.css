@@ -1,6 +1,7 @@
 .textGeneratorContainer {
   display: flex;
   justify-content: center;
+  padding-top: 3rem;
 }
 
 .leftDiv {
@@ -9,4 +10,8 @@
 
 .rightDiv {
   width: 50%;
+}
+
+.spaceContainer {
+  min-height: 600px;
 }

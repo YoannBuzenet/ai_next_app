@@ -47,6 +47,8 @@
   "compo.heartWorkPlace.loading.computerAreWorking": "L'IA prépare le contenu...",
   "compo.heartWorkPlace.loading.proTipsAddMoreWords": "Astuce pour de meilleurs résultats : essayez d'ajouter plus de mots",
 
+  "compo.test.button.generateAIContent": "Génerer du contenu avec l'IA",
+
   "compo.CategorySelector.selectCategory": "Choisissez un thème",
   "compo.CategorySelector.mostPopular": "Les plus populaires",
 

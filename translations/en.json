@@ -47,6 +47,8 @@
   "compo.heartWorkPlace.loading.computerAreWorking": "Our computers are working for you !",
   "compo.heartWorkPlace.loading.proTipsAddMoreWords": "Protip to get better results : try adding more words",
 
+  "compo.test.button.generateAIContent": "Generate AI Content",
+
   "compo.CategorySelector.selectCategory": "Select your category",
   "compo.CategorySelector.mostPopular": "Most Popular",
 
