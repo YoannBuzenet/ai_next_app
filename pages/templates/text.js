@@ -37,8 +37,25 @@ export default function Text() {
 
   const classes = useStyles();
   return (
-    <div className="genericBackground">
+    <div>
       <div className="container80">
+        <div className={styles.headlineContainer}>
+          <div className={styles.headlinePicture}>image</div>
+          <div className={styles.headlineText}>
+            <p className={styles.headlineTitle}>
+              <FormattedMessage
+                id={categoryObject.name.id}
+                defaultMessage={categoryObject.name.defaultMessage}
+              />
+            </p>
+            <p className={styles.headlineDescription}>
+              <FormattedMessage
+                id={categoryObject.description.id}
+                defaultMessage={categoryObject.description.defaultMessage}
+              />
+            </p>
+          </div>
+        </div>
         <div className={styles.textGeneratorContainer}>
           <div className={styles.leftDiv}>
             {
@@ -77,22 +94,34 @@ export default function Text() {
                   );
                 })}
                 <div className={styles.spaceContainer}></div>
-                <Button
-                  onClick={(e) => console.log("sending data to back end")}
-                  className={classes.button}
-                  variant="contained"
-                  size="large"
-                  endIcon={<ArrowRightAltIcon />}
-                >
-                  <FormattedMessage
-                    id="compo.test.button.generateAIContent"
-                    defaultMessage="Generate AI Content"
-                  />
-                </Button>
+                <div className={styles.buttonContainer}>
+                  <Button
+                    onClick={(e) => console.log("sending data to back end")}
+                    className={classes.button}
+                    variant="contained"
+                    size="small"
+                    endIcon={<ArrowRightAltIcon />}
+                  >
+                    <FormattedMessage
+                      id="compo.text.button.generateAIContent"
+                      defaultMessage="Generate AI Content"
+                    />
+                  </Button>
+                </div>
               </div>
             }
           </div>
           <div className={styles.rightDiv}>
+            {AIResults.length === 0 && (
+              <div>
+                <p className={styles.noResults}>
+                  <FormattedMessage
+                    id="compo.text.noResults"
+                    defaultMessage="Results will be displayed here."
+                  />
+                </p>
+              </div>
+            )}
             {AIResults.map((result) => (
               <AIResultV2 />
             ))}

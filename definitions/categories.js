@@ -21,6 +21,12 @@ const categoriesDefinition = {
       id: "categories.id1.categorylabel",
       defaultMessage: "Product Description",
     },
+    description: {
+      id: "categories.id6.placeholder",
+      defaultMessage:
+        "Generate scroll-topping headlines for your Facebook Ads to get prospects to click, and ultimately buy.",
+    },
+    parentCategory: "Marketing",
   },
   2: {
     inputs: [
@@ -57,6 +63,12 @@ const categoriesDefinition = {
       id: "categories.id2.categorylabel",
       defaultMessage: "Value Proposition",
     },
+    description: {
+      id: "categories.id6.placeholder",
+      defaultMessage:
+        "Generate scroll-topping headlines for your Facebook Ads to get prospects to click, and ultimately buy.",
+    },
+    parentCategory: "Marketing",
   },
   3: {
     inputs: [
@@ -76,6 +88,12 @@ const categoriesDefinition = {
     ],
     categoryId: 3,
     name: { id: "categories.id3.categorylabel", defaultMessage: "Blog Title" },
+    description: {
+      id: "categories.id6.placeholder",
+      defaultMessage:
+        "Generate scroll-topping headlines for your Facebook Ads to get prospects to click, and ultimately buy.",
+    },
+    parentCategory: "Blog",
   },
   4: {
     inputs: [
@@ -99,6 +117,12 @@ const categoriesDefinition = {
       id: "categories.id4.categorylabel",
       defaultMessage: "Instagram Caption",
     },
+    description: {
+      id: "categories.id6.placeholder",
+      defaultMessage:
+        "Generate scroll-topping headlines for your Facebook Ads to get prospects to click, and ultimately buy.",
+    },
+    parentCategory: "Instagram",
   },
   5: {
     inputs: [
@@ -119,6 +143,40 @@ const categoriesDefinition = {
     ],
     categoryId: 5,
     name: { id: "categories.id5.categorylabel", defaultMessage: "Blog Intro" },
+    description: {
+      id: "categories.id6.placeholder",
+      defaultMessage:
+        "Generate scroll-topping headlines for your Facebook Ads to get prospects to click, and ultimately buy.",
+    },
+    parentCategory: "Blog",
+  },
+  6: {
+    inputs: [
+      {
+        name: "value",
+        maxLengthInput: 100,
+        label: {
+          id: "categories.id6.labelInput1",
+          defaultMessage: "Product Description",
+        },
+        placeholder: {
+          id: "categories.id6.placeholder",
+          defaultMessage: "What does your product do ?",
+        },
+        inputType: "textarea",
+      },
+    ],
+    categoryId: 6,
+    name: {
+      id: "categories.id6.categorylabel",
+      defaultMessage: "Facebook Ads headline",
+    },
+    description: {
+      id: "categories.id6.placeholder",
+      defaultMessage:
+        "Generate scroll-topping headlines for your Facebook Ads to get prospects to click, and ultimately buy.",
+    },
+    parentCategory: "Marketing",
   },
 };
 
@@ -181,6 +239,19 @@ const listOfCategories = [
     parentCategory: "Blog",
     urlLogo: "",
     categoryId: 5,
+  },
+  {
+    name: {
+      id: "categories.id6.categorylabel",
+      defaultMessage: "Facebook Ads headline",
+    },
+    description: {
+      id: "categories.id6.categoryDescription",
+      defaultMessage: "",
+    },
+    parentCategory: "Marketing",
+    urlLogo: "",
+    categoryId: 6,
   },
 ];
 

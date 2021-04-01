@@ -47,7 +47,8 @@
   "compo.heartWorkPlace.loading.computerAreWorking": "Our computers are working for you !",
   "compo.heartWorkPlace.loading.proTipsAddMoreWords": "Protip to get better results : try adding more words",
 
-  "compo.test.button.generateAIContent": "Generate AI Content",
+  "compo.text.button.generateAIContent": "Generate AI Content",
+  "compo.text.noResults": "Results will be displayed here.",
 
   "compo.CategorySelector.selectCategory": "Select your category",
   "compo.CategorySelector.mostPopular": "Most Popular",
@@ -79,5 +80,8 @@
   "categories.id4.placeholder": "Example : Went to the beach yesterday - it was so beautiful.",
   "categories.id5.categorylabel": "Blog Intro",
   "categories.id5.label": "What is your blog about ?",
-  "categories.id5.placeholder": "Example : My blog is about cooking specific pizzas !"
+  "categories.id5.placeholder": "Example : My blog is about cooking specific pizzas !",
+  "categories.id6.categorylabel": "Facebook Ads headline",
+  "categories.id6.placeholder": "Generate scroll-topping headlines for your Facebook Ads to get prospects to click, and ultimately buy.",
+  "categories.id6.labelInput1": "Product Description"
 }

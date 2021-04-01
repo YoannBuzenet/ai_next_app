@@ -47,7 +47,8 @@
   "compo.heartWorkPlace.loading.computerAreWorking": "L'IA prépare le contenu...",
   "compo.heartWorkPlace.loading.proTipsAddMoreWords": "Astuce pour de meilleurs résultats : essayez d'ajouter plus de mots",
 
-  "compo.test.button.generateAIContent": "Génerer du contenu avec l'IA",
+  "compo.text.button.generateAIContent": "Génerer du contenu avec l'IA",
+  "compo.text.noResults": "Les résultats s'afficheront ici.",
 
   "compo.CategorySelector.selectCategory": "Choisissez un thème",
   "compo.CategorySelector.mostPopular": "Les plus populaires",
@@ -79,5 +80,8 @@
   "categories.id4.placeholder": "Exemple : Je suis allé mangé avec les filles hier !",
   "categories.id5.categorylabel": "Intro de blog",
   "categories.id5.label": "De quoi parle votre blog ?",
-  "categories.id5.placeholder": "Example : Investir dans l'immobillier"
+  "categories.id5.placeholder": "Example : Investir dans l'immobillier",
+  "categories.id6.categorylabel": "Facebook Ads headline",
+  "categories.id6.placeholder": "Générez des titres de défilement pour vos publicités Facebook pour inciter les prospects à cliquer, et finalement à acheter.",
+  "categories.id6.labelInput1": "Description de votre produit"
 }
