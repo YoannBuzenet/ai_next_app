@@ -2,7 +2,6 @@ import Head from "next/head";
 import Link from "next/link";
 import styles from "../styles/Home.module.css";
 import { useContext, useEffect } from "react";
-import userContextFile from "../contexts/userContext";
 import selectedAppLangContext from "../contexts/selectedAppLang";
 import { useSession, getSession } from "next-auth/client";
 import { langInApp } from "../definitions/langs";
@@ -34,7 +33,6 @@ export async function getServerSideProps(context) {
 }
 
 export default function Home(props) {
-  const { userContext } = useContext(userContextFile);
   const { currentLang, setCurrentLang } = useContext(selectedAppLangContext);
 
   useEffect(() => {

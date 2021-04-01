@@ -3,6 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import styles from "../styles/template.module.css";
 import RoundedButton from "../components/Base/RoundedButton";
 import TextField from "@material-ui/core/TextField";
+import Link from "next/link";
 import {
   categoriesDefinition,
   listOfCategories,
@@ -65,6 +66,7 @@ export default function template() {
                   cardDescriptionId={category.description.id}
                   cardDescriptionDefault={category.description.defaultMessage}
                   urlLogo={category.urlLogo}
+                  categoryID={category.categoryId}
                 />
               ))}
             </div>

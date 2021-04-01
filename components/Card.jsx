@@ -1,5 +1,5 @@
 import React from "react";
-
+import { useRouter } from "next/router";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
@@ -14,11 +14,17 @@ export default function SimpleCard({
   cardDescriptionId,
   cardDescriptionDefault,
   urlLogo,
+  categoryID,
 }) {
-  const bull = <span>•</span>;
+  const router = useRouter();
+
+  const handleClick = (e, categoryID) => {
+    console.log("go to category :", categoryID);
+    router.push("/templates/text");
+  };
 
   return (
-    <Card className={styles.card}>
+    <Card className={styles.card} onClick={(e) => handleClick(e, categoryID)}>
       <CardContent>
         <img src={urlLogo} />
         <Typography className={styles.cardTitle}>
