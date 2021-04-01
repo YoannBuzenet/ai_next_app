@@ -1,0 +1,12 @@
+.textGeneratorContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.leftDiv {
+  width: 50%;
+}
+
+.rightDiv {
+  width: 50%;
+}
