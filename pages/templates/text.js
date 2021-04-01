@@ -12,6 +12,7 @@ import { DateTime } from "luxon";
 import axios from "axios";
 import { useSession, getSession } from "next-auth/client";
 import CircularIndeterminate from "../../components/Loader";
+import SimpleSelect from "../../components/Base/Select";
 
 export default function Text() {
   const intl = useIntl();
@@ -25,7 +26,7 @@ export default function Text() {
   const [langSelected, setLangSelected] = useState("en-US");
   const [session, loading] = useSession();
 
-  console.log("ai results", AIResults);
+  console.log("langSelected", langSelected);
 
   const handleOuputNumber = (e) => {
     let numberToSet;
@@ -78,6 +79,20 @@ export default function Text() {
   const categoryObject = categoriesDefinition[selectedCategoryID];
 
   console.log("category selected", selectedCategoryID);
+
+  // Translations
+  const translatedLabelName = intl.formatMessage({
+    id: "compo.text.inputOutput",
+    defaultMessage: "Input / Output",
+  });
+  const translatedEnglishName = intl.formatMessage({
+    id: "generic.lang.english",
+    defaultMessage: "English",
+  });
+  const translatedFrenchName = intl.formatMessage({
+    id: "generic.lang.french",
+    defaultMessage: "French",
+  });
 
   const useStyles = makeStyles((theme) => ({
     button: {
@@ -161,6 +176,17 @@ export default function Text() {
                 })}
                 <div className={styles.spaceContainer}></div>
                 <div className={styles.buttonContainer}>
+                  <div className="selectContainer">
+                    <SimpleSelect
+                      handleChange={setLangSelected}
+                      listToDisplay={[
+                        { value: "en-US", name: translatedEnglishName },
+                        { value: "fr-FR", name: translatedFrenchName },
+                      ]}
+                      value={langSelected}
+                      label={translatedLabelName}
+                    />
+                  </div>
                   <div
                     className="outputContainer"
                     style={{ position: "relative" }}

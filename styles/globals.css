@@ -157,6 +157,24 @@ p {
   width: 130px;
 }
 
+.outputContainer {
+  margin-left: 20px;
+}
+
+.selectContainer {
+  position: relative;
+}
+
+.selectContainer label {
+  position: absolute;
+  top: -12px;
+  font-size: 1.8rem;
+}
+
+label + .MuiInput-formControl {
+  margin-top: 0 !important;
+}
+
 @media only screen and (max-width: 1024px) {
   .container {
     width: 80%;
