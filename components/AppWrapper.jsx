@@ -12,7 +12,7 @@ import { langInApp } from "../definitions/langs";
 import TransparentDiv from "../components/TransparentDiv";
 
 const AppWrapper = ({ children }) => {
-  const [userContext, setUserContext] = useState({});
+  const [userContext, setUserContext] = useState({ langSelected: "fr-FR" });
   const [selectedCategoryID, setSelectedCategoryID] = useState(1);
   const [isBlackDivDisplayed, setIsBlackDivDisplayed] = useState(false);
   const [areFlagsDisplayed, setAreFlagsDisplayed] = useState(false);

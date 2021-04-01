@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 import SelectedCategoryId from "../../contexts/selectedCategoryContext";
+import UserContext from "../../contexts/userContext";
 import { categoriesDefinition } from "../../definitions/categories";
 import styles from "../../styles/Text.module.css";
 import { FormattedMessage, useIntl } from "react-intl";
@@ -23,10 +24,8 @@ export default function Text() {
   const [AIResults, setAIResults] = useState([]);
   const [outputNumber, setOutputNumber] = useState(3);
   const [isLoadingAPIResults, setIsLoadingAPIResults] = useState(false);
-  const [langSelected, setLangSelected] = useState("en-US");
   const [session, loading] = useSession();
-
-  console.log("langSelected", langSelected);
+  const { userContext, setUserContext } = useContext(UserContext);
 
   const handleOuputNumber = (e) => {
     let numberToSet;
@@ -39,6 +38,10 @@ export default function Text() {
       numberToSet = number;
     }
     setOutputNumber(numberToSet);
+  };
+
+  const passLangSelectedToUserContext = (value) => {
+    setUserContext({ ...userContext, langSelected: value });
   };
 
   const sendDataToBackEnd = async () => {
@@ -178,12 +181,12 @@ export default function Text() {
                 <div className={styles.buttonContainer}>
                   <div className="selectContainer">
                     <SimpleSelect
-                      handleChange={setLangSelected}
+                      handleChange={passLangSelectedToUserContext}
                       listToDisplay={[
                         { value: "en-US", name: translatedEnglishName },
                         { value: "fr-FR", name: translatedFrenchName },
                       ]}
-                      value={langSelected}
+                      value={userContext.langSelected}
                       label={translatedLabelName}
                     />
                   </div>
