@@ -180,6 +180,16 @@ label + .MuiInput-formControl {
   margin-top: 0 !important;
 }
 
+.templates
+  .MuiFormLabel-root.MuiInputLabel-root.MuiInputLabel-formControl.MuiInputLabel-animated.MuiInputLabel-outlined {
+  margin-top: -5px;
+  font-size: 1.3rem;
+}
+
+.templates .MuiTextField-root input {
+  height: 5px !important;
+}
+
 @media only screen and (max-width: 1024px) {
   .container {
     width: 80%;

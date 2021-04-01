@@ -22,7 +22,7 @@ export default function template() {
   const [categoryButtonSelected, setCategoryButtonSelected] = useState("");
 
   return (
-    <div className="genericBackground">
+    <div className="genericBackground templates">
       <div className="container80">
         <div className={styles.selectTemplate}>
           <div>
@@ -36,6 +36,7 @@ export default function template() {
               label="Search field"
               type="search"
               variant="outlined"
+              InputProps={{ style: { fontSize: 15 } }}
             />
           </div>
         </div>
