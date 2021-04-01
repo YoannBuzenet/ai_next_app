@@ -71,3 +71,22 @@
   font-size: 1.8rem;
   font-weight: 500;
 }
+
+.loaderContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.loaderElements {
+  width: 700px;
+  text-align: center;
+}
+
+.loaderElements p {
+  margin-top: 1rem;
+  font-size: 3rem;
+}
+
+.loaderParagraphs {
+  margin-top: 2rem;
+}

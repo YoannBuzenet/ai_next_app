@@ -11,6 +11,7 @@ import AIResultV2 from "../../components/AIResultV2";
 import { DateTime } from "luxon";
 import axios from "axios";
 import { useSession, getSession } from "next-auth/client";
+import CircularIndeterminate from "../../components/Loader";
 
 export default function Text() {
   const intl = useIntl();
@@ -18,13 +19,13 @@ export default function Text() {
     SelectedCategoryId
   );
   const [userInputs, setUserInputs] = useState({});
-  const [AIResults, setAIResults] = useState([
-    { content: "test", date: DateTime.now().setLocale("en") },
-  ]);
+  const [AIResults, setAIResults] = useState([]);
   const [outputNumber, setOutputNumber] = useState(3);
   const [isLoadingAPIResults, setIsLoadingAPIResults] = useState(false);
   const [langSelected, setLangSelected] = useState("en-US");
   const [session, loading] = useSession();
+
+  console.log("ai results", AIResults);
 
   const handleOuputNumber = (e) => {
     let numberToSet;
@@ -53,7 +54,7 @@ export default function Text() {
       userInputs: arrayofuserInputs,
       lang: langSelected,
       user: session.user,
-      numberOfOutput: outputNumber,
+      numberOfOutputs: outputNumber,
     };
     console.log("we build the final payload here. Here :", finalPayload);
     axios
@@ -64,7 +65,8 @@ export default function Text() {
           currentText: result,
           date: DateTime.now().setLocale("en"),
         }));
-        setAIResults([...resultsWithDates]);
+        console.log("result with dates", resultsWithDates);
+        setAIResults([...AIResults, ...resultsWithDates]);
         setIsLoadingAPIResults(false);
       })
       .catch((err) => {
@@ -199,7 +201,24 @@ export default function Text() {
             }
           </div>
           <div className={styles.rightDiv}>
-            {AIResults.length === 0 && (
+            {isLoadingAPIResults && (
+              <div className="global-white-background marginTop20">
+                <div className={styles.loaderContainer}>
+                  <div className={styles.loaderElements}>
+                    <CircularIndeterminate size={50} />
+                    <div className={styles.loaderParagraphs}>
+                      <p>
+                        <FormattedMessage
+                          id="compo.heartWorkPlace.loading.pleaseWait"
+                          defaultMessage="Loading ..."
+                        />
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+            {!isLoadingAPIResults && AIResults.length === 0 && (
               <div>
                 <p className={styles.noResults}>
                   <FormattedMessage
