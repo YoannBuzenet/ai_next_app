@@ -55,6 +55,10 @@
   color: rgb(124, 124, 124);
 }
 
+.oneInput {
+  padding-bottom: 2rem;
+}
+
 .oneInput p {
   font-weight: 500;
   margin-bottom: 0.5rem;

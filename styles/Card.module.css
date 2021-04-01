@@ -4,7 +4,14 @@
   margin-right: 2%;
   min-width: 350px;
   cursor: pointer;
-  height: 150px;
+  height: 160px;
+}
+
+.pictures {
+  height: 50px;
+  width: 50px;
+  background-color: red;
+  margin-bottom: 1rem;
 }
 
 p.cardTitle {

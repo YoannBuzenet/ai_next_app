@@ -22,9 +22,9 @@ const categoriesDefinition = {
       defaultMessage: "Product Description",
     },
     description: {
-      id: "categories.id6.placeholder",
+      id: "categories.id1.description",
       defaultMessage:
-        "Generate scroll-topping headlines for your Facebook Ads to get prospects to click, and ultimately buy.",
+        "Create a description that will present your product with ease.",
     },
     parentCategory: "Marketing",
   },
@@ -64,9 +64,8 @@ const categoriesDefinition = {
       defaultMessage: "Value Proposition",
     },
     description: {
-      id: "categories.id6.placeholder",
-      defaultMessage:
-        "Generate scroll-topping headlines for your Facebook Ads to get prospects to click, and ultimately buy.",
+      id: "categories.id2.description",
+      defaultMessage: "Offer a rich and relevant presentation of your service.",
     },
     parentCategory: "Marketing",
   },
@@ -89,9 +88,9 @@ const categoriesDefinition = {
     categoryId: 3,
     name: { id: "categories.id3.categorylabel", defaultMessage: "Blog Title" },
     description: {
-      id: "categories.id6.placeholder",
+      id: "categories.id3.description",
       defaultMessage:
-        "Generate scroll-topping headlines for your Facebook Ads to get prospects to click, and ultimately buy.",
+        "Create a blog title that will summarize the key idea of your text.",
     },
     parentCategory: "Blog",
   },
@@ -118,9 +117,8 @@ const categoriesDefinition = {
       defaultMessage: "Instagram Caption",
     },
     description: {
-      id: "categories.id6.placeholder",
-      defaultMessage:
-        "Generate scroll-topping headlines for your Facebook Ads to get prospects to click, and ultimately buy.",
+      id: "categories.id4.description",
+      defaultMessage: "Create a unique caption for your Instagram caption.",
     },
     parentCategory: "Instagram",
   },
@@ -144,9 +142,8 @@ const categoriesDefinition = {
     categoryId: 5,
     name: { id: "categories.id5.categorylabel", defaultMessage: "Blog Intro" },
     description: {
-      id: "categories.id6.placeholder",
-      defaultMessage:
-        "Generate scroll-topping headlines for your Facebook Ads to get prospects to click, and ultimately buy.",
+      id: "categories.id5.description",
+      defaultMessage: "Introduce your blog with the relevant outlines.",
     },
     parentCategory: "Blog",
   },
@@ -172,7 +169,7 @@ const categoriesDefinition = {
       defaultMessage: "Facebook Ads headline",
     },
     description: {
-      id: "categories.id6.placeholder",
+      id: "categories.id6.description",
       defaultMessage:
         "Generate scroll-topping headlines for your Facebook Ads to get prospects to click, and ultimately buy.",
     },
@@ -187,8 +184,9 @@ const listOfCategories = [
       defaultMessage: "Product Description",
     },
     description: {
-      id: "categories.id1.categoryDescription",
-      defaultMessage: "",
+      id: "categories.id1.description",
+      defaultMessage:
+        "Create a description that will present your product with ease.",
     },
     parentCategory: "Marketing",
     urlLogo: "",
@@ -200,8 +198,8 @@ const listOfCategories = [
       defaultMessage: "Value Proposition",
     },
     description: {
-      id: "categories.id2.categoryDescription",
-      defaultMessage: "",
+      id: "categories.id2.description",
+      defaultMessage: "Offer a rich and relevant presentation of your service.",
     },
     parentCategory: "Marketing",
     urlLogo: "",
@@ -210,8 +208,9 @@ const listOfCategories = [
   {
     name: { id: "categories.id3.categorylabel", defaultMessage: "Blog Title" },
     description: {
-      id: "categories.id3.categoryDescription",
-      defaultMessage: "",
+      id: "categories.id3.description",
+      defaultMessage:
+        "Create a blog title that will summarize the key idea of your text.",
     },
     parentCategory: "Blog",
     urlLogo: "",
@@ -223,8 +222,8 @@ const listOfCategories = [
       defaultMessage: "Instagram Caption",
     },
     description: {
-      id: "categories.id4.categoryDescription",
-      defaultMessage: "",
+      id: "categories.id4.description",
+      defaultMessage: "Create a unique caption for your Instagram caption.",
     },
     parentCategory: "Instagram",
     urlLogo: "",
@@ -233,8 +232,8 @@ const listOfCategories = [
   {
     name: { id: "categories.id5.categorylabel", defaultMessage: "Blog Intro" },
     description: {
-      id: "categories.id5.categoryDescription",
-      defaultMessage: "",
+      id: "categories.id5.description",
+      defaultMessage: "Introduce your blog with the relevant outlines.",
     },
     parentCategory: "Blog",
     urlLogo: "",
@@ -246,8 +245,9 @@ const listOfCategories = [
       defaultMessage: "Facebook Ads headline",
     },
     description: {
-      id: "categories.id6.categoryDescription",
-      defaultMessage: "",
+      id: "categories.id6.description",
+      defaultMessage:
+        "Create relevant stories that will engage your customers.",
     },
     parentCategory: "Marketing",
     urlLogo: "",
