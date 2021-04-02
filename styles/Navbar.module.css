@@ -3,13 +3,17 @@
 /**********************/
 
 .navbar {
-  padding: 2rem 0;
+  padding: 0.5rem 0;
   font-size: 1.6rem;
   background-color: white;
   border-bottom: 1px solid rgb(210, 214, 220);
 }
 
 .leftNavbar {
+  display: flex;
+}
+
+.rightNavBar {
   display: flex;
 }
 
@@ -42,7 +46,29 @@
 }
 .navbar ul a:hover {
   /* text-decoration: underline; */
-  border-bottom: 3px solid black;
+}
+
+.navLink {
+  margin-left: 10px;
+  padding: 1rem;
+  border-radius: 3px;
+}
+
+div.navLink p {
+  padding: 2px 0;
+  font-size: 16px;
+}
+div.navLink p:hover {
+  padding: 2px 0;
+  font-size: 16px;
+}
+
+div.navLink:hover {
+  background-color: var(--darker-light-grey-background);
+}
+
+.navbarFlags {
+  position: relative;
 }
 
 @media only screen and (max-width: 768px) {

@@ -4,11 +4,31 @@ import styles from "../styles/template.module.css";
 import RoundedButton from "../components/Base/RoundedButton";
 import TextField from "@material-ui/core/TextField";
 import Link from "next/link";
+import { useSession, getSession } from "next-auth/client";
 import {
   categoriesDefinition,
   listOfCategories,
 } from "../definitions/categories";
 import Card from "../components/Card";
+import UserCheck from "../services/userCheck";
+
+export async function getServerSideProps(context) {
+  const session = await getSession(context);
+  //TODO STEP2 : check if Subscribed too
+  const isLoggedUser = UserCheck.isUserLogged(session?.user?.isLoggedUntil);
+
+  if (!isLoggedUser) {
+    return {
+      redirect: {
+        destination: "/",
+        permanent: false,
+      },
+      props: {},
+    };
+  } else {
+    return { props: {} };
+  }
+}
 
 const useStyles = makeStyles((theme) => ({
   root: {

@@ -12,7 +12,7 @@ export default function Login() {
   const handleGoogleClick = (e) => {
     e.preventDefault();
     signIn("google", {
-      callbackUrl: `${process.env.NEXT_PUBLIC_URL_ABSOLUTE_THIS_WEBSITE}/workplace`,
+      callbackUrl: `${process.env.NEXT_PUBLIC_URL_ABSOLUTE_THIS_WEBSITE}/templates`,
     });
   };
 

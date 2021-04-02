@@ -88,7 +88,7 @@ const categoriesDefinition = {
       },
     ],
     categoryId: 3,
-    urlIcon: "/icons/group_7.png",
+    urlIcon: "/icons/image_7.png",
     name: { id: "categories.id3.categorylabel", defaultMessage: "Blog Title" },
     description: {
       id: "categories.id3.description",
@@ -144,7 +144,7 @@ const categoriesDefinition = {
       },
     ],
     categoryId: 5,
-    urlIcon: "/icons/group_7.png",
+    urlIcon: "/icons/image_7.png",
     name: { id: "categories.id5.categorylabel", defaultMessage: "Blog Intro" },
     description: {
       id: "categories.id5.description",
@@ -219,7 +219,7 @@ const listOfCategories = [
         "Create a blog title that will summarize the key idea of your text.",
     },
     parentCategory: "Blog",
-    urlLogo: "/icons/group_7.png",
+    urlLogo: "/icons/image_7.png",
     categoryId: 3,
   },
   {
@@ -242,7 +242,7 @@ const listOfCategories = [
       defaultMessage: "Introduce your blog with the relevant outlines.",
     },
     parentCategory: "Blog",
-    urlLogo: "/icons/group_7.png",
+    urlLogo: "/icons/image_7.png",
     categoryId: 5,
   },
   {

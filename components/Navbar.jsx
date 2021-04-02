@@ -15,47 +15,57 @@ const Navbar = () => {
         <div className="container">
           <div className={styles.menuElements}>
             <div className={styles.leftNavbar}>
-              <Link
-                href={
-                  UserCheck.isUserLogged(session?.user?.isLoggedUntil)
-                    ? "/workplace"
-                    : "/"
-                }
-              >
-                <a>
-                  <span>CURSIFY</span>
-                </a>
-              </Link>
+              <div className={styles.navLink}>
+                <Link href={"/"}>
+                  <a>
+                    <p>CURSIFY</p>
+                  </a>
+                </Link>
+              </div>
+              {UserCheck.isUserLogged(session?.user?.isLoggedUntil) && (
+                <div className={styles.navLink}>
+                  <Link href={"/templates"}>
+                    <a>
+                      <p>Templates</p>
+                    </a>
+                  </Link>
+                </div>
+              )}
             </div>
-            <ul>
+            <div className={styles.rightNavBar}>
               {!UserCheck.isUserLogged(session?.user?.isLoggedUntil) && (
-                <li>
+                <div className={styles.navLink}>
                   <Link href="/login">
                     <a>
-                      <FormattedMessage
-                        id="navbar.menu.signin"
-                        defaultMessage="Sign In"
-                      />
+                      <p>
+                        <FormattedMessage
+                          id="navbar.menu.signin"
+                          defaultMessage="Sign In"
+                        />
+                      </p>
                     </a>
                   </Link>
-                </li>
+                </div>
               )}
               {UserCheck.isUserLogged(session?.user?.isLoggedUntil) && (
-                <li>
+                <div className={styles.navLink}>
                   <Link href="/myAccount">
                     <a>
-                      <FormattedMessage
-                        id="navbar.menu.myAccount"
-                        defaultMessage="My Account"
-                      />
+                      <p>
+                        <FormattedMessage
+                          id="navbar.menu.myAccount"
+                          defaultMessage="My Account"
+                        />
+                      </p>
                     </a>
                   </Link>
-                </li>
+                </div>
               )}
-              <li>
-                <AppLangChoice />
-              </li>
-            </ul>
+
+              <div className={styles.navbarFlags}>
+                <AppLangChoice top="13" marginLeft="20" />
+              </div>
+            </div>
           </div>
         </div>
       </nav>
