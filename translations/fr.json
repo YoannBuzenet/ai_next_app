@@ -34,6 +34,8 @@
   "page.myAccount.title": "Mon compte",
   "page.myAccount.logOutLabel": "Me déconnecter",
   "page.myAccount.logOugButton": "Déconnexion",
+  "page.myAccount.session": "Session",
+  "page.myAccount.useageAndBilling": "Utilisation et factures",
 
   "page.workplace.inputOutput": "Langue Entrée & Sortie : ",
   "page.workplace.displayCategories": "Afficher les thèmes",

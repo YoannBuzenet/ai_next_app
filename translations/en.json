@@ -34,6 +34,8 @@
   "page.myAccount.title": "My Account",
   "page.myAccount.logOutLabel": "Log out Account",
   "page.myAccount.logOugButton": "Sign Out",
+  "page.myAccount.session": "Session",
+  "page.myAccount.useageAndBilling": "Usage and Billing",
 
   "page.workplace.inputOutput": "Input & Output Language :",
   "page.workplace.displayCategories": "Display Categories",
