@@ -20,6 +20,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function template() {
   const [categoryButtonSelected, setCategoryButtonSelected] = useState("all");
+  const [currentSearch, setCurrentSearch] = useState("");
 
   return (
     <div className="genericBackground templates">
@@ -37,6 +38,8 @@ export default function template() {
               type="search"
               variant="outlined"
               InputProps={{ style: { fontSize: 15 } }}
+              value={currentSearch}
+              onChange={(e) => setCurrentSearch(e.target.value)}
             />
           </div>
         </div>
@@ -64,6 +67,15 @@ export default function template() {
                 .filter((card) => {
                   if (categoryButtonSelected !== "all") {
                     return card.parentCategory === categoryButtonSelected;
+                  } else {
+                    return card;
+                  }
+                })
+                .filter((card) => {
+                  if (currentSearch.length > 0) {
+                    return card.name.defaultMessage
+                      .toLocaleLowerCase()
+                      .includes(currentSearch.toLocaleLowerCase());
                   } else {
                     return card;
                   }

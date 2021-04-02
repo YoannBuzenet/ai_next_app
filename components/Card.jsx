@@ -32,7 +32,10 @@ export default function SimpleCard({
   return (
     <Card className={styles.card} onClick={(e) => handleClick(e, categoryID)}>
       <CardContent>
-        <img src={urlLogo} className={styles.pictures} />
+        <div className={styles.logoBackground}>
+          <img src={urlLogo} className={styles.pictures} />
+        </div>
+
         <Typography className={styles.cardTitle}>
           <FormattedMessage id={cardNameId} defaultMessage={cardNameDefault} />
         </Typography>

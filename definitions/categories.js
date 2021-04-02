@@ -17,6 +17,7 @@ const categoriesDefinition = {
       },
     ],
     categoryId: 1,
+    urlIcon: "/icons/image_28.png",
     name: {
       id: "categories.id1.categorylabel",
       defaultMessage: "Product Description",
@@ -59,6 +60,7 @@ const categoriesDefinition = {
       },
     ],
     categoryId: 2,
+    urlIcon: "/icons/image_28.png",
     name: {
       id: "categories.id2.categorylabel",
       defaultMessage: "Value Proposition",
@@ -86,6 +88,7 @@ const categoriesDefinition = {
       },
     ],
     categoryId: 3,
+    urlIcon: "/icons/group_7.png",
     name: { id: "categories.id3.categorylabel", defaultMessage: "Blog Title" },
     description: {
       id: "categories.id3.description",
@@ -112,6 +115,7 @@ const categoriesDefinition = {
       },
     ],
     categoryId: 4,
+    urlIcon: "/icons/image_25.png",
     name: {
       id: "categories.id4.categorylabel",
       defaultMessage: "Instagram Caption",
@@ -140,6 +144,7 @@ const categoriesDefinition = {
       },
     ],
     categoryId: 5,
+    urlIcon: "/icons/group_7.png",
     name: { id: "categories.id5.categorylabel", defaultMessage: "Blog Intro" },
     description: {
       id: "categories.id5.description",
@@ -164,6 +169,7 @@ const categoriesDefinition = {
       },
     ],
     categoryId: 6,
+    urlIcon: "/icons/image_24.png",
     name: {
       id: "categories.id6.categorylabel",
       defaultMessage: "Facebook Ads headline",
@@ -189,7 +195,7 @@ const listOfCategories = [
         "Create a description that will present your product with ease.",
     },
     parentCategory: "Marketing",
-    urlLogo: "",
+    urlLogo: "/icons/image_28.png",
     categoryId: 1,
   },
   {
@@ -202,7 +208,7 @@ const listOfCategories = [
       defaultMessage: "Offer a rich and relevant presentation of your service.",
     },
     parentCategory: "Marketing",
-    urlLogo: "",
+    urlLogo: "/icons/image_28.png",
     categoryId: 2,
   },
   {
@@ -213,7 +219,7 @@ const listOfCategories = [
         "Create a blog title that will summarize the key idea of your text.",
     },
     parentCategory: "Blog",
-    urlLogo: "",
+    urlLogo: "/icons/group_7.png",
     categoryId: 3,
   },
   {
@@ -226,7 +232,7 @@ const listOfCategories = [
       defaultMessage: "Create a unique caption for your Instagram caption.",
     },
     parentCategory: "Instagram",
-    urlLogo: "",
+    urlLogo: "/icons/image_25.png",
     categoryId: 4,
   },
   {
@@ -236,7 +242,7 @@ const listOfCategories = [
       defaultMessage: "Introduce your blog with the relevant outlines.",
     },
     parentCategory: "Blog",
-    urlLogo: "",
+    urlLogo: "/icons/group_7.png",
     categoryId: 5,
   },
   {
@@ -250,7 +256,7 @@ const listOfCategories = [
         "Create relevant stories that will engage your customers.",
     },
     parentCategory: "FacebookAds",
-    urlLogo: "",
+    urlLogo: "/icons/image_24.png",
     categoryId: 6,
   },
 ];

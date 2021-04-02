@@ -56,7 +56,7 @@ export default function Text() {
     const finalPayload = {
       categoryID: selectedCategoryID,
       userInputs: arrayofuserInputs,
-      lang: langSelected,
+      lang: userContext.langSelected,
       user: session.user,
       numberOfOutputs: outputNumber,
     };
@@ -117,7 +117,11 @@ export default function Text() {
     <div>
       <div className="container80 TextZone">
         <div className={styles.headlineContainer}>
-          <div className={styles.headlinePicture}>image</div>
+          <div className={styles.pictureContainer}>
+            <div className={styles.logoBackground}>
+              <img src={categoryObject.urlIcon} className={styles.pictures} />
+            </div>
+          </div>
           <div className={styles.headlineText}>
             <p className={styles.headlineTitle}>
               <FormattedMessage

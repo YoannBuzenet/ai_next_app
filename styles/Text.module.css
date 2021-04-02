@@ -39,6 +39,27 @@
   font-size: 3rem;
 }
 
+.logoBackground {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  background-color: var(--darker-light-grey-background);
+  position: relative;
+}
+
+.pictureContainer {
+  margin-right: 20px;
+}
+
+.pictures {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  height: 30px;
+  width: 30px;
+  margin-bottom: 1rem;
+}
+
 .headlineDescription {
   padding-top: 1rem;
   font-size: 1.2rem;
