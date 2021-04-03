@@ -51,6 +51,8 @@ export default function Home(props) {
     defaultMessage: "Cursify - AI that creates your content",
   });
 
+  console.log("session", session);
+
   return (
     <>
       <Head>

@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import { useSession, getSession, signOut } from "next-auth/client";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import styles from "../styles/MyAccount.module.css";
 import UserCheck from "../services/userCheck";
 import Button from "@material-ui/core/Button";
@@ -14,6 +14,7 @@ import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
+import axios from "axios";
 
 // export async function getServerSideProps(context) {
 //   const session = await getSession(context);
@@ -33,7 +34,14 @@ import Box from "@material-ui/core/Box";
 
 export default function MyAccount() {
   const [session, loading] = useSession();
+  const [value, setValue] = React.useState(0);
+  const [data7DaysConsumption, setData7DaysConsumption] = useState({});
   const intl = useIntl();
+
+  useEffect(() => {
+    // to do yo
+    // Get data from 7 days here
+  }, []);
 
   const handleSignOut = () => {
     signOut({ callbackUrl: process.env.NEXT_PUBLIC_URL_ABSOLUTE_THIS_WEBSITE });
@@ -71,7 +79,6 @@ export default function MyAccount() {
   }));
 
   const classes = useStyles();
-  const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -138,11 +145,13 @@ export default function MyAccount() {
                     indicatorColor="primary"
                   >
                     <Tab
+                      disableRipple
                       label={translatedSession}
                       {...a11yProps(0)}
                       className={classes.tab}
                     />
                     <Tab
+                      disableRipple
                       label={translatedUsageAndBilling}
                       {...a11yProps(1)}
                       className={classes.tab}
