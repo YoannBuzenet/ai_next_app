@@ -40,9 +40,12 @@ export default function MyAccount() {
   const intl = useIntl();
 
   useEffect(() => {
-    // to do yo
-    // Get data from 7 days here
+    axios
+      .post(`/api/numberOfWords/`, { session })
+      .then((resp) => setData7DaysConsumption(resp.data));
   }, []);
+
+  console.log("data from node api", data7DaysConsumption);
 
   const handleSignOut = () => {
     signOut({ callbackUrl: process.env.NEXT_PUBLIC_URL_ABSOLUTE_THIS_WEBSITE });
