@@ -16,6 +16,7 @@ import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import axios from "axios";
 import MyResponsiveLine from "../components/Base/Charts/ResponsiveChartLine";
+import { generateObjectWithdates } from "../services/utils";
 
 // export async function getServerSideProps(context) {
 //   const session = await getSession(context);
@@ -46,9 +47,11 @@ export default function MyAccount() {
         y: oneDay.amount,
       }));
 
-      // create a function that gives 7 last dates in DATEONLY format in ASC order
       // check for each one if we have data, if not we create an object with 0
       // complete array is displayed
+      const arrayWithLast7dates = generateObjectWithdates();
+
+      // TO DO yoann
 
       const dataForChart = [
         {

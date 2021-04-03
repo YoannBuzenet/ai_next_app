@@ -11,4 +11,40 @@ const getNowInUTC = () => {
   return new Date(now_utc);
 };
 
-module.exports = { getNowInUTC };
+const formatNumberToTwoDigit = (number) => {
+  let finalNumber = number;
+  const stringifiedNumber = number + "";
+  if (stringifiedNumber.length === 1) {
+    finalNumber = "0" + stringifiedNumber;
+  }
+  return finalNumber;
+};
+
+const getOneDayinDATEONLYInUTC = (day) => {
+  var date = new Date(day);
+
+  var now_DATEONLY =
+    "" +
+    date.getUTCFullYear() +
+    "-" +
+    formatNumberToTwoDigit(date.getUTCMonth() + 1) +
+    "-" +
+    formatNumberToTwoDigit(date.getUTCDate());
+
+  return now_DATEONLY;
+};
+
+const generateObjectWithdates = (numberOfDaysToCreate) => {
+  let objectToReturn = [];
+  for (let i = 0; i < numberOfDaysToCreate; i++) {
+    var date = new Date();
+    date.setDate(date.getDate() - (numberOfDaysToCreate - i));
+
+    var date7daysFromNowUTC = getOneDayinDATEONLYInUTC(date);
+    objectToReturn = [...objectToReturn, { [date7daysFromNowUTC]: {} }];
+  }
+
+  return objectToReturn;
+};
+
+module.exports = { getNowInUTC, generateObjectWithdates };
