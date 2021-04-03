@@ -1,6 +1,7 @@
 // install (please make sure versions match peerDependencies)
 import { ResponsiveLine } from "@nivo/line";
 import { useIntl } from "react-intl";
+import { linearGradientDef } from "@nivo/core";
 
 // Coming from documentation, keeping it to see what it looks like
 // everything is here : https://nivo.rocks/line/
@@ -291,6 +292,38 @@ const MyResponsiveLine = ({ data, height, width }) => {
 
   return (
     <ResponsiveLine
+      enableArea={true}
+      defs={[
+        // using helpers
+        // will inherit colors from current element
+        linearGradientDef("gradientA", [
+          { offset: 0, color: "inherit" },
+          { offset: 100, color: "inherit", opacity: 0 },
+        ]),
+        linearGradientDef("gradientB", [
+          { offset: 0, color: "#000" },
+          { offset: 100, color: "inherit" },
+        ]),
+        // using plain object
+        {
+          id: "gradientC",
+          type: "linearGradient",
+          colors: [
+            { offset: 0, color: "#3f51b5" },
+            { offset: 100, color: "#ffffff" },
+          ],
+        },
+      ]}
+      fill={[
+        // match using object query
+        { match: { id: "react" }, id: "gradientA" },
+        // match using function
+        { match: (d) => d.id === "vue", id: "gradientB" },
+        // match all, will only affect 'elm', because once a rule match,
+        // others are skipped, so now it acts as a fallback
+        { match: "*", id: "gradientC" },
+      ]}
+      areaOpacity={0.1}
       colors={(d) => d.color}
       data={data}
       width={width}
