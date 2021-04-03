@@ -291,6 +291,7 @@ const MyResponsiveLine = ({ data, height, width }) => {
 
   return (
     <ResponsiveLine
+      colors={(d) => d.color}
       data={data}
       width={width}
       height={height}

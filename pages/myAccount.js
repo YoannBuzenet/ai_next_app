@@ -76,7 +76,7 @@ export default function MyAccount() {
       const dataForChart = [
         {
           data: completedData,
-          color: "black",
+          color: "hsl(231, 48%, 48%)",
           id: "Daily Use",
         },
       ];
