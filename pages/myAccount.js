@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import { useSession, getSession, signOut } from "next-auth/client";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import styles from "../styles/MyAccount.module.css";
 import UserCheck from "../services/userCheck";
 import Button from "@material-ui/core/Button";
@@ -15,6 +15,7 @@ import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import axios from "axios";
+import MyResponsiveLine from "../components/Base/Charts/ResponsiveChartLine";
 
 // export async function getServerSideProps(context) {
 //   const session = await getSession(context);
@@ -34,7 +35,7 @@ import axios from "axios";
 
 export default function MyAccount() {
   const [session, loading] = useSession();
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = useState(0);
   const [data7DaysConsumption, setData7DaysConsumption] = useState({});
   const intl = useIntl();
 
@@ -186,6 +187,9 @@ export default function MyAccount() {
                 </TabPanel>
                 <TabPanel value={value} index={1}>
                   Le petit graph !
+                  <div className={styles.chartContainer}>
+                    <MyResponsiveLine height={500} width={800} />
+                  </div>
                 </TabPanel>
                 {/* <TabPanel value={value} index={2}>
                   

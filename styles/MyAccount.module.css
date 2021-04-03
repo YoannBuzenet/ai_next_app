@@ -19,6 +19,10 @@
   width: 20%;
 }
 
+.chartContainer {
+  height: 550px;
+}
+
 @media only screen and (max-width: 768px) {
   .signOutContainer {
     flex-direction: column;
