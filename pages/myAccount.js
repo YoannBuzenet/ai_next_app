@@ -47,15 +47,35 @@ export default function MyAccount() {
         y: oneDay.amount,
       }));
 
+      console.log("fresh data", data);
+
       // check for each one if we have data, if not we create an object with 0
       // complete array is displayed
-      const arrayWithLast7dates = generateObjectWithdates();
+      const arrayWithLast7dates = generateObjectWithdates(7);
 
-      // TO DO yoann
+      let completedData = [];
+
+      for (let i = 0; i < arrayWithLast7dates.length; i++) {
+        const possibleExistingData = data.find(
+          (oneDay) => oneDay.x === arrayWithLast7dates[i].date
+        );
+
+        if (possibleExistingData !== undefined) {
+          completedData = [...completedData, possibleExistingData];
+        } else {
+          completedData = [
+            ...completedData,
+            {
+              x: arrayWithLast7dates[i].date,
+              y: 0,
+            },
+          ];
+        }
+      }
 
       const dataForChart = [
         {
-          data: data,
+          data: completedData,
           color: "black",
           id: "Daily Use",
         },
@@ -63,8 +83,6 @@ export default function MyAccount() {
       setData7DaysConsumption(dataForChart);
     });
   }, []);
-
-  console.log("data from node api", data7DaysConsumption);
 
   const handleSignOut = () => {
     signOut({ callbackUrl: process.env.NEXT_PUBLIC_URL_ABSOLUTE_THIS_WEBSITE });

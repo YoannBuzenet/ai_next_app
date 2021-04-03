@@ -36,12 +36,12 @@ const getOneDayinDATEONLYInUTC = (day) => {
 
 const generateObjectWithdates = (numberOfDaysToCreate) => {
   let objectToReturn = [];
-  for (let i = 0; i < numberOfDaysToCreate; i++) {
+  for (let i = 1; i <= numberOfDaysToCreate; i++) {
     var date = new Date();
     date.setDate(date.getDate() - (numberOfDaysToCreate - i));
 
     var date7daysFromNowUTC = getOneDayinDATEONLYInUTC(date);
-    objectToReturn = [...objectToReturn, { [date7daysFromNowUTC]: {} }];
+    objectToReturn = [...objectToReturn, { date: date7daysFromNowUTC }];
   }
 
   return objectToReturn;
