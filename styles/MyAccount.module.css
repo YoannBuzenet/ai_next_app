@@ -21,6 +21,13 @@
 
 .chartContainer {
   height: 550px;
+  display: flex;
+  justify-content: center;
+}
+
+.chartContainer > div > div {
+  display: flex;
+  justify-content: center;
 }
 
 @media only screen and (max-width: 768px) {

@@ -36,6 +36,8 @@
   "page.myAccount.logOugButton": "Sign Out",
   "page.myAccount.session": "Session",
   "page.myAccount.useageAndBilling": "Usage and Billing",
+  "page.myAccount.useageAndBilling.graph.dailyConsumption": "Day",
+  "page.myAccount.useageAndBilling.graph.amount": "Amount",
 
   "page.workplace.inputOutput": "Input & Output Language :",
   "page.workplace.displayCategories": "Display Categories",
