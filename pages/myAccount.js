@@ -18,22 +18,23 @@ import axios from "axios";
 import MyResponsiveLine from "../components/Base/Charts/ResponsiveChartLine";
 import { generateObjectWithdates } from "../services/utils";
 import ProgressBar from "../components/Base/Progress";
+import { FREE_LIMIT_NUMBER_OF_WORDS } from "../config/settings";
 
-// export async function getServerSideProps(context) {
-//   const session = await getSession(context);
-//   const isLoggedUser = UserCheck.isUserLogged(session?.user?.isLoggedUntil);
-//   if (!isLoggedUser) {
-//     return {
-//       redirect: {
-//         destination: "/",
-//         permanent: false,
-//       },
-//       props: {},
-//     };
-//   } else {
-//     return { props: {} };
-//   }
-// }
+export async function getServerSideProps(context) {
+  const session = await getSession(context);
+  const isLoggedUser = UserCheck.isUserLogged(session?.user?.isLoggedUntil);
+  if (!isLoggedUser) {
+    return {
+      redirect: {
+        destination: "/",
+        permanent: false,
+      },
+      props: {},
+    };
+  } else {
+    return { props: {} };
+  }
+}
 
 export default function MyAccount() {
   const [session, loading] = useSession();
@@ -279,7 +280,7 @@ export default function MyAccount() {
                         />
                       </h2>
                       <div className={styles.progressBarTitle}>
-                        <p>
+                        <p className={styles.totalWords}>
                           <FormattedMessage
                             id="page.myAccount.useageAndBilling.usage.totalCreditsUsedThisMonth"
                             defaultMessage="Total words used this month"
@@ -307,6 +308,24 @@ export default function MyAccount() {
                         defaultMessage="You are currently in free trial access."
                       />
                     </p>
+                    {session?.user?.isOnFreeAccess === 1 &&
+                      session?.wordsTotalConsumption?.userTotalConsumption >
+                        FREE_LIMIT_NUMBER_OF_WORDS && (
+                        <div className={styles.freeAccessOver}>
+                          <p>
+                            <FormattedMessage
+                              id="page.myAccount.useageAndBilling.subscription.status.freeAccess.isOver"
+                              defaultMessage="You reach your maximum free use access."
+                            />
+                          </p>
+                          <p>
+                            <FormattedMessage
+                              id="page.myAccount.useageAndBilling.subscription.status.freeAccess.pleaseContactUs"
+                              defaultMessage="Please contact us to subscribe to our service."
+                            />
+                          </p>
+                        </div>
+                      )}
                   </div>
                 </TabPanel>
                 {/* <TabPanel value={value} index={2}>

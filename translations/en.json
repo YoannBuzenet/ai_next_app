@@ -44,6 +44,8 @@
   "page.myAccount.useageAndBilling.usage.totalCreditsUsedThisMonth": "Total words used this month",
   "page.myAccount.useageAndBilling.subscription.title": "Subscription",
   "page.myAccount.useageAndBilling.subscription.status.freeAccess": "You are currently in free trial access.",
+  "page.myAccount.useageAndBilling.subscription.status.freeAccess.isOver": "You reach your maximum free use access.",
+  "page.myAccount.useageAndBilling.subscription.status.freeAccess.pleaseContactUs": "Please contact us to subscribe to our service.",
 
   "page.workplace.inputOutput": "Input & Output Language :",
   "page.workplace.displayCategories": "Display Categories",
@@ -61,6 +63,7 @@
   "compo.text.noResults": "Results will be displayed here.",
   "compo.text.numberOfOutputs": "Outputs",
   "compo.text.inputOutput": "Input / Output",
+  "compo.text.quotaReached": "Free Quota limit reached",
 
   "compo.CategorySelector.selectCategory": "Select your category",
   "compo.CategorySelector.mostPopular": "Most Popular",

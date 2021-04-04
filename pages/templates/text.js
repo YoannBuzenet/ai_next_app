@@ -15,6 +15,7 @@ import { useSession, getSession } from "next-auth/client";
 import CircularIndeterminate from "../../components/Loader";
 import SimpleSelect from "../../components/Base/Select";
 import UserCheck from "../../services/userCheck";
+import { FREE_LIMIT_NUMBER_OF_WORDS } from "../../config/settings";
 
 export async function getServerSideProps(context) {
   const session = await getSession(context);
@@ -237,18 +238,43 @@ export default function Text() {
                       value={outputNumber}
                     />
                   </div>
-                  <Button
-                    onClick={(e) => sendDataToBackEnd()}
-                    className={classes.button}
-                    variant="contained"
-                    size="small"
-                    endIcon={<ArrowRightAltIcon />}
-                  >
-                    <FormattedMessage
-                      id="compo.text.button.generateAIContent"
-                      defaultMessage="Generate AI Content"
-                    />
-                  </Button>
+
+                  {session?.user?.isOnFreeAccess === 1 &&
+                    session?.wordsTotalConsumption?.userTotalConsumption <
+                      FREE_LIMIT_NUMBER_OF_WORDS && (
+                      <div>
+                        <Button
+                          onClick={(e) => sendDataToBackEnd()}
+                          className={classes.button}
+                          variant="contained"
+                          size="small"
+                          endIcon={<ArrowRightAltIcon />}
+                        >
+                          <FormattedMessage
+                            id="compo.text.button.generateAIContent"
+                            defaultMessage="Generate AI Content"
+                          />
+                        </Button>
+                      </div>
+                    )}
+                  {session?.user?.isOnFreeAccess === 1 &&
+                    session?.wordsTotalConsumption?.userTotalConsumption >
+                      FREE_LIMIT_NUMBER_OF_WORDS && (
+                      <div>
+                        <Button
+                          onClick={(e) => sendDataToBackEnd()}
+                          className={classes.button}
+                          variant="contained"
+                          size="small"
+                          disabled
+                        >
+                          <FormattedMessage
+                            id="compo.text.quotaReached"
+                            defaultMessage="Free Quota limit reached"
+                          />
+                        </Button>
+                      </div>
+                    )}
                 </div>
               </div>
             }
