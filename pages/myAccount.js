@@ -40,7 +40,7 @@ export default function MyAccount() {
   const [value, setValue] = useState(0);
   const [data7DaysConsumption, setData7DaysConsumption] = useState([]);
   const intl = useIntl();
-  const [total7DaysConsumption, setTotal7DaysConsumption] = useState("");
+  const [userTotalConsumption, setUserTotalConsumption] = useState("");
 
   useEffect(() => {
     axios.post(`/api/numberOfWords/7daysData`, { session }).then((resp) => {
@@ -95,9 +95,9 @@ export default function MyAccount() {
     });
 
     axios
-      .post(`/api/numberOfWords/7daysTotalConsumption`, { session })
+      .post(`/api/numberOfWords/userTotalConsumption`, { session })
       .then((resp) => {
-        setTotal7DaysConsumption(resp.data?.userTotalConsumption);
+        setUserTotalConsumption(resp.data?.userTotalConsumption);
       });
   }, []);
 
@@ -251,7 +251,7 @@ export default function MyAccount() {
                     />
                   </div>
                   <div>
-                    <p>Vous avez utilisé {total7DaysConsumption} mots.</p>
+                    <p>Vous avez utilisé {userTotalConsumption} mots.</p>
                   </div>
                 </TabPanel>
                 {/* <TabPanel value={value} index={2}>
