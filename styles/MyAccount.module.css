@@ -6,7 +6,7 @@
 }
 
 .main {
-  height: calc(100vh - 166px);
+  height: calc(100vh - 155px);
 }
 
 .signOutContainer {
@@ -26,6 +26,11 @@
 }
 
 .chartContainer > div > div {
+  display: flex;
+  justify-content: center;
+}
+
+.userTotalConsumption {
   display: flex;
   justify-content: center;
 }

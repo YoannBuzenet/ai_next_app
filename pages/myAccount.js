@@ -118,7 +118,6 @@ export default function MyAccount() {
       },
     },
     root: {
-      backgroundColor: "white",
       flexGrow: 1,
       boxShadow: 0,
     },
@@ -250,8 +249,11 @@ export default function MyAccount() {
                       data={data7DaysConsumption}
                     />
                   </div>
-                  <div>
-                    <p>Vous avez utilisé {userTotalConsumption} mots.</p>
+                  <div className={styles.userTotalConsumption}>
+                    <p>
+                      Vous avez utilisé <strong>{userTotalConsumption}</strong>{" "}
+                      mots depuis la création de votre compte.
+                    </p>
                   </div>
                 </TabPanel>
                 {/* <TabPanel value={value} index={2}>
