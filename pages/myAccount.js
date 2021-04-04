@@ -17,6 +17,7 @@ import Box from "@material-ui/core/Box";
 import axios from "axios";
 import MyResponsiveLine from "../components/Base/Charts/ResponsiveChartLine";
 import { generateObjectWithdates } from "../services/utils";
+import ProgressBar from "../components/Base/Progress";
 
 // export async function getServerSideProps(context) {
 //   const session = await getSession(context);
@@ -41,6 +42,10 @@ export default function MyAccount() {
   const [data7DaysConsumption, setData7DaysConsumption] = useState([]);
   const intl = useIntl();
   const [userTotalConsumption, setUserTotalConsumption] = useState("");
+  const [userMonthlyConsumption, setUserMonthlyConsumption] = useState(0);
+
+  console.log("fuuuuu", 0 / 20000);
+  console.log("fuuuuu2", userMonthlyConsumption / 20000);
 
   useEffect(() => {
     axios.post(`/api/numberOfWords/7daysData`, { session }).then((resp) => {
@@ -98,6 +103,12 @@ export default function MyAccount() {
       .post(`/api/numberOfWords/userTotalConsumption`, { session })
       .then((resp) => {
         setUserTotalConsumption(resp.data?.userTotalConsumption);
+      });
+    axios
+
+      .post(`/api/numberOfWords/thisMonthConsumption`, { session })
+      .then((resp) => {
+        setUserMonthlyConsumption(resp.data?.dataForCurrentMonth.totalAmount);
       });
   }, []);
 
@@ -254,6 +265,16 @@ export default function MyAccount() {
                       Vous avez utilisé <strong>{userTotalConsumption}</strong>{" "}
                       mots depuis la création de votre compte.
                     </p>
+                    <h2>Usage</h2>
+                    <div className={styles.progressBarTitle}>
+                      <p>Total Credits used this month</p>
+                      <p className={styles.wordsCounter}>
+                        {userTotalConsumption} / 20,000
+                      </p>
+                    </div>
+                    <div className={styles.progressContainer}>
+                      <ProgressBar progress={userTotalConsumption / 20000} />
+                    </div>
                   </div>
                 </TabPanel>
                 {/* <TabPanel value={value} index={2}>

@@ -6,7 +6,7 @@
 }
 
 .main {
-  height: calc(100vh - 155px);
+  min-height: calc(100vh - 155px);
 }
 
 .signOutContainer {
@@ -31,8 +31,27 @@
 }
 
 .userTotalConsumption {
+  margin: auto;
+  margin-top: -20px;
+  max-width: 800px;
+}
+
+.userTotalConsumption p:first-child {
+  text-align: center;
+}
+
+.progressContainer {
+  margin: 1rem auto;
+}
+.progressBarTitle {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+}
+
+.wordsCounter {
+  font-size: 1.4rem;
+  color: rgb(93, 96, 100);
+  font-weight: 600;
 }
 
 @media only screen and (max-width: 768px) {
