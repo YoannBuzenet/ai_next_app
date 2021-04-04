@@ -42,6 +42,8 @@
   "page.myAccount.useageAndBilling.usage.wordsSinceAccountCreation": " words since your account creation.",
   "page.myAccount.useageAndBilling.usage.title": "Usage",
   "page.myAccount.useageAndBilling.usage.totalCreditsUsedThisMonth": "Total words used this month",
+  "page.myAccount.useageAndBilling.subscription.title": "Subscription",
+  "page.myAccount.useageAndBilling.subscription.status.freeAccess": "You are currently in free trial access.",
 
   "page.workplace.inputOutput": "Input & Output Language :",
   "page.workplace.displayCategories": "Display Categories",

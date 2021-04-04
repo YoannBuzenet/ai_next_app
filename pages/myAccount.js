@@ -272,26 +272,42 @@ export default function MyAccount() {
                         defaultMessage=" words since your account creation."
                       />
                     </p>
-                    <h2>
-                      <FormattedMessage
-                        id="page.myAccount.useageAndBilling.usage.title"
-                        defaultMessage="Usage"
-                      />
-                    </h2>
-                    <div className={styles.progressBarTitle}>
-                      <p>
+                    <div className={styles.usageDiv}>
+                      <h2>
                         <FormattedMessage
-                          id="page.myAccount.useageAndBilling.usage.totalCreditsUsedThisMonth"
-                          defaultMessage="Total words used this month"
+                          id="page.myAccount.useageAndBilling.usage.title"
+                          defaultMessage="Usage"
                         />
-                      </p>
-                      <p className={styles.wordsCounter}>
-                        {userTotalConsumption} / 20,000
-                      </p>
+                      </h2>
+                      <div className={styles.progressBarTitle}>
+                        <p>
+                          <FormattedMessage
+                            id="page.myAccount.useageAndBilling.usage.totalCreditsUsedThisMonth"
+                            defaultMessage="Total words used this month"
+                          />
+                        </p>
+                        <p className={styles.wordsCounter}>
+                          {userTotalConsumption} / 5,000
+                        </p>
+                      </div>
+                      <div className={styles.progressContainer}>
+                        <ProgressBar progress={userTotalConsumption / 5000} />
+                      </div>
                     </div>
-                    <div className={styles.progressContainer}>
-                      <ProgressBar progress={userTotalConsumption / 20000} />
+                    <div className={styles.subscriptionDiv}>
+                      <h2>
+                        <FormattedMessage
+                          id="page.myAccount.useageAndBilling.subscription.title"
+                          defaultMessage="Subscription"
+                        />
+                      </h2>
                     </div>
+                    <p>
+                      <FormattedMessage
+                        id="page.myAccount.useageAndBilling.subscription.status.freeAccess"
+                        defaultMessage="You are currently in free trial access."
+                      />
+                    </p>
                   </div>
                 </TabPanel>
                 {/* <TabPanel value={value} index={2}>

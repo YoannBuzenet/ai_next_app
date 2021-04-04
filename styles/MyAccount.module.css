@@ -40,6 +40,10 @@
   text-align: center;
 }
 
+.usageDiv {
+  margin-bottom: 3rem;
+}
+
 .progressContainer {
   margin: 1rem auto;
 }
