@@ -19,6 +19,7 @@ import MyResponsiveLine from "../components/Base/Charts/ResponsiveChartLine";
 import { generateObjectWithdates } from "../services/utils";
 import ProgressBar from "../components/Base/Progress";
 import { FREE_LIMIT_NUMBER_OF_WORDS } from "../config/settings";
+import ResponsiveArticle from "../components/Loader/ResponsiveArticle";
 
 export async function getServerSideProps(context) {
   const session = await getSession(context);
@@ -48,6 +49,7 @@ export default function MyAccount() {
   console.log("session", session);
 
   useEffect(() => {
+    setIsLoadingUserData(true);
     axios.post(`/api/numberOfWords/7daysData`, { session }).then((resp) => {
       const data = resp.data.dataFor7days.map((oneDay) => ({
         x: oneDay.date,
@@ -97,6 +99,7 @@ export default function MyAccount() {
         },
       ];
       setData7DaysConsumption(dataForChart);
+      setIsLoadingUserData(false);
     });
 
     axios
@@ -214,14 +217,14 @@ export default function MyAccount() {
                   >
                     <Tab
                       disableRipple
-                      label={translatedSession}
-                      {...a11yProps(0)}
+                      label={translatedUsageAndBilling}
+                      {...a11yProps(1)}
                       className={classes.tab}
                     />
                     <Tab
                       disableRipple
-                      label={translatedUsageAndBilling}
-                      {...a11yProps(1)}
+                      label={translatedSession}
+                      {...a11yProps(0)}
                       className={classes.tab}
                     />
                     {/* <Tab
@@ -231,7 +234,96 @@ export default function MyAccount() {
                     /> */}
                   </Tabs>
                 </AppBar>
+
                 <TabPanel value={value} index={0}>
+                  {/* {isLoadingUserData && (
+                    <div className={styles.loaderContainer}>
+                      <ResponsiveArticle />
+                    </div>
+                  )} */}
+
+                  {!isLoadingUserData && (
+                    <>
+                      <div className={styles.chartContainer}>
+                        <MyResponsiveLine
+                          height={500}
+                          width={850}
+                          data={data7DaysConsumption}
+                        />
+                      </div>
+                      <div className={styles.userTotalConsumption}>
+                        <p className={styles.totalWords}>
+                          <FormattedMessage
+                            id="page.myAccount.useageAndBilling.usage.youUsed"
+                            defaultMessage="Vous have used "
+                          />
+                          <strong>{userTotalConsumption}</strong>
+                          <FormattedMessage
+                            id="page.myAccount.useageAndBilling.usage.wordsSinceAccountCreation"
+                            defaultMessage=" words since your account creation."
+                          />
+                        </p>
+                        <div className={styles.usageDiv}>
+                          <h2>
+                            <FormattedMessage
+                              id="page.myAccount.useageAndBilling.usage.title"
+                              defaultMessage="Usage"
+                            />
+                          </h2>
+                          <div className={styles.progressBarTitle}>
+                            <p>
+                              <FormattedMessage
+                                id="page.myAccount.useageAndBilling.usage.totalCreditsUsedThisMonth"
+                                defaultMessage="Total words used this month"
+                              />
+                            </p>
+                            <p className={styles.wordsCounter}>
+                              {userTotalConsumption} / 5,000
+                            </p>
+                          </div>
+                          <div className={styles.progressContainer}>
+                            <ProgressBar
+                              progress={userTotalConsumption / 5000}
+                            />
+                          </div>
+                        </div>
+                        <div className={styles.subscriptionDiv}>
+                          <h2>
+                            <FormattedMessage
+                              id="page.myAccount.useageAndBilling.subscription.title"
+                              defaultMessage="Subscription"
+                            />
+                          </h2>
+                        </div>
+                        <p>
+                          <FormattedMessage
+                            id="page.myAccount.useageAndBilling.subscription.status.freeAccess"
+                            defaultMessage="You are currently in free trial access."
+                          />
+                        </p>
+                        {session?.user?.isOnFreeAccess === 1 &&
+                          session?.wordsTotalConsumption?.userTotalConsumption >
+                            FREE_LIMIT_NUMBER_OF_WORDS && (
+                            <div className={styles.freeAccessOver}>
+                              <p>
+                                <FormattedMessage
+                                  id="page.myAccount.useageAndBilling.subscription.status.freeAccess.isOver"
+                                  defaultMessage="You reach your maximum free use access."
+                                />
+                              </p>
+                              <p>
+                                <FormattedMessage
+                                  id="page.myAccount.useageAndBilling.subscription.status.freeAccess.pleaseContactUs"
+                                  defaultMessage="Please contact us to subscribe to our service."
+                                />
+                              </p>
+                            </div>
+                          )}
+                      </div>
+                    </>
+                  )}
+                </TabPanel>
+                <TabPanel value={value} index={1}>
                   <div className={styles.signOutContainer}>
                     <p>
                       <FormattedMessage
@@ -250,82 +342,6 @@ export default function MyAccount() {
                         defaultMessage="Sign Out"
                       />
                     </Button>
-                  </div>
-                </TabPanel>
-                <TabPanel value={value} index={1}>
-                  <div className={styles.chartContainer}>
-                    <MyResponsiveLine
-                      height={500}
-                      width={850}
-                      data={data7DaysConsumption}
-                    />
-                  </div>
-                  <div className={styles.userTotalConsumption}>
-                    <p>
-                      <FormattedMessage
-                        id="page.myAccount.useageAndBilling.usage.youUsed"
-                        defaultMessage="Vous have used "
-                      />
-                      <strong>{userTotalConsumption}</strong>
-                      <FormattedMessage
-                        id="page.myAccount.useageAndBilling.usage.wordsSinceAccountCreation"
-                        defaultMessage=" words since your account creation."
-                      />
-                    </p>
-                    <div className={styles.usageDiv}>
-                      <h2>
-                        <FormattedMessage
-                          id="page.myAccount.useageAndBilling.usage.title"
-                          defaultMessage="Usage"
-                        />
-                      </h2>
-                      <div className={styles.progressBarTitle}>
-                        <p className={styles.totalWords}>
-                          <FormattedMessage
-                            id="page.myAccount.useageAndBilling.usage.totalCreditsUsedThisMonth"
-                            defaultMessage="Total words used this month"
-                          />
-                        </p>
-                        <p className={styles.wordsCounter}>
-                          {userTotalConsumption} / 5,000
-                        </p>
-                      </div>
-                      <div className={styles.progressContainer}>
-                        <ProgressBar progress={userTotalConsumption / 5000} />
-                      </div>
-                    </div>
-                    <div className={styles.subscriptionDiv}>
-                      <h2>
-                        <FormattedMessage
-                          id="page.myAccount.useageAndBilling.subscription.title"
-                          defaultMessage="Subscription"
-                        />
-                      </h2>
-                    </div>
-                    <p>
-                      <FormattedMessage
-                        id="page.myAccount.useageAndBilling.subscription.status.freeAccess"
-                        defaultMessage="You are currently in free trial access."
-                      />
-                    </p>
-                    {session?.user?.isOnFreeAccess === 1 &&
-                      session?.wordsTotalConsumption?.userTotalConsumption >
-                        FREE_LIMIT_NUMBER_OF_WORDS && (
-                        <div className={styles.freeAccessOver}>
-                          <p>
-                            <FormattedMessage
-                              id="page.myAccount.useageAndBilling.subscription.status.freeAccess.isOver"
-                              defaultMessage="You reach your maximum free use access."
-                            />
-                          </p>
-                          <p>
-                            <FormattedMessage
-                              id="page.myAccount.useageAndBilling.subscription.status.freeAccess.pleaseContactUs"
-                              defaultMessage="Please contact us to subscribe to our service."
-                            />
-                          </p>
-                        </div>
-                      )}
                   </div>
                 </TabPanel>
                 {/* <TabPanel value={value} index={2}>

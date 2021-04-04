@@ -44,6 +44,10 @@
   margin-bottom: 3rem;
 }
 
+.loaderContainer {
+  margin-top: 50px;
+}
+
 .progressContainer {
   margin: 1rem auto;
 }
@@ -71,5 +75,8 @@
   }
   .signOutContainer p {
     width: 100%;
+  }
+  .loaderContainer {
+    margin-top: 10px;
   }
 }
