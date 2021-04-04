@@ -38,6 +38,10 @@
   "page.myAccount.useageAndBilling": "Utilisation et factures",
   "page.myAccount.useageAndBilling.graph.dailyConsumption": "Jour",
   "page.myAccount.useageAndBilling.graph.amount": "Quantité",
+  "page.myAccount.useageAndBilling.usage.youUsed": "Vous avez utilisé ",
+  "page.myAccount.useageAndBilling.usage.wordsSinceAccountCreation": " mots depuis la création de votre compte.",
+  "page.myAccount.useageAndBilling.usage.title": "Utilisation",
+  "page.myAccount.useageAndBilling.usage.totalCreditsUsedThisMonth": "Nombre de mots utilisés ce mois-ci",
 
   "page.workplace.inputOutput": "Langue Entrée & Sortie : ",
   "page.workplace.displayCategories": "Afficher les thèmes",

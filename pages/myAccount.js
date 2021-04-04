@@ -262,12 +262,29 @@ export default function MyAccount() {
                   </div>
                   <div className={styles.userTotalConsumption}>
                     <p>
-                      Vous avez utilisé <strong>{userTotalConsumption}</strong>{" "}
-                      mots depuis la création de votre compte.
+                      <FormattedMessage
+                        id="page.myAccount.useageAndBilling.usage.youUsed"
+                        defaultMessage="Vous have used "
+                      />
+                      <strong>{userTotalConsumption}</strong>
+                      <FormattedMessage
+                        id="page.myAccount.useageAndBilling.usage.wordsSinceAccountCreation"
+                        defaultMessage=" words since your account creation."
+                      />
                     </p>
-                    <h2>Usage</h2>
+                    <h2>
+                      <FormattedMessage
+                        id="page.myAccount.useageAndBilling.usage.title"
+                        defaultMessage="Usage"
+                      />
+                    </h2>
                     <div className={styles.progressBarTitle}>
-                      <p>Total Credits used this month</p>
+                      <p>
+                        <FormattedMessage
+                          id="page.myAccount.useageAndBilling.usage.totalCreditsUsedThisMonth"
+                          defaultMessage="Total words used this month"
+                        />
+                      </p>
                       <p className={styles.wordsCounter}>
                         {userTotalConsumption} / 20,000
                       </p>
