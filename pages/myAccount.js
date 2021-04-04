@@ -73,9 +73,18 @@ export default function MyAccount() {
         }
       }
 
+      const arrayWithFormattedDate = completedData.map((object) => ({
+        ...object,
+        x: intl.formatDate(new Date(object.x), {
+          month: "numeric",
+          day: "numeric",
+          format: "short",
+        }),
+      }));
+
       const dataForChart = [
         {
-          data: completedData,
+          data: arrayWithFormattedDate,
           color: "hsl(231, 48%, 48%)",
           id: "Daily Use",
         },
