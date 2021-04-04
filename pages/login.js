@@ -19,7 +19,6 @@ export default function Login() {
       // Uncomment to trigger a refresh token at EACH login
       // {
       //   access_type: "offline",
-      //   prompt: "consent",
       // }
     );
   };

@@ -33,7 +33,7 @@ const categoriesDefinition = {
     inputs: [
       {
         name: "value1",
-        maxLengthInput: 100,
+        maxLengthInput: 30,
         label: {
           id: "categories.id2.label",
           defaultMessage: "What is your company/product name ?",
@@ -46,7 +46,7 @@ const categoriesDefinition = {
       },
       {
         name: "value2",
-        maxLengthInput: 100,
+        maxLengthInput: 70,
         label: {
           id: "categories.id2.label2",
           defaultMessage: "What is your company about ?",
@@ -103,35 +103,6 @@ const categoriesDefinition = {
         name: "value",
         maxLengthInput: 100,
         label: {
-          id: "categories.id4.label",
-          defaultMessage: "What is your caption about ?",
-        },
-        placeholder: {
-          id: "categories.id4.placeholder",
-          defaultMessage:
-            "Example : Went to the beach yesterday - it was so beautiful.",
-        },
-        inputType: "textarea",
-      },
-    ],
-    categoryId: 4,
-    urlIcon: "/icons/image_25.png",
-    name: {
-      id: "categories.id4.categorylabel",
-      defaultMessage: "Instagram Caption",
-    },
-    description: {
-      id: "categories.id4.description",
-      defaultMessage: "Create a unique caption for your Instagram caption.",
-    },
-    parentCategory: "Instagram",
-  },
-  5: {
-    inputs: [
-      {
-        name: "value",
-        maxLengthInput: 100,
-        label: {
           id: "categories.id5.label",
           defaultMessage: "What is your blog about ?",
         },
@@ -143,7 +114,7 @@ const categoriesDefinition = {
         inputType: "textarea",
       },
     ],
-    categoryId: 5,
+    categoryId: 4,
     urlIcon: "/icons/image_7.png",
     name: { id: "categories.id5.categorylabel", defaultMessage: "Blog Intro" },
     description: {
@@ -152,7 +123,7 @@ const categoriesDefinition = {
     },
     parentCategory: "Blog",
   },
-  6: {
+  5: {
     inputs: [
       {
         name: "value",
@@ -168,7 +139,7 @@ const categoriesDefinition = {
         inputType: "textarea",
       },
     ],
-    categoryId: 6,
+    categoryId: 5,
     urlIcon: "/icons/image_24.png",
     name: {
       id: "categories.id6.categorylabel",
@@ -223,19 +194,6 @@ const listOfCategories = [
     categoryId: 3,
   },
   {
-    name: {
-      id: "categories.id4.categorylabel",
-      defaultMessage: "Instagram Caption",
-    },
-    description: {
-      id: "categories.id4.description",
-      defaultMessage: "Create a unique caption for your Instagram caption.",
-    },
-    parentCategory: "Instagram",
-    urlLogo: "/icons/image_25.png",
-    categoryId: 4,
-  },
-  {
     name: { id: "categories.id5.categorylabel", defaultMessage: "Blog Intro" },
     description: {
       id: "categories.id5.description",
@@ -243,7 +201,7 @@ const listOfCategories = [
     },
     parentCategory: "Blog",
     urlLogo: "/icons/image_7.png",
-    categoryId: 5,
+    categoryId: 4,
   },
   {
     name: {
@@ -257,7 +215,7 @@ const listOfCategories = [
     },
     parentCategory: "FacebookAds",
     urlLogo: "/icons/image_24.png",
-    categoryId: 6,
+    categoryId: 5,
   },
 ];
 
