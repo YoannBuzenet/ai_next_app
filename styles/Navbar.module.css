@@ -65,6 +65,7 @@ div.navLink p:hover {
 
 div.navLink:hover {
   background-color: var(--darker-light-grey-background);
+  cursor: pointer;
 }
 
 .navbarFlags {

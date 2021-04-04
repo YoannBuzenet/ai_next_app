@@ -15,27 +15,27 @@ const Navbar = () => {
         <div className="container">
           <div className={styles.menuElements}>
             <div className={styles.leftNavbar}>
-              <div className={styles.navLink}>
-                <Link href={"/"}>
+              <Link href={"/"}>
+                <div className={styles.navLink}>
                   <a>
                     <p>CURSIFY</p>
                   </a>
-                </Link>
-              </div>
+                </div>
+              </Link>
               {UserCheck.isUserLogged(session?.user?.isLoggedUntil) && (
-                <div className={styles.navLink}>
-                  <Link href={"/templates"}>
+                <Link href={"/templates"}>
+                  <div className={styles.navLink}>
                     <a>
                       <p>Templates</p>
                     </a>
-                  </Link>
-                </div>
+                  </div>
+                </Link>
               )}
             </div>
             <div className={styles.rightNavBar}>
               {!UserCheck.isUserLogged(session?.user?.isLoggedUntil) && (
-                <div className={styles.navLink}>
-                  <Link href="/login">
+                <Link href="/login">
+                  <div className={styles.navLink}>
                     <a>
                       <p>
                         <FormattedMessage
@@ -44,12 +44,12 @@ const Navbar = () => {
                         />
                       </p>
                     </a>
-                  </Link>
-                </div>
+                  </div>
+                </Link>
               )}
               {UserCheck.isUserLogged(session?.user?.isLoggedUntil) && (
-                <div className={styles.navLink}>
-                  <Link href="/myAccount">
+                <Link href="/myAccount">
+                  <div className={styles.navLink}>
                     <a>
                       <p>
                         <FormattedMessage
@@ -58,8 +58,8 @@ const Navbar = () => {
                         />
                       </p>
                     </a>
-                  </Link>
-                </div>
+                  </div>
+                </Link>
               )}
 
               <div className={styles.navbarFlags}>
