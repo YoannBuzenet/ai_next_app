@@ -44,8 +44,7 @@ export default function MyAccount() {
   const [userTotalConsumption, setUserTotalConsumption] = useState("");
   const [userMonthlyConsumption, setUserMonthlyConsumption] = useState(0);
 
-  console.log("fuuuuu", 0 / 20000);
-  console.log("fuuuuu2", userMonthlyConsumption / 20000);
+  console.log("session", session);
 
   useEffect(() => {
     axios.post(`/api/numberOfWords/7daysData`, { session }).then((resp) => {
@@ -256,7 +255,7 @@ export default function MyAccount() {
                   <div className={styles.chartContainer}>
                     <MyResponsiveLine
                       height={500}
-                      width={900}
+                      width={850}
                       data={data7DaysConsumption}
                     />
                   </div>
