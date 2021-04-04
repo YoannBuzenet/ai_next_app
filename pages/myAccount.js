@@ -36,12 +36,14 @@ import { generateObjectWithdates } from "../services/utils";
 
 export default function MyAccount() {
   const [session, loading] = useSession();
+  const [isLoadingUserData, setIsLoadingUserData] = useState(false);
   const [value, setValue] = useState(0);
   const [data7DaysConsumption, setData7DaysConsumption] = useState([]);
   const intl = useIntl();
+  const [total7DaysConsumption, setTotal7DaysConsumption] = useState("");
 
   useEffect(() => {
-    axios.post(`/api/numberOfWords/`, { session }).then((resp) => {
+    axios.post(`/api/numberOfWords/7daysData`, { session }).then((resp) => {
       const data = resp.data.dataFor7days.map((oneDay) => ({
         x: oneDay.date,
         y: oneDay.amount,
@@ -91,6 +93,12 @@ export default function MyAccount() {
       ];
       setData7DaysConsumption(dataForChart);
     });
+
+    axios
+      .post(`/api/numberOfWords/7daysTotalConsumption`, { session })
+      .then((resp) => {
+        setTotal7DaysConsumption(resp.data?.userTotalConsumption);
+      });
   }, []);
 
   const handleSignOut = () => {
@@ -241,6 +249,9 @@ export default function MyAccount() {
                       width={900}
                       data={data7DaysConsumption}
                     />
+                  </div>
+                  <div>
+                    <p>Vous avez utilisé {total7DaysConsumption} mots.</p>
                   </div>
                 </TabPanel>
                 {/* <TabPanel value={value} index={2}>
