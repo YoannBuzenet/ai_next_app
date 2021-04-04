@@ -3,11 +3,22 @@
   justify-content: center;
   padding-top: 3rem;
   padding-bottom: 3rem;
+  height: 82%;
 }
 
 .leftDiv {
   width: 48%;
   margin-right: 1%;
+}
+/* https://stackoverflow.com/questions/23090136/how-can-i-make-my-flexbox-layout-take-100-vertical-space */
+.leftDiv > div {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: stretch;
+  height: 100%;
 }
 
 .rightDiv {
@@ -16,7 +27,8 @@
 }
 
 .spaceContainer {
-  min-height: 500px;
+  height: 100%;
+  flex: 1 1 auto;
 }
 
 .headlineContainer {

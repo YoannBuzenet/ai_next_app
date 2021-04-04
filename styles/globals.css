@@ -37,11 +37,13 @@ a {
 
 html {
   font-size: 62.5%;
+  height: 100%;
 }
 
 body {
   margin: 0;
   padding: 0;
+  height: 100%;
 }
 
 .container {
@@ -64,6 +66,11 @@ ul {
 
 main {
   overflow: hidden;
+}
+
+#__next,
+.heightContainer {
+  height: 100%;
 }
 
 .blackDiv {
@@ -143,6 +150,10 @@ p {
 
 .genericBackground {
   background-color: var(--light-grey-background);
+}
+
+.TextZone {
+  height: 100%;
 }
 
 /* Material UI Inputs */

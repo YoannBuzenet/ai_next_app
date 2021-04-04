@@ -14,6 +14,23 @@ import axios from "axios";
 import { useSession, getSession } from "next-auth/client";
 import CircularIndeterminate from "../../components/Loader";
 import SimpleSelect from "../../components/Base/Select";
+import UserCheck from "../../services/userCheck";
+
+export async function getServerSideProps(context) {
+  const session = await getSession(context);
+  const isLoggedUser = UserCheck.isUserLogged(session?.user?.isLoggedUntil);
+  if (!isLoggedUser) {
+    return {
+      redirect: {
+        destination: "/",
+        permanent: false,
+      },
+      props: {},
+    };
+  } else {
+    return { props: {} };
+  }
+}
 
 export default function Text() {
   const intl = useIntl();
@@ -114,7 +131,7 @@ export default function Text() {
 
   const classes = useStyles();
   return (
-    <div>
+    <div className="heightContainer">
       <div className="container80 TextZone">
         <div className={styles.headlineContainer}>
           <div className={styles.pictureContainer}>
