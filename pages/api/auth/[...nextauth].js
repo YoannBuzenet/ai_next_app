@@ -5,9 +5,9 @@ import axios from "axios";
 const callbacks = {};
 let userData;
 callbacks.signIn = async function signIn(user, account, metadata) {
-  // console.log("user", user);
-  // console.log("account", account);
-  // console.log("metadata", metadata);
+  console.log("user", user);
+  console.log("account", account);
+  console.log("metadata", metadata);
   if (account.provider === "google") {
     const googleUser = {
       email: metadata.email,

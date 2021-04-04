@@ -11,9 +11,17 @@ export default function Login() {
 
   const handleGoogleClick = (e) => {
     e.preventDefault();
-    signIn("google", {
-      callbackUrl: `${process.env.NEXT_PUBLIC_URL_ABSOLUTE_THIS_WEBSITE}/templates`,
-    });
+    signIn(
+      "google",
+      {
+        callbackUrl: `${process.env.NEXT_PUBLIC_URL_ABSOLUTE_THIS_WEBSITE}/templates`,
+      }
+      // Uncomment to trigger a refresh token at EACH login
+      // {
+      //   access_type: "offline",
+      //   prompt: "consent",
+      // }
+    );
   };
 
   const Intl = useIntl();
