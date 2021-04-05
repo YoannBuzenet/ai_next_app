@@ -31,6 +31,7 @@
   "page.index.fifthLiner.title": "Try it now for free",
   "page.index.fifthLiner.button.title": "Get Started",
 
+  "page.myAccount.head": "My Account",
   "page.myAccount.title": "My Account",
   "page.myAccount.logOutLabel": "Log out Account",
   "page.myAccount.logOugButton": "Sign Out",
@@ -51,6 +52,7 @@
   "page.workplace.displayCategories": "Display Categories",
   "page.workplace.hideCategories": "Hide Categories",
 
+  "page.templates.head": "Template List",
   "page.templates.selectTemplate": "Select a template to get started",
   "page.templates.searchLabel": "Search",
 

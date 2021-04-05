@@ -31,6 +31,7 @@
   "page.index.fifthLiner.title": "Intéressé(e) ? Testez le gratuitement",
   "page.index.fifthLiner.button.title": "Commencer",
 
+  "page.myAccount.head": "Mon compte",
   "page.myAccount.title": "Mon compte",
   "page.myAccount.logOutLabel": "Me déconnecter",
   "page.myAccount.logOugButton": "Déconnexion",
@@ -51,6 +52,7 @@
   "page.workplace.displayCategories": "Afficher les thèmes",
   "page.workplace.hideCategories": "Cacher les thèmes",
 
+  "page.templates.head": "Tous les templates",
   "page.templates.selectTemplate": "Choisissez un template",
   "page.templates.searchLabel": "Rechercher",
 

@@ -196,168 +196,179 @@ export default function MyAccount() {
     id: "page.myAccount.useageAndBilling",
     defaultMessage: "Usage and Billing",
   });
+  const translatedPageTitle = intl.formatMessage({
+    id: "page.myAccount.head",
+    defaultMessage: "My Account",
+  });
 
   return (
-    <div className={styles.myAccountContainer}>
-      <div className="">
-        <div className="container">
-          <main className={styles.main}>
-            <div className={styles.title}>
-              <h1>
-                <FormattedMessage
-                  id="page.myAccount.title"
-                  defaultMessage="My Account"
-                />
-              </h1>
-            </div>
-            <div className={styles.tabContainer}>
-              <div className={classes.root}>
-                <AppBar position="static" elevation={0}>
-                  <Tabs
-                    value={value}
-                    onChange={handleChange}
-                    aria-label="simple tabs example"
-                    className={classes.tabs}
-                    indicatorColor="primary"
-                  >
-                    <Tab
-                      disableRipple
-                      label={translatedUsageAndBilling}
-                      {...a11yProps(1)}
-                      className={classes.tab}
-                    />
-                    <Tab
-                      disableRipple
-                      label={translatedSession}
-                      {...a11yProps(0)}
-                      className={classes.tab}
-                    />
-                    {/* <Tab
+    <>
+      <Head>
+        <title>{translatedPageTitle}</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <div className={styles.myAccountContainer}>
+        <div className="">
+          <div className="container">
+            <main className={styles.main}>
+              <div className={styles.title}>
+                <h1>
+                  <FormattedMessage
+                    id="page.myAccount.title"
+                    defaultMessage="My Account"
+                  />
+                </h1>
+              </div>
+              <div className={styles.tabContainer}>
+                <div className={classes.root}>
+                  <AppBar position="static" elevation={0}>
+                    <Tabs
+                      value={value}
+                      onChange={handleChange}
+                      aria-label="simple tabs example"
+                      className={classes.tabs}
+                      indicatorColor="primary"
+                    >
+                      <Tab
+                        disableRipple
+                        label={translatedUsageAndBilling}
+                        {...a11yProps(1)}
+                        className={classes.tab}
+                      />
+                      <Tab
+                        disableRipple
+                        label={translatedSession}
+                        {...a11yProps(0)}
+                        className={classes.tab}
+                      />
+                      {/* <Tab
                       label="Item Three"
                       {...a11yProps(2)}
                       className={classes.tab}
                     /> */}
-                  </Tabs>
-                </AppBar>
+                    </Tabs>
+                  </AppBar>
 
-                <TabPanel value={value} index={0}>
-                  {/* {isLoadingUserData && (
+                  <TabPanel value={value} index={0}>
+                    {/* {isLoadingUserData && (
                     <div className={styles.loaderContainer}>
                       <ResponsiveArticle />
                     </div>
                   )} */}
 
-                  {!isLoadingUserData && (
-                    <>
-                      <div className={styles.chartContainer}>
-                        <MyResponsiveLine
-                          height={500}
-                          width={850}
-                          data={data7DaysConsumption}
-                        />
-                      </div>
-                      <div className={styles.userTotalConsumption}>
-                        <p className={styles.totalWords}>
-                          <FormattedMessage
-                            id="page.myAccount.useageAndBilling.usage.youUsed"
-                            defaultMessage="Vous have used "
+                    {!isLoadingUserData && (
+                      <>
+                        <div className={styles.chartContainer}>
+                          <MyResponsiveLine
+                            height={500}
+                            width={850}
+                            data={data7DaysConsumption}
                           />
-                          <strong>{userTotalConsumption || 0}</strong>
-                          <FormattedMessage
-                            id="page.myAccount.useageAndBilling.usage.wordsSinceAccountCreation"
-                            defaultMessage=" words since your account creation."
-                          />
-                        </p>
-                        <div className={styles.usageDiv}>
-                          <h2>
+                        </div>
+                        <div className={styles.userTotalConsumption}>
+                          <p className={styles.totalWords}>
                             <FormattedMessage
-                              id="page.myAccount.useageAndBilling.usage.title"
-                              defaultMessage="Usage"
+                              id="page.myAccount.useageAndBilling.usage.youUsed"
+                              defaultMessage="Vous have used "
                             />
-                          </h2>
-                          <div className={styles.progressBarTitle}>
-                            <p>
+                            <strong>{userTotalConsumption || 0}</strong>
+                            <FormattedMessage
+                              id="page.myAccount.useageAndBilling.usage.wordsSinceAccountCreation"
+                              defaultMessage=" words since your account creation."
+                            />
+                          </p>
+                          <div className={styles.usageDiv}>
+                            <h2>
                               <FormattedMessage
-                                id="page.myAccount.useageAndBilling.usage.totalCreditsUsedThisMonth"
-                                defaultMessage="Total words used this month"
+                                id="page.myAccount.useageAndBilling.usage.title"
+                                defaultMessage="Usage"
                               />
-                            </p>
-                            <p className={styles.wordsCounter}>
-                              {userTotalConsumption || 0} / 5,000
-                            </p>
-                          </div>
-                          <div className={styles.progressContainer}>
-                            <ProgressBar
-                              progress={userTotalConsumption / 5000}
-                            />
-                          </div>
-                        </div>
-                        <div className={styles.subscriptionDiv}>
-                          <h2>
-                            <FormattedMessage
-                              id="page.myAccount.useageAndBilling.subscription.title"
-                              defaultMessage="Subscription"
-                            />
-                          </h2>
-                        </div>
-                        <p>
-                          <FormattedMessage
-                            id="page.myAccount.useageAndBilling.subscription.status.freeAccess"
-                            defaultMessage="You are currently in free trial access."
-                          />
-                        </p>
-                        {session?.user?.isOnFreeAccess === 1 &&
-                          session?.wordsTotalConsumption?.userTotalConsumption >
-                            FREE_LIMIT_NUMBER_OF_WORDS && (
-                            <div className={styles.freeAccessOver}>
+                            </h2>
+                            <div className={styles.progressBarTitle}>
                               <p>
                                 <FormattedMessage
-                                  id="page.myAccount.useageAndBilling.subscription.status.freeAccess.isOver"
-                                  defaultMessage="You reach your maximum free use access."
+                                  id="page.myAccount.useageAndBilling.usage.totalCreditsUsedThisMonth"
+                                  defaultMessage="Total words used this month"
                                 />
                               </p>
-                              <p>
-                                <FormattedMessage
-                                  id="page.myAccount.useageAndBilling.subscription.status.freeAccess.pleaseContactUs"
-                                  defaultMessage="Please contact us to subscribe to our service."
-                                />
+                              <p className={styles.wordsCounter}>
+                                {userTotalConsumption || 0} / 5,000
                               </p>
                             </div>
-                          )}
-                      </div>
-                    </>
-                  )}
-                </TabPanel>
-                <TabPanel value={value} index={1}>
-                  <div className={styles.signOutContainer}>
-                    <p>
-                      <FormattedMessage
-                        id="page.myAccount.logOutLabel"
-                        defaultMessage="Log out Account"
-                      />
-                    </p>
-                    <Button
-                      onClick={handleSignOut}
-                      className={classes.button}
-                      variant="contained"
-                      size="large"
-                    >
-                      <FormattedMessage
-                        id="page.myAccount.logOugButton"
-                        defaultMessage="Sign Out"
-                      />
-                    </Button>
-                  </div>
-                </TabPanel>
-                {/* <TabPanel value={value} index={2}>
+                            <div className={styles.progressContainer}>
+                              <ProgressBar
+                                progress={userTotalConsumption / 5000}
+                              />
+                            </div>
+                          </div>
+                          <div className={styles.subscriptionDiv}>
+                            <h2>
+                              <FormattedMessage
+                                id="page.myAccount.useageAndBilling.subscription.title"
+                                defaultMessage="Subscription"
+                              />
+                            </h2>
+                          </div>
+                          <p>
+                            <FormattedMessage
+                              id="page.myAccount.useageAndBilling.subscription.status.freeAccess"
+                              defaultMessage="You are currently in free trial access."
+                            />
+                          </p>
+                          {session?.user?.isOnFreeAccess === 1 &&
+                            session?.wordsTotalConsumption
+                              ?.userTotalConsumption >
+                              FREE_LIMIT_NUMBER_OF_WORDS && (
+                              <div className={styles.freeAccessOver}>
+                                <p>
+                                  <FormattedMessage
+                                    id="page.myAccount.useageAndBilling.subscription.status.freeAccess.isOver"
+                                    defaultMessage="You reach your maximum free use access."
+                                  />
+                                </p>
+                                <p>
+                                  <FormattedMessage
+                                    id="page.myAccount.useageAndBilling.subscription.status.freeAccess.pleaseContactUs"
+                                    defaultMessage="Please contact us to subscribe to our service."
+                                  />
+                                </p>
+                              </div>
+                            )}
+                        </div>
+                      </>
+                    )}
+                  </TabPanel>
+                  <TabPanel value={value} index={1}>
+                    <div className={styles.signOutContainer}>
+                      <p>
+                        <FormattedMessage
+                          id="page.myAccount.logOutLabel"
+                          defaultMessage="Log out Account"
+                        />
+                      </p>
+                      <Button
+                        onClick={handleSignOut}
+                        className={classes.button}
+                        variant="contained"
+                        size="large"
+                      >
+                        <FormattedMessage
+                          id="page.myAccount.logOugButton"
+                          defaultMessage="Sign Out"
+                        />
+                      </Button>
+                    </div>
+                  </TabPanel>
+                  {/* <TabPanel value={value} index={2}>
                   
                 </TabPanel> */}
+                </div>
               </div>
-            </div>
-            <div className=""></div>
-          </main>
+              <div className=""></div>
+            </main>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
