@@ -45,21 +45,30 @@ export default function Text() {
   const [session, loading] = useSession();
   const { userContext, setUserContext } = useContext(UserContext);
 
-  const handleOuputNumber = (e) => {
-    let numberToSet;
-    const number = parseInt(e.target.value);
-    if (e.target.value === "") {
-      numberToSet = "";
-    } else if (isNaN(number)) {
-      numberToSet = 1;
-    } else {
-      numberToSet = number;
-    }
-    setOutputNumber(numberToSet);
+  const handleOuputNumber = (value) => {
+    console.log("ta pute de mere la grosse salope", value);
+    setOutputNumber(value);
   };
 
   const passLangSelectedToUserContext = (value) => {
     setUserContext({ ...userContext, langSelected: value });
+  };
+
+  const handleChangeInputs = (e, input) => {
+    const userInput = e.target.value;
+    let finalInput = userInputs?.[input.name];
+
+    if (userInput.length > input.maxLengthInput) {
+      setUserInputs({
+        ...userInputs,
+        [input.name]: finalInput,
+      });
+    } else {
+      setUserInputs({
+        ...userInputs,
+        [input.name]: userInput,
+      });
+    }
   };
 
   const sendDataToBackEnd = async () => {
@@ -113,6 +122,10 @@ export default function Text() {
   const translatedFrenchName = intl.formatMessage({
     id: "generic.lang.french",
     defaultMessage: "French",
+  });
+  const translatedOutPutLabels = intl.formatMessage({
+    id: "compo.text.numberOfOutputs",
+    defaultMessage: "Outputs",
   });
 
   const useStyles = makeStyles((theme) => ({
@@ -183,12 +196,7 @@ export default function Text() {
                         InputProps={{ styles: { fontSize: 20 } }}
                         placeholder={translatedPlaceholder}
                         value={userInputs?.[input.name] || ""}
-                        onChange={(e) =>
-                          setUserInputs({
-                            ...userInputs,
-                            [input.name]: e.target.value,
-                          })
-                        }
+                        onChange={(e) => handleChangeInputs(e, input)}
                         fullWidth
                         variant="outlined"
                         multiline={
@@ -212,7 +220,7 @@ export default function Text() {
                       label={translatedLabelName}
                     />
                   </div>
-                  <div
+                  {/* <div
                     className="outputContainer"
                     style={{ position: "relative" }}
                   >
@@ -235,6 +243,20 @@ export default function Text() {
                       variant="outlined"
                       size="small"
                       onChange={handleOuputNumber}
+                      value={outputNumber}
+                    />
+                  </div> */}
+                  <div className="selectContainer">
+                    <SimpleSelect
+                      id="outlined-basic"
+                      size="small"
+                      listToDisplay={[
+                        { value: 1, name: 1 },
+                        { value: 2, name: 2 },
+                        { value: 3, name: 3 },
+                      ]}
+                      label={translatedOutPutLabels}
+                      handleChange={handleOuputNumber}
                       value={outputNumber}
                     />
                   </div>

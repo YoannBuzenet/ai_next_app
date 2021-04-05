@@ -21,6 +21,7 @@ export default function SimpleSelect({
   label,
   handleChange,
   value,
+  variant = "standard",
 }) {
   const classes = useStyles();
 
@@ -33,6 +34,7 @@ export default function SimpleSelect({
         value={value}
         onChange={(e) => handleChange(e.target.value)}
         className={classToAdd}
+        variant={variant}
       >
         {listToDisplay.map((item) => (
           <MenuItem value={item.value}>{item.name}</MenuItem>
