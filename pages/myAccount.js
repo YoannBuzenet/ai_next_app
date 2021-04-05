@@ -257,7 +257,7 @@ export default function MyAccount() {
                             id="page.myAccount.useageAndBilling.usage.youUsed"
                             defaultMessage="Vous have used "
                           />
-                          <strong>{userTotalConsumption}</strong>
+                          <strong>{userTotalConsumption || 0}</strong>
                           <FormattedMessage
                             id="page.myAccount.useageAndBilling.usage.wordsSinceAccountCreation"
                             defaultMessage=" words since your account creation."
