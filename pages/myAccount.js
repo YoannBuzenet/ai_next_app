@@ -297,7 +297,7 @@ export default function MyAccount() {
                             </div>
                             <div className={styles.progressContainer}>
                               <ProgressBar
-                                progress={userTotalConsumption / 5000}
+                                progress={(userTotalConsumption / 5000) * 100}
                               />
                             </div>
                           </div>
