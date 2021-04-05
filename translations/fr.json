@@ -51,6 +51,9 @@
   "page.workplace.displayCategories": "Afficher les thèmes",
   "page.workplace.hideCategories": "Cacher les thèmes",
 
+  "page.templates.selectTemplate": "Choisissez un template",
+  "page.templates.searchLabel": "Rechercher",
+
   "compo.heartWorkPlace.button.create": "Créer",
   "compo.heartWorkPlace.noCategory.title": "Bienvenue sur Cursify",
   "compo.heartWorkPlace.noCategory.paragraph1": "Sélectionnez un thème sur la gauche pour commencer !",
@@ -64,6 +67,8 @@
   "compo.text.numberOfOutputs": "Résultats",
   "compo.text.inputOutput": "Saisie / Résultat",
   "compo.text.quotaReached": "Quota gratuit atteint",
+
+  "compo.chart.dailyUse": "Utilisation",
 
   "compo.CategorySelector.selectCategory": "Choisissez un thème",
   "compo.CategorySelector.mostPopular": "Les plus populaires",
@@ -88,7 +93,7 @@
   "categories.id2.label": "Quel est le nom de votre entreprise ou de votre produit ?",
   "categories.id2.placeholder": "Exemple : Cursify",
   "categories.id2.label2": "Décrivez votre produit",
-  "categories.id2.placeholder2": "Exemple : Une entreprise de production de contenu avec via Intelligence Artificielle",
+  "categories.id2.placeholder2": "Exemple : Une entreprise de production de contenu via Intelligence Artificielle",
   "categories.id3.categorylabel": "Titre de billet de blog",
   "categories.id3.description": "Résumez simplement l'idée de votre billet de blog en une phrase clef.",
   "categories.id3.label": "De quoi parlera ce billet de blog ? ",

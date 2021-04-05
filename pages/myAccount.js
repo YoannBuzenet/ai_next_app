@@ -91,11 +91,16 @@ export default function MyAccount() {
         }),
       }));
 
+      const transatedDailyUse = intl.formatMessage({
+        id: "compo.chart.dailyUse",
+        defaultMessage: "Daily Use",
+      });
+
       const dataForChart = [
         {
           data: arrayWithFormattedDate,
           color: "hsl(231, 48%, 48%)",
-          id: "Daily Use",
+          id: transatedDailyUse,
         },
       ];
       setData7DaysConsumption(dataForChart);

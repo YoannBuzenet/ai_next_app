@@ -11,6 +11,7 @@ import {
 } from "../definitions/categories";
 import Card from "../components/Card";
 import UserCheck from "../services/userCheck";
+import { FormattedMessage, useIntl } from "react-intl";
 
 export async function getServerSideProps(context) {
   const session = await getSession(context);
@@ -41,6 +42,11 @@ const useStyles = makeStyles((theme) => ({
 export default function template() {
   const [categoryButtonSelected, setCategoryButtonSelected] = useState("all");
   const [currentSearch, setCurrentSearch] = useState("");
+  const intl = useIntl();
+  const translatedSearchLabel = intl.formatMessage({
+    id: "page.templates.searchLabel",
+    defaultMessage: "Search",
+  });
 
   return (
     <div className="genericBackground templates">
@@ -48,13 +54,16 @@ export default function template() {
         <div className={styles.selectTemplate}>
           <div>
             <span className={styles.title}>
-              Select a template to get started
+              <FormattedMessage
+                defaultMessage="Select a template to get started"
+                id="page.templates.selectTemplate"
+              />
             </span>
           </div>
           <div>
             <TextField
               id="outlined-search"
-              label="Search field"
+              label={translatedSearchLabel}
               type="search"
               variant="outlined"
               InputProps={{ style: { fontSize: 15 } }}

@@ -51,6 +51,9 @@
   "page.workplace.displayCategories": "Display Categories",
   "page.workplace.hideCategories": "Hide Categories",
 
+  "page.templates.selectTemplate": "Select a template to get started",
+  "page.templates.searchLabel": "Search",
+
   "compo.heartWorkPlace.button.create": "Create",
   "compo.heartWorkPlace.noCategory.title": "Welcome on Cursify",
   "compo.heartWorkPlace.noCategory.paragraph1": "Please select a category on the left to get started.",
@@ -64,6 +67,8 @@
   "compo.text.numberOfOutputs": "Outputs",
   "compo.text.inputOutput": "Input / Output",
   "compo.text.quotaReached": "Free Quota limit reached",
+
+  "compo.chart.dailyUse": "Daily Use",
 
   "compo.CategorySelector.selectCategory": "Select your category",
   "compo.CategorySelector.mostPopular": "Most Popular",
