@@ -241,7 +241,7 @@ export default function Home(props) {
                   <span>
                     <FormattedMessage
                       id="page.index.fourthLiner.tickbox7"
-                      defaultMessage="Instagram Caption"
+                      defaultMessage="Ad Description"
                     />
                   </span>
                 </div>
