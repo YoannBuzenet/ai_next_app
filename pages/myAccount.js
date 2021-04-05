@@ -278,7 +278,7 @@ export default function MyAccount() {
                               />
                             </p>
                             <p className={styles.wordsCounter}>
-                              {userTotalConsumption} / 5,000
+                              {userTotalConsumption || 0} / 5,000
                             </p>
                           </div>
                           <div className={styles.progressContainer}>
