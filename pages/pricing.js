@@ -159,7 +159,14 @@ const Pricing = () => {
                         />
                       </span>
                     )}
-                    {!isAnnual && <span>Billed monthly</span>}
+                    {!isAnnual && (
+                      <span>
+                        <FormattedMessage
+                          id="page.pricing.Billedmonthly"
+                          defaultMessage="Billed monthly"
+                        />
+                      </span>
+                    )}
                   </div>
                 </div>
                 <div className={styles.optionsContainer}>
@@ -192,14 +199,34 @@ const Pricing = () => {
             <div className={styles.onePriceDiv3}>
               <div className={styles.topDivWithoutCTA}>
                 <div className={styles.topDiv}>
-                  <h2>Entreprise</h2>
-                  <p className={styles.subTitle}>Perfect for teams</p>
+                  <h2>
+                    <FormattedMessage
+                      id="page.pricing.Entreprise"
+                      defaultMessage="Entreprise"
+                    />
+                  </h2>
+                  <p className={styles.subTitle}>
+                    <FormattedMessage
+                      id="page.pricing.Perfectforteams"
+                      defaultMessage="Perfect for teams"
+                    />
+                  </p>
                 </div>
                 <div className={styles.priceInfo}>
                   <div className={styles.price}>
-                    <span className={styles.priceNumber}>Custom</span>
+                    <span className={styles.priceNumber}>
+                      <FormattedMessage
+                        id="page.pricing.Custom"
+                        defaultMessage="Custom"
+                      />
+                    </span>
                   </div>
-                  <div className={styles.subprice}>Billed Monthly</div>
+                  <div className={styles.subprice}>
+                    <FormattedMessage
+                      id="page.pricing.Billedmonthly"
+                      defaultMessage="Billed monthly"
+                    />
+                  </div>
                 </div>
                 <div className={styles.optionsContainer}>
                   <Option
