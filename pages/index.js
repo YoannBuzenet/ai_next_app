@@ -48,7 +48,7 @@ export default function Home(props) {
 
   const translatedPageTitle = Intl.formatMessage({
     id: "page.index.pageTitle",
-    defaultMessage: "Cursify - AI that creates your content",
+    defaultMessage: "EasyFlow - AI that creates your content",
   });
 
   console.log("session", session);
@@ -156,7 +156,7 @@ export default function Home(props) {
             <p>
               <FormattedMessage
                 id="page.index.thirdLiner.explaination"
-                defaultMessage="Cursify uses technology based on AI. Thanks to Deep Learning, it is able to make connections that have never been done before. With just a few words, it can create specific text just for you."
+                defaultMessage="EasyFlow uses technology based on AI. Thanks to Deep Learning, it is able to make connections that have never been done before. With just a few words, it can create specific text just for you."
               />
             </p>
             <div>

@@ -2,7 +2,7 @@
   "generic.lang.english": "English",
   "generic.lang.french": "French",
 
-  "page.index.pageTitle": "Cursify - AI that creates your content",
+  "page.index.pageTitle": "EasyFlow - AI that creates your content",
   "page.index.firstLiner.punchline": "AI that generates your content in seconds",
   "page.index.firstLiner.paragraph": "One click and you're in.",
   "page.index.firstLiner.CTA": "Get Started",
@@ -13,7 +13,7 @@
   "page.index.thirdCase.slogan": "And just click",
   "page.index.thirdCase.explaination": "AI generates creative and relevant text based on what you entered. You can directly copy it and use it !",
   "page.index.thirdLiner.slogan": "Give a few words. Let the AI do the rest.",
-  "page.index.thirdLiner.explaination": "Cursify uses technology based on AI. Thanks to Deep Learning, it is able to make connections that have never been done before. With just a few words, it can create specific text just for you.",
+  "page.index.thirdLiner.explaination": "EasyFlow uses technology based on AI. Thanks to Deep Learning, it is able to make connections that have never been done before. With just a few words, it can create specific text just for you.",
   "page.index.fourthLiner.slogan": "Just generate and use it",
   "page.index.fourthLiner.explaination": "Words are automatically generated thanks to the Deep Learning algorithm. Creative and relevant marketing text are generated for you on the fly.",
   "page.index.fourthLiner.tickbox1": "Facebook Ads",
@@ -57,7 +57,7 @@
   "page.templates.searchLabel": "Search",
 
   "compo.heartWorkPlace.button.create": "Create",
-  "compo.heartWorkPlace.noCategory.title": "Welcome on Cursify",
+  "compo.heartWorkPlace.noCategory.title": "Welcome on EasyFlow",
   "compo.heartWorkPlace.noCategory.paragraph1": "Please select a category on the left to get started.",
   "compo.heartWorkPlace.noCategory.paragraph2": "Content will be fully AI generated.",
   "compo.heartWorkPlace.loading.pleaseWait": "Loading ...",
@@ -79,13 +79,13 @@
 
   "page.login.head.title": "Sign In / Register",
   "page.login.title": "Sign in or Create your Account",
-  "page.login.legalNotice": "By proceeding, you are agreeing to Cursify's Terms of Service.",
+  "page.login.legalNotice": "By proceeding, you are agreeing to EasyFlow's Terms of Service.",
 
   "navbar.menu.signin": "Sign In",
   "navbar.menu.myAccount": "My Account",
   "navbar.menu.pricing": "Pricing",
 
-  "footer.copyright": "© 2021 Cursify, Inc. All rights reserved.",
+  "footer.copyright": "© 2021 EasyFlow, Inc. All rights reserved.",
 
   "categories.id1.categorylabel": "Product Description",
   "categories.id1.label": "Describe shortly your product",

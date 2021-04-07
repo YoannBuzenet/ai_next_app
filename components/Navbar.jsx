@@ -18,7 +18,7 @@ const Navbar = () => {
               <Link href={"/"}>
                 <div className={styles.navLink}>
                   <a>
-                    <p>CURSIFY</p>
+                    <p>EASYFLOW</p>
                   </a>
                 </div>
               </Link>

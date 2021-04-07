@@ -9,7 +9,7 @@ const Footer = () => {
           <span>
             <FormattedMessage
               id="footer.copyright"
-              defaultMessage="© 2021 Cursify, Inc. All rights reserved."
+              defaultMessage="© 2021 EasyFlow, Inc. All rights reserved."
             />
           </span>
         </div>

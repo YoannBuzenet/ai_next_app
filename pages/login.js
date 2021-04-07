@@ -59,7 +59,7 @@ export default function Login() {
                 <p>
                   <FormattedMessage
                     id="page.login.legalNotice"
-                    defaultMessage="By proceeding, you are agreeing to Cursify's Terms of Service."
+                    defaultMessage="By proceeding, you are agreeing to EasyFlow's Terms of Service."
                   />
                 </p>
               </div>

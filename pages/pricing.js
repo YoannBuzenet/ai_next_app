@@ -13,9 +13,9 @@ const Pricing = () => {
         <div className={styles.titleContainer}>
           <h1>Pricing</h1>
           <div className={styles.switchContainer}>
-            Monthly
+            Pay Monthly
             <SwitchLabels setState={setIsAnnual} state={isAnnual} />
-            Annually
+            Pay Annually
           </div>
         </div>
         <div className={styles.catchphrase}></div>

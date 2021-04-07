@@ -8,6 +8,9 @@
 
 .switchContainer {
   display: flex;
+  width: 100px;
+  margin: auto;
+  margin-top: 50px;
 }
 
 .catchphrase {

@@ -2,7 +2,7 @@
   "generic.lang.english": "Anglais",
   "generic.lang.french": "Français",
 
-  "page.index.pageTitle": "Cursify - L'IA qui crée votre contenu",
+  "page.index.pageTitle": "EasyFlow - L'IA qui crée votre contenu",
   "page.index.firstLiner.punchline": "L'IA qui crée votre contenu en quelques secondes",
   "page.index.firstLiner.paragraph": "Un clic et c'est prêt !",
   "page.index.firstLiner.CTA": "Commencer",
@@ -13,7 +13,7 @@
   "page.index.thirdCase.slogan": "Et cliquez !",
   "page.index.thirdCase.explaination": "L'IA génère du contenu créatif basé sur votre texte. Vous pouvez le copier et directement l'utiliser",
   "page.index.thirdLiner.slogan": "Donnez quelques mots à l'IA. Laissez la faire le reste.",
-  "page.index.thirdLiner.explaination": "Cursify utilise une technologie basée sur l'intelligence artificielle. Capable de créer des connections jamais faites jusqu'alors, elle crée des phrases pertinentes avec seulement quelques mots.",
+  "page.index.thirdLiner.explaination": "EasyFlow utilise une technologie basée sur l'intelligence artificielle. Capable de créer des connections jamais faites jusqu'alors, elle crée des phrases pertinentes avec seulement quelques mots.",
   "page.index.fourthLiner.slogan": "Cliquez, Générez, Utilisez",
   "page.index.fourthLiner.explaination": "Les phrases sont automatiquement crées grâce un algorithme de Deep Learning. L'IA génère du texte pertinent, créatif, et ciblé, en un clic.",
   "page.index.fourthLiner.tickbox1": "Accroches Facebook",
@@ -57,7 +57,7 @@
   "page.templates.searchLabel": "Rechercher",
 
   "compo.heartWorkPlace.button.create": "Créer",
-  "compo.heartWorkPlace.noCategory.title": "Bienvenue sur Cursify",
+  "compo.heartWorkPlace.noCategory.title": "Bienvenue sur EasyFlow",
   "compo.heartWorkPlace.noCategory.paragraph1": "Sélectionnez un thème sur la gauche pour commencer !",
   "compo.heartWorkPlace.noCategory.paragraph2": "Le contenu sera complètement généré par l'IA.",
   "compo.heartWorkPlace.loading.pleaseWait": "Chargement...",
@@ -79,13 +79,13 @@
 
   "page.login.head.title": "Se connecter / S'inscrire",
   "page.login.title": "Se connecter ou Créer un compte",
-  "page.login.legalNotice": "En vous inscrivant, vous acceptez les conditions de vente de Cursify.",
+  "page.login.legalNotice": "En vous inscrivant, vous acceptez les conditions de vente de EasyFlow.",
 
   "navbar.menu.signin": "Se connecter",
   "navbar.menu.myAccount": "Mon compte",
   "navbar.menu.pricing": "Tarifs",
 
-  "footer.copyright": "© 2021 Cursify. Tous droits réservés.",
+  "footer.copyright": "© 2021 EasyFlow. Tous droits réservés.",
 
   "categories.id1.categorylabel": "Description Produit",
   "categories.id1.label": "Décrivez votre produit",
@@ -94,7 +94,7 @@
   "categories.id2.categorylabel": "Proposition de valeur",
   "categories.id2.description": "Proposez une mise en avant riche et ingénieuse de la valeur de votre service.",
   "categories.id2.label": "Quel est le nom de votre entreprise ou de votre produit ?",
-  "categories.id2.placeholder": "Exemple : Cursify",
+  "categories.id2.placeholder": "Exemple : EasyFlow",
   "categories.id2.label2": "Décrivez votre produit",
   "categories.id2.placeholder2": "Exemple : Une entreprise de production de contenu via Intelligence Artificielle",
   "categories.id3.categorylabel": "Titre de billet de blog",

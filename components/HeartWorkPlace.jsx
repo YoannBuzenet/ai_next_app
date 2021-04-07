@@ -43,7 +43,7 @@ const HeartWorkPlace = ({
         <h1>
           <FormattedMessage
             id="compo.heartWorkPlace.noCategory.title"
-            defaultMessage="Welcome on Cursify"
+            defaultMessage="Welcome on EasyFlow"
           />
         </h1>
         <div className={style.explainationParagraphs}>
