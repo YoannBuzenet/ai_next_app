@@ -57,6 +57,9 @@
   "page.templates.searchLabel": "Rechercher",
 
   "page.pricing.cta": "Tester",
+  "page.pricing.option5000Free": "5 000 mots gratuits",
+  "page.pricing.mailSupport": "Support par email 24/7",
+  "page.pricing.accessAllCategories": "Accès à toutes les catégories",
 
   "compo.heartWorkPlace.button.create": "Créer",
   "compo.heartWorkPlace.noCategory.title": "Bienvenue sur EasyFlow",

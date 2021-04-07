@@ -53,9 +53,18 @@ const Pricing = () => {
                   <div className={styles.subprice}>No Credit Card Required</div>
                 </div>
                 <div className={styles.optionsContainer}>
-                  <Option />
-                  <Option />
-                  <Option />
+                  <Option
+                    idOptionLabel="page.pricing.option5000Free"
+                    defaultOptionLabel="5,000 free words"
+                  />
+                  <Option
+                    idOptionLabel="page.pricing.accessAllCategories"
+                    defaultOptionLabel="Access to all categories"
+                  />
+                  <Option
+                    idOptionLabel="page.pricing.mailSupport"
+                    defaultOptionLabel="24/7 email support"
+                  />
                 </div>
               </div>
               <BlueCTA
@@ -93,7 +102,10 @@ const Pricing = () => {
                   <Option />
                   <Option />
                   <Option />
-                  <Option />
+                  <Option
+                    idOptionLabel="page.pricing.mailSupport"
+                    defaultOptionLabel="24/7 email support"
+                  />
                 </div>
               </div>
               <BlueCTA
@@ -122,7 +134,10 @@ const Pricing = () => {
                   <Option />
                   <Option />
                   <Option />
-                  <Option />
+                  <Option
+                    idOptionLabel="page.pricing.mailSupport"
+                    defaultOptionLabel="24/7 email support"
+                  />
                 </div>
               </div>
               <BlueCTA

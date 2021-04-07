@@ -103,7 +103,7 @@ div.onePriceDiv2 {
   position: absolute;
   z-index: 5;
   top: -15px;
-  left: 85px;
+  left: 80px;
   background-color: rgba(28, 100, 242, 1);
   color: white;
   font-size: 1.275rem;
@@ -129,7 +129,7 @@ div.onePriceDiv3 {
 
 .pricesContainer .subTitle {
   margin: 0;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--grey-text);
 }
 
@@ -148,7 +148,7 @@ div.onePriceDiv3 {
 
 .subprice {
   font-size: 1.8rem;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--grey-text);
 }
 
