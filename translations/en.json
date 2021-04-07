@@ -56,6 +56,8 @@
   "page.templates.selectTemplate": "Select a template to get started",
   "page.templates.searchLabel": "Search",
 
+  "page.pricing.cta": "Try",
+
   "compo.heartWorkPlace.button.create": "Create",
   "compo.heartWorkPlace.noCategory.title": "Welcome on EasyFlow",
   "compo.heartWorkPlace.noCategory.paragraph1": "Please select a category on the left to get started.",

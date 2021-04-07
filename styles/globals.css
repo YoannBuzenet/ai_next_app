@@ -30,6 +30,7 @@ a {
     rgb(71 123 222 / 80%)
   );
   --grey-text: rgba(93, 93, 93, 0.835);
+  /* --grey-text: rgba(75, 75, 75, 0.835); */
 }
 * {
   box-sizing: border-box;

@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Link from "next/link";
 import styles from "../styles/Pricing.module.css";
 import SwitchLabels from "../components/Base/Switch";
+import RoundedButton from "../components/Base/RoundedButton";
+import BlueCTA from "../components/Base/BlueCTA";
 
 const Pricing = () => {
   const [isAnnual, setIsAnnual] = useState(true);
@@ -27,7 +29,7 @@ const Pricing = () => {
             <div className={styles.onePriceDiv1}>
               <div className={styles.topDiv}>
                 <h2>Free Trial</h2>
-                <p className={styles.subTitle}>ddddd</p>
+                <p className={styles.subTitle}>Discover our product</p>
               </div>
               <div className={styles.priceInfo}>
                 <div className={styles.price}>0€</div>
@@ -39,7 +41,7 @@ const Pricing = () => {
             <div className={styles.onePriceDiv2}>
               <div className={styles.topDiv}>
                 <h2>Solo Access</h2>
-                <p className={styles.subTitle}>ddddd</p>
+                <p className={styles.subTitle}>Perfect for one person</p>
               </div>
               <div className={styles.priceInfo}>
                 <div className={styles.price}>35€</div>
@@ -52,14 +54,14 @@ const Pricing = () => {
             <div className={styles.onePriceDiv3}>
               <div className={styles.topDiv}>
                 <h2>Entreprise</h2>
-                <p className={styles.subTitle}>ddddd</p>
+                <p className={styles.subTitle}>Perfect for teams</p>
               </div>
               <div className={styles.priceInfo}>
                 <div className={styles.price}>Custom</div>
                 <div className={styles.subprice}>Billed Monthly</div>
               </div>
               <div className={styles.optionsContainer}>options</div>
-              <button>CTA</button>
+              <BlueCTA to="/" idLabel="page.pricing.cta" defaultLabel="Try" />
             </div>
           </div>
           <div className={styles.spaceContainer}></div>
