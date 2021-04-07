@@ -12,5 +12,6 @@
 .checkIcon {
   color: var(--primary-color);
   margin-top: 5px;
-  margin-right: 10px;
+  margin-right: 5px;
+  min-width: 50px;
 }

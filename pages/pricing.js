@@ -7,13 +7,16 @@ import BlueCTA from "../components/Base/BlueCTA";
 import * as Icon from "react-feather";
 import Option from "../components/pricingPage/Option";
 import { FormattedMessage } from "react-intl";
+import { useSession, getSession, signOut } from "next-auth/client";
+import UserCheck from "../services/userCheck";
 
 const Pricing = () => {
   const [isAnnual, setIsAnnual] = useState(true);
+  const [session, loading] = useSession();
 
-  // to do translate le nom de la page
+  // to do translate la Head de la page
 
-  console.log("bru", Icon);
+  const isLoggedUser = UserCheck.isUserLogged(session?.user?.isLoggedUntil);
 
   return (
     <div className="pricing">
@@ -104,12 +107,22 @@ const Pricing = () => {
                   />
                 </div>
               </div>
-              <BlueCTA
-                to="/"
-                idLabel="page.pricing.cta"
-                defaultLabel="Try"
-                isFullWidth
-              />
+              {isLoggedUser && (
+                <BlueCTA
+                  to="/"
+                  idLabel="page.pricing.tryForFree"
+                  defaultLabel="Try for free"
+                  isFullWidth
+                />
+              )}
+              {!isLoggedUser && (
+                <BlueCTA
+                  to="/"
+                  idLabel="page.pricing.signIn"
+                  defaultLabel="Sign In"
+                  isFullWidth
+                />
+              )}
             </div>
             <div className={styles.onePriceDiv2}>
               <span className={styles.mostPopular}>
@@ -188,12 +201,22 @@ const Pricing = () => {
                   />
                 </div>
               </div>
-              <BlueCTA
-                to="/"
-                idLabel="page.pricing.cta"
-                defaultLabel="Try"
-                isFullWidth
-              />
+              {isLoggedUser && (
+                <BlueCTA
+                  to="/"
+                  idLabel="page.pricing.tryForFree"
+                  defaultLabel="Try for free"
+                  isFullWidth
+                />
+              )}
+              {!isLoggedUser && (
+                <BlueCTA
+                  to="/"
+                  idLabel="page.pricing.signIn"
+                  defaultLabel="Sign In"
+                  isFullWidth
+                />
+              )}
             </div>
 
             <div className={styles.onePriceDiv3}>
@@ -252,12 +275,22 @@ const Pricing = () => {
                   />
                 </div>
               </div>
-              <BlueCTA
-                to="/"
-                idLabel="page.pricing.cta"
-                defaultLabel="Try"
-                isFullWidth
-              />
+              {isLoggedUser && (
+                <BlueCTA
+                  to="/"
+                  idLabel="page.pricing.tryForFree"
+                  defaultLabel="Try for free"
+                  isFullWidth
+                />
+              )}
+              {!isLoggedUser && (
+                <BlueCTA
+                  to="/"
+                  idLabel="page.pricing.signIn"
+                  defaultLabel="Sign In"
+                  isFullWidth
+                />
+              )}
             </div>
           </div>
           <div className={styles.spaceContainer}></div>
