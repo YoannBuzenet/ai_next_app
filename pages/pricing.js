@@ -32,7 +32,9 @@ const Pricing = () => {
                 <p className={styles.subTitle}>Discover our product</p>
               </div>
               <div className={styles.priceInfo}>
-                <div className={styles.price}>0€</div>
+                <div className={styles.price}>
+                  <span className={styles.priceNumber}>0€</span>
+                </div>
                 <div className={styles.subprice}>No Credit Card Required</div>
               </div>
               <div className={styles.optionsContainer}>
@@ -54,7 +56,7 @@ const Pricing = () => {
               <div className={styles.priceInfo}>
                 <div className={styles.price}>
                   {isAnnual && (
-                    <span>
+                    <span className={styles.priceNumber}>
                       35€<span>/month</span>
                     </span>
                   )}
@@ -83,7 +85,9 @@ const Pricing = () => {
                 <p className={styles.subTitle}>Perfect for teams</p>
               </div>
               <div className={styles.priceInfo}>
-                <div className={styles.price}>Custom</div>
+                <div className={styles.price}>
+                  <span className={styles.priceNumber}>Custom</span>
+                </div>
                 <div className={styles.subprice}>Billed Monthly</div>
               </div>
               <div className={styles.optionsContainer}>

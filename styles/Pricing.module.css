@@ -36,9 +36,20 @@
 .pricesContainer > div {
   min-height: 400px;
   width: 300px;
-  background-color: green;
+  background-color: rgb(242, 242, 242);
   border-radius: 6px;
   padding: 2rem;
+}
+
+div.onePriceDiv1 {
+  height: 400px;
+}
+
+div.onePriceDiv2 {
+  height: 450px;
+}
+div.onePriceDiv3 {
+  height: 500px;
 }
 
 .pricesContainer h2 {
@@ -56,7 +67,7 @@
   margin-top: 3rem;
 }
 
-.price {
+.price .priceNumber {
   font-size: 5rem;
 }
 

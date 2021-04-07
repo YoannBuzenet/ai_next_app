@@ -13,7 +13,9 @@ export default function SwitchLabels({ description, state, setState }) {
   return (
     <FormGroup row>
       <FormControlLabel
-        control={<Switch checked={state} onChange={handleChange} />}
+        control={
+          <Switch checked={state} onChange={handleChange} color="primary" />
+        }
       />
     </FormGroup>
   );
