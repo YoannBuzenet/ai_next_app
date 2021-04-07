@@ -4,11 +4,15 @@ import styles from "../styles/Pricing.module.css";
 import SwitchLabels from "../components/Base/Switch";
 import RoundedButton from "../components/Base/RoundedButton";
 import BlueCTA from "../components/Base/BlueCTA";
+import * as Icon from "react-feather";
+import Option from "../components/pricingPage/Option";
 
 const Pricing = () => {
   const [isAnnual, setIsAnnual] = useState(true);
 
   // to do translate le nom de la page
+
+  console.log("bru", Icon);
 
   return (
     <div className="pricing">
@@ -48,8 +52,9 @@ const Pricing = () => {
                 <div className={styles.subprice}>No Credit Card Required</div>
               </div>
               <div className={styles.optionsContainer}>
-                optionsoptionsoptions options options options options options
-                options options
+                <Option />
+                <Option />
+                <Option />
               </div>
               <BlueCTA
                 to="/"
@@ -78,8 +83,11 @@ const Pricing = () => {
                 </div>
               </div>
               <div className={styles.optionsContainer}>
-                optionsoptionsoptions options options options options options
-                options options
+                <Option />
+                <Option />
+                <Option />
+                <Option />
+                <Option />
               </div>
               <BlueCTA
                 to="/"
@@ -101,8 +109,13 @@ const Pricing = () => {
                 <div className={styles.subprice}>Billed Monthly</div>
               </div>
               <div className={styles.optionsContainer}>
-                optionsoptionsoptions options options options options options
-                options options
+                <Option />
+                <Option />
+                <Option />
+                <Option />
+                <Option />
+                <Option />
+                <Option />
               </div>
               <BlueCTA
                 to="/"

@@ -19,16 +19,17 @@
   width: 100px;
   margin: auto;
   margin-top: 50px;
+  margin-bottom: 30px;
 }
 
 .switchContainer p {
   min-width: 140px;
   font-size: 2rem;
   margin-right: 10px;
+  font-weight: 600;
 }
 
 .selected {
-  font-weight: 600;
 }
 .nonSelected {
   font-weight: 300;
