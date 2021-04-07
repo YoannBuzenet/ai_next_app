@@ -98,8 +98,14 @@ const Pricing = () => {
                   </div>
                 </div>
                 <div className={styles.optionsContainer}>
-                  <Option />
-                  <Option />
+                  <Option
+                    idOptionLabel="page.pricing.100000words"
+                    defaultOptionLabel="100,000 words/month"
+                  />
+                  <Option
+                    idOptionLabel="page.pricing.accessAllCategories"
+                    defaultOptionLabel="Access to all categories"
+                  />
                   <Option />
                   <Option />
                   <Option
@@ -129,7 +135,10 @@ const Pricing = () => {
                   <div className={styles.subprice}>Billed Monthly</div>
                 </div>
                 <div className={styles.optionsContainer}>
-                  <Option />
+                  <Option
+                    idOptionLabel="page.pricing.illimitedWords"
+                    defaultOptionLabel="Unlimited Words"
+                  />
                   <Option />
                   <Option />
                   <Option />
