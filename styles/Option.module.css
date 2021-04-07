@@ -1,6 +1,7 @@
 .optionContainer {
   display: flex;
   align-items: center;
+  margin-top: 10px;
 }
 
 .optionContainer p {

@@ -106,8 +106,10 @@ const Pricing = () => {
                     idOptionLabel="page.pricing.accessAllCategories"
                     defaultOptionLabel="Access to all categories"
                   />
-                  <Option />
-                  <Option />
+                  <Option
+                    idOptionLabel="page.pricing.accessPremiumFeatures"
+                    defaultOptionLabel="Access to last features"
+                  />
                   <Option
                     idOptionLabel="page.pricing.mailSupport"
                     defaultOptionLabel="24/7 email support"
@@ -139,10 +141,19 @@ const Pricing = () => {
                     idOptionLabel="page.pricing.illimitedWords"
                     defaultOptionLabel="Unlimited Words"
                   />
-                  <Option />
-                  <Option />
-                  <Option />
-                  <Option />
+                  <Option
+                    idOptionLabel="page.pricing.accessAllCategories"
+                    defaultOptionLabel="Access to all categories"
+                  />
+
+                  <Option
+                    idOptionLabel="page.pricing.accessPremiumFeatures"
+                    defaultOptionLabel="Access to premium features"
+                  />
+                  <Option
+                    idOptionLabel="page.pricing.premiumCommunity"
+                    defaultOptionLabel="Premium Community (Coming soon)"
+                  />
                   <Option
                     idOptionLabel="page.pricing.mailSupport"
                     defaultOptionLabel="24/7 email support"
