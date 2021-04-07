@@ -115,7 +115,6 @@ const Pricing = () => {
                 <Option />
                 <Option />
                 <Option />
-                <Option />
               </div>
               <BlueCTA
                 to="/"
