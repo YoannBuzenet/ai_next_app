@@ -33,6 +33,18 @@ const Navbar = () => {
               )}
             </div>
             <div className={styles.rightNavBar}>
+              <Link href="/pricing">
+                <div className={styles.navLink}>
+                  <a>
+                    <p>
+                      <FormattedMessage
+                        id="navbar.menu.pricing"
+                        defaultMessage="Pricing"
+                      />
+                    </p>
+                  </a>
+                </div>
+              </Link>
               {!UserCheck.isUserLogged(session?.user?.isLoggedUntil) && (
                 <Link href="/login">
                   <div className={styles.navLink}>

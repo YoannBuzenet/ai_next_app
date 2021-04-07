@@ -5,20 +5,18 @@ import OnePrice from "../components/pricing/OnePrice";
 import SwitchLabels from "../components/Base/Switch";
 
 const Pricing = () => {
-  const [isAnnualOrMonthly, setIsAnnualOrMonthly] = useState("Annual");
+  const [isAnnual, setIsAnnual] = useState(true);
 
   return (
-    <div className="globalGradient pricing">
+    <div className="pricing">
       <div className="container">
         <div className={styles.titleContainer}>
           <h1>Pricing</h1>
-          <SwitchLabels
-            state={isAnnualOrMonthly}
-            setState={setIsAnnualOrMonthly}
-            state1="Annual"
-            state2="Monthly"
-            description={isAnnualOrMonthly}
-          />
+          <div className={styles.switchContainer}>
+            Monthly
+            <SwitchLabels setState={setIsAnnual} state={isAnnual} />
+            Annually
+          </div>
         </div>
         <div className={styles.catchphrase}></div>
         <div className={styles.pricesContainer}>
