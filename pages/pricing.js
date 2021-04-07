@@ -22,9 +22,37 @@ const Pricing = () => {
         <div className={styles.firstDivContainer}>
           <div className={styles.catchphrase}></div>
           <div className={styles.pricesContainer}>
-            <div className={styles.onePriceDiv}>"d"</div>
-            <div className={styles.onePriceDiv}>"d"</div>
-            <div className={styles.onePriceDiv}>"d"</div>
+            <div className={styles.onePriceDiv1}>
+              <div className={styles.topDiv}>
+                <h2>Free Trial</h2>
+                <p className={styles.subTitle}>ddddd</p>
+              </div>
+              <div className={styles.priceInfo}>
+                <div className={styles.price}>0€</div>
+                <div className={styles.subprice}></div>
+              </div>
+            </div>
+            <div className={styles.onePriceDiv2}>
+              <div className={styles.topDiv}>
+                <h2>Solo Access</h2>
+                <p className={styles.subTitle}>ddddd</p>
+              </div>
+              <div className={styles.priceInfo}>
+                <div className={styles.price}>35€</div>
+                <div className={styles.subprice}></div>
+              </div>
+            </div>
+
+            <div className={styles.onePriceDiv3}>
+              <div className={styles.topDiv}>
+                <h2>Entreprise</h2>
+                <p className={styles.subTitle}>ddddd</p>
+              </div>
+              <div className={styles.priceInfo}>
+                <div className={styles.price}>Custom</div>
+                <div className={styles.subprice}></div>
+              </div>
+            </div>
           </div>
           <div className={styles.spaceContainer}></div>
         </div>
