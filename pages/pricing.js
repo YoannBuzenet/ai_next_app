@@ -13,11 +13,13 @@ const Pricing = () => {
       <div className="container">
         <div className={styles.titleContainer}>
           <h1>Pricing</h1>
-          <div className={styles.switchContainer}>
-            Pay Monthly
-            <SwitchLabels setState={setIsAnnual} state={isAnnual} />
-            Pay Annually
-          </div>
+          <p>Slogan stylé</p>
+          <p>Try for free</p>
+        </div>
+        <div className={styles.switchContainer}>
+          Pay Monthly
+          <SwitchLabels setState={setIsAnnual} state={isAnnual} />
+          Pay Annually
         </div>
         <div className={styles.firstDivContainer}>
           <div className={styles.catchphrase}></div>
@@ -29,8 +31,10 @@ const Pricing = () => {
               </div>
               <div className={styles.priceInfo}>
                 <div className={styles.price}>0€</div>
-                <div className={styles.subprice}></div>
+                <div className={styles.subprice}>No Credit Card Required</div>
               </div>
+              <div className={styles.optionsContainer}>options</div>
+              <button>CTA</button>
             </div>
             <div className={styles.onePriceDiv2}>
               <div className={styles.topDiv}>
@@ -39,8 +43,10 @@ const Pricing = () => {
               </div>
               <div className={styles.priceInfo}>
                 <div className={styles.price}>35€</div>
-                <div className={styles.subprice}></div>
+                <div className={styles.subprice}>420€ Billed Yearly</div>
               </div>
+              <div className={styles.optionsContainer}>options</div>
+              <button>CTA</button>
             </div>
 
             <div className={styles.onePriceDiv3}>
@@ -50,8 +56,10 @@ const Pricing = () => {
               </div>
               <div className={styles.priceInfo}>
                 <div className={styles.price}>Custom</div>
-                <div className={styles.subprice}></div>
+                <div className={styles.subprice}>Billed Monthly</div>
               </div>
+              <div className={styles.optionsContainer}>options</div>
+              <button>CTA</button>
             </div>
           </div>
           <div className={styles.spaceContainer}></div>
