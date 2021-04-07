@@ -65,14 +65,29 @@ const Pricing = () => {
             <div className={styles.onePriceDiv1}>
               <div className={styles.topDivWithoutCTA}>
                 <div className={styles.topDiv}>
-                  <h2>Free Trial</h2>
-                  <p className={styles.subTitle}>Discover our product</p>
+                  <h2>
+                    <FormattedMessage
+                      id="page.pricing.FreeTrial"
+                      defaultMessage="Free Trial"
+                    />
+                  </h2>
+                  <p className={styles.subTitle}>
+                    <FormattedMessage
+                      id="page.pricing.Discoverourproduct"
+                      defaultMessage="Discover our product"
+                    />
+                  </p>
                 </div>
                 <div className={styles.priceInfo}>
                   <div className={styles.price}>
                     <span className={styles.priceNumber}>0€</span>
                   </div>
-                  <div className={styles.subprice}>No Credit Card Required</div>
+                  <div className={styles.subprice}>
+                    <FormattedMessage
+                      id="page.pricing.NoCreditCardRequired"
+                      defaultMessage="No Credit Card Required"
+                    />
+                  </div>
                 </div>
                 <div className={styles.optionsContainer}>
                   <Option
@@ -97,17 +112,38 @@ const Pricing = () => {
               />
             </div>
             <div className={styles.onePriceDiv2}>
-              <span className={styles.mostPopular}>MOST POPULAR</span>
+              <span className={styles.mostPopular}>
+                <FormattedMessage
+                  id="page.pricing.mostpopular"
+                  defaultMessage="MOST POPULAR"
+                />
+              </span>
               <div className={styles.topDivWithoutCTA}>
                 <div className={styles.topDiv}>
-                  <h2>Solo Access</h2>
-                  <p className={styles.subTitle}>Perfect for one person</p>
+                  <h2>
+                    <FormattedMessage
+                      id="page.pricing.soloAccess"
+                      defaultMessage="Solo Access"
+                    />
+                  </h2>
+                  <p className={styles.subTitle}>
+                    <FormattedMessage
+                      id="page.pricing.Perfectforoneperson"
+                      defaultMessage="Perfect for one person"
+                    />
+                  </p>
                 </div>
                 <div className={styles.priceInfo}>
                   <div className={styles.price}>
                     {isAnnual && (
                       <span className={styles.priceNumber}>
-                        35€<span> /month</span>
+                        35€
+                        <span>
+                          <FormattedMessage
+                            id="page.pricing.byMonth"
+                            defaultMessage=" /month"
+                          />
+                        </span>
                       </span>
                     )}
                     {!isAnnual && (
@@ -115,7 +151,14 @@ const Pricing = () => {
                     )}
                   </div>
                   <div className={styles.subprice}>
-                    {isAnnual && <span>420€ Billed Yearly</span>}
+                    {isAnnual && (
+                      <span>
+                        <FormattedMessage
+                          id="page.pricing.420€BilledYearly"
+                          defaultMessage="420€ Billed Yearly"
+                        />
+                      </span>
+                    )}
                     {!isAnnual && <span>Billed monthly</span>}
                   </div>
                 </div>
