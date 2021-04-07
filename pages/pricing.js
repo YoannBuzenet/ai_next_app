@@ -6,6 +6,7 @@ import RoundedButton from "../components/Base/RoundedButton";
 import BlueCTA from "../components/Base/BlueCTA";
 import * as Icon from "react-feather";
 import Option from "../components/pricingPage/Option";
+import { FormattedMessage } from "react-intl";
 
 const Pricing = () => {
   const [isAnnual, setIsAnnual] = useState(true);
@@ -18,15 +19,33 @@ const Pricing = () => {
     <div className="pricing">
       <div className="container">
         <div className={styles.titleContainer}>
-          <h1>Pricing</h1>
+          <h1>
+            <FormattedMessage
+              id="page.pricing.title"
+              defaultMessage="Pricing"
+            />
+          </h1>
           <div className={styles.catchPhraseContainer}>
-            <p>Write easily with EasyFlow</p>
-            <p>Flexible pricing for all projects</p>
+            <p>
+              <FormattedMessage
+                id="page.pricing.catchprase1"
+                defaultMessage="Write easily with EasyFlow"
+              />
+            </p>
+            <p>
+              <FormattedMessage
+                id="page.pricing.catchprase2"
+                defaultMessage="Flexible pricing for all projects"
+              />
+            </p>
           </div>
         </div>
         <div className={styles.switchContainer}>
           <p className={!isAnnual ? styles.selected : styles.nonSelected}>
-            Pay Monthly
+            <FormattedMessage
+              id="page.pricing.PayMonthly"
+              defaultMessage="Pay Monthly"
+            />
           </p>
           <SwitchLabels
             setState={setIsAnnual}
@@ -34,7 +53,10 @@ const Pricing = () => {
             classToAdd="margin20"
           />
           <p className={isAnnual ? styles.selected : styles.nonSelected}>
-            Pay Annually
+            <FormattedMessage
+              id="page.pricing.PayAnnually"
+              defaultMessage="Pay Annually"
+            />
           </p>
         </div>
         <div className={styles.firstDivContainer}>

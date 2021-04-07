@@ -57,6 +57,11 @@
   "page.templates.searchLabel": "Rechercher",
 
   "page.pricing.cta": "Tester",
+  "page.pricing.title": "Tarifs",
+  "page.pricing.catchprase1": "Ecrivez facilement avec EasyFlow",
+  "page.pricing.catchprase2": "Des prix pour tous types de projets",
+  "page.pricing.PayMonthly": "Tarif Mensuel",
+  "page.pricing.PayAnnually": "Tarif Annuel",
   "page.pricing.option5000Free": "5 000 mots gratuits",
   "page.pricing.mailSupport": "Support par email 24/7",
   "page.pricing.accessAllCategories": "Accès à toutes les catégories",
