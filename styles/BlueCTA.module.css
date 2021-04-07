@@ -1,3 +1,16 @@
+.buttonContainer {
+  margin-top: 50px;
+}
+
+.buttonContainerFullWidth {
+  margin-top: 50px;
+}
+
+.buttonContainerFullWidth a {
+  display: block;
+  text-align: center;
+}
+
 .button {
   padding-left: 3.5rem;
   padding-right: 3.5rem;

@@ -60,6 +60,10 @@
   font-size: 5rem;
 }
 
+.price span {
+  font-size: 2rem;
+}
+
 .subprice {
   font-size: 1.8rem;
   font-weight: 600;

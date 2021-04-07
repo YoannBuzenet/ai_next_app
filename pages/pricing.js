@@ -35,8 +35,16 @@ const Pricing = () => {
                 <div className={styles.price}>0€</div>
                 <div className={styles.subprice}>No Credit Card Required</div>
               </div>
-              <div className={styles.optionsContainer}>options</div>
-              <button>CTA</button>
+              <div className={styles.optionsContainer}>
+                optionsoptionsoptions options options options options options
+                options options
+              </div>
+              <BlueCTA
+                to="/"
+                idLabel="page.pricing.cta"
+                defaultLabel="Try"
+                isFullWidth
+              />
             </div>
             <div className={styles.onePriceDiv2}>
               <div className={styles.topDiv}>
@@ -44,11 +52,29 @@ const Pricing = () => {
                 <p className={styles.subTitle}>Perfect for one person</p>
               </div>
               <div className={styles.priceInfo}>
-                <div className={styles.price}>35€</div>
-                <div className={styles.subprice}>420€ Billed Yearly</div>
+                <div className={styles.price}>
+                  {isAnnual && (
+                    <span>
+                      35€<span>/month</span>
+                    </span>
+                  )}
+                  {!isAnnual && <span>49€</span>}
+                </div>
+                <div className={styles.subprice}>
+                  {isAnnual && <span>420€ Billed Yearly</span>}
+                  {!isAnnual && <span>Billed monthly</span>}
+                </div>
               </div>
-              <div className={styles.optionsContainer}>options</div>
-              <button>CTA</button>
+              <div className={styles.optionsContainer}>
+                optionsoptionsoptions options options options options options
+                options options
+              </div>
+              <BlueCTA
+                to="/"
+                idLabel="page.pricing.cta"
+                defaultLabel="Try"
+                isFullWidth
+              />
             </div>
 
             <div className={styles.onePriceDiv3}>
@@ -60,8 +86,16 @@ const Pricing = () => {
                 <div className={styles.price}>Custom</div>
                 <div className={styles.subprice}>Billed Monthly</div>
               </div>
-              <div className={styles.optionsContainer}>options</div>
-              <BlueCTA to="/" idLabel="page.pricing.cta" defaultLabel="Try" />
+              <div className={styles.optionsContainer}>
+                optionsoptionsoptions options options options options options
+                options options
+              </div>
+              <BlueCTA
+                to="/"
+                idLabel="page.pricing.cta"
+                defaultLabel="Try"
+                isFullWidth
+              />
             </div>
           </div>
           <div className={styles.spaceContainer}></div>
