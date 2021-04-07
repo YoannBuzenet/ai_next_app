@@ -5,9 +5,9 @@ import styles from "../../styles/Option.module.css";
 const Option = () => {
   //
   return (
-    <div>
+    <div className={styles.optionContainer}>
       <Icon.CheckCircle className={styles.checkIcon} />
-      options
+      <p>options</p>
     </div>
   );
 };
