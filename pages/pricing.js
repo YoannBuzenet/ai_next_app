@@ -20,7 +20,7 @@ const Pricing = () => {
         <div className={styles.titleContainer}>
           <h1>Pricing</h1>
           <div className={styles.catchPhraseContainer}>
-            <p>Slogan stylé</p>
+            <p>Write easily with EasyFlow</p>
             <p>Try for free</p>
           </div>
         </div>
@@ -66,6 +66,7 @@ const Pricing = () => {
               />
             </div>
             <div className={styles.onePriceDiv2}>
+              <span className={styles.mostPopular}>MOST POPULAR</span>
               <div className={styles.topDivWithoutCTA}>
                 <div className={styles.topDiv}>
                   <h2>Solo Access</h2>

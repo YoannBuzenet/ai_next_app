@@ -12,6 +12,15 @@
   margin-top: 3rem;
 }
 
+.catchPhraseContainer p {
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+.catchPhraseContainer p:last-child {
+  color: green;
+}
+
 .switchContainer {
   display: flex;
   justify-content: center;
@@ -59,9 +68,11 @@
 .pricesContainer > div {
   min-height: 400px;
   width: 300px;
-  background-color: rgb(242, 242, 242);
   border-radius: 6px;
   padding: 2rem;
+  background-color: white;
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 10%),
+    0 10px 10px -5px rgb(0 0 0 / 4%);
 }
 
 .onePriceDiv1 .topDivWithoutCTA {
@@ -79,7 +90,30 @@ div.onePriceDiv1 {
 }
 
 div.onePriceDiv2 {
+  position: relative;
   height: 450px;
+  border: 2px solid;
+  border-color: rgba(28, 100, 242, 1);
+}
+
+.mostPopular {
+  position: absolute;
+  z-index: 5;
+  top: -15px;
+  left: 85px;
+  background-color: rgba(28, 100, 242, 1);
+  color: white;
+  font-size: 1.275rem;
+  border-radius: 9999px;
+  line-height: 1.5rem;
+  font-weight: 550;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  font-family: "Inter", sans-serif;
 }
 div.onePriceDiv3 {
   height: 500px;

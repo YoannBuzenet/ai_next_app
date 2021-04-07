@@ -165,6 +165,10 @@ p {
   height: 100%;
 }
 
+.pricing {
+  background-color: var(--darker-light-grey-background);
+}
+
 /* Material UI Inputs */
 .TextZone div.MuiInputBase-root {
   font-size: 1.6rem;
