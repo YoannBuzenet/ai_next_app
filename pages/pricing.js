@@ -18,9 +18,13 @@ const Pricing = () => {
 
   // to do translate la Head de la page
 
-  const handleButtonSubmit = () => {
+  const handleButtonSubmit = (e, action) => {
     // login / register et renvoyer sur /pricing
     // ou pinger le freeAccess et connecter sur la workplace
+    //upgrade
+    //tryForFree
+    //signIn
+    //upgradeEnterprise
   };
 
   const isLoggedUser = UserCheck.isUserLogged(session?.user?.isLoggedUntil);
@@ -127,6 +131,9 @@ const Pricing = () => {
                     idLabel="page.pricing.tryForFree"
                     defaultLabel="Try for free"
                     isFullWidth
+                    handleClick={(e) => {
+                      handleButtonSubmit(e, "tryForFree");
+                    }}
                   />
                 )}
                 {!isLoggedUser && (
@@ -135,6 +142,9 @@ const Pricing = () => {
                     idLabel="page.pricing.signIn"
                     defaultLabel="Sign In"
                     isFullWidth
+                    handleClick={(e) => {
+                      handleButtonSubmit(e, "signIn");
+                    }}
                   />
                 )}
               </div>
@@ -218,9 +228,12 @@ const Pricing = () => {
                 {isLoggedUser && (
                   <BlueCTA
                     to="/"
-                    idLabel="page.pricing.tryForFree"
-                    defaultLabel="Try for free"
+                    idLabel="page.pricing.upgrade"
+                    defaultLabel="Upgrade"
                     isFullWidth
+                    handleClick={(e) => {
+                      handleButtonSubmit(e, "upgrade");
+                    }}
                   />
                 )}
                 {!isLoggedUser && (
@@ -229,6 +242,9 @@ const Pricing = () => {
                     idLabel="page.pricing.signIn"
                     defaultLabel="Sign In"
                     isFullWidth
+                    handleClick={(e) => {
+                      handleButtonSubmit(e, "signIn");
+                    }}
                   />
                 )}
               </div>
@@ -292,9 +308,12 @@ const Pricing = () => {
                 {isLoggedUser && (
                   <BlueCTA
                     to="/"
-                    idLabel="page.pricing.tryForFree"
-                    defaultLabel="Try for free"
+                    idLabel="page.pricing.upgrade"
+                    defaultLabel="Upgrade"
                     isFullWidth
+                    handleClick={(e) => {
+                      handleButtonSubmit(e, "upgradeEnterprise");
+                    }}
                   />
                 )}
                 {!isLoggedUser && (
@@ -303,6 +322,9 @@ const Pricing = () => {
                     idLabel="page.pricing.signIn"
                     defaultLabel="Sign In"
                     isFullWidth
+                    handleClick={(e) => {
+                      handleButtonSubmit(e, "signIn");
+                    }}
                   />
                 )}
               </div>

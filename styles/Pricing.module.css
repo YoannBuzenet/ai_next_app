@@ -30,7 +30,7 @@
   align-items: center;
   width: 100px;
   margin: auto;
-  margin-top: 50px;
+  margin-top: 30px;
   margin-bottom: 30px;
 }
 
@@ -73,28 +73,30 @@
   width: 300px;
   border-radius: 6px;
   padding: 2rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
   background-color: white;
   box-shadow: 0 20px 25px -5px rgb(0 0 0 / 10%),
     0 10px 10px -5px rgb(0 0 0 / 4%);
 }
 
 .onePriceDiv1 .topDivWithoutCTA {
-  height: 270px;
+  height: 290px;
 }
 .onePriceDiv2 .topDivWithoutCTA {
-  height: 320px;
+  height: 340px;
 }
 .onePriceDiv3 .topDivWithoutCTA {
-  height: 370px;
+  height: 395px;
 }
 
 div.onePriceDiv1 {
-  height: 400px;
+  height: 420px;
 }
 
 div.onePriceDiv2 {
   position: relative;
-  height: 450px;
+  height: 470px;
   border: 2px solid;
   border-color: rgba(28, 100, 242, 1);
 }
@@ -119,7 +121,7 @@ div.onePriceDiv2 {
   font-family: "Inter", sans-serif;
 }
 div.onePriceDiv3 {
-  height: 500px;
+  height: 520px;
 }
 
 .pricesContainer h2 {
@@ -139,7 +141,7 @@ div.onePriceDiv3 {
 }
 
 .price .priceNumber {
-  font-size: 5rem;
+  font-size: 4.5rem;
 }
 
 .price span {

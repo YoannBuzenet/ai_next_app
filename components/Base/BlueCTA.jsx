@@ -3,7 +3,13 @@ import Link from "next/link";
 import styles from "../../styles/BlueCTA.module.css";
 import { FormattedMessage } from "react-intl";
 
-const BlueCTA = ({ to, idLabel, defaultLabel, isFullWidth = false }) => {
+const BlueCTA = ({
+  to,
+  idLabel,
+  defaultLabel,
+  handleClick,
+  isFullWidth = false,
+}) => {
   const widthButton = isFullWidth
     ? styles.buttonContainerFullWidth
     : styles.buttonContainer;
@@ -11,7 +17,7 @@ const BlueCTA = ({ to, idLabel, defaultLabel, isFullWidth = false }) => {
   return (
     <div className={widthButton}>
       <Link href={to}>
-        <a type="button" className={styles.button}>
+        <a type="button" className={styles.button} onClick={handleClick}>
           <FormattedMessage id={idLabel} defaultMessage={defaultLabel} />
         </a>
       </Link>
