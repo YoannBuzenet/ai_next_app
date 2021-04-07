@@ -21,7 +21,7 @@ const Pricing = () => {
           <h1>Pricing</h1>
           <div className={styles.catchPhraseContainer}>
             <p>Write easily with EasyFlow</p>
-            <p>Try for free</p>
+            <p>Flexible pricing for all projects</p>
           </div>
         </div>
         <div className={styles.switchContainer}>

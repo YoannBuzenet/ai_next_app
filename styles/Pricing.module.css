@@ -17,8 +17,11 @@
   font-weight: 600;
 }
 
+.catchPhraseContainer p:first-child {
+  font-size: 3rem;
+}
 .catchPhraseContainer p:last-child {
-  color: green;
+  color: var(--grey-text);
 }
 
 .switchContainer {
