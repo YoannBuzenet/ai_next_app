@@ -1,16 +1,38 @@
 .titleContainer {
   padding: 3rem 0;
+  text-align: center;
 }
 .titleContainer h1 {
   text-align: center;
   margin: 0;
+  font-size: 5rem;
+}
+
+.catchPhraseContainer {
+  margin-top: 3rem;
 }
 
 .switchContainer {
   display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100px;
   margin: auto;
   margin-top: 50px;
+}
+
+.switchContainer p {
+  min-width: 140px;
+  font-size: 2rem;
+  margin-right: 10px;
+}
+
+.selected {
+  font-weight: 600;
+}
+.nonSelected {
+  font-weight: 300;
+  color: grey;
 }
 
 .catchphrase {

@@ -15,13 +15,23 @@ const Pricing = () => {
       <div className="container">
         <div className={styles.titleContainer}>
           <h1>Pricing</h1>
-          <p>Slogan stylé</p>
-          <p>Try for free</p>
+          <div className={styles.catchPhraseContainer}>
+            <p>Slogan stylé</p>
+            <p>Try for free</p>
+          </div>
         </div>
         <div className={styles.switchContainer}>
-          Pay Monthly
-          <SwitchLabels setState={setIsAnnual} state={isAnnual} />
-          Pay Annually
+          <p className={!isAnnual ? styles.selected : styles.nonSelected}>
+            Pay Monthly
+          </p>
+          <SwitchLabels
+            setState={setIsAnnual}
+            state={isAnnual}
+            classToAdd="margin20"
+          />
+          <p className={isAnnual ? styles.selected : styles.nonSelected}>
+            Pay Annually
+          </p>
         </div>
         <div className={styles.firstDivContainer}>
           <div className={styles.catchphrase}></div>
@@ -57,10 +67,10 @@ const Pricing = () => {
                 <div className={styles.price}>
                   {isAnnual && (
                     <span className={styles.priceNumber}>
-                      35€<span>/month</span>
+                      35€<span> /month</span>
                     </span>
                   )}
-                  {!isAnnual && <span>49€</span>}
+                  {!isAnnual && <span className={styles.priceNumber}>49€</span>}
                 </div>
                 <div className={styles.subprice}>
                   {isAnnual && <span>420€ Billed Yearly</span>}

@@ -15,6 +15,13 @@ a {
   box-sizing: border-box;
 }
 
+.margin30 {
+  margin: 0 30px;
+}
+.margin20 {
+  margin: 0 20px;
+}
+
 /**********************/
 /*******GENERAL*******/
 /**********************/

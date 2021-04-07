@@ -3,7 +3,12 @@ import FormGroup from "@material-ui/core/FormGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Switch from "@material-ui/core/Switch";
 
-export default function SwitchLabels({ description, state, setState }) {
+export default function SwitchLabels({
+  description,
+  state,
+  setState,
+  classToAdd,
+}) {
   console.log("state", state);
 
   const handleChange = (event) => {
@@ -11,7 +16,7 @@ export default function SwitchLabels({ description, state, setState }) {
   };
 
   return (
-    <FormGroup row>
+    <FormGroup row className={classToAdd}>
       <FormControlLabel
         control={
           <Switch checked={state} onChange={handleChange} color="primary" />
