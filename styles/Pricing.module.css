@@ -64,6 +64,16 @@
   padding: 2rem;
 }
 
+.onePriceDiv1 .topDivWithoutCTA {
+  height: 270px;
+}
+.onePriceDiv2 .topDivWithoutCTA {
+  height: 320px;
+}
+.onePriceDiv3 .topDivWithoutCTA {
+  height: 370px;
+}
+
 div.onePriceDiv1 {
   height: 400px;
 }
