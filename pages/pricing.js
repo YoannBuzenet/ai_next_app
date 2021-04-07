@@ -7,6 +7,8 @@ import SwitchLabels from "../components/Base/Switch";
 const Pricing = () => {
   const [isAnnual, setIsAnnual] = useState(true);
 
+  // to do translate le nom de la page
+
   return (
     <div className="pricing">
       <div className="container">

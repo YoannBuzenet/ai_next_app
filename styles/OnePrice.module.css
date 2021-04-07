@@ -1,2 +1,9 @@
 .onePriceDiv {
+  min-height: 400px;
+  width: 300px;
+  background-color: green;
+  margin: auto;
+}
+
+@media only screen and (max-width: 768px) {
 }

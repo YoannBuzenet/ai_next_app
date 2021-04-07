@@ -53,6 +53,8 @@ export default function Home(props) {
 
   console.log("session", session);
 
+  //todo -> need a favicon
+
   return (
     <>
       <Head>
