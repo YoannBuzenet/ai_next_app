@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import styles from "../styles/Pricing.module.css";
-import OnePrice from "../components/pricing/OnePrice";
 import SwitchLabels from "../components/Base/Switch";
 
 const Pricing = () => {
@@ -20,11 +19,14 @@ const Pricing = () => {
             Pay Annually
           </div>
         </div>
-        <div className={styles.catchphrase}></div>
-        <div className={styles.pricesContainer}>
-          <OnePrice explaination="Accès gratuit" />
-          <OnePrice explaination="Prix mensuel" />
-          <OnePrice explaination="Accès entreprise" />
+        <div className={styles.firstDivContainer}>
+          <div className={styles.catchphrase}></div>
+          <div className={styles.pricesContainer}>
+            <div className={styles.onePriceDiv}>"d"</div>
+            <div className={styles.onePriceDiv}>"d"</div>
+            <div className={styles.onePriceDiv}>"d"</div>
+          </div>
+          <div className={styles.spaceContainer}></div>
         </div>
       </div>
     </div>
