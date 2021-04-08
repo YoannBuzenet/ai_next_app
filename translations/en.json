@@ -92,7 +92,9 @@
   "page.subscribeSuccess.subscribed.youArenowSubscribed": "You are now subscribed to our services.",
   "page.subscribeSuccess.subscribed.youCanUseTheApp": "You can use the application. If needed, feel free to contact us.",
   "page.subscribeSuccess.subscribed.followConsumption": "To follow your word use, please check the 'My Account' tab.",
-  "page.subscribeSuccess.freeAccess.followConsumption": "You have a free access to EasyFlow !",
+  "page.subscribeSuccess.freeAccess.freeAccess": "You have a free access to EasyFlow !",
+  "page.subscribeSuccess.freeAccess.youCanNowUseTheApp": "You can use the application, with a limit of 5,000 words. If you have any question, please contact us.",
+  "page.subscribeSuccess.freeAccess.followConsumption": "To follow your word use, please check the 'My Account' tab.",
 
   "compo.heartWorkPlace.button.create": "Create",
   "compo.heartWorkPlace.noCategory.title": "Welcome on EasyFlow",

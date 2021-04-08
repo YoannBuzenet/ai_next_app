@@ -96,21 +96,25 @@ export default function subscribeSuccess({ session }) {
             <div>
               <p>
                 <FormattedMessage
-                  id="page.subscribeSuccess.freeAccess.followConsumption"
+                  id="page.subscribeSuccess.freeAccess.freeAccess"
                   defaultMessage="You now have a free access to EasyFlow !"
                 />
               </p>
             </div>
             <div>
               <p>
-                Vous pouvez utiliser l'application à loisir dans la limite de
-                5000 mots. En cas de besoin, n'hésitez pas à nous contacter.
+                <FormattedMessage
+                  id="page.subscribeSuccess.freeAccess.youCanNowUseTheApp"
+                  defaultMessage="You can use the application, with a limit of 5,000 words. If you have any question, please contact us."
+                />
               </p>
             </div>
             <div>
               <p>
-                Pour suivre l'évolution de vos consommations, consulez l'onglet
-                "Mon Compte".
+                <FormattedMessage
+                  id="page.subscribeSuccess.freeAccess.followConsumption"
+                  defaultMessage="To follow your word use, please check the 'My Account' tab."
+                />
               </p>
             </div>
             <div>
