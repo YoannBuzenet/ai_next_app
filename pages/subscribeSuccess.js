@@ -52,21 +52,35 @@ export default function subscribeSuccess({ session }) {
       </Head>
       <div className="container">
         <main className={styles.main}>
-          <h1>Bravo !</h1>
+          <h1>
+            <FormattedMessage
+              id="page.subscribeSuccess.title"
+              defaultMessage="Success !"
+            />
+          </h1>
           <div className={styles.textContainer}>
             <div>
-              <p>Vous êtes désormais abonné à nos services.</p>
-            </div>
-            <div>
               <p>
-                Vous pouvez utiliser l'application à loisir. En cas de besoin,
-                n'hésitez pas à nous contacter.
+                <FormattedMessage
+                  id="page.subscribeSuccess.subscribed.youArenowSubscribed"
+                  defaultMessage="You are now subscribed to our services."
+                />
               </p>
             </div>
             <div>
               <p>
-                Pour suivre l'évolution de vos consommations, consulez l'onglet
-                "Mon Compte".
+                <FormattedMessage
+                  id="page.subscribeSuccess.subscribed.youCanUseTheApp"
+                  defaultMessage="You can use the application. If needed, feel free to contact us."
+                />
+              </p>
+            </div>
+            <div>
+              <p>
+                <FormattedMessage
+                  id="page.subscribeSuccess.subscribed.followConsumption"
+                  defaultMessage="To follow your word use, please check the 'My Account' tab."
+                />
               </p>
             </div>
             <div>
@@ -80,7 +94,12 @@ export default function subscribeSuccess({ session }) {
           </div>
           <div className={styles.textContainer}>
             <div>
-              <p>Vous avez désormais un accès gratuits à EasyFlow !</p>
+              <p>
+                <FormattedMessage
+                  id="page.subscribeSuccess.freeAccess.followConsumption"
+                  defaultMessage="You now have a free access to EasyFlow !"
+                />
+              </p>
             </div>
             <div>
               <p>

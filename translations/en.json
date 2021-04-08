@@ -87,7 +87,12 @@
   "page.pricing.upgrade": "Upgrade",
 
   "page.subscribeSuccess.head": "Success !",
+  "page.subscribeSuccess.title": "Success !",
   "page.subscribeSuccess.button.GoToApp": "Go To App",
+  "page.subscribeSuccess.subscribed.youArenowSubscribed": "You are now subscribed to our services.",
+  "page.subscribeSuccess.subscribed.youCanUseTheApp": "You can use the application. If needed, feel free to contact us.",
+  "page.subscribeSuccess.subscribed.followConsumption": "To follow your word use, please check the 'My Account' tab.",
+  "page.subscribeSuccess.freeAccess.followConsumption": "You have a free access to EasyFlow !",
 
   "compo.heartWorkPlace.button.create": "Create",
   "compo.heartWorkPlace.noCategory.title": "Welcome on EasyFlow",

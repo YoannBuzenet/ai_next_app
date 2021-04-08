@@ -87,7 +87,12 @@
   "page.pricing.upgrade": "Choisir",
 
   "page.subscribeSuccess.head": "Bravo !",
+  "page.subscribeSuccess.title": "Bravo !",
   "page.subscribeSuccess.button.GoToApp": "Aller sur l'application",
+  "page.subscribeSuccess.subscribed.youArenowSubscribed": "Vous êtes désormais abonné à nos services.",
+  "page.subscribeSuccess.subscribed.youCanUseTheApp": "Vous pouvez utiliser l'application à loisir. En cas de besoin, n'hésitez pas à nous contacter.",
+  "page.subscribeSuccess.subscribed.followConsumption": "Pour suivre l'évolution de vos consommations, consulez l'onglet 'Mon Compte'.",
+  "page.subscribeSuccess.freeAccess.followConsumption": "Vous avez désormais un accès gratuit à EasyFlow !",
 
   "compo.heartWorkPlace.button.create": "Créer",
   "compo.heartWorkPlace.noCategory.title": "Bienvenue sur EasyFlow",
