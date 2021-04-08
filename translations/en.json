@@ -86,6 +86,9 @@
   "page.pricing.tryForFree": "Try for free",
   "page.pricing.upgrade": "Upgrade",
 
+  "page.subscribeSuccess.head": "Success !",
+  "page.subscribeSuccess.button.GoToApp": "Go To App",
+
   "compo.heartWorkPlace.button.create": "Create",
   "compo.heartWorkPlace.noCategory.title": "Welcome on EasyFlow",
   "compo.heartWorkPlace.noCategory.paragraph1": "Please select a category on the left to get started.",
