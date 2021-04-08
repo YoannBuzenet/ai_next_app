@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useSession, getSession, signIn } from "next-auth/client";
 import { useContext } from "react";
-import styles from "../styles/Login.module.css";
+import styles from "../styles/subscribeSuccess.module.css";
 import { useIntl, FormattedMessage } from "react-intl";
 import UserCheck from "../services/userCheck";
 import BlueCTA from "../components/Base/BlueCTA";
@@ -51,17 +51,23 @@ export default function subscribeSuccess({ session }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="container">
-        <main>
+        <main className={styles.main}>
           <h1>Bravo !</h1>
-          <div>
-            <div>Vous êtes désormais abonné à nos services.</div>
+          <div className={styles.textContainer}>
             <div>
-              Vous pouvez utiliser l'application à loisir. En cas de besoin,
-              n'hésitez pas à nous contacter.
+              <p>Vous êtes désormais abonné à nos services.</p>
             </div>
             <div>
-              Pour suivre l'évolution de vos consommations, consulez l'onglet
-              "Mon Compte".
+              <p>
+                Vous pouvez utiliser l'application à loisir. En cas de besoin,
+                n'hésitez pas à nous contacter.
+              </p>
+            </div>
+            <div>
+              <p>
+                Pour suivre l'évolution de vos consommations, consulez l'onglet
+                "Mon Compte".
+              </p>
             </div>
             <div>
               <BlueCTA
@@ -72,15 +78,21 @@ export default function subscribeSuccess({ session }) {
               />
             </div>
           </div>
-          <div>
-            <div>Vous avez désormais un accès gratuits à EasyFlow !</div>
+          <div className={styles.textContainer}>
             <div>
-              Vous pouvez utiliser l'application à loisir dans la limite de 5000
-              mots. En cas de besoin, n'hésitez pas à nous contacter.
+              <p>Vous avez désormais un accès gratuits à EasyFlow !</p>
             </div>
             <div>
-              Pour suivre l'évolution de vos consommations, consulez l'onglet
-              "Mon Compte".
+              <p>
+                Vous pouvez utiliser l'application à loisir dans la limite de
+                5000 mots. En cas de besoin, n'hésitez pas à nous contacter.
+              </p>
+            </div>
+            <div>
+              <p>
+                Pour suivre l'évolution de vos consommations, consulez l'onglet
+                "Mon Compte".
+              </p>
             </div>
             <div>
               <BlueCTA
