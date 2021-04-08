@@ -14,6 +14,11 @@ export async function getServerSideProps(context) {
 
   console.log("session on server", session);
 
+  const isUserOnFreeAccess = session?.user?.isOnFreeAccess;
+  const isSubscribedUntil =
+    session?.user?.isSubscribedUntil !== "" &&
+    "DATE EN UTC SUPERIEURE A AUJOURDHUI";
+
   // TO DO : filtrer si pas abonné ou si pas accès gratuit
 
   //   if (!isLoggedUser) {
