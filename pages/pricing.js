@@ -16,15 +16,15 @@ const Pricing = () => {
   const [session, loading] = useSession();
   const intl = useIntl();
 
-  // to do translate la Head de la page
-
   const handleButtonSubmit = (e, action) => {
+    //TO DO Yoann
     // login / register et renvoyer sur /pricing
     // ou pinger le freeAccess et connecter sur la workplace
     //upgrade
     //tryForFree
     //signIn
     //upgradeEnterprise
+    console.log("action", action);
   };
 
   const isLoggedUser = UserCheck.isUserLogged(session?.user?.isLoggedUntil);
@@ -53,12 +53,12 @@ const Pricing = () => {
                   defaultMessage="Write easily with EasyFlow"
                 />
               </p>
-              <p>
+              {/* <p>
                 <FormattedMessage
                   id="page.pricing.catchprase2"
                   defaultMessage="Flexible pricing for all projects"
                 />
-              </p>
+              </p> */}
             </div>
           </div>
           <div className={styles.switchContainer}>
@@ -149,7 +149,13 @@ const Pricing = () => {
                 )}
               </div>
               <div className={styles.onePriceDiv2}>
-                <span className={styles.mostPopular}>
+                <span
+                  className={
+                    intl.locale === "fr-FR"
+                      ? styles.mostPopularFR
+                      : styles.mostPopularEN
+                  }
+                >
                   <FormattedMessage
                     id="page.pricing.mostpopular"
                     defaultMessage="MOST POPULAR"

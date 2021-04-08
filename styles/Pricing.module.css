@@ -20,9 +20,9 @@
 .catchPhraseContainer p:first-child {
   font-size: 3rem;
 }
-.catchPhraseContainer p:last-child {
+/* .catchPhraseContainer p:last-child {
   color: var(--grey-text);
-}
+} */
 
 .switchContainer {
   display: flex;
@@ -101,11 +101,30 @@ div.onePriceDiv2 {
   border-color: rgba(28, 100, 242, 1);
 }
 
-.mostPopular {
+.mostPopularFR {
   position: absolute;
   z-index: 5;
   top: -15px;
-  left: 80px;
+  left: 90px;
+  background-color: rgba(28, 100, 242, 1);
+  color: white;
+  font-size: 1.275rem;
+  border-radius: 9999px;
+  line-height: 1.5rem;
+  font-weight: 550;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  font-family: "Inter", sans-serif;
+}
+.mostPopularEN {
+  position: absolute;
+  z-index: 5;
+  top: -15px;
+  left: 75px;
   background-color: rgba(28, 100, 242, 1);
   color: white;
   font-size: 1.275rem;
