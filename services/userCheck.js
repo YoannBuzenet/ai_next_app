@@ -1,14 +1,29 @@
-const { getNowInUTC } = require("./utils");
+const {
+  getNowInUTC,
+  getTodayFromMidnightInUTC,
+  transformDateIntoUTC,
+} = require("./utils");
 
-const isUserLogged = (userIsSubscribedUntil) => {
-  if (userIsSubscribedUntil === undefined) {
+const isUserLogged = (userIsLoggedUntil) => {
+  if (userIsLoggedUntil === undefined) {
     return false;
   }
   // Creating an UTC timestamp
   const nowUTC = getNowInUTC();
 
   // Compare it with data from back-end
-  return new Date(userIsSubscribedUntil).getTime() > nowUTC.getTime();
+  return new Date(userIsLoggedUntil).getTime() > nowUTC.getTime();
 };
 
-module.exports = { isUserLogged };
+const isUserSubscribed = (userIsSubscribedUntil) => {
+  if (userIsSubscribedUntil === "" || userIsSubscribedUntil === undefined) {
+    return false;
+  }
+
+  const nowUTC = getTodayFromMidnightInUTC();
+  const userSubscribeUTC = new Date(userIsSubscribedUntil);
+
+  return userSubscribeUTC > nowUTC;
+};
+
+module.exports = { isUserLogged, isUserSubscribed };
