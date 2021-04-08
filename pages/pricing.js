@@ -216,8 +216,8 @@ const Pricing = () => {
                   </div>
                   <div className={styles.optionsContainer}>
                     <Option
-                      idOptionLabel="page.pricing.100000words"
-                      defaultOptionLabel="100,000 words/month"
+                      idOptionLabel="page.pricing.50000words"
+                      defaultOptionLabel="50,000 words/month"
                     />
                     <Option
                       idOptionLabel="page.pricing.accessAllCategories"
