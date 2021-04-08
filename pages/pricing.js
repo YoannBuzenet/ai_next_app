@@ -28,6 +28,8 @@ const Pricing = () => {
   };
 
   const isLoggedUser = UserCheck.isUserLogged(session?.user?.isLoggedUntil);
+  const isSubbed = UserCheck.isUserSubscribed(session?.user?.isSubscribedUntil);
+  const isUserOnFreeAccess = session?.user?.isOnFreeAccess === 1;
 
   const translatedHead = intl.formatMessage({
     id: "page.pricing.head",
