@@ -12,6 +12,7 @@ import { useSession, getSession, signOut } from "next-auth/client";
 import UserCheck from "../services/userCheck";
 import { FREE_LIMIT_NUMBER_OF_WORDS } from "../config/settings";
 import { useRouter } from "next/router";
+import axios from "axios";
 
 const Pricing = () => {
   const [isAnnual, setIsAnnual] = useState(true);
@@ -20,24 +21,35 @@ const Pricing = () => {
 
   const router = useRouter();
 
-  const handleButtonSubmit = (e, action) => {
-    //TO DO Yoann
-    // login / register et renvoyer sur /pricing
-    // ou pinger le freeAccess et connecter sur la workplace
-    // 4 actions à faire
-
-    //upgrade
-    //tryForFree
-    //upgradeEnterprise
+  const handleButtonSubmit = async (e, action) => {
     console.log("action", action);
+
     if (action === "signIn") {
       router.push("/login");
+    } else if (action === "upgrade") {
+      // Yearly or monthly ?
+      // TO DO STRIPE
+      // THEN GO TO /subscribeSuccess
+    } else if (action === "tryForFree") {
+      const hasUserFreeAccess = axios.post(`/api/freeAccess`, {
+        user: session.user,
+      });
+
+      if (hasUserFreeAccess) {
+        console.log("free access granted");
+        router.push("/subscribeSuccess");
+      } else {
+        // notification
+        console.log("free access didnt work");
+      }
+    } else if (action === "upgradeEnterprise") {
+      // TO DO TYPEFORM / FORM
     }
   };
-  //to complete
+
   const numberOfWordsUsed = session?.user?.totalWordsConsumption;
   const hasUserUsedIsFreeCredit =
-    session?.user?.totalWordsConsumption > FREE_LIMIT_NUMBER_OF_WORDS;
+    numberOfWordsUsed > FREE_LIMIT_NUMBER_OF_WORDS;
   const isLoggedUser = UserCheck.isUserLogged(session?.user?.isLoggedUntil);
   const isSubbed = UserCheck.isUserSubscribed(session?.user?.isSubscribedUntil);
   const isUserOnFreeAccess = session?.user?.isOnFreeAccess === 1;
