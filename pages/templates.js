@@ -16,10 +16,11 @@ import { FormattedMessage, useIntl } from "react-intl";
 
 export async function getServerSideProps(context) {
   const session = await getSession(context);
-  //TODO STEP2 : check if Subscribed too
-  const isLoggedUser = UserCheck.isUserLogged(session?.user?.isLoggedUntil);
 
-  if (!isLoggedUser) {
+  const isLoggedUser = UserCheck.isUserLogged(session?.user?.isLoggedUntil);
+  const isSubbed = UserCheck.isUserSubscribed(session?.user?.isSubscribedUntil);
+
+  if (!isSubbed) {
     return {
       redirect: {
         destination: "/pricing",

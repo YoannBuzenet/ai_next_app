@@ -22,6 +22,7 @@ const Pricing = () => {
   const router = useRouter();
 
   const handleButtonSubmit = async (e, action) => {
+    e.preventDefault();
     console.log("action", action);
 
     if (action === "signIn") {

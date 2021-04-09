@@ -16,7 +16,11 @@ const isUserLogged = (userIsLoggedUntil) => {
 };
 
 const isUserSubscribed = (userIsSubscribedUntil) => {
-  if (userIsSubscribedUntil === "" || userIsSubscribedUntil === undefined) {
+  if (
+    userIsSubscribedUntil === "" ||
+    userIsSubscribedUntil === undefined ||
+    userIsSubscribedUntil === null
+  ) {
     return false;
   }
 
