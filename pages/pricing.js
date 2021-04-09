@@ -56,6 +56,14 @@ const Pricing = () => {
   const isUserOnFreeAccess = session?.user?.isOnFreeAccess === 1;
   const isUserOnCompanyAccess = session?.user?.isOnCompanyAccess === 1;
 
+  console.log("number of words", numberOfWordsUsed);
+  console.log("hasUserUsedIsFreeCredit", hasUserUsedIsFreeCredit);
+  console.log("isSubbed", isSubbed);
+  console.log(
+    "isLoggedUser && isUserOnFreeAccess && !hasUserUsedIsFreeCredit &&!isSubbed",
+    isLoggedUser && isUserOnFreeAccess && !hasUserUsedIsFreeCredit && !isSubbed
+  );
+
   const translatedHead = intl.formatMessage({
     id: "page.pricing.head",
     defaultMessage: "Upgrade your plan",
@@ -168,7 +176,7 @@ const Pricing = () => {
                 {isLoggedUser &&
                   isUserOnFreeAccess &&
                   !isSubbed &&
-                  hasUserUsedIsFreeCredit && (
+                  !hasUserUsedIsFreeCredit && (
                     <BlueCTA
                       to="/"
                       idLabel="page.pricing.onGoing"
@@ -180,7 +188,7 @@ const Pricing = () => {
                 {/* Fini */}
                 {isLoggedUser &&
                   isUserOnFreeAccess &&
-                  !hasUserUsedIsFreeCredit &&
+                  hasUserUsedIsFreeCredit &&
                   !isSubbed && (
                     <BlueCTA
                       to="/"

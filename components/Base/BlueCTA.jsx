@@ -8,21 +8,36 @@ const BlueCTA = ({
   idLabel,
   defaultLabel,
   handleClick,
+  disabled = false,
   isFullWidth = false,
 }) => {
   const widthButton = isFullWidth
     ? styles.buttonContainerFullWidth
     : styles.buttonContainer;
 
-  return (
-    <div className={widthButton}>
-      <Link href={to}>
-        <a type="button" className={styles.button} onClick={handleClick}>
+  if (!disabled) {
+    return (
+      <div className={widthButton}>
+        <Link href={to}>
+          <a type="button" className={styles.button} onClick={handleClick}>
+            <FormattedMessage id={idLabel} defaultMessage={defaultLabel} />
+          </a>
+        </Link>
+      </div>
+    );
+  } else {
+    return (
+      <div className={widthButton}>
+        <span
+          type="button"
+          className={styles.disabledButton}
+          onClick={handleClick}
+        >
           <FormattedMessage id={idLabel} defaultMessage={defaultLabel} />
-        </a>
-      </Link>
-    </div>
-  );
+        </span>
+      </div>
+    );
+  }
 };
 
 export default BlueCTA;
