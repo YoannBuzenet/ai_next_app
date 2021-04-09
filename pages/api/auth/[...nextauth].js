@@ -3,7 +3,7 @@ import Providers from "next-auth/providers";
 import axios from "axios";
 
 const callbacks = {};
-let userData;
+let userData = "";
 callbacks.signIn = async function signIn(user, account, metadata) {
   console.log("user", user);
   console.log("account", account);
@@ -88,7 +88,22 @@ callbacks.session = async function session(session, token) {
       apiRespThisMonth.data?.dataForCurrentMonth?.[0]?.totalAmount;
   }
 
-  //get user total words
+  // refresh user Data
+  if (userData.hasOwnProperty("id")) {
+    //redefine userData here et assign it into same variable
+    const objectToSend = {
+      passphrase: process.env.FRONT_APP_PASSPHRASE,
+      userID: userData.id,
+    };
+    let apiResp = await axios.post(
+      `${process.env.CENTRAL_API_URL}/api/users/getById`,
+      objectToSend
+    );
+
+    console.log("our new data", apiResp.data);
+
+    userData = apiResp.data;
+  }
 
   session.user = userData;
   session.accessToken = token.accessToken;

@@ -32,15 +32,15 @@ const Pricing = () => {
       // TO DO STRIPE
       // THEN GO TO /subscribeSuccess
     } else if (action === "tryForFree") {
-      const hasUserFreeAccess = axios.post(`/api/freeAccess`, {
-        user: session.user,
-      });
-
-      if (hasUserFreeAccess) {
-        console.log("free access granted");
+      try {
+        const hasUserFreeAccess = await axios.post(`/api/freeAccess`, {
+          user: session.user,
+        });
+        console.log("ça a marché ?", hasUserFreeAccess);
         router.push("/subscribeSuccess");
-      } else {
+      } catch (e) {
         // notification
+        // TO DO
         console.log("free access didnt work");
       }
     } else if (action === "upgradeEnterprise") {

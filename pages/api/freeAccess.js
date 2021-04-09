@@ -9,18 +9,14 @@ export default async (req, res) => {
   }
 
   const objectToSend = {
-    category: req?.body?.categoryID,
-    lang: req?.body?.lang,
-    userInput: req?.body?.userInputs,
     passphrase: process.env.FRONT_APP_PASSPHRASE,
-    idUser: idUser,
+    user: req.body.user,
     provider: req?.body?.user?.provider,
-    numberOfOutputs: req?.body?.numberOfOutputs,
   };
 
   try {
     const APIresp = await axios.post(
-      `${process.env.CENTRAL_API_URL}/users/EnableFreeAccess`,
+      `${process.env.CENTRAL_API_URL}/api/users/EnableFreeAccess`,
       objectToSend
     );
 

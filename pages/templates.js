@@ -19,8 +19,9 @@ export async function getServerSideProps(context) {
 
   const isLoggedUser = UserCheck.isUserLogged(session?.user?.isLoggedUntil);
   const isSubbed = UserCheck.isUserSubscribed(session?.user?.isSubscribedUntil);
+  const isUserOnFreeAccess = session?.user?.isOnFreeAccess === 1;
 
-  if (!isSubbed) {
+  if (!isSubbed || !isUserOnFreeAccess) {
     return {
       redirect: {
         destination: "/pricing",

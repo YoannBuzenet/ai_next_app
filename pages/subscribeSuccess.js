@@ -16,6 +16,8 @@ export async function getServerSideProps(context) {
   const isUserOnFreeAccess = session?.user?.isOnFreeAccess === 1;
   const isUserSubd = isUserSubscribed(session?.user?.isSubscribedUntil);
 
+  console.log("session as seen from subscribe", session);
+
   if (isUserOnFreeAccess || isUserSubd) {
     return { props: { session } };
   } else {
@@ -24,20 +26,31 @@ export async function getServerSideProps(context) {
         destination: "/",
         permanent: false,
       },
-      props: { session },
+      props: { sessionServ: session },
     };
   }
 }
 
-export default function subscribeSuccess() {
+export default function subscribeSuccess(props) {
   const [session, loading] = useSession();
 
-  const isUserOnFreeAccess = session?.user?.isOnFreeAccess === 1;
-  const isUserSubd = isUserSubscribed(session?.user?.isSubscribedUntil);
+  const isUserOnFreeAccess =
+    session?.user?.isOnFreeAccess === 1 ||
+    props.session?.user?.isOnFreeAccess === 1;
+
+  console.log("free access 0", isUserOnFreeAccess);
+  console.log("free access 1", session?.user?.isOnFreeAccess === 1);
+  console.log("free access 2", props.session?.user?.isOnFreeAccess === 1);
+
+  const isUserSubd =
+    isUserSubscribed(session?.user?.isSubscribedUntil) ||
+    isUserSubscribed(props?.session?.user?.isSubscribedUntil);
 
   const Intl = useIntl();
 
   console.log("bro", session);
+  console.log("broServ", props?.sessionServ);
+  console.log("broProps", props);
 
   // TRANSLATIONS
   const translatedHead = Intl.formatMessage({
