@@ -11,21 +11,28 @@ import { FormattedMessage, useIntl } from "react-intl";
 import { useSession, getSession, signOut } from "next-auth/client";
 import UserCheck from "../services/userCheck";
 import { FREE_LIMIT_NUMBER_OF_WORDS } from "../config/settings";
+import { useRouter } from "next/router";
 
 const Pricing = () => {
   const [isAnnual, setIsAnnual] = useState(true);
   const [session, loading] = useSession();
   const intl = useIntl();
 
+  const router = useRouter();
+
   const handleButtonSubmit = (e, action) => {
     //TO DO Yoann
     // login / register et renvoyer sur /pricing
     // ou pinger le freeAccess et connecter sur la workplace
+    // 4 actions à faire
+
     //upgrade
     //tryForFree
-    //signIn
     //upgradeEnterprise
     console.log("action", action);
+    if (action === "signIn") {
+      router.push("/login");
+    }
   };
   //to complete
   const numberOfWordsUsed = session?.user?.totalWordsConsumption;

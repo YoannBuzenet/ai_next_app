@@ -22,7 +22,7 @@ export async function getServerSideProps(context) {
   if (!isLoggedUser) {
     return {
       redirect: {
-        destination: "/",
+        destination: "/pricing",
         permanent: false,
       },
       props: {},
