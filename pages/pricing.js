@@ -36,9 +36,11 @@ const Pricing = () => {
           .then((result) => {
             // Call Stripe.js method to redirect to the new Checkout page
             console.log("results", result);
-            stripe.redirectToCheckout({
-              sessionId: data.sessionId,
-            });
+            stripe
+              .redirectToCheckout({
+                sessionId: data.sessionId,
+              })
+              .then((result) => console.log("result stripe", result));
           });
       } else {
         // monthly
@@ -47,9 +49,11 @@ const Pricing = () => {
           .then((result) => {
             // Call Stripe.js method to redirect to the new Checkout page
             console.log("results", result);
-            stripe.redirectToCheckout({
-              sessionId: data.sessionId,
-            });
+            stripe
+              .redirectToCheckout({
+                sessionId: data.sessionId,
+              })
+              .then((result) => console.log("result stripe", result));
           });
       }
 
