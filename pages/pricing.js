@@ -10,6 +10,7 @@ import Option from "../components/pricingPage/Option";
 import { FormattedMessage, useIntl } from "react-intl";
 import { useSession, getSession, signOut } from "next-auth/client";
 import UserCheck from "../services/userCheck";
+import { FREE_LIMIT_NUMBER_OF_WORDS } from "../config/settings";
 
 const Pricing = () => {
   const [isAnnual, setIsAnnual] = useState(true);
@@ -28,6 +29,8 @@ const Pricing = () => {
   };
   //to complete
   const numberOfWordsUsed = session?.user?.totalWordsConsumption;
+  const hasUserUsedIsFreeCredit =
+    session?.user?.totalWordsConsumption > FREE_LIMIT_NUMBER_OF_WORDS;
   const isLoggedUser = UserCheck.isUserLogged(session?.user?.isLoggedUntil);
   const isSubbed = UserCheck.isUserSubscribed(session?.user?.isSubscribedUntil);
   const isUserOnFreeAccess = session?.user?.isOnFreeAccess === 1;
@@ -140,17 +143,30 @@ const Pricing = () => {
                   />
                 )}
                 {/* compter les mots ici */}
-                {isLoggedUser && isUserOnFreeAccess && (
-                  <BlueCTA
-                    to="/"
-                    idLabel="page.pricing.tryForFree"
-                    defaultLabel="Try for free"
-                    isFullWidth
-                    handleClick={(e) => {
-                      handleButtonSubmit(e, "tryForFree");
-                    }}
-                  />
-                )}
+                {/* En cours */}
+                {isLoggedUser &&
+                  isUserOnFreeAccess &&
+                  hasUserUsedIsFreeCredit && (
+                    <BlueCTA
+                      to="/"
+                      idLabel="page.pricing.onGoing"
+                      defaultLabel="Ongoing"
+                      isFullWidth
+                      disabled
+                    />
+                  )}
+                {/* Fini */}
+                {isLoggedUser &&
+                  isUserOnFreeAccess &&
+                  !hasUserUsedIsFreeCredit && (
+                    <BlueCTA
+                      to="/"
+                      idLabel="page.pricing.creditUsed"
+                      defaultLabel="Free trial ended"
+                      isFullWidth
+                      disabled
+                    />
+                  )}
                 {!isLoggedUser && (
                   <BlueCTA
                     to="/"

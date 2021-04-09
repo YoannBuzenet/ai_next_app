@@ -85,6 +85,8 @@
   "page.pricing.signIn": "Se connecter",
   "page.pricing.tryForFree": "Essayer gratuitement",
   "page.pricing.upgrade": "Choisir",
+  "page.pricing.onGoing": "En cours",
+  "page.pricing.creditUsed": "Essai terminé",
 
   "page.subscribeSuccess.head": "Bravo !",
   "page.subscribeSuccess.title": "Bravo !",
