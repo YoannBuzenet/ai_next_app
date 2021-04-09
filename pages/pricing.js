@@ -13,6 +13,7 @@ import UserCheck from "../services/userCheck";
 import { FREE_LIMIT_NUMBER_OF_WORDS } from "../config/settings";
 import { useRouter } from "next/router";
 import axios from "axios";
+import { products } from "../config/products";
 
 const Pricing = () => {
   const [isAnnual, setIsAnnual] = useState(true);
@@ -30,10 +31,26 @@ const Pricing = () => {
     } else if (action === "upgrade") {
       if (isAnnual) {
         //yearly
-        // TO DO STRIPE
+        const paymentCall = await axios
+          .post("/api/payment/stripe", { priceId: products.yearly.stripeId })
+          .then((result) => {
+            // Call Stripe.js method to redirect to the new Checkout page
+            console.log("results", result);
+            stripe.redirectToCheckout({
+              sessionId: data.sessionId,
+            });
+          });
       } else {
         // monthly
-        // TO DO STRIPE
+        const paymentCall = await axios
+          .post("/api/payment/stripe", { priceId: products.monthly.stripeId })
+          .then((result) => {
+            // Call Stripe.js method to redirect to the new Checkout page
+            console.log("results", result);
+            stripe.redirectToCheckout({
+              sessionId: data.sessionId,
+            });
+          });
       }
 
       // THEN GO TO /subscribeSuccess
