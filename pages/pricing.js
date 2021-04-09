@@ -34,6 +34,7 @@ const Pricing = () => {
   const isLoggedUser = UserCheck.isUserLogged(session?.user?.isLoggedUntil);
   const isSubbed = UserCheck.isUserSubscribed(session?.user?.isSubscribedUntil);
   const isUserOnFreeAccess = session?.user?.isOnFreeAccess === 1;
+  const isUserOnCompanyAccess = session?.user?.isOnCompanyAccess === 1;
 
   const translatedHead = intl.formatMessage({
     id: "page.pricing.head",
@@ -131,7 +132,7 @@ const Pricing = () => {
                     />
                   </div>
                 </div>
-                {isLoggedUser && !isUserOnFreeAccess && (
+                {isLoggedUser && !isUserOnFreeAccess && !isSubbed && (
                   <BlueCTA
                     to="/"
                     idLabel="page.pricing.tryForFree"
@@ -146,6 +147,7 @@ const Pricing = () => {
                 {/* En cours */}
                 {isLoggedUser &&
                   isUserOnFreeAccess &&
+                  !isSubbed &&
                   hasUserUsedIsFreeCredit && (
                     <BlueCTA
                       to="/"
@@ -158,7 +160,8 @@ const Pricing = () => {
                 {/* Fini */}
                 {isLoggedUser &&
                   isUserOnFreeAccess &&
-                  !hasUserUsedIsFreeCredit && (
+                  !hasUserUsedIsFreeCredit &&
+                  !isSubbed && (
                     <BlueCTA
                       to="/"
                       idLabel="page.pricing.creditUsed"
@@ -167,6 +170,15 @@ const Pricing = () => {
                       disabled
                     />
                   )}
+                {isLoggedUser && isSubbed && (
+                  <BlueCTA
+                    to="/"
+                    idLabel="page.pricing.creditUsed"
+                    defaultLabel="Free trial ended"
+                    isFullWidth
+                    disabled
+                  />
+                )}
                 {!isLoggedUser && (
                   <BlueCTA
                     to="/"
@@ -262,7 +274,16 @@ const Pricing = () => {
                     />
                   </div>
                 </div>
-                {isLoggedUser && (
+                {isLoggedUser && isSubbed && (
+                  <BlueCTA
+                    to="/"
+                    idLabel="page.pricing.onGoing"
+                    defaultLabel="Ongoing"
+                    isFullWidth
+                    disabled
+                  />
+                )}
+                {isLoggedUser && !isSubbed && (
                   <BlueCTA
                     to="/"
                     idLabel="page.pricing.upgrade"
