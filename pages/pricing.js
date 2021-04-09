@@ -26,7 +26,8 @@ const Pricing = () => {
     //upgradeEnterprise
     console.log("action", action);
   };
-
+  //to complete
+  const numberOfWordsUsed = session?.user?.totalWordsConsumption;
   const isLoggedUser = UserCheck.isUserLogged(session?.user?.isLoggedUntil);
   const isSubbed = UserCheck.isUserSubscribed(session?.user?.isSubscribedUntil);
   const isUserOnFreeAccess = session?.user?.isOnFreeAccess === 1;
@@ -127,7 +128,19 @@ const Pricing = () => {
                     />
                   </div>
                 </div>
-                {isLoggedUser && (
+                {isLoggedUser && !isUserOnFreeAccess && (
+                  <BlueCTA
+                    to="/"
+                    idLabel="page.pricing.tryForFree"
+                    defaultLabel="Try for free"
+                    isFullWidth
+                    handleClick={(e) => {
+                      handleButtonSubmit(e, "tryForFree");
+                    }}
+                  />
+                )}
+                {/* compter les mots ici */}
+                {isLoggedUser && isUserOnFreeAccess && (
                   <BlueCTA
                     to="/"
                     idLabel="page.pricing.tryForFree"
