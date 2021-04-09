@@ -28,8 +28,14 @@ const Pricing = () => {
     if (action === "signIn") {
       router.push("/login");
     } else if (action === "upgrade") {
-      // Yearly or monthly ?
-      // TO DO STRIPE
+      if (isAnnual) {
+        //yearly
+        // TO DO STRIPE
+      } else {
+        // monthly
+        // TO DO STRIPE
+      }
+
       // THEN GO TO /subscribeSuccess
     } else if (action === "tryForFree") {
       try {
@@ -71,7 +77,10 @@ const Pricing = () => {
 
   return (
     <>
-      <Head>{translatedHead}</Head>
+      <Head>
+        <title>{translatedHead}</title>
+        <script type="text/javascript" src="https://js.stripe.com/v3/"></script>
+      </Head>
       <div className="pricing">
         <div className="container">
           <div className={styles.titleContainer}>
