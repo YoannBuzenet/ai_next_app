@@ -1,6 +1,13 @@
 import Head from "next/head";
+import { useIntl, FormattedMessage } from "react-intl";
 
 export default function PaymentFailed(props) {
+  const Intl = useIntl();
+  // TRANSLATIONS
+  const translatedHead = Intl.formatMessage({
+    id: "page.subscribeSuccess.head",
+    defaultMessage: "Success !",
+  });
   return (
     <>
       <Head>
