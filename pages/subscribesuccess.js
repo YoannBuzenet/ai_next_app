@@ -9,27 +9,27 @@ import UserCheck from "../services/userCheck";
 import BlueCTA from "../components/Base/BlueCTA";
 import { isUserSubscribed } from "../services/userCheck";
 
-export async function getServerSideProps(context) {
-  const session = await getSession(context);
-  const isLoggedUser = UserCheck.isUserLogged(session?.user?.isLoggedUntil);
+// export async function getServerSideProps(context) {
+//   const session = await getSession(context);
+//   const isLoggedUser = UserCheck.isUserLogged(session?.user?.isLoggedUntil);
 
-  const isUserOnFreeAccess = session?.user?.isOnFreeAccess === 1;
-  const isUserSubd = isUserSubscribed(session?.user?.isSubscribedUntil);
+//   const isUserOnFreeAccess = session?.user?.isOnFreeAccess === 1;
+//   const isUserSubd = isUserSubscribed(session?.user?.isSubscribedUntil);
 
-  console.log("session as seen from server", session);
+//   console.log("session as seen from server", session);
 
-  if (isUserOnFreeAccess || isUserSubd) {
-    return { props: { session } };
-  } else {
-    return {
-      redirect: {
-        destination: "/",
-        permanent: false,
-      },
-      props: { sessionServ: session },
-    };
-  }
-}
+//   if (isUserOnFreeAccess || isUserSubd) {
+//     return { props: { session } };
+//   } else {
+//     return {
+//       redirect: {
+//         destination: "/",
+//         permanent: false,
+//       },
+//       props: { sessionServ: session },
+//     };
+//   }
+// }
 export default function Subscribesuccess(props) {
   const [session, loading] = useSession();
 
@@ -72,42 +72,41 @@ export default function Subscribesuccess(props) {
             />
           </h1>
           {/* Sub part */}
-          {isUserSubd && (
-            <div className={styles.textContainer}>
-              <div>
-                <p>
-                  <FormattedMessage
-                    id="page.subscribeSuccess.subscribed.youArenowSubscribed"
-                    defaultMessage="You are now subscribed to our services."
-                  />
-                </p>
-              </div>
-              <div>
-                <p>
-                  <FormattedMessage
-                    id="page.subscribeSuccess.subscribed.youCanUseTheApp"
-                    defaultMessage="You can use the application. If needed, feel free to contact us."
-                  />
-                </p>
-              </div>
-              <div>
-                <p>
-                  <FormattedMessage
-                    id="page.subscribeSuccess.subscribed.followConsumption"
-                    defaultMessage="To follow your word use, please check the 'My Account' tab."
-                  />
-                </p>
-              </div>
-              <div>
-                <BlueCTA
-                  to="/templates"
-                  handleClick={() => {}}
-                  idLabel="page.subscribeSuccess.button.GoToApp"
-                  defaultLabel="Go To App"
+
+          <div className={styles.textContainer}>
+            <div>
+              <p>
+                <FormattedMessage
+                  id="page.subscribeSuccess.subscribed.youArenowSubscribed"
+                  defaultMessage="You are now subscribed to our services."
                 />
-              </div>
+              </p>
             </div>
-          )}
+            <div>
+              <p>
+                <FormattedMessage
+                  id="page.subscribeSuccess.subscribed.youCanUseTheApp"
+                  defaultMessage="You can use the application. If needed, feel free to contact us."
+                />
+              </p>
+            </div>
+            <div>
+              <p>
+                <FormattedMessage
+                  id="page.subscribeSuccess.subscribed.followConsumption"
+                  defaultMessage="To follow your word use, please check the 'My Account' tab."
+                />
+              </p>
+            </div>
+            <div>
+              <BlueCTA
+                to="/templates"
+                handleClick={() => {}}
+                idLabel="page.subscribeSuccess.button.GoToApp"
+                defaultLabel="Go To App"
+              />
+            </div>
+          </div>
         </main>
       </div>
     </>

@@ -22,7 +22,7 @@ export default async (req, res) => {
       // is redirected to the success page.
 
       success_url: `${process.env.NEXTAUTH_URL}/subscribesuccess?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${process.env.NEXTAUTH_URL}/paymentFailed`,
+      cancel_url: `${process.env.NEXTAUTH_URL}/paymentfailed`,
     });
 
     res.send({
