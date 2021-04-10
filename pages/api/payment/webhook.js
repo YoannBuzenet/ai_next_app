@@ -37,6 +37,7 @@ export default async (req, res) => {
     eventType = req.body.type;
   }
 
+  console.log("--------------------------------------------------------");
   console.log("data from stripe", data);
 
   switch (event.type) {
