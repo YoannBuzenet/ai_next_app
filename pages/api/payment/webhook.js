@@ -1,5 +1,12 @@
 const axios = require("axios");
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+import { buffer } from "micro";
+
+export const config = {
+  api: {
+    bodyParser: false,
+  },
+};
 
 // REPRENDRE LA :
 // stripe.com/docs/billing/subscriptions/checkout
@@ -17,11 +24,11 @@ export default async (req, res) => {
     let event;
     let signature = req.headers["stripe-signature"];
 
-    var buf = Buffer.from(JSON.stringify(req.body));
+    const buf = await buffer(req);
 
     try {
       event = await stripe.webhooks.constructEvent(
-        buf.toString(),
+        buf,
         signature,
         webhookSecret
       );
