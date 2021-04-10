@@ -283,7 +283,7 @@ const Pricing = () => {
                     <div className={styles.price}>
                       {isAnnual && (
                         <span className={styles.priceNumber}>
-                          35€
+                          29€
                           <span>
                             <FormattedMessage
                               id="page.pricing.byMonth"
@@ -293,7 +293,7 @@ const Pricing = () => {
                         </span>
                       )}
                       {!isAnnual && (
-                        <span className={styles.priceNumber}>49€</span>
+                        <span className={styles.priceNumber}>45€</span>
                       )}
                     </div>
                     <div className={styles.subprice}>
@@ -317,8 +317,8 @@ const Pricing = () => {
                   </div>
                   <div className={styles.optionsContainer}>
                     <Option
-                      idOptionLabel="page.pricing.50000words"
-                      defaultOptionLabel="50,000 words/month"
+                      idOptionLabel="page.pricing.20000words"
+                      defaultOptionLabel="20,000 words/month"
                     />
                     <Option
                       idOptionLabel="page.pricing.accessAllCategories"
