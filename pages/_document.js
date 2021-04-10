@@ -13,6 +13,10 @@ class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
+          <script
+            type="text/javascript"
+            src="https://js.stripe.com/v3/"
+          ></script>
         </body>
       </Html>
     );

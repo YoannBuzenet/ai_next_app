@@ -33,9 +33,9 @@ const Pricing = () => {
         //yearly
         const paymentCall = await axios
           .post("/api/payment/stripe", { priceId: products.yearly.stripeId })
-          .then((result) => {
+          .then((data) => {
             // Call Stripe.js method to redirect to the new Checkout page
-            console.log("results", result);
+            console.log("datas", data);
             stripe
               .redirectToCheckout({
                 sessionId: data.sessionId,
@@ -46,9 +46,9 @@ const Pricing = () => {
         // monthly
         const paymentCall = await axios
           .post("/api/payment/stripe", { priceId: products.monthly.stripeId })
-          .then((result) => {
+          .then((data) => {
             // Call Stripe.js method to redirect to the new Checkout page
-            console.log("results", result);
+            console.log("datas", data);
             stripe
               .redirectToCheckout({
                 sessionId: data.sessionId,
