@@ -17,9 +17,11 @@ export default async (req, res) => {
     let event;
     let signature = req.headers["stripe-signature"];
 
+    var buf = Buffer.from(JSON.stringify(req.body));
+
     try {
       event = await stripe.webhooks.constructEvent(
-        req.body,
+        buf.toString(),
         signature,
         webhookSecret
       );
