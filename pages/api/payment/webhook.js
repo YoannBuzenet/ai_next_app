@@ -1,6 +1,7 @@
 const axios = require("axios");
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 import { buffer } from "micro";
+import Cors from "micro-cors";
 
 export const config = {
   api: {
