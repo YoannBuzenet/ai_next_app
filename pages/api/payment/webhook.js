@@ -21,12 +21,12 @@ export default async (req, res) => {
 
     try {
       event = stripe.webhooks.constructEvent(
-        req.body || req.rawBody,
+        req.body,
         signature,
         webhookSecret
       );
     } catch (err) {
-      console.log(`⚠️  Webhook signature verification failed.`);
+      console.log(`⚠️  Webhook signature verification failed.`, err);
       return res.status(400);
     }
     // Extract the object from the event.
