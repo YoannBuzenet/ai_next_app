@@ -14,6 +14,7 @@ import { FREE_LIMIT_NUMBER_OF_WORDS } from "../config/settings";
 import { useRouter } from "next/router";
 import axios from "axios";
 import { products } from "../config/products";
+import getStripe from "../services/getStripe";
 
 const Pricing = () => {
   const [isAnnual, setIsAnnual] = useState(true);
@@ -24,6 +25,7 @@ const Pricing = () => {
 
   const handleButtonSubmit = async (e, action) => {
     e.preventDefault();
+    const stripe = await getStripe();
     console.log("action", action);
 
     if (action === "signIn") {
@@ -38,7 +40,7 @@ const Pricing = () => {
             console.log("datas", data);
             stripe
               .redirectToCheckout({
-                sessionId: data.sessionId,
+                sessionId: data.data.sessionId,
               })
               .then((result) => console.log("result stripe", result));
           });
@@ -51,7 +53,7 @@ const Pricing = () => {
             console.log("datas", data);
             stripe
               .redirectToCheckout({
-                sessionId: data.sessionId,
+                sessionId: data.data.sessionId,
               })
               .then((result) => console.log("result stripe", result));
           });
