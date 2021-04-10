@@ -19,9 +19,9 @@ export default async (req, res) => {
   // THIS SHOULD BE A VARIABLE
   const webhookSecret = process.env.STRIPE_WEBHOOK;
 
+  let event;
   if (webhookSecret) {
     // Retrieve the event by verifying the signature using the raw body and secret.
-    let event;
     let signature = req.headers["stripe-signature"];
 
     const buf = await buffer(req);
