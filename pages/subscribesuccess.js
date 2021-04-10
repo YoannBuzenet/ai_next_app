@@ -16,7 +16,7 @@ export async function getServerSideProps(context) {
   const isUserOnFreeAccess = session?.user?.isOnFreeAccess === 1;
   const isUserSubd = isUserSubscribed(session?.user?.isSubscribedUntil);
 
-  console.log("session as seen from subscribe", session);
+  console.log("session as seen from server", session);
 
   if (isUserOnFreeAccess || isUserSubd) {
     return { props: { session } };
