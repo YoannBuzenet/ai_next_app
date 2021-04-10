@@ -13,6 +13,8 @@ export default async (req, res) => {
   const webhookSecret = process.env.STRIPE_WEBHOOK;
 
   console.log("ça marche ?", webhookSecret);
+  console.log("req.body", req.body);
+  console.log("req.rawBody", req.rawBody);
 
   if (webhookSecret) {
     // Retrieve the event by verifying the signature using the raw body and secret.
