@@ -73,6 +73,6 @@ export default async (req, res) => {
       // Unhandled event type
     }
 
-    res.status(200);
+    res.status(200).send();
   }
 };
