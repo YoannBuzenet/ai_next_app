@@ -21,8 +21,9 @@ export default async (req, res) => {
       // the actual Session ID is returned in the query parameter when your customer
       // is redirected to the success page.
       success_url:
-        "http://localhost:3000/subscribeSuccess?session_id={CHECKOUT_SESSION_ID}",
-      cancel_url: "http://localhost:3000/",
+        process.env.NEXTAUTH_URL +
+        "/subscribeSuccess?session_id={CHECKOUT_SESSION_ID}",
+      cancel_url: process.env.NEXTAUTH_URL,
     });
 
     res.send({

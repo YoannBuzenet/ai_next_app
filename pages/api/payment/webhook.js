@@ -1,13 +1,16 @@
 const axios = require("axios");
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
+// REPRENDRE LA :
+// stripe.com/docs/billing/subscriptions/checkout
+
 export default async (req, res) => {
   let data;
   let eventType;
   // Check if webhook signing is configured.
 
   // THIS SHOULD BE A VARIABLE
-  const webhookSecret = "STRIPE_WEBHOOK_SECRET";
+  const webhookSecret = process.env.STRIPE_WEBHOOK;
 
   if (webhookSecret) {
     // Retrieve the event by verifying the signature using the raw body and secret.
@@ -33,6 +36,8 @@ export default async (req, res) => {
     data = req.body.data;
     eventType = req.body.type;
   }
+
+  console.log("data from stripe", data);
 
   switch (event.type) {
     case "checkout.session.completed":
