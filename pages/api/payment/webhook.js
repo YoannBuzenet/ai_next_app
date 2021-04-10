@@ -12,6 +12,8 @@ export default async (req, res) => {
   // THIS SHOULD BE A VARIABLE
   const webhookSecret = process.env.STRIPE_WEBHOOK;
 
+  console.log("ça marche ?", webhookSecret);
+
   if (webhookSecret) {
     // Retrieve the event by verifying the signature using the raw body and secret.
     let event;
@@ -25,7 +27,7 @@ export default async (req, res) => {
       );
     } catch (err) {
       console.log(`⚠️  Webhook signature verification failed.`);
-      return res.sendStatus(400);
+      return res.status(400);
     }
     // Extract the object from the event.
     data = event.data;
@@ -59,5 +61,5 @@ export default async (req, res) => {
     // Unhandled event type
   }
 
-  res.sendStatus(200);
+  res.status(200);
 };
