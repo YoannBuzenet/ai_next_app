@@ -59,14 +59,14 @@ const Pricing = () => {
           });
       }
 
-      // THEN GO TO /subscribeSuccess
+      // THEN GO TO /subscribesuccess
     } else if (action === "tryForFree") {
       try {
         const hasUserFreeAccess = await axios.post(`/api/freeAccess`, {
           user: session.user,
         });
         console.log("ça a marché ?", hasUserFreeAccess);
-        router.push("/subscribeSuccess");
+        router.push("/subscribesuccess");
       } catch (e) {
         // notification
         // TO DO

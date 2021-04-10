@@ -31,7 +31,7 @@ export async function getServerSideProps(context) {
   }
 }
 
-export default function subscribeSuccess(props) {
+export default function Subscribesuccess(props) {
   const [session, loading] = useSession();
 
   const isUserOnFreeAccess =
