@@ -56,6 +56,7 @@ export default async (req, res) => {
         // Payment is successful and the subscription is created.
         // You should provision the subscription and save the customer ID to your database.
         console.log("event SESSION", event);
+        console.log("event SESSION details", event.data.object.total_details);
         break;
       case "invoice.paid":
         // Continue to provision the subscription as payments continue to be made.
