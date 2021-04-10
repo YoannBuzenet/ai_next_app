@@ -48,6 +48,7 @@ export default async (req, res) => {
 
   console.log("--------------------------------------------------------");
   console.log("data from stripe", data);
+  console.log("event from stripe", event);
 
   switch (event.type) {
     case "checkout.session.completed":
