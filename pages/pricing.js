@@ -66,7 +66,7 @@ const Pricing = () => {
           user: session.user,
         });
         console.log("ça a marché ?", hasUserFreeAccess);
-        router.push("/subscribesuccess");
+        router.push("/freeAccessSuccess");
       } catch (e) {
         // notification
         // TO DO

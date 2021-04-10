@@ -21,9 +21,8 @@ export default async (req, res) => {
       // the actual Session ID is returned in the query parameter when your customer
       // is redirected to the success page.
 
-      //TODO mettre les url en variable : une page de succès par produit
       success_url: `${process.env.NEXTAUTH_URL}/subscribesuccess?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: process.env.NEXTAUTH_URL,
+      cancel_url: `${process.env.NEXTAUTH_URL}/paymentFailed`,
     });
 
     res.send({

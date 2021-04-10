@@ -31,7 +31,7 @@ export async function getServerSideProps(context) {
   }
 }
 
-export default function FreeAccessSuccess(props) {
+export default function Subscribesuccess(props) {
   const [session, loading] = useSession();
 
   const isUserOnFreeAccess =
@@ -72,29 +72,30 @@ export default function FreeAccessSuccess(props) {
               defaultMessage="Success !"
             />
           </h1>
-          {/* Sub part */}
-          {isUserSubd && (
+
+          {/* Free Access Part */}
+          {isUserOnFreeAccess && (
             <div className={styles.textContainer}>
               <div>
                 <p>
                   <FormattedMessage
-                    id="page.subscribeSuccess.subscribed.youArenowSubscribed"
-                    defaultMessage="You are now subscribed to our services."
+                    id="page.subscribeSuccess.freeAccess.freeAccess"
+                    defaultMessage="You now have a free access to EasyFlow !"
                   />
                 </p>
               </div>
               <div>
                 <p>
                   <FormattedMessage
-                    id="page.subscribeSuccess.subscribed.youCanUseTheApp"
-                    defaultMessage="You can use the application. If needed, feel free to contact us."
+                    id="page.subscribeSuccess.freeAccess.youCanNowUseTheApp"
+                    defaultMessage="You can use the application, with a limit of 5,000 words. If you have any question, please contact us."
                   />
                 </p>
               </div>
               <div>
                 <p>
                   <FormattedMessage
-                    id="page.subscribeSuccess.subscribed.followConsumption"
+                    id="page.subscribeSuccess.freeAccess.followConsumption"
                     defaultMessage="To follow your word use, please check the 'My Account' tab."
                   />
                 </p>
