@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { useIntl, FormattedMessage } from "react-intl";
+import styles from "../styles/subscribeSuccess.module.css";
 
 export default function PaymentFailed(props) {
   const Intl = useIntl();
