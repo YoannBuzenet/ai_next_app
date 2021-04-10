@@ -13,7 +13,6 @@ export default async (req, res) => {
   const webhookSecret = process.env.STRIPE_WEBHOOK;
 
   console.log("ça marche ?", webhookSecret);
-  console.log("la grosse pute de tes gros morts", req);
 
   if (webhookSecret) {
     // Retrieve the event by verifying the signature using the raw body and secret.
@@ -22,7 +21,7 @@ export default async (req, res) => {
 
     try {
       event = stripe.webhooks.constructEvent(
-        req.rawBody,
+        req.body || req.rawBody,
         signature,
         webhookSecret
       );
