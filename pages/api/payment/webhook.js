@@ -1,5 +1,6 @@
 const axios = require("axios");
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+import { buffer } from "micro";
 
 // REPRENDRE LA :
 // stripe.com/docs/billing/subscriptions/checkout
