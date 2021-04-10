@@ -15,6 +15,7 @@ export default async (req, res) => {
   console.log("ça marche ?", webhookSecret);
   console.log("req.body", req.body);
   console.log("req.rawBody", req.rawBody);
+  console.log("signature", req.headers["stripe-signature"]);
 
   if (webhookSecret) {
     // Retrieve the event by verifying the signature using the raw body and secret.
@@ -22,7 +23,7 @@ export default async (req, res) => {
     let signature = req.headers["stripe-signature"];
 
     try {
-      event = stripe.webhooks.constructEvent(
+      event = await stripe.webhooks.constructEvent(
         req.body,
         signature,
         webhookSecret
