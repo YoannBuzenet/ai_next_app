@@ -50,23 +50,24 @@ export default async (req, res) => {
     }
 
     console.log("--------------------------------------------------------");
-    console.log("data from stripe", data);
-    console.log("event from stripe", event);
 
     switch (event.type) {
       case "checkout.session.completed":
         // Payment is successful and the subscription is created.
         // You should provision the subscription and save the customer ID to your database.
+        console.log("event SESSION", event);
         break;
       case "invoice.paid":
         // Continue to provision the subscription as payments continue to be made.
         // Store the status in your database and check when a user accesses your service.
         // This approach helps you avoid hitting rate limits.
+        console.log("event INVOICE PAID", event);
         break;
       case "invoice.payment_failed":
         // The payment failed or the customer does not have a valid payment method.
         // The subscription becomes past_due. Notify your customer and send them to the
         // customer portal to update their payment information.
+        console.log("event PAYMENT FAILED", event);
         break;
       default:
       // Unhandled event type
