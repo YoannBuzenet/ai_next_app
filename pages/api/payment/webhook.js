@@ -9,13 +9,10 @@ export default async (req, res) => {
   let eventType;
   // Check if webhook signing is configured.
 
+  const buf = await buffer(req);
+
   // THIS SHOULD BE A VARIABLE
   const webhookSecret = process.env.STRIPE_WEBHOOK;
-
-  console.log("ça marche ?", webhookSecret);
-  console.log("req.body", req.body);
-  console.log("req.rawBody", req.rawBody);
-  console.log("signature", req.headers["stripe-signature"]);
 
   if (webhookSecret) {
     // Retrieve the event by verifying the signature using the raw body and secret.
@@ -24,7 +21,7 @@ export default async (req, res) => {
 
     try {
       event = await stripe.webhooks.constructEvent(
-        req.body,
+        buf.toString(),
         signature,
         webhookSecret
       );
