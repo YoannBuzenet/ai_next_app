@@ -16,7 +16,8 @@ export default async (req, res) => {
   try {
     // ping generic API
     const axiosCall = await axios.post(
-      `${process.env.CENTRAL_API_URL}/api/stripePurchases/sessionLink`
+      `${process.env.CENTRAL_API_URL}/api/stripePurchases/sessionLink`,
+      objectToSend
     );
   } catch (e) {
     res.status(500);
