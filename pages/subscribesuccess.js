@@ -2,7 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
 import { useSession, getSession, signIn } from "next-auth/client";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import styles from "../styles/subscribeSuccess.module.css";
 import { useIntl, FormattedMessage } from "react-intl";
 import UserCheck from "../services/userCheck";
@@ -31,6 +31,7 @@ export async function getServerSideProps(context) {
 export default function Subscribesuccess(props) {
   const [session, loading] = useSession();
   const router = useRouter();
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     // ping next api with idsession + id user
@@ -40,11 +41,15 @@ export default function Subscribesuccess(props) {
       router.push("/");
       return;
     }
-
-    axios.post("/api/payment/session", {
-      user: session.user,
-      session_id: sessionId,
-    });
+    setIsLoading(true);
+    axios
+      .post("/api/payment/session", {
+        user: session.user,
+        session_id: sessionId,
+      })
+      .then((result) => {
+        setIsLoading(false);
+      });
   }, []);
 
   // const isUserSubd =
