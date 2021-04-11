@@ -2,54 +2,59 @@ import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
 import { useSession, getSession, signIn } from "next-auth/client";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import styles from "../styles/subscribeSuccess.module.css";
 import { useIntl, FormattedMessage } from "react-intl";
 import UserCheck from "../services/userCheck";
 import BlueCTA from "../components/Base/BlueCTA";
 import { isUserSubscribed } from "../services/userCheck";
+import { useRouter } from "next/router";
+import axios from "axios";
 
-// export async function getServerSideProps(context) {
-//   const session = await getSession(context);
-//   const isLoggedUser = UserCheck.isUserLogged(session?.user?.isLoggedUntil);
+export async function getServerSideProps(context) {
+  const session = await getSession(context);
 
-//   const isUserOnFreeAccess = session?.user?.isOnFreeAccess === 1;
-//   const isUserSubd = isUserSubscribed(session?.user?.isSubscribedUntil);
+  console.log("session as seen from server", session);
 
-//   console.log("session as seen from server", session);
-
-//   if (isUserOnFreeAccess || isUserSubd) {
-//     return { props: { session } };
-//   } else {
-//     return {
-//       redirect: {
-//         destination: "/",
-//         permanent: false,
-//       },
-//       props: { sessionServ: session },
-//     };
-//   }
-// }
+  if (context.query.hasOwnProperty("session_id")) {
+    return { props: { session } };
+  } else {
+    return {
+      redirect: {
+        destination: "/",
+        permanent: false,
+      },
+      props: { sessionServ: session },
+    };
+  }
+}
 export default function Subscribesuccess(props) {
   const [session, loading] = useSession();
+  const router = useRouter();
 
-  const isUserOnFreeAccess =
-    session?.user?.isOnFreeAccess === 1 ||
-    props.session?.user?.isOnFreeAccess === 1;
+  useEffect(() => {
+    // ping next api with idsession + id user
+    const sessionId = router?.query?.session_id;
 
-  console.log("free access 0", isUserOnFreeAccess);
-  console.log("free access 1", session?.user?.isOnFreeAccess === 1);
-  console.log("free access 2", props.session?.user?.isOnFreeAccess === 1);
+    if (sessionId === undefined) {
+      router.push("/");
+      return;
+    }
 
-  const isUserSubd =
-    isUserSubscribed(session?.user?.isSubscribedUntil) ||
-    isUserSubscribed(props?.session?.user?.isSubscribedUntil);
+    axios.post("/api/payment/session", {
+      user: session.user,
+      session_id: sessionId,
+    });
+  }, []);
+
+  // const isUserSubd =
+  //   isUserSubscribed(session?.user?.isSubscribedUntil) ||
+  //   isUserSubscribed(props?.session?.user?.isSubscribedUntil);
 
   const Intl = useIntl();
 
-  console.log("bro", session);
-  console.log("broServ", props?.sessionServ);
-  console.log("broProps", props);
+  console.log("session", session);
+  console.log("session serv", props);
 
   // TRANSLATIONS
   const translatedHead = Intl.formatMessage({
