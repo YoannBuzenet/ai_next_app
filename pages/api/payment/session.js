@@ -19,6 +19,8 @@ export default async (req, res) => {
       `${process.env.CENTRAL_API_URL}/api/stripePurchases/sessionLink`,
       objectToSend
     );
+    console.log("axios call", axiosCall);
+    res.status(200);
   } catch (e) {
     res.status(500);
     return res.send({
