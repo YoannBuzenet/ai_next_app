@@ -87,11 +87,36 @@ export default async (req, res) => {
         // Store the status in your database and check when a user accesses your service.
         // This approach helps you avoid hitting rate limits.
         console.log("event INVOICE PAID", event);
+        const objectToSend = {
+          passphrase: process.env.FRONT_APP_PASSPHRASE,
+          customerID: event.data.object.customer,
+          amount: event.data.object.amount_due,
+          billing_reason: event.data.object.billing_reason,
+          date: event.created,
+          account_country: event.data.object.account_country,
+          status: event.data.object.status,
+          total: event.data.object.total,
+          subscription: event.data.object.subscription,
+          customer_email: event.data.object.customer_email,
+        };
+
+        axios
+          .post(
+            `${process.env.CENTRAL_API_URL}/api/stripePurchases/updateSubscription`,
+            objectToSend
+          )
+          .catch((error) =>
+            console.error(
+              "error while registering stripe purchase to API",
+              error
+            )
+          );
         break;
       case "invoice.payment_failed":
         // The payment failed or the customer does not have a valid payment method.
         // The subscription becomes past_due. Notify your customer and send them to the
         // customer portal to update their payment information.
+
         // TO DO when we have nodemailer working : mail customer
         console.log("event PAYMENT FAILED", event);
         break;

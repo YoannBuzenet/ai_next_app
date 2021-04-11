@@ -23,6 +23,7 @@ export default async (req, res) => {
     res.status(200).send();
   } catch (e) {
     res.status(500);
+    console.log("error while saving", e);
     return res.send({
       error: {
         message: e.message,
