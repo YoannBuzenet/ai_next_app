@@ -20,7 +20,7 @@ export default async (req, res) => {
       objectToSend
     );
     console.log("axios call", axiosCall);
-    res.status(200);
+    res.status(200).send();
   } catch (e) {
     res.status(500);
     return res.send({
