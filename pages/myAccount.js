@@ -19,6 +19,9 @@ import MyResponsiveLine from "../components/Base/Charts/ResponsiveChartLine";
 import { generateObjectWithdates } from "../services/utils";
 import ProgressBar from "../components/Base/Progress";
 import { FREE_LIMIT_NUMBER_OF_WORDS } from "../config/settings";
+import getStripe from "../services/getStripe";
+import BlueCTA from "../components/Base/BlueCTA";
+import { products } from "../config/products";
 
 export async function getServerSideProps(context) {
   const session = await getSession(context);
@@ -129,6 +132,26 @@ export default function MyAccount() {
 
   const handleSignOut = () => {
     signOut({ callbackUrl: process.env.NEXT_PUBLIC_URL_ABSOLUTE_THIS_WEBSITE });
+  };
+
+  const handleBuyReload = async (e) => {
+    e.preventDefault();
+    const stripe = await getStripe();
+
+    const paymentCall = await axios
+      .post("/api/payment/stripe", {
+        priceId: products.boost.stripeId,
+        mode: "payment",
+      })
+      .then((data) => {
+        // Call Stripe.js method to redirect to the new Checkout page
+        console.log("datas", data);
+        stripe
+          .redirectToCheckout({
+            sessionId: data.data.sessionId,
+          })
+          .then((result) => console.log("result stripe", result));
+      });
   };
 
   const useStyles = makeStyles((theme) => ({
@@ -341,6 +364,46 @@ export default function MyAccount() {
                                 </p>
                               </div>
                             )}
+                          {/* TO DO remove le ! */}
+                          {!isUserSubd && (
+                            <div className={styles.reloadDiv}>
+                              <h2>
+                                <FormattedMessage
+                                  id="page.myAccount.useageAndBilling.reload"
+                                  defaultMessage="Reload"
+                                />
+                              </h2>
+                              <div className={styles.CTAAndTextContainer}>
+                                <div>
+                                  <p className={styles.reloadPriceParagraph}>
+                                    <FormattedMessage
+                                      id="page.myAccount.useageAndBilling.reload.ExplainationText"
+                                      defaultMessage="19€ for a 20,000 extra words"
+                                    />
+                                  </p>
+                                  <p
+                                    className={
+                                      styles.reloadPriceDurationParagraph
+                                    }
+                                  >
+                                    <FormattedMessage
+                                      id="page.myAccount.useageAndBilling.reload.ExplainationText.duration"
+                                      defaultMessage="Lasts 30 days"
+                                    />
+                                  </p>
+                                </div>
+                                <BlueCTA
+                                  to="/"
+                                  idLabel="page.myAccount.useageAndBilling.reload.CTA"
+                                  defaultLabel="Buy"
+                                  handleClick={(e) => {
+                                    handleBuyReload(e);
+                                  }}
+                                  disableMarginTop
+                                />
+                              </div>
+                            </div>
+                          )}
                         </div>
                       </>
                     )}

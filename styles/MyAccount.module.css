@@ -66,6 +66,17 @@
   margin-top: 20px;
 }
 
+.CTAAndTextContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.reloadPriceDurationParagraph {
+  margin: 0;
+  font-weight: 500;
+  color: var(--grey-text);
+}
+
 @media only screen and (max-width: 768px) {
   .signOutContainer {
     flex-direction: column;

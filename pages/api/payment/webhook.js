@@ -87,7 +87,7 @@ export default async (req, res) => {
         // Store the status in your database and check when a user accesses your service.
         // This approach helps you avoid hitting rate limits.
         console.log("event INVOICE PAID", event);
-        const objectToSend = {
+        const objectToSendBackEnd = {
           passphrase: process.env.FRONT_APP_PASSPHRASE,
           customerID: event.data.object.customer,
           amount: event.data.object.amount_due,
@@ -103,7 +103,7 @@ export default async (req, res) => {
         axios
           .post(
             `${process.env.CENTRAL_API_URL}/api/stripePurchases/updateSubscription`,
-            objectToSend
+            objectToSendBackEnd
           )
           .catch((error) =>
             console.error(

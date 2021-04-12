@@ -301,7 +301,7 @@ const Pricing = () => {
                         <span>
                           <FormattedMessage
                             id="page.pricing.420€BilledYearly"
-                            defaultMessage="420€ Billed Yearly"
+                            defaultMessage="348€ Billed Yearly"
                           />
                         </span>
                       )}

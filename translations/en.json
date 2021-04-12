@@ -47,6 +47,10 @@
   "page.myAccount.useageAndBilling.subscription.status.freeAccess": "You are currently in free trial access.",
   "page.myAccount.useageAndBilling.subscription.status.freeAccess.isOver": "You reach your maximum free use access.",
   "page.myAccount.useageAndBilling.subscription.status.freeAccess.pleaseContactUs": "Please contact us to subscribe to our service.",
+  "page.myAccount.useageAndBilling.reload": "Reload",
+  "page.myAccount.useageAndBilling.reload.CTA": "Buy",
+  "page.myAccount.useageAndBilling.reload.ExplainationText": "19€ for a 20,000 extra words",
+  "page.myAccount.useageAndBilling.reload.ExplainationText.duration": "Lasts 30 days",
 
   "page.workplace.inputOutput": "Input & Output Language :",
   "page.workplace.displayCategories": "Display Categories",
@@ -70,7 +74,7 @@
   "page.pricing.soloAccess": "Solo Access",
   "page.pricing.Perfectforoneperson": "Perfect for one person",
   "page.pricing.byMonth": " /month",
-  "page.pricing.420€BilledYearly": "420€ Billed Yearly",
+  "page.pricing.420€BilledYearly": "348€ Billed Yearly",
   "page.pricing.Billedmonthly": "Billed monthly",
   "page.pricing.Entreprise": "Enterprise",
   "page.pricing.Perfectforteams": "Perfect for teams",
@@ -87,6 +91,7 @@
   "page.pricing.tryForFree": "Try for free",
   "page.pricing.upgrade": "Upgrade",
   "page.pricing.onGoing": "Ongoing",
+  "page.pricing.reload": "Buy a reload",
   "page.pricing.creditUsed": "Free trial ended",
 
   "page.subscribeSuccess.head": "Success !",

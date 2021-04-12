@@ -10,14 +10,17 @@ const BlueCTA = ({
   handleClick,
   disabled = false,
   isFullWidth = false,
+  disableMarginTop = false,
 }) => {
   const widthButton = isFullWidth
     ? styles.buttonContainerFullWidth
     : styles.buttonContainer;
 
+  const addedStyle = disableMarginTop ? { marginTop: 0 } : {};
+
   if (!disabled) {
     return (
-      <div className={widthButton}>
+      <div className={widthButton} style={addedStyle}>
         <Link href={to}>
           <a type="button" className={styles.button} onClick={handleClick}>
             <FormattedMessage id={idLabel} defaultMessage={defaultLabel} />
