@@ -59,35 +59,6 @@ callbacks.jwt = async function jwt(token, user) {
 callbacks.session = async function session(session, token) {
   // we can fetch info from back end here to add it to the session
 
-  if (userData?.email) {
-    //get user monthly words
-    let idUser;
-    if (userData?.provider === "google") {
-      idUser = userData?.googleId;
-    }
-
-    const objectToSend = {
-      passphrase: process.env.FRONT_APP_PASSPHRASE,
-      idUser: idUser,
-      provider: userData?.provider,
-    };
-
-    const apiResp = await axios.post(
-      `${process.env.CENTRAL_API_URL}/api/numberOfWords/userTotalConsumption`,
-      objectToSend
-    );
-
-    session.wordsTotalConsumption = apiResp.data;
-
-    const apiRespThisMonth = await axios.post(
-      `${process.env.CENTRAL_API_URL}/api/numberOfWords/getWordsConsumptionForCurrentMonth`,
-      objectToSend
-    );
-
-    session.MonthConsumption =
-      apiRespThisMonth.data?.dataForCurrentMonth?.[0]?.totalAmount;
-  }
-
   // refresh user Data
   if (userData.hasOwnProperty("id")) {
     //redefine userData here et assign it into same variable
