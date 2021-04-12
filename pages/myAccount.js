@@ -19,7 +19,6 @@ import MyResponsiveLine from "../components/Base/Charts/ResponsiveChartLine";
 import { generateObjectWithdates } from "../services/utils";
 import ProgressBar from "../components/Base/Progress";
 import { FREE_LIMIT_NUMBER_OF_WORDS } from "../config/settings";
-import ResponsiveArticle from "../components/Loader/ResponsiveArticle";
 
 export async function getServerSideProps(context) {
   const session = await getSession(context);
@@ -46,7 +45,15 @@ export default function MyAccount() {
   const [userTotalConsumption, setUserTotalConsumption] = useState("");
   const [userMonthlyConsumption, setUserMonthlyConsumption] = useState(0);
 
+  const isUserSubd = UserCheck.isUserSubscribed(
+    session?.user?.isSubscribedUntil
+  );
+
+  //TO DO
+  const maxWordsUser = "";
+
   console.log("session", session);
+  console.log("is user subbed", isUserSubd);
 
   useEffect(() => {
     setIsLoadingUserData(true);
