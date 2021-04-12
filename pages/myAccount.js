@@ -6,7 +6,7 @@ import styles from "../styles/MyAccount.module.css";
 import UserCheck from "../services/userCheck";
 import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
-import { FormattedMessage, useIntl } from "react-intl";
+import { FormattedMessage, useIntl, FormattedNumber } from "react-intl";
 import React from "react";
 import PropTypes from "prop-types";
 import AppBar from "@material-ui/core/AppBar";
@@ -52,8 +52,15 @@ export default function MyAccount() {
     session?.user?.isSubscribedUntil
   );
 
-  //TO DO
-  const maxWordsUser = "";
+  const maxWordsUser = !isUserSubd
+    ? FREE_LIMIT_NUMBER_OF_WORDS
+    : session.user.totalMaxWordsUserThisMonth;
+
+  const maxWordsUserAsString = !isUserSubd ? (
+    <FormattedNumber value={5000} />
+  ) : (
+    <FormattedNumber value={session.user.totalMaxWordsUserThisMonth} />
+  );
 
   console.log("session", session);
   console.log("is user subbed", isUserSubd);
@@ -322,12 +329,15 @@ export default function MyAccount() {
                                 />
                               </p>
                               <p className={styles.wordsCounter}>
-                                {userTotalConsumption || 0} / 5,000
+                                {userTotalConsumption || 0} /{" "}
+                                {maxWordsUserAsString}
                               </p>
                             </div>
                             <div className={styles.progressContainer}>
                               <ProgressBar
-                                progress={(userTotalConsumption / 5000) * 100}
+                                progress={
+                                  (userTotalConsumption / maxWordsUser) * 100
+                                }
                               />
                             </div>
                           </div>
@@ -364,8 +374,7 @@ export default function MyAccount() {
                                 </p>
                               </div>
                             )}
-                          {/* TO DO remove le ! */}
-                          {!isUserSubd && (
+                          {isUserSubd && (
                             <div className={styles.reloadDiv}>
                               <h2>
                                 <FormattedMessage
