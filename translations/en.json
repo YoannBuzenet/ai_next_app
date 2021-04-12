@@ -45,6 +45,7 @@
   "page.myAccount.useageAndBilling.usage.totalCreditsUsedThisMonth": "Total words used this month",
   "page.myAccount.useageAndBilling.subscription.title": "Subscription",
   "page.myAccount.useageAndBilling.subscription.status.freeAccess": "You are currently in free trial access.",
+  "page.myAccount.useageAndBilling.subscription.status.Subbed": "You are subscribed until ",
   "page.myAccount.useageAndBilling.subscription.status.freeAccess.isOver": "You reach your maximum free use access.",
   "page.myAccount.useageAndBilling.subscription.status.freeAccess.pleaseContactUs": "Please contact us to subscribe to our service.",
   "page.myAccount.useageAndBilling.reload": "Reload",

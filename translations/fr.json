@@ -45,6 +45,7 @@
   "page.myAccount.useageAndBilling.usage.totalCreditsUsedThisMonth": "Nombre de mots utilisés ce mois-ci",
   "page.myAccount.useageAndBilling.subscription.title": "Abonnement",
   "page.myAccount.useageAndBilling.subscription.status.freeAccess": "Vous êtes actuellement en période d'essai gratuite.",
+  "page.myAccount.useageAndBilling.subscription.status.Subbed": "Vous êtes abonné(e) jusqu'au  ",
   "page.myAccount.useageAndBilling.subscription.status.freeAccess.isOver": "Vous avez atteint le maximum d'utilisation gratuite du service.",
   "page.myAccount.useageAndBilling.subscription.status.freeAccess.pleaseContactUs": "Merci de nous contacter pour vous abonner.",
   "page.myAccount.useageAndBilling.reload": "Recharge",

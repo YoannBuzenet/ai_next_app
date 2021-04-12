@@ -6,7 +6,12 @@ import styles from "../styles/MyAccount.module.css";
 import UserCheck from "../services/userCheck";
 import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
-import { FormattedMessage, useIntl, FormattedNumber } from "react-intl";
+import {
+  FormattedMessage,
+  useIntl,
+  FormattedNumber,
+  FormattedDate,
+} from "react-intl";
 import React from "react";
 import PropTypes from "prop-types";
 import AppBar from "@material-ui/core/AppBar";
@@ -349,12 +354,26 @@ export default function MyAccount() {
                               />
                             </h2>
                           </div>
-                          <p>
-                            <FormattedMessage
-                              id="page.myAccount.useageAndBilling.subscription.status.freeAccess"
-                              defaultMessage="You are currently in free trial access."
-                            />
-                          </p>
+                          {isUserSubd && (
+                            <p>
+                              <FormattedMessage
+                                id="page.myAccount.useageAndBilling.subscription.status.Subbed"
+                                defaultMessage="You are subscribed until "
+                              />
+                              <FormattedDate
+                                value={session?.user?.isSubscribedUntil}
+                              />
+                              .
+                            </p>
+                          )}
+                          {!isUserSubd && (
+                            <p>
+                              <FormattedMessage
+                                id="page.myAccount.useageAndBilling.subscription.status.freeAccess"
+                                defaultMessage="You are currently in free trial access."
+                              />
+                            </p>
+                          )}
                           {session?.user?.isOnFreeAccess === 1 &&
                             session?.wordsTotalConsumption
                               ?.userTotalConsumption >
