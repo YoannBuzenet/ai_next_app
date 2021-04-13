@@ -3,6 +3,7 @@ import Link from "next/link";
 import styles from "../styles/Home.module.css";
 import { useContext, useEffect } from "react";
 import selectedAppLangContext from "../contexts/selectedAppLang";
+import notificationContext from "../contexts/notificationsContext";
 import { useSession, getSession } from "next-auth/client";
 import { langInApp } from "../definitions/langs";
 
@@ -34,6 +35,9 @@ export async function getServerSideProps(context) {
 
 export default function Home(props) {
   const { currentLang, setCurrentLang } = useContext(selectedAppLangContext);
+  const { notificationInfo, setNotificationInfo } = useContext(
+    notificationContext
+  );
 
   useEffect(() => {
     if (currentLang.hasOwnProperty("isDefault")) {

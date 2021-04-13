@@ -22,8 +22,8 @@ const AppWrapper = ({ children }) => {
   const [notificationInfo, setNotificationInfo] = useState({
     alert: { style: {}, severity: "success", variant: "filled", message: "" },
     snackbar: {
-      autoHideDuration: 20000,
-      anchorOrigin: "",
+      autoHideDuration: null,
+      anchorOrigin: { vertical: "bottom", horizontal: "left" },
       isDisplayed: false,
       onClose: "",
     },
@@ -77,8 +77,8 @@ const AppWrapper = ({ children }) => {
   const handleSetContextTransparentDiv = (transparentDiv) => {
     setIsTransparentDivDisplayed(transparentDiv);
   };
-  const handleSetIsDisplayedNotification = (isDiplayed) => {
-    setNotificationInfo(isDiplayed);
+  const handleSetIsDisplayedNotification = (contextSnackBar) => {
+    setNotificationInfo(contextSnackBar);
   };
   const handleSetContextCurrentLang = (currentLang) => {
     if (Object.keys(langInApp).includes(currentLang.locale)) {
@@ -153,28 +153,45 @@ const AppWrapper = ({ children }) => {
                         locale={currentLang.locale}
                         messages={currentLang.translatedText}
                       >
-                        {isTransparentDivDisplayed && <TransparentDiv />}
-                        <Snackbar
-                          anchorOrigin={notificationInfo.snackbar.anchorOrigin}
-                          open={notificationInfo.snackbar.isDisplayed}
-                          autoHideDuration={
-                            notificationInfo.snackbar.autoHideDuration
-                          }
-                          onClose={(e) =>
-                            handleSetIsDisplayedNotification(false)
-                          }
-                        >
-                          <MuiAlert
-                            onClose={(e) =>
-                              handleSetIsDisplayedNotification(false)
+                        <>
+                          {isTransparentDivDisplayed && <TransparentDiv />}
+                          <Snackbar
+                            anchorOrigin={
+                              notificationInfo.snackbar.anchorOrigin
                             }
-                            severity={notificationInfo.alert.severity}
-                            style={{ whiteSpace: "pre-line" }}
+                            open={notificationInfo.snackbar.isDisplayed}
+                            autoHideDuration={
+                              notificationInfo.snackbar.autoHideDuration
+                            }
+                            onClose={(e) =>
+                              handleSetIsDisplayedNotification({
+                                ...notificationInfo,
+                                snackbar: {
+                                  ...notificationInfo.snackbar,
+                                  isDisplayed: false,
+                                },
+                              })
+                            }
                           >
-                            {notificationInfo.alert.message}
-                          </MuiAlert>
-                        </Snackbar>
-                        {children}
+                            <MuiAlert
+                              onClose={(e) =>
+                                handleSetIsDisplayedNotification({
+                                  ...notificationInfo,
+                                  snackbar: {
+                                    ...notificationInfo.snackbar,
+                                    isDisplayed: false,
+                                  },
+                                })
+                              }
+                              severity={notificationInfo.alert.severity}
+                              style={{ whiteSpace: "pre-line" }}
+                              variant={notificationInfo.alert.variant}
+                            >
+                              {notificationInfo.alert.message}
+                            </MuiAlert>
+                          </Snackbar>
+                          {children}
+                        </>
                       </IntlProvider>
                     </IsResponsiveMenuDisplayedContextFile.Provider>
                   </AreFlagsDisplayed.Provider>

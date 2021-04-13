@@ -4,8 +4,8 @@ export default React.createContext({
   notificationInfo: {
     alert: { style: {}, severity: "success", variant: "filled", message: "" },
     snackbar: {
-      autoHideDuration: 20000,
-      anchorOrigin: "",
+      autoHideDuration: null,
+      anchorOrigin: { vertical: "bottom", horizontal: "left" },
       isDisplayed: false,
       onClose: "",
     },
