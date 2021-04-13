@@ -11,6 +11,8 @@ import NotificationContext from "../contexts/notificationsContext";
 import { IntlProvider } from "react-intl";
 import { langInApp } from "../definitions/langs";
 import TransparentDiv from "../components/TransparentDiv";
+import Snackbar from "@material-ui/core/Snackbar";
+import MuiAlert from "@material-ui/lab/Alert";
 
 const AppWrapper = ({ children }) => {
   const [userContext, setUserContext] = useState({ langSelected: "fr-FR" });
@@ -18,11 +20,11 @@ const AppWrapper = ({ children }) => {
   const [isBlackDivDisplayed, setIsBlackDivDisplayed] = useState(false);
   const [areFlagsDisplayed, setAreFlagsDisplayed] = useState(false);
   const [notificationInfo, setNotificationInfo] = useState({
-    alert: { style: {}, severity: "success", variant: "filled" },
+    alert: { style: {}, severity: "success", variant: "filled", message: "" },
     snackbar: {
       autoHideDuration: 20000,
       anchorOrigin: "",
-      open: "",
+      isDisplayed: false,
       onClose: "",
     },
   });
@@ -130,6 +132,11 @@ const AppWrapper = ({ children }) => {
     setNotificationInfo: handleSetIsDisplayedNotification,
   };
 
+  // Alert component
+  function Alert(props) {
+    return <MuiAlert variant="filled" {...props} />;
+  }
+
   return (
     <UserContextFile.Provider value={contextUserProps}>
       <NotificationContext.Provider value={contextNotification}>
@@ -147,6 +154,26 @@ const AppWrapper = ({ children }) => {
                         messages={currentLang.translatedText}
                       >
                         {isTransparentDivDisplayed && <TransparentDiv />}
+                        <Snackbar
+                          anchorOrigin={notificationInfo.snackbar.anchorOrigin}
+                          open={notificationInfo.snackbar.isDisplayed}
+                          autoHideDuration={
+                            notificationInfo.snackbar.autoHideDuration
+                          }
+                          onClose={(e) =>
+                            handleSetIsDisplayedNotification(false)
+                          }
+                        >
+                          <MuiAlert
+                            onClose={(e) =>
+                              handleSetIsDisplayedNotification(false)
+                            }
+                            severity={notificationInfo.alert.severity}
+                            style={{ whiteSpace: "pre-line" }}
+                          >
+                            {notificationInfo.alert.message}
+                          </MuiAlert>
+                        </Snackbar>
                         {children}
                       </IntlProvider>
                     </IsResponsiveMenuDisplayedContextFile.Provider>
