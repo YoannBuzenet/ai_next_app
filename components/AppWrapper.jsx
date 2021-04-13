@@ -7,6 +7,7 @@ import DefinitionsContextFile from "../contexts/definitions";
 import TransparentDivContextFile from "../contexts/transparentDiv";
 import AppLangContextFile from "../contexts/selectedAppLang";
 import AreFlagsDisplayed from "../contexts/areFlagsDisplayed";
+import NotificationContext from "../contexts/notificationsContext";
 import { IntlProvider } from "react-intl";
 import { langInApp } from "../definitions/langs";
 import TransparentDiv from "../components/TransparentDiv";
@@ -16,6 +17,7 @@ const AppWrapper = ({ children }) => {
   const [selectedCategoryID, setSelectedCategoryID] = useState(1);
   const [isBlackDivDisplayed, setIsBlackDivDisplayed] = useState(false);
   const [areFlagsDisplayed, setAreFlagsDisplayed] = useState(false);
+  const [isDisplayedNotification, setIsDisplayedNotification] = useState(false);
   const [isResponsiveMenuDisplayed, setIsResponsiveMenuDisplayed] = useState(
     false
   );
@@ -65,6 +67,9 @@ const AppWrapper = ({ children }) => {
   const handleSetContextTransparentDiv = (transparentDiv) => {
     setIsTransparentDivDisplayed(transparentDiv);
   };
+  const handleSetIsDisplayedNotification = (isDiplayed) => {
+    setIsDisplayedNotification(isDiplayed);
+  };
   const handleSetContextCurrentLang = (currentLang) => {
     if (Object.keys(langInApp).includes(currentLang.locale)) {
       setCurrentLang(currentLang);
@@ -112,32 +117,38 @@ const AppWrapper = ({ children }) => {
     areFlagsDisplayed,
     setAreFlagsDisplayed: handleSetAreFlagsDisplayed,
   };
+  const contextNotification = {
+    isDisplayedNotification,
+    setIsDisplayedNotification: handleSetIsDisplayedNotification,
+  };
 
   return (
     <UserContextFile.Provider value={contextUserProps}>
-      <SelectedCategoryContext.Provider value={contextProps}>
-        <BlackDivContextFile.Provider value={contextBlackDiv}>
-          <TransparentDivContextFile.Provider value={contextTransparentDiv}>
-            <DefinitionsContextFile.Provider value={contextAllDefinitions}>
-              <AppLangContextFile.Provider value={contextCurrentLang}>
-                <AreFlagsDisplayed.Provider value={contextAreFlagsDisplayed}>
-                  <IsResponsiveMenuDisplayedContextFile.Provider
-                    value={contextResponsiveMenu}
-                  >
-                    <IntlProvider
-                      locale={currentLang.locale}
-                      messages={currentLang.translatedText}
+      <NotificationContext.Provider value={contextNotification}>
+        <SelectedCategoryContext.Provider value={contextProps}>
+          <BlackDivContextFile.Provider value={contextBlackDiv}>
+            <TransparentDivContextFile.Provider value={contextTransparentDiv}>
+              <DefinitionsContextFile.Provider value={contextAllDefinitions}>
+                <AppLangContextFile.Provider value={contextCurrentLang}>
+                  <AreFlagsDisplayed.Provider value={contextAreFlagsDisplayed}>
+                    <IsResponsiveMenuDisplayedContextFile.Provider
+                      value={contextResponsiveMenu}
                     >
-                      {isTransparentDivDisplayed && <TransparentDiv />}
-                      {children}
-                    </IntlProvider>
-                  </IsResponsiveMenuDisplayedContextFile.Provider>
-                </AreFlagsDisplayed.Provider>
-              </AppLangContextFile.Provider>
-            </DefinitionsContextFile.Provider>
-          </TransparentDivContextFile.Provider>
-        </BlackDivContextFile.Provider>
-      </SelectedCategoryContext.Provider>
+                      <IntlProvider
+                        locale={currentLang.locale}
+                        messages={currentLang.translatedText}
+                      >
+                        {isTransparentDivDisplayed && <TransparentDiv />}
+                        {children}
+                      </IntlProvider>
+                    </IsResponsiveMenuDisplayedContextFile.Provider>
+                  </AreFlagsDisplayed.Provider>
+                </AppLangContextFile.Provider>
+              </DefinitionsContextFile.Provider>
+            </TransparentDivContextFile.Provider>
+          </BlackDivContextFile.Provider>
+        </SelectedCategoryContext.Provider>
+      </NotificationContext.Provider>
     </UserContextFile.Provider>
   );
 };
