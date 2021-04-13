@@ -1,17 +1,31 @@
 import AppWrapper from "../components/AppWrapper";
 import "../styles/globals.css";
-import { Provider } from "next-auth/client";
 import Navbar from "../components/Navbar";
-import { useEffect } from "react";
+import { useEffect, useContext } from "react";
 import Footer from "../components/Footer";
-import { useSession, getSession, signIn } from "next-auth/client";
+import { useSession, Provider } from "next-auth/client";
+import notificationContext from "../contexts/notificationsContext";
 
 function MyApp({ Component, pageProps }) {
   const [session, loading] = useSession();
+  const { notificationInfo, setNotificationInfo } = useContext(
+    notificationContext
+  );
 
-  //useEffect, check si ya une session NON outdated en LS
-  // si oui on log dessus
-  // si non on l'efface
+  //useEffect, check le décompte de mots
+  // si < X, notification
+
+  //This useEffect will trigger at each rerender
+  useEffect(() => {
+    if (
+      session?.user?.totalMaxWordsUserThisMonth -
+      session?.user?.consumptionThisMonth
+    ) {
+      console.log("consommation terminée");
+    } else {
+      console.log("consommation ok");
+    }
+  });
 
   return (
     <AppWrapper>

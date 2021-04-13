@@ -132,11 +132,6 @@ const AppWrapper = ({ children }) => {
     setNotificationInfo: handleSetIsDisplayedNotification,
   };
 
-  // Alert component
-  function Alert(props) {
-    return <MuiAlert variant="filled" {...props} />;
-  }
-
   return (
     <UserContextFile.Provider value={contextUserProps}>
       <NotificationContext.Provider value={contextNotification}>
