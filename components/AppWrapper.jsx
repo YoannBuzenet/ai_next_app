@@ -17,7 +17,15 @@ const AppWrapper = ({ children }) => {
   const [selectedCategoryID, setSelectedCategoryID] = useState(1);
   const [isBlackDivDisplayed, setIsBlackDivDisplayed] = useState(false);
   const [areFlagsDisplayed, setAreFlagsDisplayed] = useState(false);
-  const [isDisplayedNotification, setIsDisplayedNotification] = useState(false);
+  const [notificationInfo, setNotificationInfo] = useState({
+    alert: { style: {}, severity: "success", variant: "filled" },
+    snackbar: {
+      autoHideDuration: 20000,
+      anchorOrigin: "",
+      open: "",
+      onClose: "",
+    },
+  });
   const [isResponsiveMenuDisplayed, setIsResponsiveMenuDisplayed] = useState(
     false
   );
@@ -68,7 +76,7 @@ const AppWrapper = ({ children }) => {
     setIsTransparentDivDisplayed(transparentDiv);
   };
   const handleSetIsDisplayedNotification = (isDiplayed) => {
-    setIsDisplayedNotification(isDiplayed);
+    setNotificationInfo(isDiplayed);
   };
   const handleSetContextCurrentLang = (currentLang) => {
     if (Object.keys(langInApp).includes(currentLang.locale)) {
@@ -118,8 +126,8 @@ const AppWrapper = ({ children }) => {
     setAreFlagsDisplayed: handleSetAreFlagsDisplayed,
   };
   const contextNotification = {
-    isDisplayedNotification,
-    setIsDisplayedNotification: handleSetIsDisplayedNotification,
+    notificationInfo,
+    setNotificationInfo: handleSetIsDisplayedNotification,
   };
 
   return (
