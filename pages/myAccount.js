@@ -62,7 +62,7 @@ export default function MyAccount() {
     : session.user.totalMaxWordsUserThisMonth;
 
   const maxWordsUserAsString = !isUserSubd ? (
-    <FormattedNumber value={5000} />
+    <FormattedNumber value={FREE_LIMIT_NUMBER_OF_WORDS} />
   ) : (
     <FormattedNumber value={session.user.totalMaxWordsUserThisMonth} />
   );

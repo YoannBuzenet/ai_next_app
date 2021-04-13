@@ -105,6 +105,12 @@
   "page.subscribeSuccess.freeAccess.youCanNowUseTheApp": "Vous pouvez utiliser l'application à loisir dans la limite de 5000 mots. En cas de besoin, n'hésitez pas à nous contacter.",
   "page.subscribeSuccess.freeAccess.followConsumption": "Pour suivre l'évolution de vos consommations, consultez l'onglet 'Mon Compte'.",
 
+  "page.paymentFailed.title": "Le paiement a écouché.",
+  "page.paymentFailed.head": "Paiment non effectué",
+  "page.paymentFailed.paymentCanceled": "Votre paiement n'a pas eu lieu. Votre carte n'a pas été débitée.",
+  "page.paymentFailed.technicalProblem": "Cela peut venir d'un problème technique. Merci de réessayer ultérieurement.",
+  "page.paymentFailed.contactUs": "Si vous avez une question, n'hésitez pas à nous contacter.",
+
   "compo.heartWorkPlace.button.create": "Créer",
   "compo.heartWorkPlace.noCategory.title": "Bienvenue sur EasyFlow",
   "compo.heartWorkPlace.noCategory.paragraph1": "Sélectionnez un thème sur la gauche pour commencer !",

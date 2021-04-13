@@ -81,8 +81,6 @@ export default function Subscribesuccess(props) {
               defaultMessage="Success !"
             />
           </h1>
-          {/* Sub part */}
-
           <div className={styles.textContainer}>
             <div>
               <p>

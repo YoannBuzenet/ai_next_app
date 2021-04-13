@@ -105,6 +105,12 @@
   "page.subscribeSuccess.freeAccess.youCanNowUseTheApp": "You can use the application, with a limit of 5,000 words. If you have any question, please contact us.",
   "page.subscribeSuccess.freeAccess.followConsumption": "To follow your word use, please check the 'My Account' tab.",
 
+  "page.paymentFailed.title": "The payment has failed.",
+  "page.paymentFailed.head": "Payment Failed",
+  "page.paymentFailed.paymentCanceled": "The paiment has been canceled. Your credit card was not used.",
+  "page.paymentFailed.technicalProblem": "It may be a technical problem. Please try later.",
+  "page.paymentFailed.contactUs": "If you have any question, contact us.",
+
   "compo.heartWorkPlace.button.create": "Create",
   "compo.heartWorkPlace.noCategory.title": "Welcome on EasyFlow",
   "compo.heartWorkPlace.noCategory.paragraph1": "Please select a category on the left to get started.",
