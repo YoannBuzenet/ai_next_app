@@ -12,18 +12,33 @@ function MyApp({ Component, pageProps }) {
     notificationContext
   );
 
+  const [hasUserBeenNotified, setHasUserBeenNotified] = useState(false);
+
   //useEffect, check le décompte de mots
   // si < X, notification
 
   //This useEffect will trigger at each rerender
   useEffect(() => {
+    if (!hasUserBeenNotified) {
+      return;
+    }
     if (
       session?.user?.totalMaxWordsUserThisMonth -
-      session?.user?.consumptionThisMonth
+        session?.user?.consumptionThisMonth <
+      0
     ) {
       console.log("consommation terminée");
+      setHasUserBeenNotified(true);
+    } else if (
+      session?.user?.totalMaxWordsUserThisMonth -
+        session?.user?.consumptionThisMonth <
+      2000
+    ) {
+      console.log("consommation presque terminée");
+      setHasUserBeenNotified(true);
     } else {
       console.log("consommation ok");
+      setHasUserBeenNotified(true);
     }
   });
 
