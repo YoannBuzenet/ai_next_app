@@ -46,7 +46,6 @@ export default function Text() {
   const { userContext, setUserContext } = useContext(UserContext);
 
   const handleOuputNumber = (value) => {
-    console.log("ta pute de mere la grosse salope", value);
     setOutputNumber(value);
   };
 

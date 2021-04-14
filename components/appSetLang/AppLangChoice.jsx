@@ -39,8 +39,6 @@ const AppLangChoice = ({
     setIsTransparentDivDisplayed(!isTransparentDivDisplayed);
   };
 
-  console.log("isTransparentDivDisplayed", isTransparentDivDisplayed);
-
   const urlPicture = "/pictures/flags/25X13/" + currentLang.picture + ".png";
 
   // Updating directly the DOM because DOm from SSR can be different from data in memory, and HTML can miss an update sometimes.
@@ -74,8 +72,6 @@ const AppLangChoice = ({
 
     setCurrentLang({ ...appInitialLang });
   }, []);
-
-  console.log("urlPicture", urlPicture);
 
   return (
     <>

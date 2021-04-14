@@ -1,10 +1,11 @@
 import AppWrapper from "../components/AppWrapper";
 import "../styles/globals.css";
 import Navbar from "../components/Navbar";
-import { useEffect, useContext } from "react";
+import { useEffect, useContext, useState } from "react";
 import Footer from "../components/Footer";
 import { useSession, Provider } from "next-auth/client";
 import notificationContext from "../contexts/notificationsContext";
+import UserCheck from "../services/userCheck";
 
 function MyApp({ Component, pageProps }) {
   const [session, loading] = useSession();
@@ -12,14 +13,10 @@ function MyApp({ Component, pageProps }) {
     notificationContext
   );
 
-  const [hasUserBeenNotified, setHasUserBeenNotified] = useState(false);
+  const isSubbed = UserCheck.isUserSubscribed(session?.user?.isSubscribedUntil);
 
-  //useEffect, check le décompte de mots
-  // si < X, notification
-
-  //This useEffect will trigger at each rerender
   useEffect(() => {
-    if (!hasUserBeenNotified) {
+    if (!isSubbed) {
       return;
     }
     if (
@@ -28,19 +25,16 @@ function MyApp({ Component, pageProps }) {
       0
     ) {
       console.log("consommation terminée");
-      setHasUserBeenNotified(true);
     } else if (
       session?.user?.totalMaxWordsUserThisMonth -
         session?.user?.consumptionThisMonth <
       2000
     ) {
       console.log("consommation presque terminée");
-      setHasUserBeenNotified(true);
     } else {
       console.log("consommation ok");
-      setHasUserBeenNotified(true);
     }
-  });
+  }, [session?.user?.monthlyWordsConsumption]);
 
   return (
     <AppWrapper>
