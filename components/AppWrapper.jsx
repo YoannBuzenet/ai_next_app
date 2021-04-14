@@ -15,7 +15,6 @@ import Snackbar from "@material-ui/core/Snackbar";
 import MuiAlert from "@material-ui/lab/Alert";
 
 const AppWrapper = ({ children }) => {
-  const [userContext, setUserContext] = useState({ langSelected: "fr-FR" });
   const [selectedCategoryID, setSelectedCategoryID] = useState(1);
   const [isBlackDivDisplayed, setIsBlackDivDisplayed] = useState(false);
   const [areFlagsDisplayed, setAreFlagsDisplayed] = useState(false);
@@ -57,6 +56,10 @@ const AppWrapper = ({ children }) => {
   }
 
   const [currentLang, setCurrentLang] = useState(appInitialLang);
+
+  const [userContext, setUserContext] = useState({
+    langSelected: currentLang.locale,
+  });
 
   const handleSetContextUser = (contextData) => {
     setUserContext(contextData);

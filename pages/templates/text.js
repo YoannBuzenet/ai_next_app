@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import SelectedCategoryId from "../../contexts/selectedCategoryContext";
 import notificationContext from "../../contexts/notificationsContext";
 import UserContext from "../../contexts/userContext";
@@ -49,7 +49,19 @@ export default function Text() {
   const [session, loading] = useSession();
   const { userContext, setUserContext } = useContext(UserContext);
 
-  // Translations
+  const isSubbed = UserCheck.isUserSubscribed(session?.user?.isSubscribedUntil);
+
+  // TRANSLATIONS
+  const translatedInfoLess2000WordsMessage = intl.formatMessage({
+    id: "notification.remainingConsoUnder2000words",
+    defaultMessage:
+      "There are less than 2,000 words remaining in your credit this month. If needed, you can purchase additional credits in My Account.",
+  });
+  const translatedInfonoMoreCreditMessage = intl.formatMessage({
+    id: "notification.remainingConsoat0",
+    defaultMessage:
+      "All your credits have been used this month. If needed, you can purchase additional credits in My Account.",
+  });
   const translatedLabelName = intl.formatMessage({
     id: "compo.text.inputOutput",
     defaultMessage: "Input / Output",
@@ -70,6 +82,51 @@ export default function Text() {
     id: "compo.text.inputLenghtMin",
     defaultMessage: "Your input should contain at least one character.",
   });
+
+  useEffect(() => {
+    if (!isSubbed) {
+      return;
+    }
+    if (
+      session?.user?.totalMaxWordsUserThisMonth -
+        session?.user?.consumptionThisMonth <=
+      0
+    ) {
+      console.log("consommation terminée");
+      setNotificationInfo({
+        ...notificationInfo,
+        alert: {
+          ...notificationInfo.alert,
+          message: translatedInfonoMoreCreditMessage,
+          severity: "info",
+        },
+        snackbar: {
+          ...notificationInfo.snackbar,
+          isDisplayed: true,
+        },
+      });
+    } else if (
+      session?.user?.totalMaxWordsUserThisMonth -
+        session?.user?.consumptionThisMonth <
+      2000
+    ) {
+      console.log("consommation presque terminée");
+      setNotificationInfo({
+        ...notificationInfo,
+        alert: {
+          ...notificationInfo.alert,
+          message: translatedInfoLess2000WordsMessage,
+          severity: "info",
+        },
+        snackbar: {
+          ...notificationInfo.snackbar,
+          isDisplayed: true,
+        },
+      });
+    } else {
+      console.log("consommation ok");
+    }
+  }, [session?.user?.monthlyWordsConsumption]);
 
   const handleOuputNumber = (value) => {
     setOutputNumber(value);
@@ -95,6 +152,8 @@ export default function Text() {
       });
     }
   };
+
+  console.log("yo", userContext.langSelected);
 
   const sendDataToBackEnd = async () => {
     // Check input here, if 0 return + notif

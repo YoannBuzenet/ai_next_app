@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import SelectAppLangContext from "../../contexts/selectedAppLang";
+import UserContext from "../../contexts/userContext";
 import AreFlagsDisplayedContext from "../../contexts/areFlagsDisplayed";
 import transparentDivContext from "../../contexts/transparentDiv";
 import { arrayLangsInApp } from "../../definitions/langs";
@@ -23,6 +24,8 @@ const AppLangChoice = ({
     AreFlagsDisplayedContext
   );
 
+  const { userContext, setUserContext } = useContext(UserContext);
+
   const handleClick = (event, lang) => {
     setIsTransparentDivDisplayed(false);
     setCurrentLang({
@@ -31,6 +34,7 @@ const AppLangChoice = ({
       picture: lang.picture,
       langID: lang.langID,
     });
+    // setUserContext({ ...userContext, langSelected: lang.locale });
     window.localStorage.setItem("lang", lang.locale);
   };
 
