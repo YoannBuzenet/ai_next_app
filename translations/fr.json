@@ -124,6 +124,7 @@
   "compo.text.numberOfOutputs": "Résultats",
   "compo.text.inputOutput": "Saisie / Résultat",
   "compo.text.quotaReached": "Quota gratuit atteint",
+  "compo.text.inputLenghtMin": "Votre texte doit faire au moins un caractère.",
 
   "compo.chart.dailyUse": "Utilisation",
 

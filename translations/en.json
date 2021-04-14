@@ -124,6 +124,7 @@
   "compo.text.numberOfOutputs": "Outputs",
   "compo.text.inputOutput": "Input / Output",
   "compo.text.quotaReached": "Free Quota limit reached",
+  "compo.text.inputLenghtMin": "Your input should contain at least one character.",
 
   "compo.chart.dailyUse": "Daily Use",
 

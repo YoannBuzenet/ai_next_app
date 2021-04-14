@@ -36,7 +36,7 @@ function MyApp({ Component, pageProps }) {
     }
     if (
       session?.user?.totalMaxWordsUserThisMonth -
-        session?.user?.consumptionThisMonth <
+        session?.user?.consumptionThisMonth <=
       0
     ) {
       console.log("consommation terminée");

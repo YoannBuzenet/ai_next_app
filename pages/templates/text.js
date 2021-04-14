@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 import SelectedCategoryId from "../../contexts/selectedCategoryContext";
+import notificationContext from "../../contexts/notificationsContext";
 import UserContext from "../../contexts/userContext";
 import { categoriesDefinition } from "../../definitions/categories";
 import styles from "../../styles/Text.module.css";
@@ -38,12 +39,37 @@ export default function Text() {
   const { selectedCategoryID, setSelectedCategoryID } = useContext(
     SelectedCategoryId
   );
+  const { notificationInfo, setNotificationInfo } = useContext(
+    notificationContext
+  );
   const [userInputs, setUserInputs] = useState({});
   const [AIResults, setAIResults] = useState([]);
   const [outputNumber, setOutputNumber] = useState(3);
   const [isLoadingAPIResults, setIsLoadingAPIResults] = useState(false);
   const [session, loading] = useSession();
   const { userContext, setUserContext } = useContext(UserContext);
+
+  // Translations
+  const translatedLabelName = intl.formatMessage({
+    id: "compo.text.inputOutput",
+    defaultMessage: "Input / Output",
+  });
+  const translatedEnglishName = intl.formatMessage({
+    id: "generic.lang.english",
+    defaultMessage: "English",
+  });
+  const translatedFrenchName = intl.formatMessage({
+    id: "generic.lang.french",
+    defaultMessage: "French",
+  });
+  const translatedOutPutLabels = intl.formatMessage({
+    id: "compo.text.numberOfOutputs",
+    defaultMessage: "Outputs",
+  });
+  const translatedInputShouldHaveLength = intl.formatMessage({
+    id: "compo.text.inputLenghtMin",
+    defaultMessage: "Your input should contain at least one character.",
+  });
 
   const handleOuputNumber = (value) => {
     setOutputNumber(value);
@@ -71,6 +97,27 @@ export default function Text() {
   };
 
   const sendDataToBackEnd = async () => {
+    // Check input here, if 0 return + notif
+    // else, go
+
+    for (const userInput in userInputs) {
+      if (userInputs[userInput].length === 0) {
+        setNotificationInfo({
+          ...notificationInfo,
+          alert: {
+            ...notificationInfo.alert,
+            message: translatedInputShouldHaveLength,
+            severity: "error",
+          },
+          snackbar: {
+            ...notificationInfo.snackbar,
+            isDisplayed: true,
+          },
+        });
+        return;
+      }
+    }
+
     setIsLoadingAPIResults(true);
     let arrayofuserInputs = [];
     for (const userInput in userInputs) {
@@ -108,24 +155,6 @@ export default function Text() {
   const categoryObject = categoriesDefinition[selectedCategoryID];
 
   console.log("category selected", selectedCategoryID);
-
-  // Translations
-  const translatedLabelName = intl.formatMessage({
-    id: "compo.text.inputOutput",
-    defaultMessage: "Input / Output",
-  });
-  const translatedEnglishName = intl.formatMessage({
-    id: "generic.lang.english",
-    defaultMessage: "English",
-  });
-  const translatedFrenchName = intl.formatMessage({
-    id: "generic.lang.french",
-    defaultMessage: "French",
-  });
-  const translatedOutPutLabels = intl.formatMessage({
-    id: "compo.text.numberOfOutputs",
-    defaultMessage: "Outputs",
-  });
 
   const useStyles = makeStyles((theme) => ({
     button: {
