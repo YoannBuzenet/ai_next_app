@@ -111,6 +111,8 @@
   "page.paymentFailed.technicalProblem": "Cela peut venir d'un problème technique. Merci de réessayer ultérieurement.",
   "page.paymentFailed.contactUs": "Si vous avez une question, n'hésitez pas à nous contacter.",
 
+  "page.termsAndConditions.head.title": "Conditions générales de vente",
+
   "compo.heartWorkPlace.button.create": "Créer",
   "compo.heartWorkPlace.noCategory.title": "Bienvenue sur EasyFlow",
   "compo.heartWorkPlace.noCategory.paragraph1": "Sélectionnez un thème sur la gauche pour commencer !",
