@@ -82,6 +82,11 @@ export default function Text() {
     id: "compo.text.inputLenghtMin",
     defaultMessage: "Your input should contain at least one character.",
   });
+  const translatedInputCompletelyFiltered = intl.formatMessage({
+    id: "compo.text.AllAIoutputFiltered",
+    defaultMessage:
+      "All AI results have been filtered. This happens when inappropriate inputs are entered. Please ensure that you include politically correct content. Any abuse may lead to the account being closed.",
+  });
 
   useEffect(() => {
     if (!isSubbed) {
@@ -201,6 +206,24 @@ export default function Text() {
           currentText: result,
           date: DateTime.now().setLocale("en"),
         }));
+        const wasAllAIOutputFiltered = resp.data.wasAllInputFiltered;
+
+        // If all AI output has been filtered (user may have entered an inadapted content, for example impolite or politically harmful)
+        if (wasAllAIOutputFiltered) {
+          setNotificationInfo({
+            ...notificationInfo,
+            alert: {
+              ...notificationInfo.alert,
+              message: translatedInputCompletelyFiltered,
+              severity: "warning",
+            },
+            snackbar: {
+              ...notificationInfo.snackbar,
+              isDisplayed: true,
+            },
+          });
+        }
+
         console.log("result with dates", resultsWithDates);
         setAIResults([...AIResults, ...resultsWithDates]);
         setIsLoadingAPIResults(false);
