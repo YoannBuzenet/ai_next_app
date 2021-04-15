@@ -112,6 +112,11 @@
   "page.paymentFailed.contactUs": "If you have any question, contact us.",
 
   "page.termsAndConditions.head.title": "Terms And Conditions",
+  "app.page.termsAndConditions.title": "Terms and Conditions",
+  "app.page.termsAndConditions.preambule": "Preambule",
+  "app.page.termsAndConditions.preambulePart1": "EasyFlow offers a web service (hereinafter referred to as the « SERVICE ») aimed at helping people, be they private individuals or legal entities, (hereinafter referred to as the « USER(S) ») who wish to create text content.The terms and conditions of this SERVICE are set out in these Terms and Conditions.",
+  "app.page.termsAndConditions.preambulePart2": "Details regarding the EasyFlow company are as follows: Yoann BUZENET,  Micro Entreprise EasyFlow HeadQuarters : 9 Rue place Maréchal Foch, 56700 Hennebont, France, SIREN 804 965 101 00038, Tél : +336 13 64 92 72",
+  "app.page.termsAndConditions.article1Title": "1. Necessary conditions to access the SERVICE",
 
   "compo.heartWorkPlace.button.create": "Create",
   "compo.heartWorkPlace.noCategory.title": "Welcome on EasyFlow",

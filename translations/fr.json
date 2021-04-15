@@ -112,6 +112,11 @@
   "page.paymentFailed.contactUs": "Si vous avez une question, n'hésitez pas à nous contacter.",
 
   "page.termsAndConditions.head.title": "Conditions générales de vente",
+  "app.page.termsAndConditions.title": "Conditions générales de vente",
+  "app.page.termsAndConditions.preambule": "Préambule",
+  "app.page.termsAndConditions.preambulePart1": "EasyFlow propose un service Web (ci-après dénommé le «SERVICE») destiné à aider les personnes, qu'il s'agisse de personnes physiques ou morales, (ci-après dénommées «UTILISATEUR (S)») qui souhaitent créer du contenu textuel. Les conditions de ce SERVICE sont énoncées dans ces Conditions Générales de Vente.",
+  "app.page.termsAndConditions.preambulePart2": "Les informations légales regardant l'entreprise EasyFlow sont les suivants :  Yoann BUZENET, Micro Entreprise EasyFlow - Siège social : 9 Rue place Maréchal Foch, 56700 Hennebont, SIREN 804 965 101 00038 tél : +336 13 64 92 72",
+  "app.page.termsAndConditions.article1Title": "1. Conditions nécessaires pour accéder au SERVICE",
 
   "compo.heartWorkPlace.button.create": "Créer",
   "compo.heartWorkPlace.noCategory.title": "Bienvenue sur EasyFlow",
