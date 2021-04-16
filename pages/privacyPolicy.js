@@ -106,34 +106,58 @@ export default function TermsAndConditions() {
               defaultMessage="Provide, operate, and maintain our website"
             />
           </li>
-          <li>Improve, personalize, and expand our website</li>
-          <li>Understand and analyze how you use our website</li>
-          <li>Develop new products, services, features, and functionality</li>
           <li>
-            Communicate with you, either directly or through one of our
-            partners, including for customer service, to provide you with
-            updates and other information relating to the website, and for
-            marketing and promotional purposes
+            <FormattedMessage
+              id="page.privacy.howWeuseInformation.li2"
+              defaultMessage="Improve, personalize, and expand our website"
+            />
           </li>
-          <li>Send you emails</li>
-          <li>Find and prevent fraud</li>
+          <li>
+            <FormattedMessage
+              id="page.privacy.howWeuseInformation.li3"
+              defaultMessage="Understand and analyze how you use our website"
+            />
+          </li>
+          <li>
+            <FormattedMessage
+              id="page.privacy.howWeuseInformation.li4"
+              defaultMessage="Develop new products, services, features, and functionality"
+            />
+          </li>
+          <li>
+            <FormattedMessage
+              id="page.privacy.howWeuseInformation.li5"
+              defaultMessage="Communicate directly with you, including for customer service, to provide you with updates and other information relating to the website"
+            />
+          </li>
+          <li>
+            <FormattedMessage
+              id="page.privacy.howWeuseInformation.li6"
+              defaultMessage="Find and prevent fraud"
+            />
+          </li>
         </ul>
 
-        <h2>Log Files</h2>
+        <h2>
+          <FormattedMessage
+            id="page.privacy.logFiles.title"
+            defaultMessage="Log Files"
+          />
+        </h2>
 
         <p>
-          EasyFlow follows a standard procedure of using log files. These files
-          log visitors when they visit websites. All hosting companies do this
-          and a part of hosting services' analytics. The information collected
-          by log files include internet protocol (IP) addresses, browser type,
-          Internet Service Provider (ISP), date and time stamp, referring/exit
-          pages, and possibly the number of clicks. These are not linked to any
-          information that is personally identifiable. The purpose of the
-          information is for analyzing trends, administering the site, tracking
-          users' movement on the website, and gathering demographic information.
+          <FormattedMessage
+            id="page.privacy.logFiles.par1"
+            defaultMessage="EasyFlow follows a standard procedure of using log files. These files log visitors when they visit websites. All hosting companies do this and a part of hosting services' analytics. The information collected by log files include internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time stamp, referring/exit pages, and possibly the number of clicks. These are not linked to any information that is personally identifiable. The purpose of the information is for analyzing trends, administering the site, tracking users' movement on the website, and gathering demographic information."
+          />
         </p>
 
-        <h2>GDPR Data Protection Rights</h2>
+        <h2>
+          <FormattedMessage
+            id="page.privacy.GDPR.title"
+            defaultMessage="GDPR Data Protection Rights"
+          />
+        </h2>
 
         <p>
           We would like to make sure you are fully aware of all of your data
@@ -170,22 +194,6 @@ export default function TermsAndConditions() {
         <p>
           If you make a request, we have one month to respond to you. If you
           would like to exercise any of these rights, please contact us.
-        </p>
-
-        <h2>Children's Information</h2>
-
-        <p>
-          Another part of our priority is adding protection for children while
-          using the internet. We encourage parents and guardians to observe,
-          participate in, and/or monitor and guide their online activity.
-        </p>
-
-        <p>
-          EasyFlow does not knowingly collect any Personal Identifiable
-          Information from children under the age of 13. If you think that your
-          child provided this kind of information on our website, we strongly
-          encourage you to contact us immediately and we will do our best
-          efforts to promptly remove such information from our records.
         </p>
       </main>
     </>
