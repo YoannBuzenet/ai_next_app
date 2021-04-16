@@ -150,6 +150,11 @@
   "page.privacy.consent.par1": "By using our website, you hereby consent to our Privacy Policy and agree to its terms.",
   "page.privacy.informationWeCollect.title": "Information we collect",
   "page.privacy.informationWeCollect.par1": "The personal information that you are asked to provide, and the reasons why you are asked to provide it, will be made clear to you at the point we ask you to provide your personal information.",
+  "page.privacy.informationWeCollect.par2": "If you contact us directly, we may receive additional information about you such as your name, email address, phone number, the contents of the message and/or attachments you may send us, and any other information you may choose to provide.",
+  "page.privacy.informationWeCollect.par3": "When you register for an Account, we may ask for your contact information, including items such as name, company name, address, email.",
+  "page.privacy.howWeuseInformation": "How we use your information",
+  "page.privacy.howWeuseInformation.intro": "We use the information we collect in various ways, including to:",
+  "page.privacy.howWeuseInformation.li1": "Provide, operate, and maintain our website",
 
   "compo.heartWorkPlace.button.create": "Create",
   "compo.heartWorkPlace.noCategory.title": "Welcome on EasyFlow",

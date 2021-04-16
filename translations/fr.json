@@ -150,6 +150,11 @@
   "page.privacy.consent.par1": "En utilisant notre site Web, vous consentez par la présente à notre politique de confidentialité et acceptez ses conditions.",
   "page.privacy.informationWeCollect.title": "Les informations que nous collectons",
   "page.privacy.informationWeCollect.par1": "Les informations personnelles que vous êtes invité à fournir et les raisons pour lesquelles vous êtes invité à les fournir vous seront expliquées clairement au moment où nous vous demandons de fournir vos informations personnelles.",
+  "page.privacy.informationWeCollect.par2": "Si vous nous contactez directement, nous pouvons recevoir des informations supplémentaires à votre sujet telles que votre nom, votre adresse e-mail, votre numéro de téléphone, le contenu du message et / ou des pièces jointes que vous pouvez nous envoyer, ainsi que toute autre information que vous choisirez de fournir.",
+  "page.privacy.informationWeCollect.par3": "Lorsque vous vous inscrivez pour un compte, nous pouvons vous demander vos informations de contact, y compris des éléments tels que votre nom, nom de l'entreprise, adresse, e-mail.",
+  "page.privacy.howWeuseInformation": "Notre utilisation des données",
+  "page.privacy.howWeuseInformation.intro": "Nous utilisons les informations que nous collectons de différentes manières, notamment pour:",
+  "page.privacy.howWeuseInformation.li1": "Enrichir, exploiter et maintenir notre site Web",
 
   "compo.heartWorkPlace.button.create": "Créer",
   "compo.heartWorkPlace.noCategory.title": "Bienvenue sur EasyFlow",
