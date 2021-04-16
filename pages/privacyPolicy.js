@@ -31,30 +31,45 @@ export default function TermsAndConditions() {
       </p>
 
       <p>
-        If you have additional questions or require more information about our
-        Privacy Policy, do not hesitate to contact us.
+        <FormattedMessage
+          id="page.privacy.paragraph2"
+          defaultMessage="If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us."
+        />
       </p>
 
       <p>
-        This Privacy Policy applies only to our online activities and is valid
-        for visitors to our website with regards to the information that they
-        shared and/or collect in EasyFlow. This policy is not applicable to any
-        information collected offline or via channels other than this website.
+        <FormattedMessage
+          id="page.privacy.paragraph3"
+          defaultMessage="This Privacy Policy applies only to our online activities and is valid for visitors to our website with regards to the information that they shared and/or collect in EasyFlow. This policy is not applicable to any information collected offline or via channels other than this website."
+        />
       </p>
 
-      <h2>Consent</h2>
+      <h2>
+        <FormattedMessage
+          id="page.privacy.consent.title"
+          defaultMessage="Consent"
+        />
+      </h2>
 
       <p>
-        By using our website, you hereby consent to our Privacy Policy and agree
-        to its terms.
+        <FormattedMessage
+          id="page.privacy.consent.par1"
+          defaultMessage="By using our website, you hereby consent to our Privacy Policy and agree to its terms."
+        />
       </p>
 
-      <h2>Information we collect</h2>
+      <h2>
+        <FormattedMessage
+          id="page.privacy.informationWeCollect.title"
+          defaultMessage="Information we collect"
+        />
+      </h2>
 
       <p>
-        The personal information that you are asked to provide, and the reasons
-        why you are asked to provide it, will be made clear to you at the point
-        we ask you to provide your personal information.
+        <FormattedMessage
+          id="page.privacy.informationWeCollect.par1"
+          defaultMessage="The personal information that you are asked to provide, and the reasons why you are asked to provide it, will be made clear to you at the point we ask you to provide your personal information."
+        />
       </p>
       <p>
         If you contact us directly, we may receive additional information about

@@ -144,6 +144,12 @@
   "page.privacy.head.title": "Privacy policy",
   "page.privacy.page.title": "Privacy Policy for EasyFlow",
   "page.privacy.paragraph1": "At EasyFlow, accessible from www.easyflow.ai, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by EasyFlow and how we use it.",
+  "page.privacy.paragraph2": "If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us.",
+  "page.privacy.paragraph3": "This Privacy Policy applies only to our online activities and is valid for visitors to our website with regards to the information that they shared and/or collect in EasyFlow. This policy is not applicable to any information collected offline or via channels other than this website.",
+  "page.privacy.consent.title": "Consent",
+  "page.privacy.consent.par1": "By using our website, you hereby consent to our Privacy Policy and agree to its terms.",
+  "page.privacy.informationWeCollect.title": "Information we collect",
+  "page.privacy.informationWeCollect.par1": "The personal information that you are asked to provide, and the reasons why you are asked to provide it, will be made clear to you at the point we ask you to provide your personal information.",
 
   "compo.heartWorkPlace.button.create": "Create",
   "compo.heartWorkPlace.noCategory.title": "Welcome on EasyFlow",

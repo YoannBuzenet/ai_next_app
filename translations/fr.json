@@ -144,6 +144,12 @@
   "page.privacy.head.title": "Politique de confidentialité",
   "page.privacy.page.title": "Politique de confidentialité",
   "page.privacy.paragraph1": "Chez EasyFlow, accessible depuis www.easyflow.ai, l'une de nos principales priorités est la confidentialité de nos visiteurs. Cette Politique de confidentialité contient les types d'informations qui sont collectés et enregistrés par EasyFlow et comment nous les utilisons.",
+  "page.privacy.paragraph2": "Si vous avez des questions supplémentaires ou avez besoin de plus d'informations sur notre politique de confidentialité, n'hésitez pas à nous contacter.",
+  "page.privacy.paragraph3": "Cette politique de confidentialité s'applique uniquement à nos activités en ligne et est valable pour les visiteurs de notre site Web en ce qui concerne les informations qu'ils ont partagées et / ou collectées dans EasyFlow. Cette politique ne s'applique à aucune information collectée hors ligne ou via des canaux autres que ce site Web.",
+  "page.privacy.consent.title": "Consentement",
+  "page.privacy.consent.par1": "En utilisant notre site Web, vous consentez par la présente à notre politique de confidentialité et acceptez ses conditions.",
+  "page.privacy.informationWeCollect.title": "Les informations que nous collectons",
+  "page.privacy.informationWeCollect.par1": "Les informations personnelles que vous êtes invité à fournir et les raisons pour lesquelles vous êtes invité à les fournir vous seront expliquées clairement au moment où nous vous demandons de fournir vos informations personnelles.",
 
   "compo.heartWorkPlace.button.create": "Créer",
   "compo.heartWorkPlace.noCategory.title": "Bienvenue sur EasyFlow",
