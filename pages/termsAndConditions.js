@@ -66,6 +66,122 @@ export default function TermsAndConditions() {
             defaultMessage="2. Duration / Cancellation"
           />
         </h2>
+        <h3>
+          <FormattedMessage
+            id="app.page.termsAndConditions.article2.subtitle1"
+            defaultMessage="Duration"
+          />
+        </h3>
+        <p>
+          <FormattedMessage
+            id="app.page.termsAndConditions.article2.subtitle1.paragraph1"
+            defaultMessage="At the end of the initial subscription period, the Terms and Conditions will be renewed automatically by tacit agreement, unless you stop it. You will be billed monthly or annually, depending on the subscription chosen."
+          />
+        </p>
+        <h3>
+          <FormattedMessage
+            id="app.page.termsAndConditions.article2.subtitle2"
+            defaultMessage="Cancellation"
+          />
+        </h3>
+        <p>
+          <FormattedMessage
+            id="app.page.termsAndConditions.article2.subtitle2.paragraph1"
+            defaultMessage="In the event that the USER fails to perform some or all of their obligations under these Terms and Conditions, EASYFLOW may cancel these Terms and Conditions as of right and at any time, with or without formal notice being made to the USER to fulfil their obligations. EASYFLOW shall send any formal notice by any means of its choice, including by simple electronic mail (e-mail)."
+          />
+        </p>
+        <p>
+          <FormattedMessage
+            id="app.page.termsAndConditions.article3.paragraph1"
+            defaultMessage="The SERVICE consists in making available to USERS a software tool allowing them to create text for various uses, marketing in particular. From a few words, the SERVICE generates texts using artificial intelligence technology. Each USER can then, under his own responsibility, choose the texts he likes, modify them, generate others, copy them and use them as they see fit. EASYFLOW does not claim any ownership over the content produced by the USER."
+          />
+        </p>
+        <h2>
+          <FormattedMessage
+            id="app.page.termsAndConditions.article4.title"
+            defaultMessage="3. LIABILITY"
+          />
+        </h2>
+        <ul>
+          <li>
+            <FormattedMessage
+              id="app.page.termsAndConditions.article4.paragraph1"
+              defaultMessage="a/ The USER is solely responsible for content used and produced from the SERVICE. You represent and warrant that any text or content used in or taken from the SERVICE will not infringe or violate a third party’s intellectual property rights, or result in the violation of any applicable law or regulation."
+            />
+          </li>
+          <li>
+            <FormattedMessage
+              id="app.page.termsAndConditions.article4.paragraph2"
+              defaultMessage="b/ The SERVICE will be used in compliance with all applicable laws."
+            />
+          </li>
+          <li>
+            <FormattedMessage
+              id="app.page.termsAndConditions.article4.paragraph3"
+              defaultMessage="c/ The SERVICE will not be used to produce, use or communicate harmful, shoking, offensive, defamatory, threatening, obscene, sensitive or unsafe content."
+            />
+          </li>
+        </ul>
+        <h2>
+          <FormattedMessage
+            id="app.page.termsAndConditions.article6.title"
+            defaultMessage="4. FORCE MAJEURE"
+          />
+        </h2>
+        <p>
+          <FormattedMessage
+            id="app.page.termsAndConditions.article6.paragraph1"
+            defaultMessage="Force majeure events shall suspend the obligations of the parties as regards the Terms and Conditions. However, if the force majeure event continues for over two (2) months, each party will have the option of putting an end to the Terms and Conditions by registered post with return receipt sent to the other party."
+          />
+        </p>
+        <h2>
+          <FormattedMessage
+            id="app.page.termsAndConditions.article7.title"
+            defaultMessage="5. Right of withdrawal"
+          />
+        </h2>
+        <p>
+          <FormattedMessage
+            id="app.page.termsAndConditions.article7.paragraph1"
+            defaultMessage="As a user residing in a member country of the European Union, you have the right to withdraw from any purchase made on EASYFLOW without giving a reason."
+          />
+        </p>
+        <p>
+          <FormattedMessage
+            id="app.page.termsAndConditions.article7.paragraph2"
+            defaultMessage="However, you agree that your legal right of withdrawal will end within 14 days or after you used 10,000 words of the SERVICE after your subscription, depending on what happens first. For any reimbursement process, please contact us at support@easyflow.com."
+          />
+        </p>
+        <h2>
+          <FormattedMessage
+            id="app.page.termsAndConditions.article8.title"
+            defaultMessage="6. Miscellaneous"
+          />
+        </h2>
+        <p>
+          <FormattedMessage
+            id="app.page.termsAndConditions.article8.paragraph2"
+            defaultMessage="These Terms and Conditions give the full obligations of the parties. The fact that either party does not take advantage of any shortcoming or any failure to perform any of its obligations or any other breach by the other party of any of its obligations under the Terms and Conditions shall not be interpreted as a waiver of the obligation in question or of any of the other provisions contained in the Terms and Conditions. Similarly, any delay or failure by either party to perform the rights and prerogatives granted to them under these Terms and Conditions shall not be interpreted as a waiver of these rights and prerogatives."
+          />
+        </p>
+        <p>
+          <FormattedMessage
+            id="app.page.termsAndConditions.article8.paragraph3"
+            defaultMessage="These Terms and Conditions constitute a full and exclusive whole of the terms of the agreement entered into between EASYFLOW and the USER."
+          />
+        </p>
+        <h2>
+          <FormattedMessage
+            id="app.page.termsAndConditions.article9.title"
+            defaultMessage="7. Applicable law"
+          />
+        </h2>
+        <p>
+          <FormattedMessage
+            id="app.page.termsAndConditions.article9.paragraph1"
+            defaultMessage="Competent jurisdiction : These Terms and Conditions are subject to interpretation and performance under French law. Any dispute between EASYFLOW and the USER relating to the existence, validity, interpretation or performance of the Terms and Conditions or of any of their clauses that the parties are unable to resolve amicably shall be ruled by the Paris courts."
+          />
+        </p>
       </div>
     </>
   );
