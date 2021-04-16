@@ -160,12 +160,16 @@ export default function TermsAndConditions() {
         </h2>
 
         <p>
-          We would like to make sure you are fully aware of all of your data
-          protection rights. Every user is entitled to the following:
+          <FormattedMessage
+            id="page.privacy.GDPR.par1"
+            defaultMessage="We would like to make sure you are fully aware of all of your data protection rights. Every user is entitled to the following:"
+          />
         </p>
         <p>
-          The right to access – You have the right to request copies of your
-          personal data. We may charge you a small fee for this service.
+          <FormattedMessage
+            id="page.privacy.GDPR.par2"
+            defaultMessage="The right to access – You have the right to request copies of your personal data. We may charge you a small fee for this service."
+          />
         </p>
         <p>
           The right to rectification – You have the right to request that we

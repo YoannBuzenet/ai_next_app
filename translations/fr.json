@@ -163,6 +163,8 @@
   "page.privacy.logFiles.title": "Fichiers de log (ou fichiers journaux)",
   "page.privacy.logFiles.par1": "EasyFlow suit une procédure standard d'utilisation des fichiers de log (ou fichiers journaux). Ces fichiers enregistrent les visiteurs lorsqu'ils visitent des sites Web. Toutes les sociétés d'hébergement font cela et font partie de l'analyse des services d'hébergement. Les informations collectées par les fichiers journaux comprennent les adresses de protocole Internet (IP), le type de navigateur, le fournisseur d'accès Internet (FAI), la date et l'heure, les pages de renvoi / sortie et éventuellement le nombre de clics. Ceux-ci ne sont liés à aucune information personnellement identifiable. Le but de ces informations est d'analyser les tendances, d'administrer le site, de suivre les mouvements des utilisateurs sur le site Web et de collecter des informations démographiques.",
   "page.privacy.GDPR.title": "Droits de protection des données RGPD",
+  "page.privacy.GDPR.par1": "Nous souhaitons nous assurer que vous connaissez parfaitement tous vos droits en matière de protection des données. Chaque utilisateur a droit aux avantages suivants:",
+  "page.privacy.GDPR.par2": "Le droit d'accès - Vous avez le droit de demander des copies de vos données personnelles.",
 
   "compo.heartWorkPlace.button.create": "Créer",
   "compo.heartWorkPlace.noCategory.title": "Bienvenue sur EasyFlow",
