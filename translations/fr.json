@@ -165,6 +165,12 @@
   "page.privacy.GDPR.title": "Droits de protection des données RGPD",
   "page.privacy.GDPR.par1": "Nous souhaitons nous assurer que vous connaissez parfaitement tous vos droits en matière de protection des données. Chaque utilisateur a droit aux avantages suivants:",
   "page.privacy.GDPR.par2": "Le droit d'accès - Vous avez le droit de demander des copies de vos données personnelles.",
+  "page.privacy.GDPR.par3": "Le droit de rectification - Vous avez le droit de demander que nous corrigions toute information que vous jugez inexacte. Vous avez également le droit de demander que nous complétions les informations que vous estimez incomplètes.",
+  "page.privacy.GDPR.par4": "Le droit à l'effacement - Vous avez le droit de demander que nous effacions vos données personnelles, sous certaines conditions.",
+  "page.privacy.GDPR.par5": "Le droit de restreindre le traitement - Vous avez le droit de demander que nous restreignions le traitement de vos données personnelles, sous certaines conditions.",
+  "page.privacy.GDPR.par6": "Le droit de vous opposer au traitement - Vous avez le droit de vous opposer au traitement de vos données personnelles, sous certaines conditions.",
+  "page.privacy.GDPR.par7": "Le droit à la portabilité des données - Vous avez le droit de demander que nous transférions les données que nous avons collectées à une autre organisation, ou directement à vous, sous certaines conditions.",
+  "page.privacy.GDPR.par8": "Si vous faites une demande, nous avons un mois pour vous répondre. Si vous souhaitez exercer l'un de ces droits, veuillez nous contacter.",
 
   "compo.heartWorkPlace.button.create": "Créer",
   "compo.heartWorkPlace.noCategory.title": "Bienvenue sur EasyFlow",
