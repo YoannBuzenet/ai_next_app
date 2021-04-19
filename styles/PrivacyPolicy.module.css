@@ -2,6 +2,28 @@
   max-width: 50%;
   text-align: left;
   margin: auto;
+  margin-bottom: 5rem;
+}
+
+.privacyPolicyPage h2 {
+  font-size: 2rem;
+}
+
+.privacyPolicyPage h3 {
+  font-size: 1.6rem;
+}
+
+.privacyPolicyPage p {
+  line-height: 22px;
+}
+
+.privacyPolicyPage ul {
+  padding: auto;
+}
+
+.privacyPolicyPage ul li {
+  margin-top: 8px;
+  font-size: 16px;
 }
 
 @media only screen and (max-width: 968px) {
@@ -9,5 +31,6 @@
     max-width: 80%;
     text-align: left;
     margin: auto;
+    margin-bottom: 2rem;
   }
 }

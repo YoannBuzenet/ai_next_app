@@ -158,55 +158,56 @@ export default function TermsAndConditions() {
             defaultMessage="GDPR Data Protection Rights"
           />
         </h2>
-
-        <p>
-          <FormattedMessage
-            id="page.privacy.GDPR.par1"
-            defaultMessage="We would like to make sure you are fully aware of all of your data protection rights. Every user is entitled to the following:"
-          />
-        </p>
-        <p>
-          <FormattedMessage
-            id="page.privacy.GDPR.par2"
-            defaultMessage="The right to access – You have the right to request copies of your personal data. We may charge you a small fee for this service."
-          />
-        </p>
-        <p>
-          <FormattedMessage
-            id="page.privacy.GDPR.par3"
-            defaultMessage="The right to rectification – You have the right to request that we correct any information you believe is inaccurate. You also have the right to request that we complete the information you believe is incomplete."
-          />
-        </p>
-        <p>
-          <FormattedMessage
-            id="page.privacy.GDPR.par4"
-            defaultMessage="The right to erasure – You have the right to request that we erase your personal data, under certain conditions."
-          />
-        </p>
-        <p>
-          <FormattedMessage
-            id="page.privacy.GDPR.par5"
-            defaultMessage="The right to restrict processing – You have the right to request that we restrict the processing of your personal data, under certain conditions."
-          />
-        </p>
-        <p>
-          <FormattedMessage
-            id="page.privacy.GDPR.par6"
-            defaultMessage="The right to object to processing – You have the right to object to our processing of your personal data, under certain conditions."
-          />
-        </p>
-        <p>
-          <FormattedMessage
-            id="page.privacy.GDPR.par7"
-            defaultMessage="The right to data portability – You have the right to request that we transfer the data that we have collected to another organization, or directly to you, under certain conditions."
-          />
-        </p>
-        <p>
-          <FormattedMessage
-            id="page.privacy.GDPR.par8"
-            defaultMessage="If you make a request, we have one month to respond to you. If you  would like to exercise any of these rights, please contact us."
-          />
-        </p>
+        <ul>
+          <li>
+            <FormattedMessage
+              id="page.privacy.GDPR.par1"
+              defaultMessage="We would like to make sure you are fully aware of all of your data protection rights. Every user is entitled to the following:"
+            />
+          </li>
+          <li>
+            <FormattedMessage
+              id="page.privacy.GDPR.par2"
+              defaultMessage="The right to access – You have the right to request copies of your personal data. We may charge you a small fee for this service."
+            />
+          </li>
+          <li>
+            <FormattedMessage
+              id="page.privacy.GDPR.par3"
+              defaultMessage="The right to rectification – You have the right to request that we correct any information you believe is inaccurate. You also have the right to request that we complete the information you believe is incomplete."
+            />
+          </li>
+          <li>
+            <FormattedMessage
+              id="page.privacy.GDPR.par4"
+              defaultMessage="The right to erasure – You have the right to request that we erase your personal data, under certain conditions."
+            />
+          </li>
+          <li>
+            <FormattedMessage
+              id="page.privacy.GDPR.par5"
+              defaultMessage="The right to restrict processing – You have the right to request that we restrict the processing of your personal data, under certain conditions."
+            />
+          </li>
+          <li>
+            <FormattedMessage
+              id="page.privacy.GDPR.par6"
+              defaultMessage="The right to object to processing – You have the right to object to our processing of your personal data, under certain conditions."
+            />
+          </li>
+          <li>
+            <FormattedMessage
+              id="page.privacy.GDPR.par7"
+              defaultMessage="The right to data portability – You have the right to request that we transfer the data that we have collected to another organization, or directly to you, under certain conditions."
+            />
+          </li>
+          <li>
+            <FormattedMessage
+              id="page.privacy.GDPR.par8"
+              defaultMessage="If you make a request, we have one month to respond to you. If you  would like to exercise any of these rights, please contact us."
+            />
+          </li>
+        </ul>
       </main>
     </>
   );
