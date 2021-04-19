@@ -127,7 +127,7 @@
   "page.termsAndConditions.article2.subtitle2.paragraph1": "In the event that the USER fails to perform some or all of their obligations under these Terms and Conditions, EASYFLOW may cancel these Terms and Conditions as of right and at any time, with or without formal notice being made to the USER to fulfil their obligations. EASYFLOW shall send any formal notice by any means of its choice, including by simple electronic mail (e-mail).",
   "page.termsAndConditions.article3.paragraph1": "The SERVICE consists in making available to USERS a software tool allowing them to create text for various uses, marketing in particular. From a few words, the SERVICE generates texts using artificial intelligence technology. Each USER can then, under his own responsibility, choose the texts he likes, modify them, generate others, copy them and use them as they see fit. EASYFLOW does not claim any ownership over the content produced by the USER.",
   "page.termsAndConditions.article4.title": "3. LIABILITY",
-  "page.termsAndConditions.article4.paragraph1": "a/ The USER is solely responsible for content used and produced from the SERVICE. You represent and warrant that any text or content used in or taken from the SERVICE will not infringe or violate a third party’s intellectual property rights, or result in the violation of any applicable law or regulation.",
+  "page.termsAndConditions.article4.paragraph1": "a/ The USER is solely responsible for content used and produced from the SERVICE. You represent and warrant that any text or content used in or taken from the SERVICE will not transgress or contravene a third party’s intellectual property rights, or result in the violation of any applicable law or regulation.",
   "page.termsAndConditions.article4.paragraph2": "b/ The SERVICE will be used in compliance with all applicable laws.",
   "page.termsAndConditions.article4.paragraph3": "c/ The SERVICE will not be used to produce, use or communicate harmful, shoking, offensive, defamatory, threatening, obscene, sensitive or unsafe content.",
   "page.termsAndConditions.article6.title": "4. FORCE MAJEURE",
@@ -207,6 +207,8 @@
   "notification.remainingConsoat0": "All your credits have been used this month. If needed, you can purchase additional credits in My Account.",
 
   "footer.copyright": "© 2021 EasyFlow, Inc. All rights reserved.",
+  "footer.termsAndConditions": "Terms and Conditions",
+  "footer.privacyPolicy": "Privacy Policy",
 
   "categories.id1.categorylabel": "Product Description",
   "categories.id1.label": "Describe shortly your product",

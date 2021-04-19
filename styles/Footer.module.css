@@ -17,10 +17,37 @@
 
 .footerContent {
   padding-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footerContent > div {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.footerContent p {
+  font-size: 1.8rem;
+  margin-top: 0.5rem;
+}
+
+.footerContent a:hover {
+  text-decoration: underline;
 }
 
 @media only screen and (max-width: 1400px) {
   .footer span {
     font-size: 1.4rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .footerContent {
+    flex-direction: column;
+  }
+
+  .footerContent > div {
+    margin-top: 1rem;
   }
 }

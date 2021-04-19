@@ -112,7 +112,7 @@ export default function TermsAndConditions() {
           <li>
             <FormattedMessage
               id="page.termsAndConditions.article4.paragraph1"
-              defaultMessage="a/ The USER is solely responsible for content used and produced from the SERVICE. You represent and warrant that any text or content used in or taken from the SERVICE will not infringe or violate a third party’s intellectual property rights, or result in the violation of any applicable law or regulation."
+              defaultMessage="a/ The USER is solely responsible for content used and produced from the SERVICE. You represent and warrant that any text or content used in or taken from the SERVICE will not transgress or contravene a third party’s intellectual property rights, or result in the violation of any applicable law or regulation."
             />
           </li>
           <li>

@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Link from "next/link";
 import Image from "next/image";
 import { useSession, getSession, signIn } from "next-auth/client";
 import { useContext } from "react";

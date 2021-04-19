@@ -1,11 +1,13 @@
 .termsAndConditionsPage {
   max-width: 50%;
   text-align: left;
+  margin: auto;
 }
 
 @media only screen and (max-width: 968px) {
   .termsAndConditionsPage {
     max-width: 80%;
     text-align: left;
+    margin: auto;
   }
 }
