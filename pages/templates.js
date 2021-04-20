@@ -55,6 +55,38 @@ export default function template() {
     id: "page.templates.head",
     defaultMessage: "Template List",
   });
+  const translatedFilterAll = intl.formatMessage({
+    id: "page.templates.filter.all",
+    defaultMessage: "All",
+  });
+  const translatedFilterBlog = intl.formatMessage({
+    id: "page.templates.filter.Blog",
+    defaultMessage: "Blog",
+  });
+  const translatedFilterContent = intl.formatMessage({
+    id: "page.templates.filter.Content",
+    defaultMessage: "Content",
+  });
+  const translatedFilterEmail = intl.formatMessage({
+    id: "page.templates.filter.Email",
+    defaultMessage: "Email",
+  });
+  const translatedFilterGoogle = intl.formatMessage({
+    id: "page.templates.filter.Google",
+    defaultMessage: "Google",
+  });
+  const translatedFilterMarketing = intl.formatMessage({
+    id: "page.templates.filter.Marketing",
+    defaultMessage: "Marketing",
+  });
+  const translatedFilterSocialMedia = intl.formatMessage({
+    id: "page.templates.filter.SocialMedia",
+    defaultMessage: "Social Media",
+  });
+  const translatedFilterTools = intl.formatMessage({
+    id: "page.templates.filter.Tools",
+    defaultMessage: "Tools",
+  });
 
   return (
     <>
@@ -87,42 +119,42 @@ export default function template() {
           </div>
           <div>
             <RoundedButton
-              name="All"
+              name={translatedFilterAll}
               handleClick={(e) => setCategoryButtonSelected("all")}
               isSelected={categoryButtonSelected === "all"}
             />
             <RoundedButton
-              name="Blog"
+              name={translatedFilterBlog}
               handleClick={(e) => setCategoryButtonSelected("Blog")}
               isSelected={categoryButtonSelected === "Blog"}
             />
             <RoundedButton
-              name="Content"
+              name={translatedFilterContent}
               handleClick={(e) => setCategoryButtonSelected("Content")}
               isSelected={categoryButtonSelected === "Content"}
             />
             <RoundedButton
-              name="Email"
+              name={translatedFilterEmail}]
               handleClick={(e) => setCategoryButtonSelected("Email")}
               isSelected={categoryButtonSelected === "Email"}
             />
             <RoundedButton
-              name="Google"
+              name={translatedFilterGoogle}
               handleClick={(e) => setCategoryButtonSelected("Google")}
               isSelected={categoryButtonSelected === "Google"}
             />
             <RoundedButton
-              name="Marketing"
+              name={translatedFilterMarketing}
               handleClick={(e) => setCategoryButtonSelected("Marketing")}
               isSelected={categoryButtonSelected === "Marketing"}
             />
             <RoundedButton
-              name="Social Media"
+              name={translatedFilterSocialMedia}
               handleClick={(e) => setCategoryButtonSelected("Social Media")}
               isSelected={categoryButtonSelected === "Social Media"}
             />
             <RoundedButton
-              name="Tools"
+              name={translatedFilterTools}
               handleClick={(e) => setCategoryButtonSelected("Tools")}
               isSelected={categoryButtonSelected === "Tools"}
             />
