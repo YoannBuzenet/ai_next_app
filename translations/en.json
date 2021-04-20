@@ -283,5 +283,9 @@
   "categories.keywordIntegrator.categorylabel": "Create a phrase with keywords",
   "categories.keywordIntegrator.description": "Easily create one or more sentences that contain specific keywords.",
   "categories.keywordIntegrator.placeholder": "Artificial intelligence software",
-  "categories.keywordIntegrator.labelInput1": "Which keywords do you want to use?"
+  "categories.keywordIntegrator.labelInput1": "Which keywords do you want to use?",
+  "categories.summarizeIdea.categorylabel": "Summarize an idea",
+  "categories.summarizeIdea.description": "Summarize a complex idea in one sentence.",
+  "categories.summarizeIdea.placeholder": "EasyFlow is a company offering web software based on artificial intelligence created in France in 2021. Our goal is to make life easier for all those who want to write.",
+  "categories.summarizeIdea.labelInput1": "Which sentence or paragraph do you want to synthesize?"
 }

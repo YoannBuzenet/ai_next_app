@@ -283,5 +283,9 @@
   "categories.keywordIntegrator.categorylabel": "Créez une phrase avec des mots clefs",
   "categories.keywordIntegrator.description": "Créez facilement une ou plusieurs phrases qui contiennent des mots clefs particuliers.",
   "categories.keywordIntegrator.placeholder": "Logiciel d'intelligence artificielle",
-  "categories.keywordIntegrator.labelInput1": "Quels mots clefs voulez-vous utiliser ?"
+  "categories.keywordIntegrator.labelInput1": "Quels mots clefs voulez-vous utiliser ?",
+  "categories.summarizeIdea.categorylabel": "Synthèse de texte",
+  "categories.summarizeIdea.description": "Résumez une idée complexe en une phrase.",
+  "categories.summarizeIdea.placeholder": "EasyFlow est une entreprise proposant un logiciel web basé sur l'intelligence artificielle créée en France en 2021. Notre objectif est de faciliter la vie de tous ceux qui veulent écrire.",
+  "categories.summarizeIdea.labelInput1": "Quelle phrase ou paragraphe souhaitez-vous synhtétiser ?"
 }

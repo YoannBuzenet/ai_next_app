@@ -474,6 +474,36 @@ const categoriesDefinition = {
     },
     parentCategory: "Marketing",
   },
+  17: {
+    inputs: [
+      {
+        name: "value",
+        maxLengthInput: 100,
+        label: {
+          id: "categories.summarizeIdea.labelInput1",
+          defaultMessage:
+            "Which sentence or paragraph do you want to synthesize?",
+        },
+        placeholder: {
+          id: "categories.summarizeIdea.placeholder",
+          defaultMessage:
+            "EasyFlow is a company offering web software based on artificial intelligence created in France in 2021. Our goal is to make life easier for all those who want to write.",
+        },
+        inputType: "textarea",
+      },
+    ],
+    categoryId: 17,
+    urlIcon: "/icons/image_24.png",
+    name: {
+      id: "categories.summarizeIdea.categorylabel",
+      defaultMessage: "Summarize an idea",
+    },
+    description: {
+      id: "categories.summarizeIdea.description",
+      defaultMessage: "Summarize a complex idea in one sentence.",
+    },
+    parentCategory: "Tools",
+  },
 };
 
 const transformDictionnaryIntoArray = (dictionnary) => {
