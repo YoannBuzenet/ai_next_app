@@ -1,6 +1,6 @@
 const langDictionnary = {
-  "en-US": "EN",
-  "fr-FR": "FR",
+  "en-US": "en",
+  "fr-FR": "fr",
 };
 
 module.exports = { langDictionnary };

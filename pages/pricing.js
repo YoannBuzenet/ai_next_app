@@ -14,6 +14,7 @@ import { FREE_LIMIT_NUMBER_OF_WORDS } from "../config/settings";
 import { useRouter } from "next/router";
 import axios from "axios";
 import { products } from "../config/products";
+import { langDictionnary } from "../definitions/langDictionnary";
 import getStripe from "../services/getStripe";
 
 const Pricing = () => {
@@ -22,6 +23,9 @@ const Pricing = () => {
   const intl = useIntl();
 
   const router = useRouter();
+
+  console.log("langDictionnary", langDictionnary);
+  console.log("intl.locale", intl.locale);
 
   const handleButtonSubmit = async (e, action) => {
     e.preventDefault();
@@ -34,7 +38,9 @@ const Pricing = () => {
       if (isAnnual) {
         //yearly
         const paymentCall = await axios
-          .post("/api/payment/stripe", { priceId: products.yearly.stripeId })
+          .post("/api/payment/stripe", {
+            priceId: products[langDictionnary[intl.locale]]?.yearly?.stripeId,
+          })
           .then((data) => {
             // Call Stripe.js method to redirect to the new Checkout page
             console.log("datas", data);

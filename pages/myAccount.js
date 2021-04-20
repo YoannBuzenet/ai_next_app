@@ -27,6 +27,7 @@ import { FREE_LIMIT_NUMBER_OF_WORDS } from "../config/settings";
 import getStripe from "../services/getStripe";
 import BlueCTA from "../components/Base/BlueCTA";
 import { products } from "../config/products";
+import { langDictionnary } from "../definitions/langDictionnary";
 
 export async function getServerSideProps(context) {
   const session = await getSession(context);
@@ -152,7 +153,7 @@ export default function MyAccount() {
 
     const paymentCall = await axios
       .post("/api/payment/stripe", {
-        priceId: products.boost.stripeId,
+        priceId: products[langDictionnary[intl.locale]].boost.stripeId,
         mode: "payment",
       })
       .then((data) => {

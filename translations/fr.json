@@ -183,7 +183,7 @@
   "compo.text.button.generateAIContent": "Génerer du contenu avec l'IA",
   "compo.text.noResults": "Les résultats s'afficheront ici.",
   "compo.text.numberOfOutputs": "Résultats",
-  "compo.text.inputOutput": "Saisie / Résultat",
+  "compo.text.inputOutput": "Langue Entrée / Sortie",
   "compo.text.quotaReached": "Quota gratuit atteint",
   "compo.text.inputLenghtMin": "Votre texte doit faire au moins un caractère.",
   "compo.text.AllAIoutputFiltered": "Tous les résultats de l'IA ont été filtrés. Cela arrive quand des propos déplacés sont formulés. Merci de veiller à intégrer du contenu politiquement correct. Tout abus pourra amener à une fermeture du compte.",
