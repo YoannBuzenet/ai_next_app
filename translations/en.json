@@ -287,5 +287,9 @@
   "categories.summarizeIdea.categorylabel": "Summarize an idea",
   "categories.summarizeIdea.description": "Summarize a complex idea in one sentence.",
   "categories.summarizeIdea.placeholder": "EasyFlow is a company offering web software based on artificial intelligence created in France in 2021. Our goal is to make life easier for all those who want to write.",
-  "categories.summarizeIdea.labelInput1": "Which sentence or paragraph do you want to synthesize?"
+  "categories.summarizeIdea.labelInput1": "Which sentence or paragraph do you want to synthesize?",
+  "categories.saleArgument.categorylabel": "Feature Highlight",
+  "categories.saleArgument.description": "Start with a simple function of a product and turn it into a concrete selling point.",
+  "categories.saleArgument.placeholder": "Content preparation using artificial intelligence.",
+  "categories.saleArgument.labelInput1": "What is the function of your product that you want to highlight?"
 }

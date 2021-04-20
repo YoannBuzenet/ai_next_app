@@ -504,6 +504,36 @@ const categoriesDefinition = {
     },
     parentCategory: "Tools",
   },
+  18: {
+    inputs: [
+      {
+        name: "value",
+        maxLengthInput: 100,
+        label: {
+          id: "categories.saleArgument.labelInput1",
+          defaultMessage:
+            "What is the function of your product that you want to highlight?",
+        },
+        placeholder: {
+          id: "categories.saleArgument.placeholder",
+          defaultMessage: "Content preparation using artificial intelligence.",
+        },
+        inputType: "textarea",
+      },
+    ],
+    categoryId: 18,
+    urlIcon: "/icons/image_24.png",
+    name: {
+      id: "categories.saleArgument.categorylabel",
+      defaultMessage: "Feature Highlight",
+    },
+    description: {
+      id: "categories.saleArgument.description",
+      defaultMessage:
+        "Start with a simple function of a product and turn it into a concrete selling point.",
+    },
+    parentCategory: "Marketing",
+  },
 };
 
 const transformDictionnaryIntoArray = (dictionnary) => {
