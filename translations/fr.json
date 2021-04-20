@@ -247,5 +247,17 @@
   "categories.googleHeadline.categorylabel": "En-tête Google",
   "categories.googleHeadline.description": "Convertissez les visiteurs d'une recherche Google avec la phrase adaptée.",
   "categories.googleHeadline.placeholder": "EasyFlow est un outil de création de contenu grâce à l'intelligence artificielle.",
-  "categories.googleHeadline.labelInput1": "Quel est l'objectif de votre site web ?"
+  "categories.googleHeadline.labelInput1": "Quel est l'objectif de votre site web ?",
+  "categories.googleDescription.categorylabel": "Description Google",
+  "categories.googleDescription.description": "Trouvez les bons mots pour intriguer votre utilisateur et lui indiquer que votre site contient exactement ce qu'il cherche.",
+  "categories.googleDescription.placeholder": "EasyFlow est un outil de création de contenu grâce à l'intelligence artificielle.",
+  "categories.googleDescription.labelInput1": "Quel est le sujet couvert par votre page ou site web ?",
+  "categories.linkedinAdText.categorylabel": "Texte Publicité Linkedin",
+  "categories.linkedinAdText.description": "Attirez l'attention de votre utilisateur avec les mots clefs qui le concernent.",
+  "categories.linkedinAdText.placeholder": "EasyFlow est un outil de création de contenu grâce à l'intelligence artificielle.",
+  "categories.linkedinAdText.labelInput1": "De quoi traite votre publicité ?",
+  "categories.blogIdeas.categorylabel": "Idées de billets de blog",
+  "categories.blogIdeas.description": "Trouvez des idées d'article pour votre blog",
+  "categories.blogIdeas.placeholder": "EasyFlow est un outil de création de contenu grâce à l'intelligence artificielle.",
+  "categories.blogIdeas.labelInput1": "De quoi parle votre blog en général ?"
 }

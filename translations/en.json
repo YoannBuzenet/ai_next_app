@@ -247,5 +247,17 @@
   "categories.googleHeadline.categorylabel": "Google Headline",
   "categories.googleHeadline.description": "Convert your user with the right line in Google results page.",
   "categories.googleHeadline.placeholder": "EasyFlow is a content creation tool using artificial intelligence.",
-  "categories.googleHeadline.labelInput1": "What is your website about ?"
+  "categories.googleHeadline.labelInput1": "What is your website about ?",
+  "categories.googleDescription.categorylabel": "Google Description",
+  "categories.googleDescription.description": "Find the right words to intrigue your user and let them know that your site contains exactly what they are looking for.",
+  "categories.googleDescription.placeholder": "EasyFlow is a content creation tool using artificial intelligence.",
+  "categories.googleDescription.labelInput1": "What is your page or website about ?",
+  "categories.linkedinAdText.categorylabel": "Linkedin Ad",
+  "categories.linkedinAdText.description": "Attract the attention of your user with the keywords that concern them.",
+  "categories.linkedinAdText.placeholder": "EasyFlow is a content creation tool using artificial intelligence.",
+  "categories.linkedinAdText.labelInput1": "What is your ad about ?",
+  "categories.blogIdeas.categorylabel": "Blog Post ideas",
+  "categories.blogIdeas.description": "Find some ideas about your next blog post.",
+  "categories.blogIdeas.placeholder": "EasyFlow is a content creation tool using artificial intelligence.",
+  "categories.blogIdeas.labelInput1": "What is your blog about ?"
 }

@@ -150,7 +150,7 @@ const categoriesDefinition = {
       defaultMessage:
         "Generate scroll-topping headlines for your Facebook Ads to get prospects to click, and ultimately buy.",
     },
-    parentCategory: "Social Networks",
+    parentCategory: "Social Media",
   },
   6: {
     inputs: [
@@ -179,7 +179,7 @@ const categoriesDefinition = {
       id: "categories.facebookPrimaryText.description",
       defaultMessage: "Explain easily why your ad is relevant for your user.",
     },
-    parentCategory: "Social Networks",
+    parentCategory: "Social Media",
   },
   7: {
     inputs: [
@@ -210,6 +210,95 @@ const categoriesDefinition = {
         "Convert your user with the right line in Google results page",
     },
     parentCategory: "Google",
+  },
+  8: {
+    inputs: [
+      {
+        name: "value",
+        maxLengthInput: 100,
+        label: {
+          id: "categories.googleDescription.labelInput1",
+          defaultMessage: "What is your page or website about ?",
+        },
+        placeholder: {
+          id: "categories.googleDescription.placeholder",
+          defaultMessage:
+            "EasyFlow is a content creation tool using artificial intelligence.",
+        },
+        inputType: "textarea",
+      },
+    ],
+    categoryId: 8,
+    urlIcon: "/icons/image_24.png",
+    name: {
+      id: "categories.googleDescription.categorylabel",
+      defaultMessage: "Google Description",
+    },
+    description: {
+      id: "categories.googleDescription.description",
+      defaultMessage:
+        "Find the right words to intrigue your user and let them know that your site contains exactly what they are looking for.",
+    },
+    parentCategory: "Google",
+  },
+  9: {
+    inputs: [
+      {
+        name: "value",
+        maxLengthInput: 100,
+        label: {
+          id: "categories.linkedinAdText.labelInput1",
+          defaultMessage: "What is your ad about ?",
+        },
+        placeholder: {
+          id: "categories.linkedinAdText.placeholder",
+          defaultMessage:
+            "EasyFlow is a content creation tool using artificial intelligence.",
+        },
+        inputType: "textarea",
+      },
+    ],
+    categoryId: 9,
+    urlIcon: "/icons/image_24.png",
+    name: {
+      id: "categories.linkedinAdText.categorylabel",
+      defaultMessage: "Linkedin Ad",
+    },
+    description: {
+      id: "categories.linkedinAdText.description",
+      defaultMessage:
+        "Attract the attention of your user with the keywords that concern them.",
+    },
+    parentCategory: "Social Media",
+  },
+  10: {
+    inputs: [
+      {
+        name: "value",
+        maxLengthInput: 100,
+        label: {
+          id: "categories.blogIdeas.labelInput1",
+          defaultMessage: "What is your blog about ?",
+        },
+        placeholder: {
+          id: "categories.blogIdeas.placeholder",
+          defaultMessage:
+            "EasyFlow is a content creation tool using artificial intelligence.",
+        },
+        inputType: "textarea",
+      },
+    ],
+    categoryId: 10,
+    urlIcon: "/icons/image_24.png",
+    name: {
+      id: "categories.blogIdeas.categorylabel",
+      defaultMessage: "Blog Post ideas",
+    },
+    description: {
+      id: "categories.blogIdeas.description",
+      defaultMessage: "Find some ideas about your next blog post..",
+    },
+    parentCategory: "Blog",
   },
 };
 
