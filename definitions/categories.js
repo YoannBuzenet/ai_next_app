@@ -300,6 +300,35 @@ const categoriesDefinition = {
     },
     parentCategory: "Blog",
   },
+  11: {
+    inputs: [
+      {
+        name: "value",
+        maxLengthInput: 100,
+        label: {
+          id: "categories.followUpEmail.labelInput1",
+          defaultMessage: "What did you talk about with your customer ?",
+        },
+        placeholder: {
+          id: "categories.followUpEmail.placeholder",
+          defaultMessage:
+            "Our meeting about artificial intelligence software for your company",
+        },
+        inputType: "textarea",
+      },
+    ],
+    categoryId: 11,
+    urlIcon: "/icons/image_24.png",
+    name: {
+      id: "categories.followUpEmail.categorylabel",
+      defaultMessage: "Follow-up Email",
+    },
+    description: {
+      id: "categories.followUpEmail.description",
+      defaultMessage: "Ask a prospect for news on a particular topic.",
+    },
+    parentCategory: "Blog",
+  },
 };
 
 const transformDictionnaryIntoArray = (dictionnary) => {

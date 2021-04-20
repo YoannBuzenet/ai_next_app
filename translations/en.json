@@ -259,5 +259,9 @@
   "categories.blogIdeas.categorylabel": "Blog Post ideas",
   "categories.blogIdeas.description": "Find some ideas about your next blog post.",
   "categories.blogIdeas.placeholder": "EasyFlow is a content creation tool using artificial intelligence.",
-  "categories.blogIdeas.labelInput1": "What is your blog about ?"
+  "categories.blogIdeas.labelInput1": "What is your blog about ?",
+  "categories.followUpEmail.categorylabel": "Follow-up Email",
+  "categories.followUpEmail.description": "Ask a prospect for news on a particular topic.",
+  "categories.followUpEmail.placeholder": "Our meeting about artificial intelligence software for your company",
+  "categories.followUpEmail.labelInput1": "What did you talk about with your customer ?"
 }
