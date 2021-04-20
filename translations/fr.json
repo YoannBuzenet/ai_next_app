@@ -291,5 +291,9 @@
   "categories.saleArgument.categorylabel": "Mettez en avant une fonctionalité",
   "categories.saleArgument.description": "Partez d'une simple fonction d'un produit et transformez-la en argument de vente béton.",
   "categories.saleArgument.placeholder": "Préparation de contenu grâce à de l'intelligence artificielle.",
-  "categories.saleArgument.labelInput1": "Quelle est la fonction de votre produit que vous souhaitez mettre en avant ?"
+  "categories.saleArgument.labelInput1": "Quelle est la fonction de votre produit que vous souhaitez mettre en avant ?",
+  "categories.hookyEmailObject.categorylabel": "Object de mail accrocheur",
+  "categories.hookyEmailObject.description": "Attirez l'oeil de vos prospects avec un objet d'email fait sur mesure.",
+  "categories.hookyEmailObject.placeholder": "Logiciel d'intelligence artificielle",
+  "categories.hookyEmailObject.labelInput1": "De quel sujet traite votre email ?"
 }

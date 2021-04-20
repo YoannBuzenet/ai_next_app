@@ -534,6 +534,35 @@ const categoriesDefinition = {
     },
     parentCategory: "Marketing",
   },
+  19: {
+    inputs: [
+      {
+        name: "value",
+        maxLengthInput: 100,
+        label: {
+          id: "categories.hookyEmailObject.labelInput1",
+          defaultMessage: "What subject is your email about?",
+        },
+        placeholder: {
+          id: "categories.hookyEmailObject.placeholder",
+          defaultMessage: "Artificial intelligence software.",
+        },
+        inputType: "textarea",
+      },
+    ],
+    categoryId: 19,
+    urlIcon: "/icons/image_24.png",
+    name: {
+      id: "categories.hookyEmailObject.categorylabel",
+      defaultMessage: "Hooky Email Object",
+    },
+    description: {
+      id: "categories.hookyEmailObject.description",
+      defaultMessage:
+        "Catch the eye of your prospects with a tailor-made email subject line..",
+    },
+    parentCategory: "Email",
+  },
 };
 
 const transformDictionnaryIntoArray = (dictionnary) => {

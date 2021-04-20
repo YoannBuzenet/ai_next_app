@@ -291,5 +291,9 @@
   "categories.saleArgument.categorylabel": "Feature Highlight",
   "categories.saleArgument.description": "Start with a simple function of a product and turn it into a concrete selling point.",
   "categories.saleArgument.placeholder": "Content preparation using artificial intelligence.",
-  "categories.saleArgument.labelInput1": "What is the function of your product that you want to highlight?"
+  "categories.saleArgument.labelInput1": "What is the function of your product that you want to highlight?",
+  "categories.hookyEmailObject.categorylabel": "Hooky Email Object",
+  "categories.hookyEmailObject.description": "Catch the eye of your prospects with a tailor-made email subject line.",
+  "categories.hookyEmailObject.placeholder": "Artificial intelligence software.",
+  "categories.hookyEmailObject.labelInput1": "What subject is your email about?"
 }
