@@ -559,7 +559,7 @@ const categoriesDefinition = {
     description: {
       id: "categories.hookyEmailObject.description",
       defaultMessage:
-        "Catch the eye of your prospects with a tailor-made email subject line..",
+        "Catch the eye of your prospects with a tailor-made email subject line.",
     },
     parentCategory: "Email",
   },

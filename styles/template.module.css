@@ -1,6 +1,11 @@
 .title {
   font-size: 18px;
 }
+
+.templates {
+  padding-bottom: 4rem;
+}
+
 .selectTemplate {
   display: flex;
   justify-content: space-between;

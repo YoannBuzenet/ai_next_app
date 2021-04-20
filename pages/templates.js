@@ -92,14 +92,39 @@ export default function template() {
               isSelected={categoryButtonSelected === "all"}
             />
             <RoundedButton
+              name="Blog"
+              handleClick={(e) => setCategoryButtonSelected("Blog")}
+              isSelected={categoryButtonSelected === "Blog"}
+            />
+            <RoundedButton
+              name="Content"
+              handleClick={(e) => setCategoryButtonSelected("Content")}
+              isSelected={categoryButtonSelected === "Content"}
+            />
+            <RoundedButton
+              name="Email"
+              handleClick={(e) => setCategoryButtonSelected("Email")}
+              isSelected={categoryButtonSelected === "Email"}
+            />
+            <RoundedButton
+              name="Google"
+              handleClick={(e) => setCategoryButtonSelected("Google")}
+              isSelected={categoryButtonSelected === "Google"}
+            />
+            <RoundedButton
               name="Marketing"
               handleClick={(e) => setCategoryButtonSelected("Marketing")}
               isSelected={categoryButtonSelected === "Marketing"}
             />
             <RoundedButton
-              name="Facebook Ads"
-              handleClick={(e) => setCategoryButtonSelected("FacebookAds")}
-              isSelected={categoryButtonSelected === "FacebookAds"}
+              name="Social Media"
+              handleClick={(e) => setCategoryButtonSelected("Social Media")}
+              isSelected={categoryButtonSelected === "Social Media"}
+            />
+            <RoundedButton
+              name="Tools"
+              handleClick={(e) => setCategoryButtonSelected("Tools")}
+              isSelected={categoryButtonSelected === "Tools"}
             />
           </div>
           <div>
