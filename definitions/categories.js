@@ -181,84 +181,59 @@ const categoriesDefinition = {
     },
     parentCategory: "Social Networks",
   },
+  7: {
+    inputs: [
+      {
+        name: "value",
+        maxLengthInput: 100,
+        label: {
+          id: "categories.googleHeadline.labelInput1",
+          defaultMessage: "What is your website about ?",
+        },
+        placeholder: {
+          id: "categories.googleHeadline.placeholder",
+          defaultMessage:
+            "EasyFlow is a content creation tool using artificial intelligence.",
+        },
+        inputType: "textarea",
+      },
+    ],
+    categoryId: 7,
+    urlIcon: "/icons/image_24.png",
+    name: {
+      id: "categories.googleHeadline.categorylabel",
+      defaultMessage: "Google Headline",
+    },
+    description: {
+      id: "categories.googleHeadline.description",
+      defaultMessage:
+        "Convert your user with the right line in Google results page",
+    },
+    parentCategory: "Google",
+  },
 };
 
-const listOfCategories = [
-  {
-    name: {
-      id: "categories.id1.categorylabel",
-      defaultMessage: "Product Description",
-    },
-    description: {
-      id: "categories.id1.description",
-      defaultMessage:
-        "Create a description that will present your product with ease.",
-    },
-    parentCategory: "Marketing",
-    urlLogo: "/icons/image_28.png",
-    categoryId: 1,
-  },
-  {
-    name: {
-      id: "categories.id2.categorylabel",
-      defaultMessage: "Value Proposition",
-    },
-    description: {
-      id: "categories.id2.description",
-      defaultMessage: "Offer a rich and relevant presentation of your service.",
-    },
-    parentCategory: "Marketing",
-    urlLogo: "/icons/image_28.png",
-    categoryId: 2,
-  },
-  {
-    name: { id: "categories.id3.categorylabel", defaultMessage: "Blog Title" },
-    description: {
-      id: "categories.id3.description",
-      defaultMessage:
-        "Create a blog title that will summarize the key idea of your text.",
-    },
-    parentCategory: "Blog",
-    urlLogo: "/icons/image_7.png",
-    categoryId: 3,
-  },
-  {
-    name: { id: "categories.id5.categorylabel", defaultMessage: "Blog Intro" },
-    description: {
-      id: "categories.id5.description",
-      defaultMessage: "Introduce your blog with the relevant outlines.",
-    },
-    parentCategory: "Blog",
-    urlLogo: "/icons/image_7.png",
-    categoryId: 4,
-  },
-  {
-    name: {
-      id: "categories.id6.categorylabel",
-      defaultMessage: "Facebook Ads headline",
-    },
-    description: {
-      id: "categories.id6.description",
-      defaultMessage:
-        "Create relevant stories that will engage your customers.",
-    },
-    parentCategory: "FacebookAds",
-    urlLogo: "/icons/image_24.png",
-    categoryId: 5,
-  },
-  {
-    name: {
-      id: "categories.facebookPrimaryText.categorylabel",
-      defaultMessage: "Facebook Primary Text",
-    },
-    description: {
-      id: "categories.facebookPrimaryText.description",
-      defaultMessage: "Explain easily why your ad is relevant for your user.",
-    },
-    parentCategory: "Social networks",
-    urlLogo: "/icons/image_24.png",
-    categoryId: 6,
-  },
-];
+const transformDictionnaryIntoArray = (dictionnary) => {
+  let finalArray = [];
+  for (const category in dictionnary) {
+    let temporaryObject = {
+      name: {
+        id: dictionnary[category].name.id,
+        defaultMessage: dictionnary[category].name.defaultMessage,
+      },
+      description: {
+        id: dictionnary[category].description.id,
+        defaultMessage: dictionnary[category].description.defaultMessage,
+      },
+      parentCategory: dictionnary[category].parentCategory,
+      urlLogo: dictionnary[category].urlIcon,
+      categoryId: dictionnary[category].categoryId,
+    };
+    finalArray = [...finalArray, temporaryObject];
+  }
+  return finalArray;
+};
+
+const listOfCategories = transformDictionnaryIntoArray(categoriesDefinition);
 
 module.exports = { categoriesDefinition, listOfCategories };

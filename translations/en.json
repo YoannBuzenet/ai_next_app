@@ -243,5 +243,9 @@
   "categories.facebookPrimaryText.categorylabel": "Facebook Primary Text",
   "categories.facebookPrimaryText.description": "Explain easily why your ad is relevant for your user.",
   "categories.facebookPrimaryText.placeholder": "EasyFlow is a content creation tool using artificial intelligence.",
-  "categories.facebookPrimaryText.labelInput1": "What is your ad about ?"
+  "categories.facebookPrimaryText.labelInput1": "What is your ad about ?",
+  "categories.googleHeadline.categorylabel": "Google Headline",
+  "categories.googleHeadline.description": "Convert your user with the right line in Google results page.",
+  "categories.googleHeadline.placeholder": "EasyFlow is a content creation tool using artificial intelligence.",
+  "categories.googleHeadline.labelInput1": "What is your website about ?"
 }

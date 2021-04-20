@@ -243,5 +243,9 @@
   "categories.facebookPrimaryText.categorylabel": "Facebook Publicité Texte Principal",
   "categories.facebookPrimaryText.description": "Expliquez facilement pourquoi votre annonce est pertinente pour votre utilisateur.",
   "categories.facebookPrimaryText.placeholder": "EasyFlow est un outil de création de contenu grâce à l'intelligence artificielle.",
-  "categories.facebookPrimaryText.labelInput1": "De quoi traite votre publicité ?"
+  "categories.facebookPrimaryText.labelInput1": "De quoi traite votre publicité ?",
+  "categories.googleHeadline.categorylabel": "En-tête Google",
+  "categories.googleHeadline.description": "Convertissez les visiteurs d'une recherche Google avec la phrase adaptée.",
+  "categories.googleHeadline.placeholder": "EasyFlow est un outil de création de contenu grâce à l'intelligence artificielle.",
+  "categories.googleHeadline.labelInput1": "Quel est l'objectif de votre site web ?"
 }
