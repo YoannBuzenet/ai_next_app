@@ -231,6 +231,19 @@ export default function Text() {
       .catch((err) => {
         console.log("error after posting to next", err);
         setIsLoadingAPIResults(false);
+        const messageToDisplay = errorHandling(err);
+        setNotificationInfo({
+          ...notificationInfo,
+          alert: {
+            ...notificationInfo.alert,
+            message: messageToDisplay,
+            severity: "error",
+          },
+          snackbar: {
+            ...notificationInfo.snackbar,
+            isDisplayed: true,
+          },
+        });
       });
   };
 

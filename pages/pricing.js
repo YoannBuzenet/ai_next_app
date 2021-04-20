@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import styles from "../styles/Pricing.module.css";
 import SwitchLabels from "../components/Base/Switch";
-import RoundedButton from "../components/Base/RoundedButton";
+import notificationContext from "../contexts/notificationsContext";
 import BlueCTA from "../components/Base/BlueCTA";
 import * as Icon from "react-feather";
 import Option from "../components/pricingPage/Option";
@@ -16,9 +16,13 @@ import axios from "axios";
 import { products } from "../config/products";
 import { langDictionnary } from "../definitions/langDictionnary";
 import getStripe from "../services/getStripe";
+import errorHandling from "../services/errorHandling";
 
 const Pricing = () => {
   const [isAnnual, setIsAnnual] = useState(true);
+  const { notificationInfo, setNotificationInfo } = useContext(
+    notificationContext
+  );
   const [session, loading] = useSession();
   const intl = useIntl();
 
@@ -49,6 +53,21 @@ const Pricing = () => {
                 sessionId: data.data.sessionId,
               })
               .then((result) => console.log("result stripe", result));
+          })
+          .catch((err) => {
+            const messageToDisplay = errorHandling(err);
+            setNotificationInfo({
+              ...notificationInfo,
+              alert: {
+                ...notificationInfo.alert,
+                message: messageToDisplay,
+                severity: "error",
+              },
+              snackbar: {
+                ...notificationInfo.snackbar,
+                isDisplayed: true,
+              },
+            });
           });
       } else {
         // monthly
@@ -61,7 +80,37 @@ const Pricing = () => {
               .redirectToCheckout({
                 sessionId: data.data.sessionId,
               })
-              .then((result) => console.log("result stripe", result));
+              .then((result) => console.log("result stripe", result))
+              .catch((err) => {
+                const messageToDisplay = errorHandling(err);
+                setNotificationInfo({
+                  ...notificationInfo,
+                  alert: {
+                    ...notificationInfo.alert,
+                    message: messageToDisplay,
+                    severity: "error",
+                  },
+                  snackbar: {
+                    ...notificationInfo.snackbar,
+                    isDisplayed: true,
+                  },
+                });
+              });
+          })
+          .catch((err) => {
+            const messageToDisplay = errorHandling(err);
+            setNotificationInfo({
+              ...notificationInfo,
+              alert: {
+                ...notificationInfo.alert,
+                message: messageToDisplay,
+                severity: "error",
+              },
+              snackbar: {
+                ...notificationInfo.snackbar,
+                isDisplayed: true,
+              },
+            });
           });
       }
 
@@ -73,13 +122,24 @@ const Pricing = () => {
         });
         console.log("ça a marché ?", hasUserFreeAccess);
         router.push("/freeAccessSuccess");
-      } catch (e) {
-        // notification
-        // TO DO
-        console.log("free access didnt work");
+      } catch (err) {
+        const messageToDisplay = errorHandling(err);
+        setNotificationInfo({
+          ...notificationInfo,
+          alert: {
+            ...notificationInfo.alert,
+            message: messageToDisplay,
+            severity: "error",
+          },
+          snackbar: {
+            ...notificationInfo.snackbar,
+            isDisplayed: true,
+          },
+        });
       }
     } else if (action === "upgradeEnterprise") {
       // TO DO TYPEFORM / FORM
+      // TO DO YOANN
     }
   };
 
