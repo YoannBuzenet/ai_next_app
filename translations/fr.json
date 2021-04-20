@@ -267,5 +267,9 @@
   "categories.ideaToParagraph.categorylabel": "De l'idée au paragraphe",
   "categories.ideaToParagraph.description": "Développez une idée à partir de quelques mots.",
   "categories.ideaToParagraph.placeholder": "Logiciel d'intelligence artificielle",
-  "categories.ideaToParagraph.labelInput1": "En quelques mots, quelle idée ou concept souhaitez-vous développer ?"
+  "categories.ideaToParagraph.labelInput1": "En quelques mots, quelle idée ou concept souhaitez-vous développer ?",
+  "categories.sharingMemories.categorylabel": "Souvenir touchant",
+  "categories.sharingMemories.description": "Créez un souvenir touchant à partir de quelques mots.",
+  "categories.sharingMemories.placeholder": "Logiciel d'intelligence artificielle",
+  "categories.sharingMemories.labelInput1": "Sur quel thème, ou à partir de quel mot souhaitez-vous construire votre souvenir ?"
 }

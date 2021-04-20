@@ -267,5 +267,9 @@
   "categories.ideaToParagraph.categorylabel": "From idea to paragraph",
   "categories.ideaToParagraph.description": "Develop an idea from a few words.",
   "categories.ideaToParagraph.placeholder": "Artificial intelligence software",
-  "categories.ideaToParagraph.labelInput1": "In a few words, what idea or concept do you want to develop?"
+  "categories.ideaToParagraph.labelInput1": "In a few words, what idea or concept do you want to develop?",
+  "categories.sharingMemories.categorylabel": "Relatable Memory",
+  "categories.sharingMemories.description": "Create a relatable memory from just a few words.",
+  "categories.sharingMemories.placeholder": "Artificial intelligence software",
+  "categories.sharingMemories.labelInput1": "On what theme, or from what word do you want to build your memory?"
 }

@@ -358,6 +358,35 @@ const categoriesDefinition = {
     },
     parentCategory: "Content",
   },
+  13: {
+    inputs: [
+      {
+        name: "value",
+        maxLengthInput: 100,
+        label: {
+          id: "categories.sharingMemories.labelInput1",
+          defaultMessage:
+            "On what theme, or from what word do you want to build your memory?",
+        },
+        placeholder: {
+          id: "categories.sharingMemories.placeholder",
+          defaultMessage: "Artificial intelligence software",
+        },
+        inputType: "textarea",
+      },
+    ],
+    categoryId: 13,
+    urlIcon: "/icons/image_24.png",
+    name: {
+      id: "categories.sharingMemories.categorylabel",
+      defaultMessage: "Relatable Memory",
+    },
+    description: {
+      id: "categories.sharingMemories.description",
+      defaultMessage: "Create a relatable memory from just a few words.",
+    },
+    parentCategory: "Content",
+  },
 };
 
 const transformDictionnaryIntoArray = (dictionnary) => {
