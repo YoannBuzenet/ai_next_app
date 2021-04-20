@@ -271,5 +271,9 @@
   "categories.sharingMemories.categorylabel": "Relatable Memory",
   "categories.sharingMemories.description": "Create a relatable memory from just a few words.",
   "categories.sharingMemories.placeholder": "Artificial intelligence software",
-  "categories.sharingMemories.labelInput1": "On what theme, or from what word do you want to build your memory?"
+  "categories.sharingMemories.labelInput1": "On what theme, or from what word do you want to build your memory?",
+  "categories.thankYouMail.categorylabel": "Thank You Mail",
+  "categories.thankYouMail.description": "Write an email to thank a customer or a prospect, starting with a few words.",
+  "categories.thankYouMail.placeholder": "Artificial intelligence software",
+  "categories.thankYouMail.labelInput1": "What did you discuss with this person?"
 }

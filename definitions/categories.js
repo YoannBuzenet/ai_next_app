@@ -387,6 +387,35 @@ const categoriesDefinition = {
     },
     parentCategory: "Content",
   },
+  14: {
+    inputs: [
+      {
+        name: "value",
+        maxLengthInput: 100,
+        label: {
+          id: "categories.thankYouMail.labelInput1",
+          defaultMessage: "What did you discuss with this person?",
+        },
+        placeholder: {
+          id: "categories.thankYouMail.placeholder",
+          defaultMessage: "Artificial intelligence software",
+        },
+        inputType: "textarea",
+      },
+    ],
+    categoryId: 14,
+    urlIcon: "/icons/image_24.png",
+    name: {
+      id: "categories.thankYouMail.categorylabel",
+      defaultMessage: "Relatable Memory",
+    },
+    description: {
+      id: "categories.thankYouMail.description",
+      defaultMessage:
+        "Write an email to thank a customer or a prospect, starting with a few words.",
+    },
+    parentCategory: "Email",
+  },
 };
 
 const transformDictionnaryIntoArray = (dictionnary) => {

@@ -271,5 +271,9 @@
   "categories.sharingMemories.categorylabel": "Souvenir touchant",
   "categories.sharingMemories.description": "Créez un souvenir touchant à partir de quelques mots.",
   "categories.sharingMemories.placeholder": "Logiciel d'intelligence artificielle",
-  "categories.sharingMemories.labelInput1": "Sur quel thème, ou à partir de quel mot souhaitez-vous construire votre souvenir ?"
+  "categories.sharingMemories.labelInput1": "Sur quel thème, ou à partir de quel mot souhaitez-vous construire votre souvenir ?",
+  "categories.thankYouMail.categorylabel": "Email de remerciement",
+  "categories.thankYouMail.description": "Ecrivez un mail pour remercier un client ou un prospect, à partir de quelques mots.",
+  "categories.thankYouMail.placeholder": "Logiciel d'intelligence artificielle",
+  "categories.thankYouMail.labelInput1": "De quoi aviez-vous parlé avec cette personne ?"
 }
