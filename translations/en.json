@@ -275,5 +275,9 @@
   "categories.thankYouMail.categorylabel": "Thank You Mail",
   "categories.thankYouMail.description": "Write an email to thank a customer or a prospect, starting with a few words.",
   "categories.thankYouMail.placeholder": "Artificial intelligence software",
-  "categories.thankYouMail.labelInput1": "What did you discuss with this person?"
+  "categories.thankYouMail.labelInput1": "What did you discuss with this person?",
+  "categories.ideaRewriter.categorylabel": "Rephrase a sentence",
+  "categories.ideaRewriter.description": "Rephrase a sentence or paragraph with other words, with one click.",
+  "categories.ideaRewriter.placeholder": "Artificial intelligence software",
+  "categories.ideaRewriter.labelInput1": "What is the sentence you want to rephrase?"
 }

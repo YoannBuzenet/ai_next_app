@@ -416,6 +416,35 @@ const categoriesDefinition = {
     },
     parentCategory: "Email",
   },
+  15: {
+    inputs: [
+      {
+        name: "value",
+        maxLengthInput: 100,
+        label: {
+          id: "categories.ideaRewriter.labelInput1",
+          defaultMessage: "What is the sentence you want to rephrase?",
+        },
+        placeholder: {
+          id: "categories.ideaRewriter.placeholder",
+          defaultMessage: "Artificial intelligence software",
+        },
+        inputType: "textarea",
+      },
+    ],
+    categoryId: 15,
+    urlIcon: "/icons/image_24.png",
+    name: {
+      id: "categories.ideaRewriter.categorylabel",
+      defaultMessage: "Rephrase a sentence",
+    },
+    description: {
+      id: "categories.ideaRewriter.description",
+      defaultMessage:
+        "Rephrase a sentence or paragraph with other words, with one click.",
+    },
+    parentCategory: "Content",
+  },
 };
 
 const transformDictionnaryIntoArray = (dictionnary) => {

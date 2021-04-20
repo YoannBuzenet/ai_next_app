@@ -275,5 +275,9 @@
   "categories.thankYouMail.categorylabel": "Email de remerciement",
   "categories.thankYouMail.description": "Ecrivez un mail pour remercier un client ou un prospect, à partir de quelques mots.",
   "categories.thankYouMail.placeholder": "Logiciel d'intelligence artificielle",
-  "categories.thankYouMail.labelInput1": "De quoi aviez-vous parlé avec cette personne ?"
+  "categories.thankYouMail.labelInput1": "De quoi aviez-vous parlé avec cette personne ?",
+  "categories.ideaRewriter.categorylabel": "Reformuler une phrase",
+  "categories.ideaRewriter.description": "Reformulez une phrase ou un paragraphe avec d'autres mots, en un clic.",
+  "categories.ideaRewriter.placeholder": "Artificial intelligence software",
+  "categories.ideaRewriter.labelInput1": "Quelle est la phrase que vous souhaitez reformuler ?"
 }
