@@ -105,7 +105,7 @@
   "page.subscribeSuccess.freeAccess.youCanNowUseTheApp": "Vous pouvez utiliser l'application à loisir dans la limite de 5000 mots. En cas de besoin, n'hésitez pas à nous contacter.",
   "page.subscribeSuccess.freeAccess.followConsumption": "Pour suivre l'évolution de vos consommations, consultez l'onglet 'Mon Compte'.",
 
-  "page.paymentFailed.title": "Le paiement a écouché.",
+  "page.paymentFailed.title": "Le paiement a échoué.",
   "page.paymentFailed.head": "Paiment non effectué",
   "page.paymentFailed.paymentCanceled": "Votre paiement n'a pas eu lieu. Votre carte n'a pas été débitée.",
   "page.paymentFailed.technicalProblem": "Cela peut venir d'un problème technique. Merci de réessayer ultérieurement.",
@@ -209,6 +209,10 @@
   "footer.copyright": "© 2021 EasyFlow. Tous droits réservés.",
   "footer.termsAndConditions": "Conditions Générales de Vente",
   "footer.privacyPolicy": "Politique de confidentialité",
+
+  "general.errorHandling.error401": "Vous n'êtes plus connecté. Merci de vous reconnecter.",
+  "general.errorHandling.error403": "Vous n'avez pas accès à cette ressource.",
+  "general.errorHandling.error500": "Il y a eu une erreur. Merci de réessayer ultérieurement.",
 
   "categories.id1.categorylabel": "Description Produit",
   "categories.id1.label": "Décrivez votre produit",
