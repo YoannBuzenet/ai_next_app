@@ -263,5 +263,9 @@
   "categories.followUpEmail.categorylabel": "Mail de relance",
   "categories.followUpEmail.description": "Demandez à un prospect des nouvelles sur un sujet particulier.",
   "categories.followUpEmail.placeholder": "Notre rencontre à propos du logiciel d'intelligence artificielle dans votre entreprise",
-  "categories.followUpEmail.labelInput1": "Quel était l'objet de votre discussion avec votre prospect ?"
+  "categories.followUpEmail.labelInput1": "Quel était l'objet de votre discussion avec votre prospect ?",
+  "categories.ideaToParagraph.categorylabel": "De l'idée au paragraphe",
+  "categories.ideaToParagraph.description": "Développez une idée à partir de quelques mots.",
+  "categories.ideaToParagraph.placeholder": "Logiciel d'intelligence artificielle",
+  "categories.ideaToParagraph.labelInput1": "En quelques mots, quelle idée ou concept souhaitez-vous développer ?"
 }

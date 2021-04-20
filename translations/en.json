@@ -263,5 +263,9 @@
   "categories.followUpEmail.categorylabel": "Follow-up Email",
   "categories.followUpEmail.description": "Ask a prospect for news on a particular topic.",
   "categories.followUpEmail.placeholder": "Our meeting about artificial intelligence software for your company",
-  "categories.followUpEmail.labelInput1": "What did you talk about with your customer ?"
+  "categories.followUpEmail.labelInput1": "What did you talk about with your customer ?",
+  "categories.ideaToParagraph.categorylabel": "From idea to paragraph",
+  "categories.ideaToParagraph.description": "Develop an idea from a few words.",
+  "categories.ideaToParagraph.placeholder": "Artificial intelligence software",
+  "categories.ideaToParagraph.labelInput1": "In a few words, what idea or concept do you want to develop?"
 }

@@ -327,7 +327,36 @@ const categoriesDefinition = {
       id: "categories.followUpEmail.description",
       defaultMessage: "Ask a prospect for news on a particular topic.",
     },
-    parentCategory: "Blog",
+    parentCategory: "Email",
+  },
+  12: {
+    inputs: [
+      {
+        name: "value",
+        maxLengthInput: 100,
+        label: {
+          id: "categories.ideaToParagraph.labelInput1",
+          defaultMessage:
+            "In a few words, what idea or concept do you want to develop?",
+        },
+        placeholder: {
+          id: "categories.ideaToParagraph.placeholder",
+          defaultMessage: "Artificial intelligence software",
+        },
+        inputType: "textarea",
+      },
+    ],
+    categoryId: 12,
+    urlIcon: "/icons/image_24.png",
+    name: {
+      id: "categories.ideaToParagraph.categorylabel",
+      defaultMessage: "From idea to paragraph",
+    },
+    description: {
+      id: "categories.ideaToParagraph.description",
+      defaultMessage: "Develop an idea from a few words.",
+    },
+    parentCategory: "Content",
   },
 };
 
