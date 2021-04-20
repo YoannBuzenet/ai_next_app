@@ -236,8 +236,12 @@
   "categories.id5.description": "Présentez votre blog avec les grandes lignes.",
   "categories.id5.label": "De quoi parle votre blog ?",
   "categories.id5.placeholder": "Example : Investir dans l'immobillier",
-  "categories.id6.categorylabel": "Facebook Ads headline",
+  "categories.id6.categorylabel": "En-têtes Publicités Facebook",
   "categories.id6.description": "Créez des posts attractif qui arrêtent le scrolling et augmentent votre taux de conversion.",
   "categories.id6.placeholder": "Générez des titres de défilement pour vos publicités Facebook pour inciter les prospects à cliquer, et finalement à acheter.",
-  "categories.id6.labelInput1": "Description de votre produit"
+  "categories.id6.labelInput1": "Description de votre produit",
+  "categories.facebookPrimaryText.categorylabel": "Facebook Publicité Texte Principal",
+  "categories.facebookPrimaryText.description": "Expliquez facilement pourquoi votre annonce est pertinente pour votre utilisateur.",
+  "categories.facebookPrimaryText.placeholder": "EasyFlow est un outil de création de contenu grâce à l'intelligence artificielle.",
+  "categories.facebookPrimaryText.labelInput1": "De quoi traite votre publicité ?"
 }

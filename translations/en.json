@@ -239,5 +239,9 @@
   "categories.id6.categorylabel": "Facebook Ads headline",
   "categories.id6.description": "Create relevant stories that will engage your customers.",
   "categories.id6.placeholder": "Generate scroll-topping headlines for your Facebook Ads to get prospects to click, and ultimately buy.",
-  "categories.id6.labelInput1": "Product Description"
+  "categories.id6.labelInput1": "Product Description",
+  "categories.facebookPrimaryText.categorylabel": "Facebook Primary Text",
+  "categories.facebookPrimaryText.description": "Explain easily why your ad is relevant for your user.",
+  "categories.facebookPrimaryText.placeholder": "EasyFlow is a content creation tool using artificial intelligence.",
+  "categories.facebookPrimaryText.labelInput1": "What is your ad about ?"
 }

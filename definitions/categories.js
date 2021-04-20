@@ -69,7 +69,7 @@ const categoriesDefinition = {
       id: "categories.id2.description",
       defaultMessage: "Offer a rich and relevant presentation of your service.",
     },
-    parentCategory: "Marketing",
+    parentCategory: "Brand",
   },
   3: {
     inputs: [
@@ -150,7 +150,36 @@ const categoriesDefinition = {
       defaultMessage:
         "Generate scroll-topping headlines for your Facebook Ads to get prospects to click, and ultimately buy.",
     },
-    parentCategory: "Marketing",
+    parentCategory: "Social Networks",
+  },
+  6: {
+    inputs: [
+      {
+        name: "value",
+        maxLengthInput: 100,
+        label: {
+          id: "categories.facebookPrimaryText.labelInput1",
+          defaultMessage: "What is your ad about ?",
+        },
+        placeholder: {
+          id: "categories.facebookPrimaryText.placeholder",
+          defaultMessage:
+            "EasyFlow is a content creation tool using artificial intelligence.",
+        },
+        inputType: "textarea",
+      },
+    ],
+    categoryId: 6,
+    urlIcon: "/icons/image_24.png",
+    name: {
+      id: "categories.facebookPrimaryText.categorylabel",
+      defaultMessage: "Facebook Primary Text",
+    },
+    description: {
+      id: "categories.facebookPrimaryText.description",
+      defaultMessage: "Explain easily why your ad is relevant for your user.",
+    },
+    parentCategory: "Social Networks",
   },
 };
 
@@ -216,6 +245,19 @@ const listOfCategories = [
     parentCategory: "FacebookAds",
     urlLogo: "/icons/image_24.png",
     categoryId: 5,
+  },
+  {
+    name: {
+      id: "categories.facebookPrimaryText.categorylabel",
+      defaultMessage: "Facebook Primary Text",
+    },
+    description: {
+      id: "categories.facebookPrimaryText.description",
+      defaultMessage: "Explain easily why your ad is relevant for your user.",
+    },
+    parentCategory: "Social networks",
+    urlLogo: "/icons/image_24.png",
+    categoryId: 6,
   },
 ];
 
