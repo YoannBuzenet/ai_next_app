@@ -279,5 +279,9 @@
   "categories.ideaRewriter.categorylabel": "Rephrase a sentence",
   "categories.ideaRewriter.description": "Rephrase a sentence or paragraph with other words, with one click.",
   "categories.ideaRewriter.placeholder": "Artificial intelligence software",
-  "categories.ideaRewriter.labelInput1": "What is the sentence you want to rephrase?"
+  "categories.ideaRewriter.labelInput1": "What is the sentence you want to rephrase?",
+  "categories.keywordIntegrator.categorylabel": "Create a phrase with keywords",
+  "categories.keywordIntegrator.description": "Easily create one or more sentences that contain specific keywords.",
+  "categories.keywordIntegrator.placeholder": "Artificial intelligence software",
+  "categories.keywordIntegrator.labelInput1": "Which keywords do you want to use?"
 }

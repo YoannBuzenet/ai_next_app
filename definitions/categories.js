@@ -445,6 +445,35 @@ const categoriesDefinition = {
     },
     parentCategory: "Content",
   },
+  16: {
+    inputs: [
+      {
+        name: "value",
+        maxLengthInput: 100,
+        label: {
+          id: "categories.keywordIntegrator.labelInput1",
+          defaultMessage: "Which keywords do you want to use?",
+        },
+        placeholder: {
+          id: "categories.keywordIntegrator.placeholder",
+          defaultMessage: "Artificial intelligence software",
+        },
+        inputType: "textarea",
+      },
+    ],
+    categoryId: 16,
+    urlIcon: "/icons/image_24.png",
+    name: {
+      id: "ategories.keywordIntegrator.categorylabel",
+      defaultMessage: "Create a phrase with keywords",
+    },
+    description: {
+      id: "categories.keywordIntegrator.description",
+      defaultMessage:
+        "Easily create one or more sentences that contain specific keywords.",
+    },
+    parentCategory: "Marketing",
+  },
 };
 
 const transformDictionnaryIntoArray = (dictionnary) => {

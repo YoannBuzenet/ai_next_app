@@ -278,6 +278,10 @@
   "categories.thankYouMail.labelInput1": "De quoi aviez-vous parlé avec cette personne ?",
   "categories.ideaRewriter.categorylabel": "Reformuler une phrase",
   "categories.ideaRewriter.description": "Reformulez une phrase ou un paragraphe avec d'autres mots, en un clic.",
-  "categories.ideaRewriter.placeholder": "Artificial intelligence software",
-  "categories.ideaRewriter.labelInput1": "Quelle est la phrase que vous souhaitez reformuler ?"
+  "categories.ideaRewriter.placeholder": "EasyFlow est une entreprise proposant un logiciel web basé sur l'intelligence artificielle.",
+  "categories.ideaRewriter.labelInput1": "Quelle est la phrase que vous souhaitez reformuler ?",
+  "categories.keywordIntegrator.categorylabel": "Créez une phrase avec des mots clefs",
+  "categories.keywordIntegrator.description": "Créez facilement une ou plusieurs phrases qui contiennent des mots clefs particuliers.",
+  "categories.keywordIntegrator.placeholder": "Logiciel d'intelligence artificielle",
+  "categories.keywordIntegrator.labelInput1": "Quels mots clefs voulez-vous utiliser ?"
 }
