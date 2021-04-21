@@ -120,6 +120,12 @@
   "page.paymentFailed.contactUs": "If you have any question, contact us.",
 
   "page.contactUs.head": "Contact Us",
+  "page.contactUs.form.fullName": "Your name*",
+  "page.contactUs.form.tel": "Phone Number*",
+  "page.contactUs.form.mail": "Contact email*",
+  "page.contactUs.form.company": "Company*",
+  "page.contactUs.form.message": "Your message*",
+  "page.contactUs.form.submit.button": "Submit",
 
   "page.termsAndConditions.head.title": "Terms And Conditions",
   "page.termsAndConditions.title": "Terms and Conditions",

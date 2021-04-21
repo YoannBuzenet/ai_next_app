@@ -120,6 +120,12 @@
   "page.paymentFailed.contactUs": "Si vous avez une question, n'hésitez pas à nous contacter.",
 
   "page.contactUs.head": "Contactez-nous",
+  "page.contactUs.form.fullName": "Vos noms et prénoms*",
+  "page.contactUs.form.tel": "Téléphone*",
+  "page.contactUs.form.mail": "Email de contact*",
+  "page.contactUs.form.company": "Société*",
+  "page.contactUs.form.message": "Votre message*",
+  "page.contactUs.form.submit.button": "Envoyer",
 
   "page.termsAndConditions.head.title": "Conditions générales de vente",
   "page.termsAndConditions.title": "Conditions générales de vente",

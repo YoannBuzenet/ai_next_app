@@ -34,7 +34,6 @@ export default function Login() {
     <>
       <Head>
         <title>{translatedHead}</title>
-        <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="globalGradient">
         <div className="container">
