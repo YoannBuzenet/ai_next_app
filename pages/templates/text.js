@@ -21,10 +21,12 @@ import { FREE_LIMIT_NUMBER_OF_WORDS } from "../../config/settings";
 export async function getServerSideProps(context) {
   const session = await getSession(context);
   const isLoggedUser = UserCheck.isUserLogged(session?.user?.isLoggedUntil);
-  if (!isLoggedUser) {
+  const isSubbed = UserCheck.isUserSubscribed(session?.user?.isSubscribedUntil);
+  const isUserOnFreeAccess = session?.user?.isOnFreeAccess === 1;
+  if (!isSubbed && !isUserOnFreeAccess) {
     return {
       redirect: {
-        destination: "/",
+        destination: "/pricing",
         permanent: false,
       },
       props: {},
