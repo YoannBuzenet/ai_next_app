@@ -119,6 +119,8 @@
   "page.paymentFailed.technicalProblem": "It may be a technical problem. Please try later.",
   "page.paymentFailed.contactUs": "If you have any question, contact us.",
 
+  "page.contactUs.head": "Contact Us",
+
   "page.termsAndConditions.head.title": "Terms And Conditions",
   "page.termsAndConditions.title": "Terms and Conditions",
   "page.termsAndConditions.preambule": "Preambule",
