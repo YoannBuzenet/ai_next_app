@@ -1,5 +1,6 @@
 const axios = require("axios");
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+var Bugsnag = require("@bugsnag/js");
 
 export default async (req, res) => {
   const { priceId } = req.body;
@@ -35,6 +36,7 @@ export default async (req, res) => {
     });
   } catch (e) {
     res.status(400);
+    Bugsnag.notify(new Error(e));
     return res.send();
   }
 };

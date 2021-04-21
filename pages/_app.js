@@ -3,6 +3,9 @@ import "../styles/globals.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { useSession, Provider } from "next-auth/client";
+import Bugsnag from "@bugsnag/js";
+
+Bugsnag.start({ apiKey: process.env.BUGSNAG_KEY });
 
 function MyApp({ Component, pageProps }) {
   return (

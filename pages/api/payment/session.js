@@ -1,4 +1,5 @@
 const axios = require("axios");
+var Bugsnag = require("@bugsnag/js");
 
 export default async (req, res) => {
   const { session_id, user } = req.body;
@@ -23,6 +24,7 @@ export default async (req, res) => {
     res.status(200).send();
   } catch (e) {
     res.status(500);
+    Bugsnag.notify(new Error(e));
     console.log("error while saving", e);
     return res.send();
   }

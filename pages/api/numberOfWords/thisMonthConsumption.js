@@ -1,4 +1,5 @@
 import axios from "axios";
+import Bugsnag from "@bugsnag/js";
 
 export default async (req, res) => {
   let idUser;
@@ -19,6 +20,7 @@ export default async (req, res) => {
   try {
     res.status(200).json(apiResp.data);
   } catch (e) {
+    Bugsnag.notify(new Error(e));
     res.status(500).send();
   }
 };
