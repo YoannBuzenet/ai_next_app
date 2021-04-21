@@ -134,7 +134,7 @@ export default function template() {
               isSelected={categoryButtonSelected === "Content"}
             />
             <RoundedButton
-              name={translatedFilterEmail}]
+              name={translatedFilterEmail}
               handleClick={(e) => setCategoryButtonSelected("Email")}
               isSelected={categoryButtonSelected === "Email"}
             />
