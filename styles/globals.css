@@ -169,6 +169,10 @@ p {
   background-color: var(--darker-light-grey-background);
 }
 
+.templates {
+  padding-bottom: 4rem;
+}
+
 /* Material UI Inputs */
 .TextZone div.MuiInputBase-root {
   font-size: 1.6rem;
