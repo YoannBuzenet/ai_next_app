@@ -1,5 +1,6 @@
 const axios = require("axios");
 var Bugsnag = require("@bugsnag/js");
+Bugsnag.start({ apiKey: process.env.BUGSNAG_KEY });
 
 export default async (req, res) => {
   const { session_id, user } = req.body;

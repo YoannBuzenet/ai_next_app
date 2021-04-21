@@ -3,6 +3,7 @@ import { useState } from "react";
 import Head from "next/head";
 import { useIntl, FormattedMessage } from "react-intl";
 import { TextField } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
 
 export default function ContactUs(props) {
   const [fields, setFields] = useState({
@@ -23,6 +24,8 @@ export default function ContactUs(props) {
     e.preventDefault();
     console.log("form is submitted");
   };
+
+  const Intl = useIntl();
 
   // TRANSLATIONS
   const translatedHead = Intl.formatMessage({
@@ -50,6 +53,10 @@ export default function ContactUs(props) {
     defaultMessage: "Your message*",
   });
 
+  const useStyles = makeStyles((theme) => ({}));
+
+  const classes = useStyles();
+
   return (
     <>
       <Head>
@@ -58,42 +65,64 @@ export default function ContactUs(props) {
       <div className="container">
         <main>
           <div className={styles.coloredBackground}></div>
-          <h1>{translatedHead}</h1>
           <div className={styles.formArea}>
+            <h1>{translatedHead}</h1>
+            <div className={styles.formHeader}></div>
             <div className={styles.formContainer}>
               <form>
                 <div className={styles.field}>
                   <TextField
                     label={translatedNameLabel}
                     onChange={(e) => handleChange(e, "fullName")}
+                    className={styles.inputs}
+                    variant="outlined"
+                    value={fields.fullName}
                   />
                 </div>
                 <div className={styles.field}>
                   <TextField
                     label={translatedCompanyLabel}
                     onChange={(e) => handleChange(e, "company")}
+                    className={styles.inputs}
+                    variant="outlined"
+                    value={fields.company}
                   />
                 </div>
                 <div className={styles.field}>
                   <TextField
                     label={translatedTelLabel}
                     onChange={(e) => handleChange(e, "telephone")}
+                    className={styles.inputs}
+                    variant="outlined"
+                    value={fields.telephone}
                   />
                 </div>
                 <div className={styles.field}>
                   <TextField
                     label={translatedMailLabel}
                     onChange={(e) => handleChange(e, "mail")}
+                    className={styles.inputs}
+                    variant="outlined"
+                    value={fields.mail}
                   />
                 </div>
-                <div className={styles.field}>
-                  <TextField
-                    label={translatedMessageLabel}
-                    onChange={(e) => handleChange(e, "message")}
-                  />
+                <div className={styles.messageContainer}>
+                  <div className={styles.field}>
+                    <TextField
+                      label={translatedMessageLabel}
+                      onChange={(e) => handleChange(e, "message")}
+                      className={styles.inputs}
+                      variant="outlined"
+                      value={fields.message}
+                    />
+                  </div>
                 </div>
                 <div className={styles.buttonContainer}>
-                  <button type="submit" onClick={handleSubmit}>
+                  <button
+                    type="submit"
+                    onClick={handleSubmit}
+                    className={styles.submitButton}
+                  >
                     <FormattedMessage
                       id="page.contactUs.form.submit.button"
                       defaultMessage="Submit"
