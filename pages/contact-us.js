@@ -72,9 +72,9 @@ export default function ContactUs(props) {
               <form onSubmit={handleSubmit}>
                 <div className={styles.lineFieldContainer}>
                   <div className={styles.field}>
-                    <p className={styles.labelParagraph}>
+                    <label className={styles.labelParagraph} htmlFor="fullName">
                       {translatedNameLabel}
-                    </p>
+                    </label>
                     <TextField
                       onChange={(e) => handleChange(e, "fullName")}
                       className={styles.inputs}
@@ -82,12 +82,13 @@ export default function ContactUs(props) {
                       value={fields.fullName}
                       fullWidth
                       required
+                      id="fullName"
                     />
                   </div>
                   <div className={styles.field}>
-                    <p className={styles.labelParagraph}>
+                    <label className={styles.labelParagraph} htmlFor="company">
                       {translatedCompanyLabel}
-                    </p>
+                    </label>
                     <TextField
                       onChange={(e) => handleChange(e, "company")}
                       className={styles.inputs}
@@ -95,14 +96,18 @@ export default function ContactUs(props) {
                       value={fields.company}
                       fullWidth
                       required
+                      id="company"
                     />
                   </div>
                 </div>
                 <div className={styles.lineFieldContainer}>
                   <div className={styles.field}>
-                    <p className={styles.labelParagraph}>
+                    <label
+                      className={styles.labelParagraph}
+                      htmlFor="telephone"
+                    >
                       {translatedTelLabel}
-                    </p>
+                    </label>
                     <TextField
                       onChange={(e) => handleChange(e, "telephone")}
                       className={styles.inputs}
@@ -110,12 +115,14 @@ export default function ContactUs(props) {
                       value={fields.telephone}
                       fullWidth
                       required
+                      type="tel"
+                      id="telephone"
                     />
                   </div>
                   <div className={styles.field}>
-                    <p className={styles.labelParagraph}>
+                    <label className={styles.labelParagraph} htmlFor="mail">
                       {translatedMailLabel}
-                    </p>
+                    </label>
                     <TextField
                       onChange={(e) => handleChange(e, "mail")}
                       className={styles.inputs}
@@ -123,14 +130,16 @@ export default function ContactUs(props) {
                       value={fields.mail}
                       fullWidth
                       required
+                      type="email"
+                      id="mail"
                     />
                   </div>
                 </div>
                 <div className={styles.messageContainer}>
                   <div className={styles.messageField}>
-                    <p className={styles.labelParagraph}>
+                    <label className={styles.labelParagraph} htmlFor="message">
                       {translatedMessageLabel}
-                    </p>
+                    </label>
                     <TextField
                       onChange={(e) => handleChange(e, "message")}
                       className={styles.inputs}
@@ -140,6 +149,7 @@ export default function ContactUs(props) {
                       multiline
                       rows={10}
                       required
+                      id="message"
                     />
                   </div>
                 </div>
