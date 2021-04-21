@@ -6,12 +6,18 @@ import { TextField } from "@material-ui/core";
 
 export default function ContactUs(props) {
   const [fields, setFields] = useState({
-    company: "",
     fullName: "",
+    company: "",
     telephone: "",
     mail: "",
     message: "",
   });
+
+  const handleChange = (e, fieldName) => {
+    console.log("form changed !");
+    // switch pour controler si besoin puis
+    setFields({ ...fields, [fieldName]: e.target.value });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -51,24 +57,40 @@ export default function ContactUs(props) {
       </Head>
       <div className="container">
         <main>
+          <div className={styles.coloredBackground}></div>
           <h1>{translatedHead}</h1>
           <div className={styles.formArea}>
             <div className={styles.formContainer}>
               <form>
                 <div className={styles.field}>
-                  <TextField label={translatedNameLabel} />
+                  <TextField
+                    label={translatedNameLabel}
+                    onChange={(e) => handleChange(e, "fullName")}
+                  />
                 </div>
                 <div className={styles.field}>
-                  <TextField label={translatedCompanyLabel} />
+                  <TextField
+                    label={translatedCompanyLabel}
+                    onChange={(e) => handleChange(e, "company")}
+                  />
                 </div>
                 <div className={styles.field}>
-                  <TextField label={translatedTelLabel} />
+                  <TextField
+                    label={translatedTelLabel}
+                    onChange={(e) => handleChange(e, "telephone")}
+                  />
                 </div>
                 <div className={styles.field}>
-                  <TextField label={translatedMailLabel} />
+                  <TextField
+                    label={translatedMailLabel}
+                    onChange={(e) => handleChange(e, "mail")}
+                  />
                 </div>
                 <div className={styles.field}>
-                  <TextField label={translatedMessageLabel} />
+                  <TextField
+                    label={translatedMessageLabel}
+                    onChange={(e) => handleChange(e, "message")}
+                  />
                 </div>
                 <div className={styles.buttonContainer}>
                   <button type="submit" onClick={handleSubmit}>
