@@ -225,6 +225,7 @@
   "footer.copyright": "© 2021 EasyFlow. Tous droits réservés.",
   "footer.termsAndConditions": "Conditions Générales de Vente",
   "footer.privacyPolicy": "Politique de confidentialité",
+  "footer.contactUs": "Contactez-nous",
 
   "general.errorHandling.error401": "Vous n'êtes plus connecté. Merci de vous reconnecter.",
   "general.errorHandling.error403": "Vous n'avez pas accès à cette ressource.",
