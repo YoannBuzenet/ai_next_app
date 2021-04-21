@@ -19,6 +19,6 @@ export default async (req, res) => {
   try {
     res.status(200).json(apiResp.data);
   } catch (e) {
-    res.status(500).json(e);
+    res.status(500).send();
   }
 };
