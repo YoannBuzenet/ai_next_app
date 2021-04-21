@@ -17,7 +17,7 @@ const categoriesDefinition = {
       },
     ],
     categoryId: 1,
-    urlIcon: "/icons/productDescription.png",
+    urlIcon: "/icons/productDescription.svg",
     name: {
       id: "categories.id1.categorylabel",
       defaultMessage: "Product Description",
@@ -60,7 +60,7 @@ const categoriesDefinition = {
       },
     ],
     categoryId: 2,
-    urlIcon: "/icons/productDescription.png",
+    urlIcon: "/icons/productDescription.svg",
     name: {
       id: "categories.id2.categorylabel",
       defaultMessage: "Value Proposition",
@@ -88,7 +88,7 @@ const categoriesDefinition = {
       },
     ],
     categoryId: 3,
-    urlIcon: "/icons/blog.png",
+    urlIcon: "/icons/blog.svg",
     name: { id: "categories.id3.categorylabel", defaultMessage: "Blog Title" },
     description: {
       id: "categories.id3.description",
@@ -115,7 +115,7 @@ const categoriesDefinition = {
       },
     ],
     categoryId: 4,
-    urlIcon: "/icons/blog.png",
+    urlIcon: "/icons/blog.svg",
     name: { id: "categories.id5.categorylabel", defaultMessage: "Blog Intro" },
     description: {
       id: "categories.id5.description",
@@ -140,7 +140,7 @@ const categoriesDefinition = {
       },
     ],
     categoryId: 5,
-    urlIcon: "/icons/facebook.png",
+    urlIcon: "/icons/facebook.svg",
     name: {
       id: "categories.id6.categorylabel",
       defaultMessage: "Facebook Ads headline",
@@ -170,7 +170,7 @@ const categoriesDefinition = {
       },
     ],
     categoryId: 6,
-    urlIcon: "/icons/facebook.png",
+    urlIcon: "/icons/facebook.svg",
     name: {
       id: "categories.facebookPrimaryText.categorylabel",
       defaultMessage: "Facebook Primary Text",
@@ -199,7 +199,7 @@ const categoriesDefinition = {
       },
     ],
     categoryId: 7,
-    urlIcon: "/icons/google.png",
+    urlIcon: "/icons/google.svg",
     name: {
       id: "categories.googleHeadline.categorylabel",
       defaultMessage: "Google Headline",
@@ -229,7 +229,7 @@ const categoriesDefinition = {
       },
     ],
     categoryId: 8,
-    urlIcon: "/icons/google.png",
+    urlIcon: "/icons/google.svg",
     name: {
       id: "categories.googleDescription.categorylabel",
       defaultMessage: "Google Description",
@@ -259,7 +259,7 @@ const categoriesDefinition = {
       },
     ],
     categoryId: 9,
-    urlIcon: "/icons/Linkedin.png",
+    urlIcon: "/icons/linkedin.svg",
     name: {
       id: "categories.linkedinAdText.categorylabel",
       defaultMessage: "Linkedin Ad",
@@ -289,7 +289,7 @@ const categoriesDefinition = {
       },
     ],
     categoryId: 10,
-    urlIcon: "/icons/blog.png",
+    urlIcon: "/icons/blog.svg",
     name: {
       id: "categories.blogIdeas.categorylabel",
       defaultMessage: "Blog Post ideas",
@@ -318,7 +318,7 @@ const categoriesDefinition = {
       },
     ],
     categoryId: 11,
-    urlIcon: "/icons/email.png",
+    urlIcon: "/icons/email.svg",
     name: {
       id: "categories.followUpEmail.categorylabel",
       defaultMessage: "Follow-up Email",
@@ -347,7 +347,7 @@ const categoriesDefinition = {
       },
     ],
     categoryId: 12,
-    urlIcon: "/icons/idea.png",
+    urlIcon: "/icons/idea.svg",
     name: {
       id: "categories.ideaToParagraph.categorylabel",
       defaultMessage: "From idea to paragraph",
@@ -376,7 +376,7 @@ const categoriesDefinition = {
       },
     ],
     categoryId: 13,
-    urlIcon: "/icons/memory.png",
+    urlIcon: "/icons/memory.svg",
     name: {
       id: "categories.sharingMemories.categorylabel",
       defaultMessage: "Relatable Memory",
@@ -404,7 +404,7 @@ const categoriesDefinition = {
       },
     ],
     categoryId: 14,
-    urlIcon: "/icons/email.png",
+    urlIcon: "/icons/email.svg",
     name: {
       id: "categories.thankYouMail.categorylabel",
       defaultMessage: "Thank You Mail",
@@ -433,7 +433,7 @@ const categoriesDefinition = {
       },
     ],
     categoryId: 15,
-    urlIcon: "/icons/idea.png",
+    urlIcon: "/icons/idea.svg",
     name: {
       id: "categories.ideaRewriter.categorylabel",
       defaultMessage: "Rephrase a sentence",
@@ -462,7 +462,7 @@ const categoriesDefinition = {
       },
     ],
     categoryId: 16,
-    urlIcon: "/icons/idea.png",
+    urlIcon: "/icons/idea.svg",
     name: {
       id: "categories.keywordIntegrator.categorylabel",
       defaultMessage: "Create a phrase with keywords",
@@ -493,7 +493,7 @@ const categoriesDefinition = {
       },
     ],
     categoryId: 17,
-    urlIcon: "/icons/idea.png",
+    urlIcon: "/icons/idea.svg",
     name: {
       id: "categories.summarizeIdea.categorylabel",
       defaultMessage: "Summarize an idea",
@@ -522,7 +522,7 @@ const categoriesDefinition = {
       },
     ],
     categoryId: 18,
-    urlIcon: "/icons/idea.png",
+    urlIcon: "/icons/idea.svg",
     name: {
       id: "categories.saleArgument.categorylabel",
       defaultMessage: "Feature Highlight",
@@ -551,7 +551,7 @@ const categoriesDefinition = {
       },
     ],
     categoryId: 19,
-    urlIcon: "/icons/email.png",
+    urlIcon: "/icons/email.svg",
     name: {
       id: "categories.hookyEmailObject.categorylabel",
       defaultMessage: "Hooky Email Object",
