@@ -35,6 +35,7 @@
 .labelParagraph {
   font-size: 18px;
   margin-bottom: 10px;
+  display: block;
   color: var(--grey-text);
 }
 
@@ -45,6 +46,7 @@
 .buttonContainer {
   text-align: center;
   margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .submitButton {
