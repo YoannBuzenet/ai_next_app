@@ -44,11 +44,11 @@ export default function ContactUs(props) {
     id: "page.contactUs.form.mail",
     defaultMessage: "Contact email*",
   });
-  const translatedMessageLabel = Intl.formatMessage({
+  const translatedCompanyLabel = Intl.formatMessage({
     id: "page.contactUs.form.company",
     defaultMessage: "Company*",
   });
-  const translatedCompanyLabel = Intl.formatMessage({
+  const translatedMessageLabel = Intl.formatMessage({
     id: "page.contactUs.form.message",
     defaultMessage: "Your message*",
   });
@@ -62,67 +62,89 @@ export default function ContactUs(props) {
       <Head>
         <title>{translatedHead}</title>
       </Head>
-      <div className="container">
+      <div className="container contactUs">
         <main>
           <div className={styles.coloredBackground}></div>
           <div className={styles.formArea}>
             <h1>{translatedHead}</h1>
             <div className={styles.formHeader}></div>
             <div className={styles.formContainer}>
-              <form>
-                <div className={styles.field}>
-                  <TextField
-                    label={translatedNameLabel}
-                    onChange={(e) => handleChange(e, "fullName")}
-                    className={styles.inputs}
-                    variant="outlined"
-                    value={fields.fullName}
-                  />
+              <form onSubmit={handleSubmit}>
+                <div className={styles.lineFieldContainer}>
+                  <div className={styles.field}>
+                    <p className={styles.labelParagraph}>
+                      {translatedNameLabel}
+                    </p>
+                    <TextField
+                      onChange={(e) => handleChange(e, "fullName")}
+                      className={styles.inputs}
+                      variant="outlined"
+                      value={fields.fullName}
+                      fullWidth
+                      required
+                    />
+                  </div>
+                  <div className={styles.field}>
+                    <p className={styles.labelParagraph}>
+                      {translatedCompanyLabel}
+                    </p>
+                    <TextField
+                      onChange={(e) => handleChange(e, "company")}
+                      className={styles.inputs}
+                      variant="outlined"
+                      value={fields.company}
+                      fullWidth
+                      required
+                    />
+                  </div>
                 </div>
-                <div className={styles.field}>
-                  <TextField
-                    label={translatedCompanyLabel}
-                    onChange={(e) => handleChange(e, "company")}
-                    className={styles.inputs}
-                    variant="outlined"
-                    value={fields.company}
-                  />
-                </div>
-                <div className={styles.field}>
-                  <TextField
-                    label={translatedTelLabel}
-                    onChange={(e) => handleChange(e, "telephone")}
-                    className={styles.inputs}
-                    variant="outlined"
-                    value={fields.telephone}
-                  />
-                </div>
-                <div className={styles.field}>
-                  <TextField
-                    label={translatedMailLabel}
-                    onChange={(e) => handleChange(e, "mail")}
-                    className={styles.inputs}
-                    variant="outlined"
-                    value={fields.mail}
-                  />
+                <div className={styles.lineFieldContainer}>
+                  <div className={styles.field}>
+                    <p className={styles.labelParagraph}>
+                      {translatedTelLabel}
+                    </p>
+                    <TextField
+                      onChange={(e) => handleChange(e, "telephone")}
+                      className={styles.inputs}
+                      variant="outlined"
+                      value={fields.telephone}
+                      fullWidth
+                      required
+                    />
+                  </div>
+                  <div className={styles.field}>
+                    <p className={styles.labelParagraph}>
+                      {translatedMailLabel}
+                    </p>
+                    <TextField
+                      onChange={(e) => handleChange(e, "mail")}
+                      className={styles.inputs}
+                      variant="outlined"
+                      value={fields.mail}
+                      fullWidth
+                      required
+                    />
+                  </div>
                 </div>
                 <div className={styles.messageContainer}>
-                  <div className={styles.field}>
+                  <div className={styles.messageField}>
+                    <p className={styles.labelParagraph}>
+                      {translatedMessageLabel}
+                    </p>
                     <TextField
-                      label={translatedMessageLabel}
                       onChange={(e) => handleChange(e, "message")}
                       className={styles.inputs}
                       variant="outlined"
                       value={fields.message}
+                      fullWidth
+                      multiline
+                      rows={10}
+                      required
                     />
                   </div>
                 </div>
                 <div className={styles.buttonContainer}>
-                  <button
-                    type="submit"
-                    onClick={handleSubmit}
-                    className={styles.submitButton}
-                  >
+                  <button type="submit" className={styles.submitButton}>
                     <FormattedMessage
                       id="page.contactUs.form.submit.button"
                       defaultMessage="Submit"

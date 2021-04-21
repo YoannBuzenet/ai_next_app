@@ -8,13 +8,43 @@
   width: 80%;
   margin: auto;
   margin-top: -150px;
+  border-radius: 6px;
+  padding: 3rem;
 }
 
-.inputs {
+.formContainer {
+  width: 90%;
+  margin: auto;
+}
+
+.lineFieldContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.field {
+  width: 50%;
+  padding: 10px;
+  margin-bottom: 1rem;
+}
+
+.messageField {
+  padding: 10px;
+}
+
+.labelParagraph {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: var(--grey-text);
 }
 
 .messageContainer {
   width: 100%;
+}
+
+.buttonContainer {
+  text-align: center;
+  margin-top: 20px;
 }
 
 .submitButton {
