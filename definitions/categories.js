@@ -464,7 +464,7 @@ const categoriesDefinition = {
     categoryId: 16,
     urlIcon: "/icons/idea.png",
     name: {
-      id: "ategories.keywordIntegrator.categorylabel",
+      id: "categories.keywordIntegrator.categorylabel",
       defaultMessage: "Create a phrase with keywords",
     },
     description: {
