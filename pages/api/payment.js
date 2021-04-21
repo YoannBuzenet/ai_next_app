@@ -5,6 +5,6 @@ export default async (req, res) => {
   try {
     res.status(200).json("payment OK");
   } catch (e) {
-    res.status(500).json(e);
+    res.status(500).send();
   }
 };

@@ -35,10 +35,6 @@ export default async (req, res) => {
     });
   } catch (e) {
     res.status(400);
-    return res.send({
-      error: {
-        message: e.message,
-      },
-    });
+    return res.send();
   }
 };
