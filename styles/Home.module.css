@@ -71,6 +71,10 @@
   margin-bottom: 0;
   opacity: 0;
 }
+
+.secondArea {
+  opacity: 0;
+}
 .firstLiner {
   padding: 3rem 0;
   position: relative;
@@ -144,7 +148,6 @@
   width: 30%;
   margin: 0 1%;
   line-height: var(--line-height);
-  opacity: 0;
 }
 
 .card .cardTitle {
@@ -208,6 +211,7 @@
   top: 120%;
   transform: translate(-50%, -50%);
   border: 1px solid rgba(210, 214, 220, 0.5);
+  z-index: 5;
 }
 
 h2.punchline {
@@ -254,7 +258,6 @@ h2.punchline {
   height: 600px;
   padding-top: 35rem;
   padding-bottom: 30rem;
-  opacity: 0;
 }
 
 .fourthLiner p {

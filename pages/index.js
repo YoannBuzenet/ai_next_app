@@ -46,6 +46,108 @@ export default function Home(props) {
     }
   }, []);
 
+  useEffect(() => {
+    var options = {
+      rootMargin: "0px",
+      threshold: 0.2,
+    };
+
+    // Classic transition
+    function callback(entries) {
+      entries.filter((el) => {
+        if (el.isIntersecting) {
+          el.target.classList.add("visible");
+        }
+      });
+    }
+
+    var elementToTrigger = class ElementToTrigger {
+      constructor(observer) {
+        this.observer = observer;
+        this.init();
+      }
+
+      init() {
+        const targets = document.querySelectorAll("#animated");
+
+        targets.forEach((li) => {
+          this.observer.observe(li);
+        });
+      }
+    };
+
+    let observer = new IntersectionObserver(callback, options);
+
+    const keypoints = new elementToTrigger(observer);
+
+    // Right transition
+
+    function callbackTransitionRight(entries) {
+      entries.filter((el) => {
+        if (el.isIntersecting) {
+          el.target.classList.add("transitionRight");
+        }
+      });
+    }
+
+    var elementToTransitionRight = class ElementToTransitionRight {
+      constructor(observer) {
+        this.observer = observer;
+        this.init();
+      }
+
+      init() {
+        const targets = document.querySelectorAll("#animated-right");
+
+        targets.forEach((li) => {
+          this.observer.observe(li);
+        });
+      }
+    };
+
+    let observerTransitionRight = new IntersectionObserver(
+      callbackTransitionRight,
+      options
+    );
+
+    const keypointsTransitionRight = new elementToTransitionRight(
+      observerTransitionRight
+    );
+
+    // Left transition
+    function callbackTransitionLeft(entries) {
+      entries.filter((el) => {
+        if (el.isIntersecting) {
+          el.target.classList.add("transitionLeft");
+        }
+      });
+    }
+
+    var elementToTransitionLeft = class ElementToTransitionLeft {
+      constructor(observer) {
+        this.observer = observer;
+        this.init();
+      }
+
+      init() {
+        const targets = document.querySelectorAll("#animated-left");
+
+        targets.forEach((li) => {
+          this.observer.observe(li);
+        });
+      }
+    };
+
+    let observerTransitionLeft = new IntersectionObserver(
+      callbackTransitionLeft,
+      options
+    );
+
+    const keypointsTransitionLeft = new elementToTransitionLeft(
+      observerTransitionLeft
+    );
+  }, []);
+
   const [session, loading] = useSession();
 
   const Intl = useIntl();
@@ -63,10 +165,6 @@ export default function Home(props) {
         <title>{translatedPageTitle}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link rel="icon" href="/favicon.ico" />
-        <script
-          type="application/javascript"
-          src="/static/animationHome.js"
-        ></script>
       </Head>
 
       <main>
@@ -84,21 +182,23 @@ export default function Home(props) {
                       defaultMessage="Generate Marketing Copy in seconds"
                     />
                   </h1>
-                  <p>
-                    <FormattedMessage
-                      id="page.index.firstLiner.paragraph"
-                      defaultMessage="One click and you're in."
-                    />
-                  </p>
-                  <div className={styles.ctaMain}>
-                    <Link href="/login">
-                      <a type="button">
-                        <FormattedMessage
-                          id="page.index.firstLiner.CTA"
-                          defaultMessage="Get Started"
-                        />
-                      </a>
-                    </Link>
+                  <div className={styles.secondArea} id="animated">
+                    <p>
+                      <FormattedMessage
+                        id="page.index.firstLiner.paragraph"
+                        defaultMessage="One click and you're in."
+                      />
+                    </p>
+                    <div className={styles.ctaMain}>
+                      <Link href="/login">
+                        <a type="button">
+                          <FormattedMessage
+                            id="page.index.firstLiner.CTA"
+                            defaultMessage="Get Started"
+                          />
+                        </a>
+                      </Link>
+                    </div>
                   </div>
                 </div>
                 <div className={styles.rightContent}></div>
@@ -109,7 +209,7 @@ export default function Home(props) {
         <div className={styles.secondLiner}>
           <div className="container">
             <div className={styles.cardsContainer}>
-              <div className={styles.card} id="animated">
+              <div className={styles.card}>
                 <span className={styles.cardTitle}>
                   <FormattedMessage
                     id="page.index.firstCase.slogan"
@@ -123,7 +223,7 @@ export default function Home(props) {
                   />
                 </span>
               </div>
-              <div className={styles.card} id="animated">
+              <div className={styles.card}>
                 <span className={styles.cardTitle}>
                   <FormattedMessage
                     id="page.index.secondCase.slogan"
@@ -137,7 +237,7 @@ export default function Home(props) {
                   />
                 </span>
               </div>
-              <div className={styles.card} id="animated">
+              <div className={styles.card}>
                 <span className={styles.cardTitle}>
                   <FormattedMessage
                     id="page.index.thirdCase.slogan"
@@ -173,8 +273,8 @@ export default function Home(props) {
             </div>
           </div>
         </div>
-        <div className={styles.fourthLiner} id="animated">
-          <div className="container">
+        <div className={styles.fourthLiner}>
+          <div className="container opacity0" id="animated">
             <h3 className={styles.punchline}>
               <FormattedMessage
                 id="page.index.fourthLiner.slogan"
@@ -307,7 +407,7 @@ export default function Home(props) {
         </div>
         <div className={styles.fifthLiner}>
           <div>
-            <div className="container">
+            <div className="container" id="animated-left">
               <p>
                 <FormattedMessage
                   id="page.index.fifthLiner.title"
@@ -315,14 +415,16 @@ export default function Home(props) {
                 />
               </p>
             </div>
-            <Link href="/login">
-              <a className={styles.CTAButton}>
-                <FormattedMessage
-                  id="page.index.fifthLiner.button.title"
-                  defaultMessage="Get Started"
-                />
-              </a>
-            </Link>
+            <div id="animated-right">
+              <Link href="/login">
+                <a className={styles.CTAButton}>
+                  <FormattedMessage
+                    id="page.index.fifthLiner.button.title"
+                    defaultMessage="Get Started"
+                  />
+                </a>
+              </Link>
+            </div>
           </div>
         </div>
       </main>
