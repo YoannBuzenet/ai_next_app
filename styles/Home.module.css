@@ -144,6 +144,7 @@
   width: 30%;
   margin: 0 1%;
   line-height: var(--line-height);
+  opacity: 0;
 }
 
 .card .cardTitle {
@@ -151,10 +152,9 @@
   font-weight: bold;
   margin-bottom: 1rem;
   font-size: 2.4rem;
-  opacity: 0;
 }
 
-.card .cardTitle.visible {
+.card.visible {
   animation: KeyFadeIn 600ms ease-in forwards !important;
 }
 
@@ -254,6 +254,7 @@ h2.punchline {
   height: 600px;
   padding-top: 35rem;
   padding-bottom: 30rem;
+  opacity: 0;
 }
 
 .fourthLiner p {

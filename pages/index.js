@@ -109,8 +109,8 @@ export default function Home(props) {
         <div className={styles.secondLiner}>
           <div className="container">
             <div className={styles.cardsContainer}>
-              <div className={styles.card}>
-                <span className={styles.cardTitle} id="animated">
+              <div className={styles.card} id="animated">
+                <span className={styles.cardTitle}>
                   <FormattedMessage
                     id="page.index.firstCase.slogan"
                     defaultMessage="Choose your category"
@@ -123,8 +123,8 @@ export default function Home(props) {
                   />
                 </span>
               </div>
-              <div className={styles.card}>
-                <span className={styles.cardTitle} id="animated">
+              <div className={styles.card} id="animated">
+                <span className={styles.cardTitle}>
                   <FormattedMessage
                     id="page.index.secondCase.slogan"
                     defaultMessage="Give it a few words"
@@ -133,12 +133,12 @@ export default function Home(props) {
                 <span>
                   <FormattedMessage
                     id="page.index.secondCase.explaination"
-                    defaultMessage="Give it a few words"
+                    defaultMessage="What do you want the AI to talk about ? Give it a few words to show it the way."
                   />
                 </span>
               </div>
-              <div className={styles.card}>
-                <span className={styles.cardTitle} id="animated">
+              <div className={styles.card} id="animated">
+                <span className={styles.cardTitle}>
                   <FormattedMessage
                     id="page.index.thirdCase.slogan"
                     defaultMessage="And just click"
@@ -173,9 +173,9 @@ export default function Home(props) {
             </div>
           </div>
         </div>
-        <div className={styles.fourthLiner}>
+        <div className={styles.fourthLiner} id="animated">
           <div className="container">
-            <h3 className={styles.punchline} id="animated">
+            <h3 className={styles.punchline}>
               <FormattedMessage
                 id="page.index.fourthLiner.slogan"
                 defaultMessage="Just generate and use it"
