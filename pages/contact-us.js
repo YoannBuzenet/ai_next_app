@@ -1,10 +1,11 @@
 import styles from "../styles/ContactUs.module.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import Head from "next/head";
 import { useIntl, FormattedMessage } from "react-intl";
 import { TextField } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import axios from "axios";
+import notificationContext from "../contexts/notificationsContext";
 
 export default function ContactUs(props) {
   const [fields, setFields] = useState({
@@ -14,6 +15,10 @@ export default function ContactUs(props) {
     mail: "",
     message: "",
   });
+
+  const { notificationInfo, setNotificationInfo } = useContext(
+    notificationContext
+  );
 
   useEffect(() => {
     const script = document.createElement("script");
@@ -29,26 +34,6 @@ export default function ContactUs(props) {
     console.log("form changed !");
     // switch pour controler si besoin puis
     setFields({ ...fields, [fieldName]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    grecaptcha.ready(function () {
-      grecaptcha
-        .execute(process.env.NEXT_PUBLIC_GOOGLE_CLIENTSIDE_RECAPTCHA_KEY, {
-          action: "form_submission",
-        })
-        .then(function (token) {
-          // console.log(token);
-          //Adding token to state
-          fields["token"] = token;
-          axios
-            .post("api/mail/contact-us", fields)
-            .then((respServer) => setIsPopUpDisplayed(true))
-            .catch((error) => console.log(error));
-        });
-    });
-    console.log("form is submitted");
   };
 
   const Intl = useIntl();
@@ -78,6 +63,64 @@ export default function ContactUs(props) {
     id: "page.contactUs.form.message",
     defaultMessage: "Your message*",
   });
+
+  const translatedMessageSuccess = Intl.formatMessage({
+    id: "page.contactUs.form.notification.success",
+    defaultMessage:
+      "Your message has been sent. We will get back to you as soon as possible.",
+  });
+  const translatedMessageFailure = Intl.formatMessage({
+    id: "page.contactUs.form.notification.failure",
+    defaultMessage:
+      "Your message could not be sent for technical reasons. Please try again later.",
+  });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    grecaptcha.ready(function () {
+      grecaptcha
+        .execute(process.env.NEXT_PUBLIC_GOOGLE_CLIENTSIDE_RECAPTCHA_KEY, {
+          action: "form_submission",
+        })
+        .then(function (token) {
+          // console.log(token);
+          //Adding token to state
+          fields["token"] = token;
+          axios
+            .post("api/mail/contact-us", fields)
+            .then((respServer) => {
+              setNotificationInfo({
+                ...notificationInfo,
+                alert: {
+                  ...notificationInfo.alert,
+                  message: translatedMessageSuccess,
+                  severity: "success",
+                },
+                snackbar: {
+                  ...notificationInfo.snackbar,
+                  isDisplayed: true,
+                },
+              });
+            })
+            .catch((error) => {
+              console.log(error);
+              setNotificationInfo({
+                ...notificationInfo,
+                alert: {
+                  ...notificationInfo.alert,
+                  message: translatedMessageFailure,
+                  severity: "error",
+                },
+                snackbar: {
+                  ...notificationInfo.snackbar,
+                  isDisplayed: true,
+                },
+              });
+            });
+        });
+    });
+    console.log("form is submitted");
+  };
 
   const useStyles = makeStyles((theme) => ({}));
 
