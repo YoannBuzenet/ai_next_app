@@ -47,104 +47,66 @@ export default function Home(props) {
   }, []);
 
   useEffect(() => {
+    var elementToTrigger = class ElementToTrigger {
+      constructor(observer, id) {
+        this.observer = observer;
+        this.id = id;
+        this.init();
+      }
+
+      init() {
+        const targets = document.querySelectorAll(this.id);
+
+        targets.forEach((li) => {
+          this.observer.observe(li);
+        });
+      }
+    };
+
     var options = {
       rootMargin: "0px",
       threshold: 0.2,
     };
 
     // Classic transition
-    function callback(entries) {
+
+    function callback(entries, classToAdd) {
       entries.filter((el) => {
         if (el.isIntersecting) {
-          el.target.classList.add("visible");
+          el.target.classList.add(classToAdd);
         }
       });
     }
 
-    var elementToTrigger = class ElementToTrigger {
-      constructor(observer) {
-        this.observer = observer;
-        this.init();
-      }
+    let observer = new IntersectionObserver(
+      (entries) => callback(entries, "visible"),
+      options
+    );
 
-      init() {
-        const targets = document.querySelectorAll("#animated");
-
-        targets.forEach((li) => {
-          this.observer.observe(li);
-        });
-      }
-    };
-
-    let observer = new IntersectionObserver(callback, options);
-
-    const keypoints = new elementToTrigger(observer);
+    const keypoints = new elementToTrigger(observer, "#animated");
 
     // Right transition
 
-    function callbackTransitionRight(entries) {
-      entries.filter((el) => {
-        if (el.isIntersecting) {
-          el.target.classList.add("transitionRight");
-        }
-      });
-    }
-
-    var elementToTransitionRight = class ElementToTransitionRight {
-      constructor(observer) {
-        this.observer = observer;
-        this.init();
-      }
-
-      init() {
-        const targets = document.querySelectorAll("#animated-right");
-
-        targets.forEach((li) => {
-          this.observer.observe(li);
-        });
-      }
-    };
-
     let observerTransitionRight = new IntersectionObserver(
-      callbackTransitionRight,
+      (entries) => callback(entries, "transitionRight"),
       options
     );
 
-    const keypointsTransitionRight = new elementToTransitionRight(
-      observerTransitionRight
+    const keypointsTransitionRight = new elementToTrigger(
+      observerTransitionRight,
+      "#animated-right"
     );
 
     // Left transition
-    function callbackTransitionLeft(entries) {
-      entries.filter((el) => {
-        if (el.isIntersecting) {
-          el.target.classList.add("transitionLeft");
-        }
-      });
-    }
-
-    var elementToTransitionLeft = class ElementToTransitionLeft {
-      constructor(observer) {
-        this.observer = observer;
-        this.init();
-      }
-
-      init() {
-        const targets = document.querySelectorAll("#animated-left");
-
-        targets.forEach((li) => {
-          this.observer.observe(li);
-        });
-      }
-    };
 
     let observerTransitionLeft = new IntersectionObserver(
-      callbackTransitionLeft,
+      (entries) => callback(entries, "transitionLeft"),
       options
     );
 
-    const keypointsTransitionLeft = new elementToTransitionLeft(
-      observerTransitionLeft
+    const keypointsTransitionLeft = new elementToTrigger(
+      observerTransitionLeft,
+      "#animated-left"
     );
   }, []);
 
