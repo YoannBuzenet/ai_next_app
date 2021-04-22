@@ -14,6 +14,16 @@ export default function ContactUs(props) {
     message: "",
   });
 
+  useEffect(() => {
+    const script = document.createElement("script");
+
+    script.src =
+      "https://www.google.com/recaptcha/api.js?render=" +
+      process.env.NEXT_PUBLIC_CLIENTSIDE_RECAPTCHA_KEY;
+    script.async = true;
+    document.body.appendChild(script);
+  }, []);
+
   const handleChange = (e, fieldName) => {
     console.log("form changed !");
     // switch pour controler si besoin puis
@@ -22,6 +32,21 @@ export default function ContactUs(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    grecaptcha.ready(function () {
+      grecaptcha
+        .execute(process.env.NEXT_PUBLIC_CLIENTSIDE_RECAPTCHA_KEY, {
+          action: "form_submission",
+        })
+        .then(function (token) {
+          console.log(token);
+          //Adding token to state
+          formData["token"] = token;
+          axios
+            .post("api/mail/contact-us", formData)
+            .then((respServer) => setIsPopUpDisplayed(true))
+            .catch((error) => console.log(error));
+        });
+    });
     console.log("form is submitted");
   };
 
