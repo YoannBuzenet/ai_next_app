@@ -119,6 +119,14 @@
   "page.paymentFailed.technicalProblem": "It may be a technical problem. Please try later.",
   "page.paymentFailed.contactUs": "If you have any question, contact us.",
 
+  "page.contactUs.head": "Contact Us",
+  "page.contactUs.form.fullName": "Your name*",
+  "page.contactUs.form.tel": "Phone Number*",
+  "page.contactUs.form.mail": "Contact email*",
+  "page.contactUs.form.company": "Company*",
+  "page.contactUs.form.message": "Your message*",
+  "page.contactUs.form.submit.button": "Submit",
+
   "page.termsAndConditions.head.title": "Terms And Conditions",
   "page.termsAndConditions.title": "Terms and Conditions",
   "page.termsAndConditions.preambule": "Preambule",
@@ -217,6 +225,7 @@
   "footer.copyright": "© 2021 EasyFlow, Inc. All rights reserved.",
   "footer.termsAndConditions": "Terms and Conditions",
   "footer.privacyPolicy": "Privacy Policy",
+  "footer.contactUs": "Contact Us",
 
   "general.errorHandling.error401": "You are not logged anymore. Please log again.",
   "general.errorHandling.error403": "You don't have access to this ressource.",

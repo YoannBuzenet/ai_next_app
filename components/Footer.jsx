@@ -28,6 +28,16 @@ const Footer = () => {
                 </a>
               </Link>
             </p>
+            <p>
+              <Link href="/contact-us">
+                <a>
+                  <FormattedMessage
+                    id="footer.contactUs"
+                    defaultMessage="Contact Us"
+                  />
+                </a>
+              </Link>
+            </p>
           </div>
           <div>
             <p>

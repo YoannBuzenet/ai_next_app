@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "start:p:80": "next start -p 80"
   },
   "dependencies": {
     "@bugsnag/js": "^7.9.2",

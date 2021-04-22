@@ -219,6 +219,19 @@ label + .MuiInput-formControl {
   height: 5px !important;
 }
 
+/* Contact Us Field */
+
+input.MuiInputBase-input.MuiOutlinedInput-input {
+  font-size: 20px;
+}
+
+.contactUs .MuiTextField-root label.MuiFormLabel-root.MuiInputLabel-root,
+.contactUs
+  .MuiInputBase-input.MuiOutlinedInput-input.MuiInputBase-inputMultiline.MuiOutlinedInput-inputMultiline {
+  line-height: 24px;
+  font-size: 16px;
+}
+
 @media only screen and (max-width: 1024px) {
   .container {
     width: 80%;
