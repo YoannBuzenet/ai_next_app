@@ -68,8 +68,6 @@ export default function Home(props) {
       threshold: 0.2,
     };
 
-    // Classic transition
-
     function callback(entries, classToAdd) {
       entries.filter((el) => {
         if (el.isIntersecting) {
@@ -77,6 +75,8 @@ export default function Home(props) {
         }
       });
     }
+
+    // Classic transition
 
     let observer = new IntersectionObserver(
       (entries) => callback(entries, "visible"),
@@ -108,6 +108,12 @@ export default function Home(props) {
       observerTransitionLeft,
       "#animated-left"
     );
+
+    return () => {
+      keypoints = null;
+      keypointsTransitionLeft = null;
+      keypointsTransitionRight = null;
+    };
   }, []);
 
   const [session, loading] = useSession();
