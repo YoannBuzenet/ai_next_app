@@ -89,6 +89,7 @@
   "page.pricing.Perfectforteams": "Perfect for teams",
   "page.pricing.Custom": "Custom",
   "page.pricing.option5000Free": "5,000 free words",
+  "page.pricing.option10000Free": "10,000 free words",
   "page.pricing.mailSupport": "24/7 email support",
   "page.pricing.accessAllCategories": "Access to all categories",
   "page.pricing.50000words": "50,000 words/month",
@@ -198,6 +199,7 @@
   "compo.heartWorkPlace.loading.computerAreWorking": "Our computers are working for you !",
   "compo.heartWorkPlace.loading.proTipsAddMoreWords": "Protip to get better results : try adding more words",
 
+  "compo.text.head.title": "Let's get creative !",
   "compo.text.button.generateAIContent": "Generate AI Content",
   "compo.text.noResults": "Results will be displayed here.",
   "compo.text.numberOfOutputs": "Outputs",

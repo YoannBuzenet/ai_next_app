@@ -130,6 +130,7 @@ export default function ContactUs(props) {
     <>
       <Head>
         <title>{translatedHead}</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <div className="container contactUs">
         <main>

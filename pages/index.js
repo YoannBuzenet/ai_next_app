@@ -57,13 +57,16 @@ export default function Home(props) {
 
   console.log("session", session);
 
-  //todo -> need a favicon
-
   return (
     <>
       <Head>
         <title>{translatedPageTitle}</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link rel="icon" href="/favicon.ico" />
+        <script
+          type="application/javascript"
+          src="/static/animationHome.js"
+        ></script>
       </Head>
 
       <main>
@@ -107,7 +110,7 @@ export default function Home(props) {
           <div className="container">
             <div className={styles.cardsContainer}>
               <div className={styles.card}>
-                <span className={styles.cardTitle}>
+                <span className={styles.cardTitle} id="test">
                   <FormattedMessage
                     id="page.index.firstCase.slogan"
                     defaultMessage="Choose your category"
@@ -120,7 +123,7 @@ export default function Home(props) {
                   />
                 </span>
               </div>
-              <div className={styles.card}>
+              <div className={styles.card} id="test">
                 <span className={styles.cardTitle}>
                   <FormattedMessage
                     id="page.index.secondCase.slogan"
@@ -172,7 +175,7 @@ export default function Home(props) {
         </div>
         <div className={styles.fourthLiner}>
           <div className="container">
-            <h3 className={styles.punchline}>
+            <h3 className={styles.punchline} id="test">
               <FormattedMessage
                 id="page.index.fourthLiner.slogan"
                 defaultMessage="Just generate and use it"

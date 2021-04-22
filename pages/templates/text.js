@@ -17,6 +17,7 @@ import CircularIndeterminate from "../../components/Loader";
 import SimpleSelect from "../../components/Base/Select";
 import UserCheck from "../../services/userCheck";
 import { FREE_LIMIT_NUMBER_OF_WORDS } from "../../config/settings";
+import Head from "next/head";
 
 export async function getServerSideProps(context) {
   const session = await getSession(context);
@@ -88,6 +89,11 @@ export default function Text() {
     id: "compo.text.AllAIoutputFiltered",
     defaultMessage:
       "All AI results have been filtered. This happens when inappropriate inputs are entered. Please ensure that you include politically correct content. Any abuse may lead to the account being closed.",
+  });
+
+  const translatedHead = Intl.formatMessage({
+    id: "compo.text.head.title",
+    defaultMessage: "Let's get creative !",
   });
 
   useEffect(() => {
@@ -270,82 +276,87 @@ export default function Text() {
 
   const classes = useStyles();
   return (
-    <div className="heightContainer">
-      <div className="container80 TextZone">
-        <div className={styles.headlineContainer}>
-          <div className={styles.pictureContainer}>
-            <div className={styles.logoBackground}>
-              <img src={categoryObject.urlIcon} className={styles.pictures} />
+    <>
+      <Head>
+        <title>{translatedHead}</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
+      <div className="heightContainer">
+        <div className="container80 TextZone">
+          <div className={styles.headlineContainer}>
+            <div className={styles.pictureContainer}>
+              <div className={styles.logoBackground}>
+                <img src={categoryObject.urlIcon} className={styles.pictures} />
+              </div>
+            </div>
+            <div className={styles.headlineText}>
+              <p className={styles.headlineTitle}>
+                <FormattedMessage
+                  id={categoryObject.name.id}
+                  defaultMessage={categoryObject.name.defaultMessage}
+                />
+              </p>
+              <p className={styles.headlineDescription}>
+                <FormattedMessage
+                  id={categoryObject.description.id}
+                  defaultMessage={categoryObject.description.defaultMessage}
+                />
+              </p>
             </div>
           </div>
-          <div className={styles.headlineText}>
-            <p className={styles.headlineTitle}>
-              <FormattedMessage
-                id={categoryObject.name.id}
-                defaultMessage={categoryObject.name.defaultMessage}
-              />
-            </p>
-            <p className={styles.headlineDescription}>
-              <FormattedMessage
-                id={categoryObject.description.id}
-                defaultMessage={categoryObject.description.defaultMessage}
-              />
-            </p>
-          </div>
-        </div>
-        <div className={styles.textGeneratorContainer}>
-          <div className={styles.leftDiv}>
-            {
-              <div className={styles.formContainer}>
-                {categoryObject.inputs.map((input, index) => {
-                  const translatedLabel = intl.formatMessage({
-                    id: input.label.id,
-                    defaultMessage: input.label.defaultMessage,
-                  });
-                  const translatedPlaceholder = intl.formatMessage({
-                    id: input.placeholder.id,
-                    defaultMessage: input.placeholder.defaultMessage,
-                  });
+          <div className={styles.textGeneratorContainer}>
+            <div className={styles.leftDiv}>
+              {
+                <div className={styles.formContainer}>
+                  {categoryObject.inputs.map((input, index) => {
+                    const translatedLabel = intl.formatMessage({
+                      id: input.label.id,
+                      defaultMessage: input.label.defaultMessage,
+                    });
+                    const translatedPlaceholder = intl.formatMessage({
+                      id: input.placeholder.id,
+                      defaultMessage: input.placeholder.defaultMessage,
+                    });
 
-                  return (
-                    <div key={index} className={styles.oneInput}>
-                      <div className={styles.lineAboveText}>
-                        <p>{translatedLabel}</p>
-                        <p className={styles.counter}>
-                          {userInputs?.[input.name]?.length || 0}/
-                          {input.maxLengthInput}
-                        </p>
+                    return (
+                      <div key={index} className={styles.oneInput}>
+                        <div className={styles.lineAboveText}>
+                          <p>{translatedLabel}</p>
+                          <p className={styles.counter}>
+                            {userInputs?.[input.name]?.length || 0}/
+                            {input.maxLengthInput}
+                          </p>
+                        </div>
+                        <TextField
+                          className="inputUserTextGeneration"
+                          InputProps={{ styles: { fontSize: 20 } }}
+                          placeholder={translatedPlaceholder}
+                          value={userInputs?.[input.name] || ""}
+                          onChange={(e) => handleChangeInputs(e, input)}
+                          fullWidth
+                          variant="outlined"
+                          multiline={
+                            input.inputType === "textarea" ? true : false
+                          }
+                          rows={input.inputType === "textarea" ? 5 : 2}
+                        />
                       </div>
-                      <TextField
-                        className="inputUserTextGeneration"
-                        InputProps={{ styles: { fontSize: 20 } }}
-                        placeholder={translatedPlaceholder}
-                        value={userInputs?.[input.name] || ""}
-                        onChange={(e) => handleChangeInputs(e, input)}
-                        fullWidth
-                        variant="outlined"
-                        multiline={
-                          input.inputType === "textarea" ? true : false
-                        }
-                        rows={input.inputType === "textarea" ? 5 : 2}
+                    );
+                  })}
+                  <div className={styles.spaceContainer}></div>
+                  <div className={styles.buttonContainer}>
+                    <div className="selectContainer">
+                      <SimpleSelect
+                        handleChange={passLangSelectedToUserContext}
+                        listToDisplay={[
+                          { value: "en-US", name: translatedEnglishName },
+                          { value: "fr-FR", name: translatedFrenchName },
+                        ]}
+                        value={userContext.langSelected}
+                        label={translatedLabelName}
                       />
                     </div>
-                  );
-                })}
-                <div className={styles.spaceContainer}></div>
-                <div className={styles.buttonContainer}>
-                  <div className="selectContainer">
-                    <SimpleSelect
-                      handleChange={passLangSelectedToUserContext}
-                      listToDisplay={[
-                        { value: "en-US", name: translatedEnglishName },
-                        { value: "fr-FR", name: translatedFrenchName },
-                      ]}
-                      value={userContext.langSelected}
-                      label={translatedLabelName}
-                    />
-                  </div>
-                  {/* <div
+                    {/* <div
                     className="outputContainer"
                     style={{ position: "relative" }}
                   >
@@ -371,98 +382,99 @@ export default function Text() {
                       value={outputNumber}
                     />
                   </div> */}
-                  <div className="selectContainer">
-                    <SimpleSelect
-                      id="outlined-basic"
-                      size="small"
-                      listToDisplay={[
-                        { value: 1, name: 1 },
-                        { value: 2, name: 2 },
-                        { value: 3, name: 3 },
-                      ]}
-                      label={translatedOutPutLabels}
-                      handleChange={handleOuputNumber}
-                      value={outputNumber}
-                    />
-                  </div>
+                    <div className="selectContainer">
+                      <SimpleSelect
+                        id="outlined-basic"
+                        size="small"
+                        listToDisplay={[
+                          { value: 1, name: 1 },
+                          { value: 2, name: 2 },
+                          { value: 3, name: 3 },
+                        ]}
+                        label={translatedOutPutLabels}
+                        handleChange={handleOuputNumber}
+                        value={outputNumber}
+                      />
+                    </div>
 
-                  {session?.user?.isOnFreeAccess === 1 &&
-                    session?.wordsTotalConsumption?.userTotalConsumption <
-                      FREE_LIMIT_NUMBER_OF_WORDS && (
-                      <div>
-                        <Button
-                          onClick={(e) => sendDataToBackEnd()}
-                          className={classes.button}
-                          variant="contained"
-                          size="small"
-                          endIcon={<ArrowRightAltIcon />}
-                        >
-                          <FormattedMessage
-                            id="compo.text.button.generateAIContent"
-                            defaultMessage="Generate AI Content"
-                          />
-                        </Button>
-                      </div>
-                    )}
-                  {session?.user?.isOnFreeAccess === 1 &&
-                    session?.wordsTotalConsumption?.userTotalConsumption >
-                      FREE_LIMIT_NUMBER_OF_WORDS && (
-                      <div>
-                        <Button
-                          onClick={(e) => sendDataToBackEnd()}
-                          className={classes.button}
-                          variant="contained"
-                          size="small"
-                          disabled
-                        >
-                          <FormattedMessage
-                            id="compo.text.quotaReached"
-                            defaultMessage="Free Quota limit reached"
-                          />
-                        </Button>
-                      </div>
-                    )}
+                    {session?.user?.isOnFreeAccess === 1 &&
+                      session?.wordsTotalConsumption?.userTotalConsumption <
+                        FREE_LIMIT_NUMBER_OF_WORDS && (
+                        <div>
+                          <Button
+                            onClick={(e) => sendDataToBackEnd()}
+                            className={classes.button}
+                            variant="contained"
+                            size="small"
+                            endIcon={<ArrowRightAltIcon />}
+                          >
+                            <FormattedMessage
+                              id="compo.text.button.generateAIContent"
+                              defaultMessage="Generate AI Content"
+                            />
+                          </Button>
+                        </div>
+                      )}
+                    {session?.user?.isOnFreeAccess === 1 &&
+                      session?.wordsTotalConsumption?.userTotalConsumption >
+                        FREE_LIMIT_NUMBER_OF_WORDS && (
+                        <div>
+                          <Button
+                            onClick={(e) => sendDataToBackEnd()}
+                            className={classes.button}
+                            variant="contained"
+                            size="small"
+                            disabled
+                          >
+                            <FormattedMessage
+                              id="compo.text.quotaReached"
+                              defaultMessage="Free Quota limit reached"
+                            />
+                          </Button>
+                        </div>
+                      )}
+                  </div>
                 </div>
-              </div>
-            }
-          </div>
-          <div className={styles.rightDiv}>
-            {isLoadingAPIResults && (
-              <div className="global-white-background marginTop20">
-                <div className={styles.loaderContainer}>
-                  <div className={styles.loaderElements}>
-                    <CircularIndeterminate size={50} />
-                    <div className={styles.loaderParagraphs}>
-                      <p>
-                        <FormattedMessage
-                          id="compo.heartWorkPlace.loading.pleaseWait"
-                          defaultMessage="Loading ..."
-                        />
-                      </p>
+              }
+            </div>
+            <div className={styles.rightDiv}>
+              {isLoadingAPIResults && (
+                <div className="global-white-background marginTop20">
+                  <div className={styles.loaderContainer}>
+                    <div className={styles.loaderElements}>
+                      <CircularIndeterminate size={50} />
+                      <div className={styles.loaderParagraphs}>
+                        <p>
+                          <FormattedMessage
+                            id="compo.heartWorkPlace.loading.pleaseWait"
+                            defaultMessage="Loading ..."
+                          />
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            )}
-            {!isLoadingAPIResults && AIResults.length === 0 && (
-              <div>
-                <p className={styles.noResults}>
-                  <FormattedMessage
-                    id="compo.text.noResults"
-                    defaultMessage="Results will be displayed here."
-                  />
-                </p>
-              </div>
-            )}
-            {AIResults.map((result) => (
-              <AIResultV2
-                currentText={result.currentText}
-                timeSinceGeneration={result.date}
-              />
-            ))}
+              )}
+              {!isLoadingAPIResults && AIResults.length === 0 && (
+                <div>
+                  <p className={styles.noResults}>
+                    <FormattedMessage
+                      id="compo.text.noResults"
+                      defaultMessage="Results will be displayed here."
+                    />
+                  </p>
+                </div>
+              )}
+              {AIResults.map((result) => (
+                <AIResultV2
+                  currentText={result.currentText}
+                  timeSinceGeneration={result.date}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }

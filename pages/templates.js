@@ -92,7 +92,7 @@ export default function template() {
     <>
       <Head>
         <title>{translatedPageTitle}</title>
-        <link rel="icon" href="/favicon.ico" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <div className="genericBackground templates">
         <div className="container80">

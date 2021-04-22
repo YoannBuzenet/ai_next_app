@@ -89,6 +89,7 @@
   "page.pricing.Perfectforteams": "Parfait pour les équipes",
   "page.pricing.Custom": "Sur Mesure",
   "page.pricing.option5000Free": "5 000 mots gratuits",
+  "page.pricing.option10000Free": "10 000 mots gratuits",
   "page.pricing.mailSupport": "Support par email 24/7",
   "page.pricing.accessAllCategories": "Accès à toutes les catégories",
   "page.pricing.50000words": "50 000 mots par mois",
@@ -198,6 +199,7 @@
   "compo.heartWorkPlace.loading.computerAreWorking": "L'IA prépare le contenu...",
   "compo.heartWorkPlace.loading.proTipsAddMoreWords": "Astuce pour de meilleurs résultats : essayez d'ajouter plus de mots",
 
+  "compo.text.head.title": "Soyons créatifs !",
   "compo.text.button.generateAIContent": "Génerer du contenu avec l'IA",
   "compo.text.noResults": "Les résultats s'afficheront ici.",
   "compo.text.numberOfOutputs": "Résultats",

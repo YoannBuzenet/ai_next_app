@@ -168,6 +168,7 @@ const Pricing = () => {
     <>
       <Head>
         <title>{translatedHead}</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <script type="text/javascript" src="https://js.stripe.com/v3/"></script>
       </Head>
       <div className="pricing">
@@ -245,8 +246,8 @@ const Pricing = () => {
                   </div>
                   <div className={styles.optionsContainer}>
                     <Option
-                      idOptionLabel="page.pricing.option5000Free"
-                      defaultOptionLabel="5,000 free words"
+                      idOptionLabel="page.pricing.option10000Free"
+                      defaultOptionLabel="10,000 free words"
                     />
                     <Option
                       idOptionLabel="page.pricing.accessAllCategories"
@@ -359,7 +360,7 @@ const Pricing = () => {
                         </span>
                       )}
                       {!isAnnual && (
-                        <span className={styles.priceNumber}>45€</span>
+                        <span className={styles.priceNumber}>39€</span>
                       )}
                     </div>
                     <div className={styles.subprice}>
