@@ -57,13 +57,16 @@ export default function Home(props) {
 
   console.log("session", session);
 
-  //todo -> need a favicon
-
   return (
     <>
       <Head>
         <title>{translatedPageTitle}</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link rel="icon" href="/favicon.ico" />
+        <script
+          type="application/javascript"
+          src="/static/animationHome.js"
+        ></script>
       </Head>
 
       <main>
@@ -75,7 +78,7 @@ export default function Home(props) {
               </div>
               <div className={styles.mainTitle}>
                 <div className={styles.leftContent}>
-                  <h1 className={styles.mainPunchline}>
+                  <h1 className={styles.mainPunchline} id="animated">
                     <FormattedMessage
                       id="page.index.firstLiner.punchline"
                       defaultMessage="Generate Marketing Copy in seconds"
@@ -106,7 +109,7 @@ export default function Home(props) {
         <div className={styles.secondLiner}>
           <div className="container">
             <div className={styles.cardsContainer}>
-              <div className={styles.card}>
+              <div className={styles.card} id="animated">
                 <span className={styles.cardTitle}>
                   <FormattedMessage
                     id="page.index.firstCase.slogan"
@@ -120,7 +123,7 @@ export default function Home(props) {
                   />
                 </span>
               </div>
-              <div className={styles.card}>
+              <div className={styles.card} id="animated">
                 <span className={styles.cardTitle}>
                   <FormattedMessage
                     id="page.index.secondCase.slogan"
@@ -130,11 +133,11 @@ export default function Home(props) {
                 <span>
                   <FormattedMessage
                     id="page.index.secondCase.explaination"
-                    defaultMessage="Give it a few words"
+                    defaultMessage="What do you want the AI to talk about ? Give it a few words to show it the way."
                   />
                 </span>
               </div>
-              <div className={styles.card}>
+              <div className={styles.card} id="animated">
                 <span className={styles.cardTitle}>
                   <FormattedMessage
                     id="page.index.thirdCase.slogan"
@@ -170,7 +173,7 @@ export default function Home(props) {
             </div>
           </div>
         </div>
-        <div className={styles.fourthLiner}>
+        <div className={styles.fourthLiner} id="animated">
           <div className="container">
             <h3 className={styles.punchline}>
               <FormattedMessage
