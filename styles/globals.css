@@ -232,6 +232,13 @@ input.MuiInputBase-input.MuiOutlinedInput-input {
   font-size: 16px;
 }
 
+/* Notifications Mui CSS override */
+
+.MuiAlert-root div.MuiAlert-message {
+  line-height: 1.8;
+  font-size: 1.4rem;
+}
+
 @media only screen and (max-width: 1024px) {
   .container {
     width: 80%;

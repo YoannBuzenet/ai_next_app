@@ -126,6 +126,8 @@
   "page.contactUs.form.company": "Société*",
   "page.contactUs.form.message": "Votre message*",
   "page.contactUs.form.submit.button": "Envoyer",
+  "page.contactUs.form.notification.success": "Votre message a bien été envoyé. Nous vous recontacterons dans les plus bref délais.",
+  "page.contactUs.form.notification.failure": "Votre message n'a pas pu être envoyé pour des raisons techniques. Merci de réessayer ultérieurement.",
 
   "page.termsAndConditions.head.title": "Conditions générales de vente",
   "page.termsAndConditions.title": "Conditions générales de vente",
