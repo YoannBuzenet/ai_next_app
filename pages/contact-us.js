@@ -40,9 +40,9 @@ export default function ContactUs(props) {
         .then(function (token) {
           console.log(token);
           //Adding token to state
-          formData["token"] = token;
+          fields["token"] = token;
           axios
-            .post("api/mail/contact-us", formData)
+            .post("api/mail/contact-us", fields)
             .then((respServer) => setIsPopUpDisplayed(true))
             .catch((error) => console.log(error));
         });

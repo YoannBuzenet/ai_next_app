@@ -1,4 +1,5 @@
 import axios from "axios";
+Bugsnag.start({ apiKey: process.env.BUGSNAG_KEY });
 
 export default (req, res) => {
   let userData;
@@ -23,10 +24,12 @@ export default (req, res) => {
         if (googleResp.data.success) {
           //On envoie le mail ici
           // TO DO Yoann
+          // Add the passphrase to the call
           res.statusCode = 200;
           res.end();
         } else {
           console.log(googleResp);
+          Bugsnag.notify(new Error(googleResp));
           res.statusCode = 500;
           res.end("Message couldn't be posted.");
         }
