@@ -15,7 +15,7 @@ class ElementToTrigger {
   }
 
   init() {
-    const targets = document.querySelectorAll("#test");
+    const targets = document.querySelectorAll("#animated");
 
     targets.forEach((li) => {
       this.observer.observe(li);

@@ -78,7 +78,7 @@ export default function Home(props) {
               </div>
               <div className={styles.mainTitle}>
                 <div className={styles.leftContent}>
-                  <h1 className={styles.mainPunchline}>
+                  <h1 className={styles.mainPunchline} id="animated">
                     <FormattedMessage
                       id="page.index.firstLiner.punchline"
                       defaultMessage="Generate Marketing Copy in seconds"
@@ -110,7 +110,7 @@ export default function Home(props) {
           <div className="container">
             <div className={styles.cardsContainer}>
               <div className={styles.card}>
-                <span className={styles.cardTitle} id="test">
+                <span className={styles.cardTitle} id="animated">
                   <FormattedMessage
                     id="page.index.firstCase.slogan"
                     defaultMessage="Choose your category"
@@ -123,8 +123,8 @@ export default function Home(props) {
                   />
                 </span>
               </div>
-              <div className={styles.card} id="test">
-                <span className={styles.cardTitle}>
+              <div className={styles.card}>
+                <span className={styles.cardTitle} id="animated">
                   <FormattedMessage
                     id="page.index.secondCase.slogan"
                     defaultMessage="Give it a few words"
@@ -138,7 +138,7 @@ export default function Home(props) {
                 </span>
               </div>
               <div className={styles.card}>
-                <span className={styles.cardTitle}>
+                <span className={styles.cardTitle} id="animated">
                   <FormattedMessage
                     id="page.index.thirdCase.slogan"
                     defaultMessage="And just click"
@@ -175,7 +175,7 @@ export default function Home(props) {
         </div>
         <div className={styles.fourthLiner}>
           <div className="container">
-            <h3 className={styles.punchline} id="test">
+            <h3 className={styles.punchline} id="animated">
               <FormattedMessage
                 id="page.index.fourthLiner.slogan"
                 defaultMessage="Just generate and use it"

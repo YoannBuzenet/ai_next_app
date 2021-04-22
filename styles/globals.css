@@ -173,6 +173,22 @@ p {
   padding-bottom: 4rem;
 }
 
+.visible {
+  animation: KeyFadeIn 500ms ease-in forwards !important;
+}
+
+@keyframes KeyFadeIn {
+  0% {
+    transform: translate3D(0, 10px, 0);
+    opacity: 0;
+  }
+
+  100% {
+    transform: none;
+    opacity: 1;
+  }
+}
+
 /* Material UI Inputs */
 .TextZone div.MuiInputBase-root {
   font-size: 1.6rem;
