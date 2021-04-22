@@ -1,9 +1,10 @@
 import styles from "../styles/ContactUs.module.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Head from "next/head";
 import { useIntl, FormattedMessage } from "react-intl";
 import { TextField } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
+import axios from "axios";
 
 export default function ContactUs(props) {
   const [fields, setFields] = useState({
@@ -19,7 +20,7 @@ export default function ContactUs(props) {
 
     script.src =
       "https://www.google.com/recaptcha/api.js?render=" +
-      process.env.NEXT_PUBLIC_CLIENTSIDE_RECAPTCHA_KEY;
+      process.env.NEXT_PUBLIC_GOOGLE_CLIENTSIDE_RECAPTCHA_KEY;
     script.async = true;
     document.body.appendChild(script);
   }, []);
@@ -34,11 +35,11 @@ export default function ContactUs(props) {
     e.preventDefault();
     grecaptcha.ready(function () {
       grecaptcha
-        .execute(process.env.NEXT_PUBLIC_CLIENTSIDE_RECAPTCHA_KEY, {
+        .execute(process.env.NEXT_PUBLIC_GOOGLE_CLIENTSIDE_RECAPTCHA_KEY, {
           action: "form_submission",
         })
         .then(function (token) {
-          console.log(token);
+          // console.log(token);
           //Adding token to state
           fields["token"] = token;
           axios

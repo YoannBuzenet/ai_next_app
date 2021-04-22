@@ -1,4 +1,5 @@
 import axios from "axios";
+import Bugsnag from "@bugsnag/js";
 Bugsnag.start({ apiKey: process.env.BUGSNAG_KEY });
 
 export default (req, res) => {
@@ -14,7 +15,7 @@ export default (req, res) => {
     axios
       .post(
         "https://www.google.com/recaptcha/api/siteverify?secret=" +
-          process.env.SERVERSIDE_RECAPTCHA_KEY +
+          process.env.SERVERSIDEGOOGLE__RECAPTCHA_KEY +
           "&response=" +
           req.body.token,
         {},
@@ -22,13 +23,14 @@ export default (req, res) => {
       )
       .then((googleResp) => {
         if (googleResp.data.success) {
+          console.log("worked like a charm");
           //On envoie le mail ici
           // TO DO Yoann
           // Add the passphrase to the call
           res.statusCode = 200;
           res.end();
         } else {
-          console.log(googleResp);
+          console.log("google auth didnt work", googleResp);
           Bugsnag.notify(new Error(googleResp));
           res.statusCode = 500;
           res.end("Message couldn't be posted.");
