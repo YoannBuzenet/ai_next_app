@@ -6,7 +6,7 @@ export default (req, res) => {
   let userData;
   if (req.method === "POST") {
     userData = req.body;
-    console.log("back end next received a ping on mail endpoint", req.body);
+    // console.log("back end next received a ping on mail endpoint", req.body);
     let config = {
       headers: {
         "Content-Type": "application/x-www-form-urlencoded; charset=utf-8",
@@ -21,13 +21,27 @@ export default (req, res) => {
         {},
         config
       )
-      .then((googleResp) => {
+      .then(async (googleResp) => {
         if (googleResp.data.success) {
-          console.log("worked like a charm");
-          //On envoie le mail ici
-          // TO DO Yoann
-          // Add the passphrase to the call
-          res.statusCode = 200;
+          const objectToSend = {
+            fullName: req.body.fullName,
+            company: req.body.company,
+            telephone: req.body.telephone,
+            mail: req.body.mail,
+            message: req.body.message,
+            passphrase: process.env.FRONT_APP_PASSPHRASE,
+          };
+          try {
+            axios.post(
+              `${process.env.CENTRAL_API_URL}/api/mail/contact-us`,
+              objectToSend
+            );
+            res.statusCode = 200;
+          } catch (e) {
+            Bugsnag.notify(new Error(e));
+            res.statusCode = 500;
+          }
+
           res.end();
         } else {
           console.log("google auth didnt work", googleResp);
