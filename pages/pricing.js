@@ -172,8 +172,18 @@ const Pricing = () => {
         <script type="text/javascript" src="https://js.stripe.com/v3/"></script>
       </Head>
       <div className="pricing">
-        <div className="container">
-          <div className={styles.titleContainer}>
+        <div className={styles.titleContainer}>
+          <div className={styles.dotsContainer}></div>
+          <div className={styles.blob1Container}>
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M60.2,-22.9C64.2,-7.3,44.1,12.9,22.4,28C0.7,43.1,-22.6,53.1,-29,46.8C-35.3,40.6,-24.8,18,-17.1,-2.7C-9.5,-23.3,-4.7,-42,11.7,-45.8C28.1,-49.6,56.2,-38.5,60.2,-22.9Z"
+                transform="translate(100 100)"
+              />
+            </svg>
+          </div>
+          <div className={styles.trianglesPatternContainer}></div>
+          <div className="container">
             <h1>
               <FormattedMessage
                 id="page.pricing.title"
@@ -206,6 +216,7 @@ const Pricing = () => {
               setState={setIsAnnual}
               state={isAnnual}
               classToAdd="margin20"
+              color="white"
             />
             <p className={isAnnual ? styles.selected : styles.nonSelected}>
               <FormattedMessage
@@ -214,6 +225,8 @@ const Pricing = () => {
               />
             </p>
           </div>
+        </div>
+        <div className="container">
           <div className={styles.firstDivContainer}>
             <div className={styles.catchphrase}></div>
             <div className={styles.pricesContainer}>
@@ -235,7 +248,7 @@ const Pricing = () => {
                   </div>
                   <div className={styles.priceInfo}>
                     <div className={styles.price}>
-                      <span className={styles.priceNumber}>0€</span>
+                      <span className={styles.priceNumber}>0 €</span>
                     </div>
                     <div className={styles.subprice}>
                       <FormattedMessage
@@ -319,7 +332,7 @@ const Pricing = () => {
                 )}
               </div>
               <div className={styles.onePriceDiv2}>
-                <span
+                {/* <span
                   className={
                     intl.locale === "fr-FR"
                       ? styles.mostPopularFR
@@ -330,13 +343,13 @@ const Pricing = () => {
                     id="page.pricing.mostpopular"
                     defaultMessage="MOST POPULAR"
                   />
-                </span>
+                </span> */}
                 <div className={styles.topDivWithoutCTA}>
                   <div className={styles.topDiv}>
                     <h2>
                       <FormattedMessage
                         id="page.pricing.soloAccess"
-                        defaultMessage="Solo Access"
+                        defaultMessage="Writer Access"
                       />
                     </h2>
                     <p className={styles.subTitle}>
@@ -350,7 +363,7 @@ const Pricing = () => {
                     <div className={styles.price}>
                       {isAnnual && (
                         <span className={styles.priceNumber}>
-                          29€
+                          29 €
                           <span>
                             <FormattedMessage
                               id="page.pricing.byMonth"
@@ -360,7 +373,7 @@ const Pricing = () => {
                         </span>
                       )}
                       {!isAnnual && (
-                        <span className={styles.priceNumber}>39€</span>
+                        <span className={styles.priceNumber}>39 €</span>
                       )}
                     </div>
                     <div className={styles.subprice}>
@@ -481,10 +494,6 @@ const Pricing = () => {
                       defaultOptionLabel="Access to premium features"
                     />
                     <Option
-                      idOptionLabel="page.pricing.premiumCommunity"
-                      defaultOptionLabel="Premium Community (Coming soon)"
-                    />
-                    <Option
                       idOptionLabel="page.pricing.mailSupport"
                       defaultOptionLabel="24/7 email support"
                     />
@@ -514,7 +523,6 @@ const Pricing = () => {
                 )}
               </div>
             </div>
-            <div className={styles.spaceContainer}></div>
           </div>
         </div>
       </div>

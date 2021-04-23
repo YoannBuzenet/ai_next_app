@@ -177,7 +177,7 @@ p {
 }
 
 .pricing {
-  background-color: var(--darker-light-grey-background);
+  padding-bottom: 10rem;
 }
 
 .templates {

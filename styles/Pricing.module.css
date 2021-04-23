@@ -1,11 +1,54 @@
 .titleContainer {
+  position: relative;
   padding: 3rem 0;
   text-align: center;
+  background: var(--blue-purple-gradient);
+  color: white;
+  min-height: 400px;
+  overflow: hidden;
 }
+
+.dotsContainer {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  right: 350px;
+  background-color: transparent;
+  opacity: 0.4;
+  background-image: radial-gradient(#000000 0.9px, transparent 0.9px);
+  background-size: 18px 18px;
+}
+
+.trianglesPatternContainer {
+  position: absolute;
+  width: 108px;
+  height: 55px;
+  left: 50px;
+  top: 250px;
+  background-color: transparent;
+  opacity: 0.4;
+  background-image: linear-gradient(45deg, #000000 50%, transparent 50%);
+  background-size: 18px 18px;
+}
+.blob1Container {
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  right: -130px;
+  bottom: -200px;
+  opacity: 0.4;
+  font-size: 10rem;
+}
+
 .titleContainer h1 {
   text-align: center;
   margin: 0;
   font-size: 5rem;
+  color: white;
+  opacity: 0.7;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  font-size: 1.8rem;
 }
 
 .catchPhraseContainer {
@@ -13,12 +56,14 @@
 }
 
 .catchPhraseContainer p {
-  margin-top: 10px;
+  margin: auto;
   font-weight: 600;
+  max-width: 80%;
+  margin-top: 10px;
 }
 
 .catchPhraseContainer p:first-child {
-  font-size: 3rem;
+  font-size: 6rem;
 }
 /* .catchPhraseContainer p:last-child {
   color: var(--grey-text);
@@ -45,7 +90,7 @@
 }
 .nonSelected {
   font-weight: 300;
-  color: grey;
+  opacity: 0.4;
 }
 
 .catchphrase {
@@ -61,6 +106,13 @@
 }
 
 .firstDivContainer {
+  position: relative;
+}
+
+.svgContainer {
+  position: absolute;
+  width: 30px;
+  height: 30px;
 }
 
 .spaceContainer {
@@ -87,7 +139,7 @@
   height: 340px;
 }
 .onePriceDiv3 .topDivWithoutCTA {
-  height: 395px;
+  height: 340px;
 }
 
 div.onePriceDiv1 {
@@ -95,11 +147,20 @@ div.onePriceDiv1 {
 }
 
 div.onePriceDiv2 {
+  height: 470px;
+  margin-top: -100px;
+}
+
+div.onePriceDiv3 {
+  height: 470px;
+}
+
+/* div.onePriceDiv2 {
   position: relative;
   height: 470px;
   border: 2px solid;
   border-color: rgba(28, 100, 242, 1);
-}
+} */
 
 .mostPopularFR {
   position: absolute;
@@ -119,6 +180,7 @@ div.onePriceDiv2 {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
   font-family: "Inter", sans-serif;
+  display: none;
 }
 .mostPopularEN {
   position: absolute;
@@ -139,9 +201,6 @@ div.onePriceDiv2 {
   padding-bottom: 0.75rem;
   font-family: "Inter", sans-serif;
 }
-div.onePriceDiv3 {
-  height: 520px;
-}
 
 .pricesContainer h2 {
   margin: 0;
@@ -160,6 +219,7 @@ div.onePriceDiv3 {
 }
 
 .price .priceNumber {
+  font-weight: 700;
   font-size: 4.5rem;
 }
 
@@ -184,5 +244,10 @@ div.onePriceDiv3 {
   }
   .spaceContainer {
     height: 50px;
+  }
+  .dotsContainer,
+  .trianglesPatternContainer,
+  .blob1Container {
+    display: none;
   }
 }
