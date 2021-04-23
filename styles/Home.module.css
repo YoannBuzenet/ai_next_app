@@ -190,6 +190,15 @@
   text-align: center;
 }
 
+.thirdLinerSvgContainer {
+  position: absolute;
+  bottom: 0;
+  right: 50px;
+  height: 200px;
+  width: 350px;
+  opacity: 0;
+}
+
 .thirdLiner h2.punchline {
   max-width: 768px;
   padding-top: 5rem;
@@ -204,7 +213,7 @@
   line-height: 2.6rem;
 }
 
-.thirdLiner img {
+.thirdLineMainImage {
   position: absolute;
   width: 1000px;
   left: 50%;
@@ -223,6 +232,10 @@ h2.punchline {
 @media only screen and (max-width: 1400px) {
   .thirdLiner img {
     width: 800px;
+  }
+
+  .thirdLinerSvgContainer {
+    display: none;
   }
 }
 @media only screen and (max-width: 1024px) {

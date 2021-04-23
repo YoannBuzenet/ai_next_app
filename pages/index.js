@@ -223,6 +223,9 @@ export default function Home(props) {
           </div>
         </div>
         <div className={styles.thirdLiner}>
+          <div className={styles.thirdLinerSvgContainer} id="animated">
+            <img src="/illustrations/Business_SVG.svg" />
+          </div>
           <div className="container">
             <h2 className={styles.punchline}>
               <FormattedMessage
@@ -237,7 +240,10 @@ export default function Home(props) {
               />
             </p>
             <div>
-              <img src="/pictures/screenshots/productDescriptionEN.png" />
+              <img
+                src="/pictures/screenshots/productDescriptionEN.png"
+                className={styles.thirdLineMainImage}
+              />
             </div>
           </div>
         </div>
