@@ -91,7 +91,7 @@ export default function Text() {
       "All AI results have been filtered. This happens when inappropriate inputs are entered. Please ensure that you include politically correct content. Any abuse may lead to the account being closed.",
   });
 
-  const translatedHead = Intl.formatMessage({
+  const translatedHead = intl.formatMessage({
     id: "compo.text.head.title",
     defaultMessage: "Let's get creative !",
   });

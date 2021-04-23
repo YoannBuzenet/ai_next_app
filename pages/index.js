@@ -140,7 +140,7 @@ export default function Home(props) {
           <div className="container">
             <div className={styles.firstLiner}>
               <div className={styles.softwareImage}>
-                <img src="/pictures/screenshots/cursifyWorkplaceEN.png" />
+                <img src="/pictures/photos/working-with-easyflow.png" />
               </div>
               <div className={styles.mainTitle}>
                 <div className={styles.leftContent}>

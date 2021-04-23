@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { useSession, getSession, signIn } from "next-auth/client";
 import { useContext } from "react";
+import Link from "next/link";
 import styles from "../styles/Login.module.css";
 import { useIntl, FormattedMessage } from "react-intl";
 
@@ -37,7 +38,7 @@ export default function Login() {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <div className="globalGradient">
-        <div className="container">
+        <div className="container loginPage">
           <main className={styles.main}>
             <div>
               <h1 className="h1Common">
@@ -57,8 +58,32 @@ export default function Login() {
               <div className={styles.agreeingTermsAndServices}>
                 <p>
                   <FormattedMessage
-                    id="page.login.legalNotice"
-                    defaultMessage="By proceeding, you are agreeing to EasyFlow's Terms of Service."
+                    id="page.login.legalNotice.part1"
+                    defaultMessage="By proceeding, you are agreeing to EasyFlow's "
+                  />
+                  <Link href="/termsAndConditions">
+                    <a target="_blank" className={styles.link}>
+                      <FormattedMessage
+                        id="page.login.legalNotice.part2"
+                        defaultMessage="Terms and Conditions "
+                      />
+                    </a>
+                  </Link>
+                  <FormattedMessage
+                    id="page.login.legalNotice.part3"
+                    defaultMessage="and "
+                  />
+                  <Link href="/privacyPolicy">
+                    <a target="_blank" className={styles.link}>
+                      <FormattedMessage
+                        id="page.login.legalNotice.part4"
+                        defaultMessage="Privacy Policy "
+                      />
+                    </a>
+                  </Link>
+                  <FormattedMessage
+                    id="page.login.legalNotice.part5"
+                    defaultMessage="."
                   />
                 </p>
               </div>

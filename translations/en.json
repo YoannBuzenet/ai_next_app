@@ -218,6 +218,11 @@
   "page.login.head.title": "Sign In / Register",
   "page.login.title": "Sign in or Create your Account",
   "page.login.legalNotice": "By proceeding, you are agreeing to EasyFlow's Terms of Service.",
+  "page.login.legalNotice.part1": "By proceeding, you are agreeing to EasyFlow's ",
+  "page.login.legalNotice.part2": "Terms of Service ",
+  "page.login.legalNotice.part3": "and ",
+  "page.login.legalNotice.part4": "Privacy Policy ",
+  "page.login.legalNotice.part5": ".",
 
   "navbar.menu.signin": "Sign In",
   "navbar.menu.myAccount": "My Account",
