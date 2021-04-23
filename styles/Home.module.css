@@ -57,10 +57,6 @@
   text-decoration: none;
 }
 
-.leftContent a:hover {
-  background-color: rgba(63, 131, 248, 0.8);
-  transition: background-color 0.5s;
-}
 .CTAButton:hover {
   background-color: rgba(63, 131, 248, 0.8);
   transition: background-color 0.5s;

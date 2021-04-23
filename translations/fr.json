@@ -217,6 +217,7 @@
 
   "page.login.head.title": "Se connecter / S'inscrire",
   "page.login.title": "Se connecter ou Créer un compte",
+  "page.login.CTA.connectWithGoogle": "Continuer avec Google",
   "page.login.legalNotice": "En vous inscrivant, vous acceptez les conditions de vente de EasyFlow.",
   "page.login.legalNotice.part1": "En vous inscrivant, vous acceptez les ",
   "page.login.legalNotice.part2": "Conditions générales de Vente ",
