@@ -2,8 +2,16 @@
   text-align: center;
   height: calc(100vh - 166px);
   display: flex;
-  flex-direction: column;
   justify-content: center;
+}
+
+.main > div:first-child,
+.main > div:last-child {
+  width: 50%;
+}
+
+.main > div:last-child {
+  background-color: white;
 }
 
 .images:hover {
