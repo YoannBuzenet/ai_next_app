@@ -1,15 +1,25 @@
 .coloredBackground {
-  background-color: var(--primary-color);
+  background: rgb(63, 81, 181);
+  background: var(--blue-purple-gradient);
   height: 300px;
 }
 
 .formArea {
+  position: relative;
   background-color: white;
   width: 80%;
   margin: auto;
   margin-top: -150px;
   border-radius: 6px;
   padding: 3rem;
+}
+
+.svgContainer {
+  position: absolute;
+  bottom: 100px;
+  right: -50px;
+  height: 100px;
+  width: 150px;
 }
 
 .formContainer {
@@ -72,5 +82,9 @@
 @media only screen and (max-width: 768px) {
   .coloredBackground {
     height: 100px;
+  }
+
+  .svgContainer {
+    display: none;
   }
 }
