@@ -223,6 +223,11 @@ div.onePriceDiv3 {
   font-size: 4.5rem;
 }
 
+.onePriceDiv3 .price .priceNumber {
+  font-weight: 700;
+  font-size: 4rem;
+}
+
 .price span {
   font-size: 2rem;
 }
