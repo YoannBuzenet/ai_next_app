@@ -57,10 +57,6 @@
   text-decoration: none;
 }
 
-.leftContent a:hover {
-  background-color: rgba(63, 131, 248, 0.8);
-  transition: background-color 0.5s;
-}
 .CTAButton:hover {
   background-color: rgba(63, 131, 248, 0.8);
   transition: background-color 0.5s;
@@ -69,6 +65,10 @@
 .mainPunchline {
   font-size: 6.4rem;
   margin-bottom: 0;
+  opacity: 0;
+}
+
+.secondArea {
   opacity: 0;
 }
 .firstLiner {
@@ -80,9 +80,20 @@
   position: absolute;
   width: 1200px;
   transform: rotate(-5deg);
-  right: -500px;
-  top: -50px;
+  right: -600px;
+  top: -220px;
   z-index: -1;
+}
+
+.dotsContainer {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  right: 350px;
+  background-color: transparent;
+  opacity: 0.4;
+  background-image: radial-gradient(#000000 0.9px, transparent 0.9px);
+  background-size: 18px 18px;
 }
 
 @media only screen and (max-width: 1400px) {
@@ -92,6 +103,11 @@
     right: -650px;
     top: -25px;
     z-index: -1;
+  }
+}
+@media only screen and (max-width: 1240px) {
+  .dotsContainer {
+    display: none;
   }
 }
 @media only screen and (max-width: 1024px) {
@@ -144,7 +160,6 @@
   width: 30%;
   margin: 0 1%;
   line-height: var(--line-height);
-  opacity: 0;
 }
 
 .card .cardTitle {
@@ -187,6 +202,15 @@
   text-align: center;
 }
 
+.thirdLinerSvgContainer {
+  position: absolute;
+  bottom: 0;
+  right: 50px;
+  height: 200px;
+  width: 350px;
+  opacity: 0;
+}
+
 .thirdLiner h2.punchline {
   max-width: 768px;
   padding-top: 5rem;
@@ -201,13 +225,14 @@
   line-height: 2.6rem;
 }
 
-.thirdLiner img {
+.thirdLineMainImage {
   position: absolute;
   width: 1000px;
   left: 50%;
   top: 120%;
   transform: translate(-50%, -50%);
   border: 1px solid rgba(210, 214, 220, 0.5);
+  z-index: 5;
 }
 
 h2.punchline {
@@ -219,6 +244,10 @@ h2.punchline {
 @media only screen and (max-width: 1400px) {
   .thirdLiner img {
     width: 800px;
+  }
+
+  .thirdLinerSvgContainer {
+    display: none;
   }
 }
 @media only screen and (max-width: 1024px) {
@@ -254,7 +283,6 @@ h2.punchline {
   height: 600px;
   padding-top: 35rem;
   padding-bottom: 30rem;
-  opacity: 0;
 }
 
 .fourthLiner p {

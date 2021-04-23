@@ -233,6 +233,9 @@ export default function ContactUs(props) {
                 </div>
               </form>
             </div>
+            <div className={styles.svgContainer}>
+              <img src="/illustrations/people_SVG.svg" />
+            </div>
           </div>
         </main>
       </div>

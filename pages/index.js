@@ -46,6 +46,76 @@ export default function Home(props) {
     }
   }, []);
 
+  useEffect(() => {
+    var elementToTrigger = class ElementToTrigger {
+      constructor(observer, id) {
+        this.observer = observer;
+        this.id = id;
+        this.init();
+      }
+
+      init() {
+        const targets = document.querySelectorAll(this.id);
+
+        targets.forEach((li) => {
+          this.observer.observe(li);
+        });
+      }
+    };
+
+    var options = {
+      rootMargin: "0px",
+      threshold: 0.2,
+    };
+
+    function callback(entries, classToAdd) {
+      entries.filter((el) => {
+        if (el.isIntersecting) {
+          el.target.classList.add(classToAdd);
+        }
+      });
+    }
+
+    // Classic transition
+
+    let observer = new IntersectionObserver(
+      (entries) => callback(entries, "visible"),
+      options
+    );
+
+    let keypoints = new elementToTrigger(observer, "#animated");
+
+    // Right transition
+
+    let observerTransitionRight = new IntersectionObserver(
+      (entries) => callback(entries, "transitionRight"),
+      options
+    );
+
+    let keypointsTransitionRight = new elementToTrigger(
+      observerTransitionRight,
+      "#animated-right"
+    );
+
+    // Left transition
+
+    let observerTransitionLeft = new IntersectionObserver(
+      (entries) => callback(entries, "transitionLeft"),
+      options
+    );
+
+    let keypointsTransitionLeft = new elementToTrigger(
+      observerTransitionLeft,
+      "#animated-left"
+    );
+
+    return () => {
+      keypoints = null;
+      keypointsTransitionLeft = null;
+      keypointsTransitionRight = null;
+    };
+  }, []);
+
   const [session, loading] = useSession();
 
   const Intl = useIntl();
@@ -63,18 +133,15 @@ export default function Home(props) {
         <title>{translatedPageTitle}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link rel="icon" href="/favicon.ico" />
-        <script
-          type="application/javascript"
-          src="/static/animationHome.js"
-        ></script>
       </Head>
 
       <main>
         <div className={styles.firstLiner}>
           <div className="container">
             <div className={styles.firstLiner}>
+              <div className={styles.dotsContainer}></div>
               <div className={styles.softwareImage}>
-                <img src="/pictures/screenshots/cursifyWorkplaceEN.png" />
+                <img src="/pictures/photos/working-with-easyflow.png" />
               </div>
               <div className={styles.mainTitle}>
                 <div className={styles.leftContent}>
@@ -84,21 +151,23 @@ export default function Home(props) {
                       defaultMessage="Generate Marketing Copy in seconds"
                     />
                   </h1>
-                  <p>
-                    <FormattedMessage
-                      id="page.index.firstLiner.paragraph"
-                      defaultMessage="One click and you're in."
-                    />
-                  </p>
-                  <div className={styles.ctaMain}>
-                    <Link href="/login">
-                      <a type="button">
-                        <FormattedMessage
-                          id="page.index.firstLiner.CTA"
-                          defaultMessage="Get Started"
-                        />
-                      </a>
-                    </Link>
+                  <div className={styles.secondArea} id="animated">
+                    <p>
+                      <FormattedMessage
+                        id="page.index.firstLiner.paragraph"
+                        defaultMessage="One click and you're in."
+                      />
+                    </p>
+                    <div className={styles.ctaMain}>
+                      <Link href="/login">
+                        <a type="button">
+                          <FormattedMessage
+                            id="page.index.firstLiner.CTA"
+                            defaultMessage="Get Started"
+                          />
+                        </a>
+                      </Link>
+                    </div>
                   </div>
                 </div>
                 <div className={styles.rightContent}></div>
@@ -109,7 +178,7 @@ export default function Home(props) {
         <div className={styles.secondLiner}>
           <div className="container">
             <div className={styles.cardsContainer}>
-              <div className={styles.card} id="animated">
+              <div className={styles.card}>
                 <span className={styles.cardTitle}>
                   <FormattedMessage
                     id="page.index.firstCase.slogan"
@@ -123,7 +192,7 @@ export default function Home(props) {
                   />
                 </span>
               </div>
-              <div className={styles.card} id="animated">
+              <div className={styles.card}>
                 <span className={styles.cardTitle}>
                   <FormattedMessage
                     id="page.index.secondCase.slogan"
@@ -137,7 +206,7 @@ export default function Home(props) {
                   />
                 </span>
               </div>
-              <div className={styles.card} id="animated">
+              <div className={styles.card}>
                 <span className={styles.cardTitle}>
                   <FormattedMessage
                     id="page.index.thirdCase.slogan"
@@ -155,6 +224,9 @@ export default function Home(props) {
           </div>
         </div>
         <div className={styles.thirdLiner}>
+          <div className={styles.thirdLinerSvgContainer} id="animated">
+            <img src="/illustrations/Business_SVG.svg" />
+          </div>
           <div className="container">
             <h2 className={styles.punchline}>
               <FormattedMessage
@@ -169,12 +241,15 @@ export default function Home(props) {
               />
             </p>
             <div>
-              <img src="/pictures/screenshots/productDescriptionEN.png" />
+              <img
+                src="/pictures/screenshots/productDescriptionEN.png"
+                className={styles.thirdLineMainImage}
+              />
             </div>
           </div>
         </div>
-        <div className={styles.fourthLiner} id="animated">
-          <div className="container">
+        <div className={styles.fourthLiner}>
+          <div className="container opacity0" id="animated">
             <h3 className={styles.punchline}>
               <FormattedMessage
                 id="page.index.fourthLiner.slogan"
@@ -307,7 +382,7 @@ export default function Home(props) {
         </div>
         <div className={styles.fifthLiner}>
           <div>
-            <div className="container">
+            <div className="container" id="animated-left">
               <p>
                 <FormattedMessage
                   id="page.index.fifthLiner.title"
@@ -315,14 +390,16 @@ export default function Home(props) {
                 />
               </p>
             </div>
-            <Link href="/login">
-              <a className={styles.CTAButton}>
-                <FormattedMessage
-                  id="page.index.fifthLiner.button.title"
-                  defaultMessage="Get Started"
-                />
-              </a>
-            </Link>
+            <div id="animated-right">
+              <Link href="/login">
+                <a className={styles.CTAButton}>
+                  <FormattedMessage
+                    id="page.index.fifthLiner.button.title"
+                    defaultMessage="Get Started"
+                  />
+                </a>
+              </Link>
+            </div>
           </div>
         </div>
       </main>

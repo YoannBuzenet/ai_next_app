@@ -8,6 +8,7 @@ export default function SwitchLabels({
   state,
   setState,
   classToAdd,
+  color = "primary",
 }) {
   console.log("state", state);
 
@@ -19,7 +20,7 @@ export default function SwitchLabels({
     <FormGroup row className={classToAdd}>
       <FormControlLabel
         control={
-          <Switch checked={state} onChange={handleChange} color="primary" />
+          <Switch checked={state} onChange={handleChange} color={color} />
         }
       />
     </FormGroup>
