@@ -68,7 +68,7 @@ export default function Login() {
       options
     );
 
-    const keypoints = new elementToTrigger(observer, "#animated");
+    let keypoints = new elementToTrigger(observer, "#animated");
 
     // Right transition
 
@@ -77,7 +77,7 @@ export default function Login() {
       options
     );
 
-    const keypointsTransitionRight = new elementToTrigger(
+    let keypointsTransitionRight = new elementToTrigger(
       observerTransitionRight,
       "#animated-right"
     );
@@ -89,7 +89,7 @@ export default function Login() {
       options
     );
 
-    const keypointsTransitionLeft = new elementToTrigger(
+    let keypointsTransitionLeft = new elementToTrigger(
       observerTransitionLeft,
       "#animated-left"
     );
@@ -176,7 +176,10 @@ export default function Login() {
               <div className="container" id="animated">
                 <img src="illustrations/Digital_marketing_SVG.svg" />
                 <p className={styles.whiteParagraph}>
-                  Easy writing in a few clicks
+                  <FormattedMessage
+                    id="page.login.rightPart"
+                    defaultMessage="Easy writing in a few clicks"
+                  />
                 </p>
               </div>
             </div>

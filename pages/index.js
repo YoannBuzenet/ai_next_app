@@ -83,7 +83,7 @@ export default function Home(props) {
       options
     );
 
-    const keypoints = new elementToTrigger(observer, "#animated");
+    let keypoints = new elementToTrigger(observer, "#animated");
 
     // Right transition
 
@@ -92,7 +92,7 @@ export default function Home(props) {
       options
     );
 
-    const keypointsTransitionRight = new elementToTrigger(
+    let keypointsTransitionRight = new elementToTrigger(
       observerTransitionRight,
       "#animated-right"
     );
@@ -104,7 +104,7 @@ export default function Home(props) {
       options
     );
 
-    const keypointsTransitionLeft = new elementToTrigger(
+    let keypointsTransitionLeft = new elementToTrigger(
       observerTransitionLeft,
       "#animated-left"
     );
@@ -139,6 +139,7 @@ export default function Home(props) {
         <div className={styles.firstLiner}>
           <div className="container">
             <div className={styles.firstLiner}>
+              <div className={styles.dotsContainer}></div>
               <div className={styles.softwareImage}>
                 <img src="/pictures/photos/working-with-easyflow.png" />
               </div>

@@ -85,6 +85,17 @@
   z-index: -1;
 }
 
+.dotsContainer {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  right: 350px;
+  background-color: transparent;
+  opacity: 0.4;
+  background-image: radial-gradient(#000000 0.9px, transparent 0.9px);
+  background-size: 18px 18px;
+}
+
 @media only screen and (max-width: 1400px) {
   .firstLiner .softwareImage img {
     position: absolute;
@@ -92,6 +103,11 @@
     right: -650px;
     top: -25px;
     z-index: -1;
+  }
+}
+@media only screen and (max-width: 1240px) {
+  .dotsContainer {
+    display: none;
   }
 }
 @media only screen and (max-width: 1024px) {
