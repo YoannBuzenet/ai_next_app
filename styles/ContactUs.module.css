@@ -79,6 +79,17 @@
   transition: background-color 0.5s;
 }
 
+@media only screen and (max-width: 968px) {
+  .lineFieldContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .field {
+    width: 100%;
+  }
+}
 @media only screen and (max-width: 768px) {
   .coloredBackground {
     height: 100px;
@@ -86,5 +97,10 @@
 
   .svgContainer {
     display: none;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .formArea {
+    width: 100%;
   }
 }
