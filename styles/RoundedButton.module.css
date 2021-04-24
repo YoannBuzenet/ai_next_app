@@ -29,3 +29,16 @@ button.selectedRoundedButton:hover {
   background-color: var(--primary-color-hover);
   transition: background-color 0.5s;
 }
+
+@media only screen and (max-width: 768px) {
+  button.selectedRoundedButton {
+    width: 70%;
+    margin: auto;
+    margin-top: 10px;
+  }
+  button.roundedButton {
+    width: 70%;
+    margin: auto;
+    margin-top: 10px;
+  }
+}

@@ -24,3 +24,15 @@
 .greyCompletingDiv {
   flex-grow: 1;
 }
+
+@media only screen and (max-width: 768px) {
+  .cardsContainer {
+    display: static;
+  }
+
+  .roundedButtonsContainer {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem auto;
+  }
+}
