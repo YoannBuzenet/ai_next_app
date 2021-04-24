@@ -382,6 +382,14 @@ h3.punchline {
     flex-direction: column;
     text-align: left;
   }
+
+  .finalCTASlogan {
+    text-align: center;
+  }
+
+  .finalButton {
+    margin-top: 30px;
+  }
 }
 @media only screen and (max-width: 1024px) {
   .fifthLiner a.CTAButton {

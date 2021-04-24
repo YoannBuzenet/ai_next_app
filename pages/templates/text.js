@@ -345,7 +345,7 @@ export default function Text() {
                   })}
                   <div className={styles.spaceContainer}></div>
                   <div className={styles.buttonContainer}>
-                    <div className="selectContainer">
+                    <div className="selectContainer outputLanguage">
                       <SimpleSelect
                         handleChange={passLangSelectedToUserContext}
                         listToDisplay={[
