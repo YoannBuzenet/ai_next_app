@@ -205,6 +205,7 @@
   "compo.text.numberOfOutputs": "Outputs",
   "compo.text.inputOutput": "Input / Output",
   "compo.text.quotaReached": "Free Quota limit reached",
+  "compo.text.paidQuotReached": "Monthly Quota reached",
   "compo.text.inputLenghtMin": "Your input should contain at least one character.",
   "compo.text.AllAIoutputFiltered": "All AI results have been filtered. This happens when inappropriate inputs are entered. Please ensure that you include politically correct content. Any abuse may lead to the account being closed.",
 

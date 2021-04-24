@@ -43,7 +43,6 @@
 .headlinePicture {
   margin-right: 2rem;
   width: 75px;
-  background-color: red;
 }
 
 .headlineTitle {
@@ -126,4 +125,29 @@
 
 .loaderParagraphs {
   margin-top: 2rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .textGeneratorContainer {
+    flex-direction: column;
+    justify-content: normal;
+  }
+  .leftDiv {
+    width: 100%;
+    margin-bottom: 100px;
+  }
+  .rightDiv {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .buttonContainer {
+    height: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .buttonContainer > div {
+    margin-top: 20px;
+  }
 }
