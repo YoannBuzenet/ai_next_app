@@ -381,8 +381,8 @@ export default function Home(props) {
           </div>
         </div>
         <div className={styles.fifthLiner}>
-          <div>
-            <div className="container" id="animated-left">
+          <div className="container">
+            <div className={styles.finalCTASlogan} id="animated-left">
               <p>
                 <FormattedMessage
                   id="page.index.fifthLiner.title"
@@ -390,7 +390,7 @@ export default function Home(props) {
                 />
               </p>
             </div>
-            <div id="animated-right">
+            <div id="animated-right" className={styles.finalButton}>
               <Link href="/login">
                 <a className={styles.CTAButton}>
                   <FormattedMessage

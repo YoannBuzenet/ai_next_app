@@ -272,6 +272,11 @@ p {
   .MuiSelect-root.MuiSelect-select.MuiSelect-selectMenu.MuiInputBase-input.MuiInput-input {
   width: 110px;
 }
+.TextZone
+  .outputLanguage
+  .MuiSelect-root.MuiSelect-select.MuiSelect-selectMenu.MuiInputBase-input.MuiInput-input {
+  width: 160px;
+}
 
 .outputContainer {
   margin-left: 20px;

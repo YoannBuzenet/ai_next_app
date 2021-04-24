@@ -117,7 +117,7 @@ export default function template() {
               />
             </div>
           </div>
-          <div>
+          <div className={styles.roundedButtonsContainer}>
             <RoundedButton
               name={translatedFilterAll}
               handleClick={(e) => setCategoryButtonSelected("all")}

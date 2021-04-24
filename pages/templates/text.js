@@ -53,6 +53,21 @@ export default function Text() {
   const { userContext, setUserContext } = useContext(UserContext);
 
   const isSubbed = UserCheck.isUserSubscribed(session?.user?.isSubscribedUntil);
+  // console.log("session", session);
+  // console.log("is subbed", isSubbed);
+  // console.log(
+  //   "session?.user?.isOnFreeAccess === 1",
+  //   session?.user?.isOnFreeAccess === 1
+  // );
+  // console.log(
+  //   "session?.wordsTotalConsumption?.userTotalConsumption",
+  //   session?.wordsTotalConsumption?.userTotalConsumption
+  // );
+  // console.log(
+  //   "limit dépassée ?",
+  //   session?.wordsTotalConsumption?.userTotalConsumption >
+  //     FREE_LIMIT_NUMBER_OF_WORDS
+  // );
 
   // TRANSLATIONS
   const translatedInfoLess2000WordsMessage = intl.formatMessage({
@@ -345,7 +360,7 @@ export default function Text() {
                   })}
                   <div className={styles.spaceContainer}></div>
                   <div className={styles.buttonContainer}>
-                    <div className="selectContainer">
+                    <div className="selectContainer outputLanguage">
                       <SimpleSelect
                         handleChange={passLangSelectedToUserContext}
                         listToDisplay={[
@@ -396,27 +411,51 @@ export default function Text() {
                         value={outputNumber}
                       />
                     </div>
-
-                    {session?.user?.isOnFreeAccess === 1 &&
-                      session?.wordsTotalConsumption?.userTotalConsumption <
-                        FREE_LIMIT_NUMBER_OF_WORDS && (
+                    {/* User is subscribed and has words left or user is on free access and has words left*/}
+                    {((session?.user?.isOnFreeAccess === 1 &&
+                      session?.user?.totalWordsConsumption <
+                        FREE_LIMIT_NUMBER_OF_WORDS) ||
+                      (isSubbed &&
+                        (session?.user?.consumptionThisMonth || 0) <=
+                          session?.user?.totalMaxWordsUserThisMonth)) && (
+                      <div>
+                        <Button
+                          onClick={(e) => sendDataToBackEnd()}
+                          className={classes.button}
+                          variant="contained"
+                          size="small"
+                          endIcon={<ArrowRightAltIcon />}
+                        >
+                          <FormattedMessage
+                            id="compo.text.button.generateAIContent"
+                            defaultMessage="Generate AI Content"
+                          />
+                        </Button>
+                      </div>
+                    )}
+                    {/* User is subscribed but used everything */}
+                    {isSubbed &&
+                      (session?.user?.consumptionThisMonth || 0) >=
+                        session?.user?.totalMaxWordsUserThisMonth && (
                         <div>
                           <Button
                             onClick={(e) => sendDataToBackEnd()}
                             className={classes.button}
                             variant="contained"
                             size="small"
+                            disabled
                             endIcon={<ArrowRightAltIcon />}
                           >
                             <FormattedMessage
-                              id="compo.text.button.generateAIContent"
-                              defaultMessage="Generate AI Content"
+                              id="compo.text.paidQuotReached"
+                              defaultMessage="Monthly Quota reached"
                             />
                           </Button>
                         </div>
                       )}
+                    {/* User is on Free Access but used everything */}
                     {session?.user?.isOnFreeAccess === 1 &&
-                      session?.wordsTotalConsumption?.userTotalConsumption >
+                      session?.user?.totalWordsConsumption >
                         FREE_LIMIT_NUMBER_OF_WORDS && (
                         <div>
                           <Button

@@ -84,3 +84,30 @@
 .link:hover {
   text-decoration: underline;
 }
+
+@media only screen and (max-width: 968px) {
+  .main {
+    flex-direction: column;
+    height: 100%;
+  }
+  .main > div:first-child {
+    width: 100%;
+    order: 2;
+  }
+  .main > div:last-child {
+    order: 1;
+    width: 100%;
+    padding: 5rem;
+  }
+  .main > div:last-child > div img {
+    max-width: 40%;
+  }
+  .whiteParagraph {
+    margin: auto;
+    width: 70%;
+    margin-top: 50px;
+    font-weight: 700;
+    font-size: 40px;
+    color: white;
+  }
+}
