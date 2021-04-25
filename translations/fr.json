@@ -317,7 +317,7 @@
   "categories.summarizeIdea.description": "Résumez une idée complexe en une phrase.",
   "categories.summarizeIdea.placeholder": "EasyFlow est une entreprise proposant un logiciel web basé sur l'intelligence artificielle créée en France en 2021. Notre objectif est de faciliter la vie de tous ceux qui veulent écrire.",
   "categories.summarizeIdea.labelInput1": "Quelle phrase ou paragraphe souhaitez-vous synhtétiser ?",
-  "categories.saleArgument.categorylabel": "Mettez en avant une fonctionalité",
+  "categories.saleArgument.categorylabel": "Argument de vente",
   "categories.saleArgument.description": "Partez d'une simple fonction d'un produit et transformez-la en argument de vente béton.",
   "categories.saleArgument.placeholder": "Préparation de contenu grâce à de l'intelligence artificielle.",
   "categories.saleArgument.labelInput1": "Quelle est la fonction de votre produit que vous souhaitez mettre en avant ?",
