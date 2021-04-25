@@ -30,7 +30,7 @@ export async function getServerSideProps(context) {
       props: {},
     };
   } else {
-    return { props: {} };
+    return { props: { serverSession: session } };
   }
 }
 
@@ -42,7 +42,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function template() {
+export default function template(props) {
+  console.log("props", props);
+
   const [categoryButtonSelected, setCategoryButtonSelected] = useState("all");
   const [currentSearch, setCurrentSearch] = useState("");
   const intl = useIntl();

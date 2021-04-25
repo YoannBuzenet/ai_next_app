@@ -21,6 +21,7 @@ import Head from "next/head";
 
 export async function getServerSideProps(context) {
   const session = await getSession(context);
+  console.log("session from server", session);
   const isLoggedUser = UserCheck.isUserLogged(session?.user?.isLoggedUntil);
   const isSubbed = UserCheck.isUserSubscribed(session?.user?.isSubscribedUntil);
   const isUserOnFreeAccess = session?.user?.isOnFreeAccess === 1;
@@ -33,11 +34,11 @@ export async function getServerSideProps(context) {
       props: {},
     };
   } else {
-    return { props: {} };
+    return { props: { session } };
   }
 }
 
-export default function Text() {
+export default function Text(props) {
   const intl = useIntl();
   const { selectedCategoryID, setSelectedCategoryID } = useContext(
     SelectedCategoryId
@@ -52,22 +53,28 @@ export default function Text() {
   const [session, loading] = useSession();
   const { userContext, setUserContext } = useContext(UserContext);
 
-  const isSubbed = UserCheck.isUserSubscribed(session?.user?.isSubscribedUntil);
-  // console.log("session", session);
-  // console.log("is subbed", isSubbed);
-  // console.log(
-  //   "session?.user?.isOnFreeAccess === 1",
-  //   session?.user?.isOnFreeAccess === 1
-  // );
-  // console.log(
-  //   "session?.wordsTotalConsumption?.userTotalConsumption",
-  //   session?.wordsTotalConsumption?.userTotalConsumption
-  // );
-  // console.log(
-  //   "limit dépassée ?",
-  //   session?.wordsTotalConsumption?.userTotalConsumption >
-  //     FREE_LIMIT_NUMBER_OF_WORDS
-  // );
+  const isSubbed =
+    UserCheck.isUserSubscribed(props.session?.user?.isSubscribedUntil) ||
+    UserCheck.isUserSubscribed(session?.user?.isSubscribedUntil);
+
+  const isUserOnFreeAccess =
+    props.session?.user?.isOnFreeAccess === 1 ||
+    session?.user?.isOnFreeAccess === 1;
+
+  console.log("session", session);
+  console.log("is subbed", isSubbed);
+  console.log(
+    "session?.user?.isOnFreeAccess === 1",
+    session?.user?.isOnFreeAccess === 1
+  );
+  console.log(
+    "session?.wordsTotalConsumption?.userTotalConsumption",
+    session?.user?.totalWordsConsumption
+  );
+  console.log(
+    "limit dépassée ?",
+    session?.user?.totalWordsConsumption > FREE_LIMIT_NUMBER_OF_WORDS
+  );
 
   // TRANSLATIONS
   const translatedInfoLess2000WordsMessage = intl.formatMessage({
@@ -412,12 +419,12 @@ export default function Text() {
                       />
                     </div>
                     {/* User is subscribed and has words left or user is on free access and has words left*/}
-                    {((session?.user?.isOnFreeAccess === 1 &&
-                      session?.user?.totalWordsConsumption <
+                    {((isUserOnFreeAccess &&
+                      props.session?.user?.totalWordsConsumption <
                         FREE_LIMIT_NUMBER_OF_WORDS) ||
                       (isSubbed &&
-                        (session?.user?.consumptionThisMonth || 0) <=
-                          session?.user?.totalMaxWordsUserThisMonth)) && (
+                        (props.session?.user?.consumptionThisMonth || 0) <=
+                          props.session?.user?.totalMaxWordsUserThisMonth)) && (
                       <div>
                         <Button
                           onClick={(e) => sendDataToBackEnd()}
@@ -435,8 +442,8 @@ export default function Text() {
                     )}
                     {/* User is subscribed but used everything */}
                     {isSubbed &&
-                      (session?.user?.consumptionThisMonth || 0) >=
-                        session?.user?.totalMaxWordsUserThisMonth && (
+                      (props.session?.user?.consumptionThisMonth || 0) >=
+                        props.session?.user?.totalMaxWordsUserThisMonth && (
                         <div>
                           <Button
                             onClick={(e) => sendDataToBackEnd()}
@@ -454,8 +461,8 @@ export default function Text() {
                         </div>
                       )}
                     {/* User is on Free Access but used everything */}
-                    {session?.user?.isOnFreeAccess === 1 &&
-                      session?.user?.totalWordsConsumption >
+                    {isUserOnFreeAccess &&
+                      props.session?.user?.totalWordsConsumption >
                         FREE_LIMIT_NUMBER_OF_WORDS && (
                         <div>
                           <Button
