@@ -1,6 +1,7 @@
 .oneResult {
   padding-bottom: 2rem;
   border-bottom: 1px solid rgb(221, 220, 220);
+  animation: KeyColorFadeIn 0.5s;
 }
 
 .mainText {
@@ -30,4 +31,15 @@
 
 .iconContainer svg {
   color: rgb(221, 220, 220);
+}
+
+@keyframes KeyColorFadeIn {
+  0% {
+    background-color: var(--primary-color);
+  }
+
+  100% {
+    transform: none;
+    background-color: transparent;
+  }
 }

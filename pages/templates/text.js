@@ -18,6 +18,7 @@ import SimpleSelect from "../../components/Base/Select";
 import UserCheck from "../../services/userCheck";
 import { FREE_LIMIT_NUMBER_OF_WORDS } from "../../config/settings";
 import Head from "next/head";
+import errorHandling from "../../services/errorHandling";
 
 export async function getServerSideProps(context) {
   const session = await getSession(context);
@@ -52,6 +53,8 @@ export default function Text(props) {
   const [isLoadingAPIResults, setIsLoadingAPIResults] = useState(false);
   const [session, loading] = useSession();
   const { userContext, setUserContext } = useContext(UserContext);
+  // We will count the number of request on that page with this state
+  const [resultSerie, setResultSerie] = useState(0);
 
   const isSubbed =
     UserCheck.isUserSubscribed(props.session?.user?.isSubscribedUntil) ||
@@ -61,7 +64,7 @@ export default function Text(props) {
     props.session?.user?.isOnFreeAccess === 1 ||
     session?.user?.isOnFreeAccess === 1;
 
-  console.log("session", session);
+  console.log("session front", session);
   console.log("is subbed", isSubbed);
   console.log(
     "session?.user?.isOnFreeAccess === 1",
@@ -232,9 +235,11 @@ export default function Text(props) {
       .post("/api/creation", finalPayload)
       .then((resp) => {
         console.log("resp after posting to next API", resp);
-        const resultsWithDates = resp.data.response.map((result) => ({
+        const resultsWithDates = resp.data.response.map((result, index) => ({
           currentText: result,
           date: DateTime.now().setLocale("en"),
+          resultSerie,
+          indexCreation: index,
         }));
         const wasAllAIOutputFiltered = resp.data.wasAllInputFiltered;
 
@@ -255,7 +260,8 @@ export default function Text(props) {
         }
 
         console.log("result with dates", resultsWithDates);
-        setAIResults([...AIResults, ...resultsWithDates]);
+        setAIResults([...resultsWithDates, ...AIResults]);
+        setResultSerie(resultSerie + 1);
         setIsLoadingAPIResults(false);
       })
       .catch((err) => {
@@ -511,10 +517,14 @@ export default function Text(props) {
                   </p>
                 </div>
               )}
-              {AIResults.map((result) => (
+              {AIResults.map((result, index) => (
                 <AIResultV2
                   currentText={result.currentText}
                   timeSinceGeneration={result.date}
+                  index={index}
+                  resultSerie={result.resultSerie}
+                  constructedId={`${result.resultSerie}${result.indexCreation}`}
+                  key={`${result.resultSerie}${result.indexCreation}`}
                 />
               ))}
             </div>

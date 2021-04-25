@@ -233,6 +233,23 @@ p {
   }
 }
 
+/* API Result */
+
+.animationTrigger {
+  animation: KeyColorFadeIn 0.5s;
+}
+
+@keyframes KeyColorFadeIn {
+  0% {
+    background-color: var(--primary-color);
+  }
+
+  100% {
+    transform: none;
+    background-color: transparent;
+  }
+}
+
 /* Buttons */
 .CTAButton {
   padding-left: 3.5rem;
