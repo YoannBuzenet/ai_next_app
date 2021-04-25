@@ -175,20 +175,16 @@ export default function Text(props) {
   };
 
   const handleChangeInputs = (e, input) => {
+    console.log("e.target.value", e.target.value);
+    console.log("input", input);
+
     const userInput = e.target.value;
     let finalInput = userInputs?.[input.name];
 
-    if (userInput.length > input.maxLengthInput) {
-      setUserInputs({
-        ...userInputs,
-        [input.name]: finalInput,
-      });
-    } else {
-      setUserInputs({
-        ...userInputs,
-        [input.name]: userInput,
-      });
-    }
+    setUserInputs({
+      ...userInputs,
+      [input.name]: userInput,
+    });
   };
 
   console.log("yo", userContext.langSelected);
@@ -302,6 +298,11 @@ export default function Text(props) {
     },
   }));
 
+  const areThereErrorsInFields =
+    categoryObject.inputs.filter(
+      (input) => userInputs?.[input.name]?.length > input.maxLengthInput
+    ).length > 0;
+
   const classes = useStyles();
   return (
     <>
@@ -362,6 +363,10 @@ export default function Text(props) {
                           value={userInputs?.[input.name] || ""}
                           onChange={(e) => handleChangeInputs(e, input)}
                           fullWidth
+                          error={
+                            userInputs?.[input.name]?.length >
+                            input.maxLengthInput
+                          }
                           variant="outlined"
                           multiline={
                             input.inputType === "textarea" ? true : false
@@ -437,6 +442,7 @@ export default function Text(props) {
                           className={classes.button}
                           variant="contained"
                           size="small"
+                          disabled={areThereErrorsInFields}
                           endIcon={<ArrowRightAltIcon />}
                         >
                           <FormattedMessage

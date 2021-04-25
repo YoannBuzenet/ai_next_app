@@ -420,14 +420,15 @@ const categoriesDefinition = {
     inputs: [
       {
         name: "value",
-        maxLengthInput: 100,
+        maxLengthInput: 300,
         label: {
           id: "categories.ideaRewriter.labelInput1",
-          defaultMessage: "What is the sentence you want to rephrase?",
+          defaultMessage: "What do you want to rephrase?",
         },
         placeholder: {
           id: "categories.ideaRewriter.placeholder",
-          defaultMessage: "Artificial intelligence software",
+          defaultMessage:
+            "Artificial intelligence software is a new technology that is growing in the society. We think it could make like easier for everybody.",
         },
         inputType: "textarea",
       },
