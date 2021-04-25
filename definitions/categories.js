@@ -479,7 +479,7 @@ const categoriesDefinition = {
     inputs: [
       {
         name: "value",
-        maxLengthInput: 100,
+        maxLengthInput: 300,
         label: {
           id: "categories.summarizeIdea.labelInput1",
           defaultMessage:
@@ -509,7 +509,7 @@ const categoriesDefinition = {
     inputs: [
       {
         name: "value",
-        maxLengthInput: 100,
+        maxLengthInput: 150,
         label: {
           id: "categories.saleArgument.labelInput1",
           defaultMessage:
