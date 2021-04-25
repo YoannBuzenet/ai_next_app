@@ -334,7 +334,7 @@ export default function Home(props) {
                   <span>
                     <FormattedMessage
                       id="page.index.fourthLiner.tickbox8"
-                      defaultMessage="Follow-up Email"
+                      defaultMessage="Keyword Integrator"
                     />
                   </span>
                 </div>
