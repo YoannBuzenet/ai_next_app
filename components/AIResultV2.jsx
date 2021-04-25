@@ -1,7 +1,6 @@
 import styles from "../styles/AIResultV2.module.css";
 import FileCopyIcon from "@material-ui/icons/FileCopy";
 import IconButton from "@material-ui/core/IconButton";
-import { DateTime } from "luxon";
 
 const AIResultV2 = ({ currentText, timeSinceGeneration }) => {
   return (

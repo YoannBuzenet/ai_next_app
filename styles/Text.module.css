@@ -24,6 +24,15 @@
 .rightDiv {
   width: 48%;
   margin-left: 1%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.rightDiv::-webkit-scrollbar {
+  display: none;
+}
+.rightDiv {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 .spaceContainer {
