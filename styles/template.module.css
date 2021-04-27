@@ -1,11 +1,15 @@
-.title {
-  font-size: 18px;
-}
-
 .selectTemplate {
   display: flex;
   justify-content: space-between;
   padding-top: 20px;
+}
+
+.selectTemplate > div:first-child {
+  margin: 3rem 0;
+}
+.title {
+  font-size: 23px;
+  font-weight: 600;
 }
 
 .cardsContainer {
