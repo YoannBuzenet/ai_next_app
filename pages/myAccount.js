@@ -235,9 +235,13 @@ export default function MyAccount() {
     id: "page.myAccount.session",
     defaultMessage: "Session",
   });
-  const translatedUsageAndBilling = intl.formatMessage({
+  const translatedUsage = intl.formatMessage({
     id: "page.myAccount.useageAndBilling",
-    defaultMessage: "Usage and Billing",
+    defaultMessage: "Usage",
+  });
+  const translatedBilling = intl.formatMessage({
+    id: "page.myAccount.Billing",
+    defaultMessage: "Billing",
   });
   const translatedPageTitle = intl.formatMessage({
     id: "page.myAccount.head",
@@ -274,8 +278,14 @@ export default function MyAccount() {
                     >
                       <Tab
                         disableRipple
-                        label={translatedUsageAndBilling}
+                        label={translatedUsage}
                         {...a11yProps(1)}
+                        className={classes.tab}
+                      />
+                      <Tab
+                        disableRipple
+                        label={translatedBilling}
+                        {...a11yProps(2)}
                         className={classes.tab}
                       />
                       <Tab
@@ -436,6 +446,9 @@ export default function MyAccount() {
                         </div>
                       </>
                     )}
+                  </TabPanel>
+                  <TabPanel value={value} index={2}>
+                    Customer portal
                   </TabPanel>
                   <TabPanel value={value} index={1}>
                     <div className={styles.signOutContainer}>
