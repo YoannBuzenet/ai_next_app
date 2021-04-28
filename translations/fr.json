@@ -54,7 +54,7 @@
   "page.myAccount.useageAndBilling.reload.ExplainationText": "19 € pour 20 000 mots",
   "page.myAccount.useageAndBilling.reload.ExplainationText.duration": "Dure 30 jours",
   "page.myAccount.Billing.handleSubscription": "Gérer mon abonnement",
-  "page.myAccount.Billing.customerPortal": "Aller sur Stripe",
+  "page.myAccount.Billing.customerPortal": "Aller sur le Portail Client Stripe",
 
   "page.workplace.inputOutput": "Langue Entrée & Sortie : ",
   "page.workplace.displayCategories": "Afficher les thèmes",

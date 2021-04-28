@@ -54,7 +54,7 @@
   "page.myAccount.useageAndBilling.reload.ExplainationText": "19 € for a 20,000 extra words",
   "page.myAccount.useageAndBilling.reload.ExplainationText.duration": "Lasts 30 days",
   "page.myAccount.Billing.handleSubscription": "Manage my subscription",
-  "page.myAccount.Billing.customerPortal": "Go to Customer Portal",
+  "page.myAccount.Billing.customerPortal": "Go to Stripe Customer Portal",
 
   "page.workplace.inputOutput": "Input & Output Language :",
   "page.workplace.displayCategories": "Display Categories",

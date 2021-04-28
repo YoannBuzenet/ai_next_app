@@ -285,19 +285,19 @@ export default function MyAccount() {
                       <Tab
                         disableRipple
                         label={translatedUsage}
-                        {...a11yProps(1)}
+                        {...a11yProps(0)}
                         className={classes.tab}
                       />
                       <Tab
                         disableRipple
                         label={translatedBilling}
-                        {...a11yProps(2)}
+                        {...a11yProps(1)}
                         className={classes.tab}
                       />
                       <Tab
                         disableRipple
                         label={translatedSession}
-                        {...a11yProps(0)}
+                        {...a11yProps(2)}
                         className={classes.tab}
                       />
                       {/* <Tab
@@ -453,7 +453,7 @@ export default function MyAccount() {
                       </>
                     )}
                   </TabPanel>
-                  <TabPanel value={value} index={2}>
+                  <TabPanel value={value} index={1}>
                     <div className={styles.signOutContainer}>
                       <p>
                         <FormattedMessage
@@ -469,12 +469,12 @@ export default function MyAccount() {
                       >
                         <FormattedMessage
                           id="page.myAccount.Billing.customerPortal"
-                          defaultMessage="Go to Customer Portal"
+                          defaultMessage="Go to Stripe Customer Portal"
                         />
                       </Button>
                     </div>
                   </TabPanel>
-                  <TabPanel value={value} index={1}>
+                  <TabPanel value={value} index={2}>
                     <div className={styles.signOutContainer}>
                       <p>
                         <FormattedMessage
