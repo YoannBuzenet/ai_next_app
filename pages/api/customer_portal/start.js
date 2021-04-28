@@ -1,33 +1,32 @@
 import axios from "axios";
 import Bugsnag from "@bugsnag/js";
+import { isUserLogged, isUserSubscribed } from "../../../services/userCheck";
 Bugsnag.start({ apiKey: process.env.BUGSNAG_KEY });
 
 export default async (req, res) => {
-  // TODO check l'endpoint
-  // Comparer les dates avec now en utc
-  //   req?.body?.user?.isLoggedUntil
-  //   req?.body?.user?.isSubscribedUntil;
-  // Si pas logué ou pas abonné, return
-
+  if (!isUserLogged(req?.body?.user?.isLoggedUntil)) {
+    res.status(401).send();
+    return;
+  } else if (!isUserSubscribed(req?.body?.user?.isSubscribedUntil)) {
+    res.status(401).send();
+    return;
+  }
   const objectToSend = {
-    category: req?.body?.categoryID,
-    lang: req?.body?.lang,
-    userInput: req?.body?.userInputs,
     passphrase: process.env.FRONT_APP_PASSPHRASE,
-    idUser: idUser,
-    provider: req?.body?.user?.provider,
-    numberOfOutputs: req?.body?.numberOfOutputs,
+    idUser: req?.body?.user?.id,
   };
 
   // TODO Ping le bon endpoint
 
   try {
     const APIresp = await axios.post(
-      `${process.env.CENTRAL_API_URL}/`,
+      `${process.env.CENTRAL_API_URL}/customer_portal/get_stripe_user_id`,
       objectToSend
     );
 
-    res.status(200).json(APIresp.data);
+    // API resp doit contenir le stripe user id
+
+    res.status(200).json();
   } catch (e) {
     Bugsnag.notify(new Error(e));
     res.status(500).send();
