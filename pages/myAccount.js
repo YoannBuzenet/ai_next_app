@@ -167,6 +167,12 @@ export default function MyAccount() {
       });
   };
 
+  const handleCustomerPortal = () => {
+    console.log(
+      "pinging next API endpoint to prepare session and get user id from back end and redirect to stripe portal"
+    );
+  };
+
   const useStyles = makeStyles((theme) => ({
     button: {
       color: "white",
@@ -448,7 +454,25 @@ export default function MyAccount() {
                     )}
                   </TabPanel>
                   <TabPanel value={value} index={2}>
-                    Customer portal
+                    <div className={styles.signOutContainer}>
+                      <p>
+                        <FormattedMessage
+                          id="page.myAccount.Billing.handleSubscription"
+                          defaultMessage="Manage my subscription"
+                        />
+                      </p>
+                      <Button
+                        onClick={handleCustomerPortal}
+                        className={classes.button}
+                        variant="contained"
+                        size="large"
+                      >
+                        <FormattedMessage
+                          id="page.myAccount.Billing.customerPortal"
+                          defaultMessage="Go to Customer Portal"
+                        />
+                      </Button>
+                    </div>
                   </TabPanel>
                   <TabPanel value={value} index={1}>
                     <div className={styles.signOutContainer}>
