@@ -13,7 +13,6 @@ import {
   FormattedDate,
 } from "react-intl";
 import React from "react";
-import PropTypes from "prop-types";
 import AppBar from "@material-ui/core/AppBar";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
@@ -28,6 +27,7 @@ import getStripe from "../services/getStripe";
 import BlueCTA from "../components/Base/BlueCTA";
 import { products } from "../config/products";
 import { langDictionnary } from "../definitions/langDictionnary";
+import notificationContext from "../contexts/notificationsContext";
 
 export async function getServerSideProps(context) {
   const session = await getSession(context);
@@ -54,9 +54,14 @@ export default function MyAccount() {
   const [userTotalConsumption, setUserTotalConsumption] = useState("");
   const [userMonthlyConsumption, setUserMonthlyConsumption] = useState(0);
 
+  const { notificationInfo, setNotificationInfo } = useContext(
+    notificationContext
+  );
+
   const isUserSubd = UserCheck.isUserSubscribed(
     session?.user?.isSubscribedUntil
   );
+  const isLoggedUser = UserCheck.isUserLogged(session?.user?.isLoggedUntil);
 
   const maxWordsUser = !isUserSubd
     ? FREE_LIMIT_NUMBER_OF_WORDS
@@ -171,6 +176,18 @@ export default function MyAccount() {
     console.log(
       "pinging next API endpoint to prepare session and get user id from back end and redirect to stripe portal"
     );
+
+    //TO DO
+    const userData = {};
+
+    axios.post("/api/customer_portal/start", userData);
+
+    //if user is not loggued or not subscribed, notification
+
+    // isUserSubd
+    // isLoggedUser
+    // notificationInfo
+    // setNotificationInfo
   };
 
   const useStyles = makeStyles((theme) => ({
