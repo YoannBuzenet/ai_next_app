@@ -236,6 +236,8 @@
 
   "notification.remainingConsoUnder2000words": "There are less than 2,000 words remaining in your credit this month. If needed, you can purchase additional credits in My Account.",
   "notification.remainingConsoat0": "All your credits have been used this month. If needed, you can purchase additional credits in My Account.",
+  "notification.youmustBeLogged": "You must be logged to access this functionnality.",
+  "notification.youmustBeSubscribed": "You must be subscribed to access this functionnality.",
 
   "footer.copyright": "© 2021 EasyFlow, Inc. All rights reserved.",
   "footer.termsAndConditions": "Terms and Conditions",

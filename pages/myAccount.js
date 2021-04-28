@@ -76,6 +76,32 @@ export default function MyAccount() {
   console.log("session", session);
   console.log("is user subbed", isUserSubd);
 
+  // Translations
+  const translatedSession = intl.formatMessage({
+    id: "page.myAccount.session",
+    defaultMessage: "Session",
+  });
+  const translatedUsage = intl.formatMessage({
+    id: "page.myAccount.useageAndBilling",
+    defaultMessage: "Usage",
+  });
+  const translatedBilling = intl.formatMessage({
+    id: "page.myAccount.Billing",
+    defaultMessage: "Billing",
+  });
+  const translatedPageTitle = intl.formatMessage({
+    id: "page.myAccount.head",
+    defaultMessage: "My Account",
+  });
+  const translatedMustBeLogged = intl.formatMessage({
+    id: "notification.youmustBeLogged",
+    defaultMessage: "You must be logged to access this functionnality.",
+  });
+  const translatedMustBeSubbed = intl.formatMessage({
+    id: "notification.youmustBeSubscribed",
+    defaultMessage: "You must be subscribed to access this functionnality.",
+  });
+
   useEffect(() => {
     setIsLoadingUserData(true);
     axios.post(`/api/numberOfWords/7daysData`, { session }).then((resp) => {
@@ -176,6 +202,37 @@ export default function MyAccount() {
     console.log(
       "pinging next API endpoint to prepare session and get user id from back end and redirect to stripe portal"
     );
+    if (!isUserSubd) {
+      setNotificationInfo({
+        ...notificationInfo,
+        alert: {
+          ...notificationInfo.alert,
+          message: translatedMustBeSubbed,
+          severity: "warning",
+        },
+
+        snackbar: {
+          ...notificationInfo.snackbar,
+          isDisplayed: false,
+        },
+      });
+      return;
+    } else if (!isLoggedUser) {
+      setNotificationInfo({
+        ...notificationInfo,
+        alert: {
+          ...notificationInfo.alert,
+          message: translatedMustBeLogged,
+          severity: "warning",
+        },
+
+        snackbar: {
+          ...notificationInfo.snackbar,
+          isDisplayed: false,
+        },
+      });
+      return;
+    }
 
     //TO DO
     const userData = {};
@@ -253,24 +310,6 @@ export default function MyAccount() {
     );
   }
 
-  // Translations
-  const translatedSession = intl.formatMessage({
-    id: "page.myAccount.session",
-    defaultMessage: "Session",
-  });
-  const translatedUsage = intl.formatMessage({
-    id: "page.myAccount.useageAndBilling",
-    defaultMessage: "Usage",
-  });
-  const translatedBilling = intl.formatMessage({
-    id: "page.myAccount.Billing",
-    defaultMessage: "Billing",
-  });
-  const translatedPageTitle = intl.formatMessage({
-    id: "page.myAccount.head",
-    defaultMessage: "My Account",
-  });
-
   return (
     <>
       <Head>
@@ -310,6 +349,7 @@ export default function MyAccount() {
                         label={translatedBilling}
                         {...a11yProps(1)}
                         className={classes.tab}
+                        disabled={!isUserSubd}
                       />
                       <Tab
                         disableRipple
@@ -483,6 +523,7 @@ export default function MyAccount() {
                         className={classes.button}
                         variant="contained"
                         size="large"
+                        disabled={!isUserSubd}
                       >
                         <FormattedMessage
                           id="page.myAccount.Billing.customerPortal"

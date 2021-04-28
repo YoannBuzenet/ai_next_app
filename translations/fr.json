@@ -236,6 +236,8 @@
 
   "notification.remainingConsoUnder2000words": "Il vous reste moins de 2 000 mots à utiliser ce mois-ci. Si besoin, vous pouvez acheter une recharge dans la rubrique Mon Compte.",
   "notification.remainingConsoat0": "Vous n'avez plus de mots à utiliser. Si besoin, vous pouvez acheter une recharge dans la rubrique Mon Compte.",
+  "notification.youmustBeLogged": "Vous devez être connecté pour accéder à cette fonctionnalité.",
+  "notification.youmustBeSubscribed": "Vous devez être abonné pour accéder à cette fonctionnalité.",
 
   "footer.copyright": "© 2021 EasyFlow. Tous droits réservés.",
   "footer.termsAndConditions": "Conditions Générales de Vente",
