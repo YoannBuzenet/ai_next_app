@@ -234,17 +234,10 @@ export default function MyAccount() {
       return;
     }
 
-    //TO DO
-    const userData = {};
-
+    const userData = { user: session.user };
+    console.log("user data", userData);
     axios.post("/api/customer_portal/start", userData);
-
-    //if user is not loggued or not subscribed, notification
-
-    // isUserSubd
-    // isLoggedUser
-    // notificationInfo
-    // setNotificationInfo
+    // TO DO .then avec redirection vers le portal
   };
 
   const useStyles = makeStyles((theme) => ({

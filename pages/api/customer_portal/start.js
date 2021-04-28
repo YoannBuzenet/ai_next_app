@@ -3,12 +3,11 @@ import Bugsnag from "@bugsnag/js";
 Bugsnag.start({ apiKey: process.env.BUGSNAG_KEY });
 
 export default async (req, res) => {
-  //TODO check l'endpoint
-
-  let idUser;
-  if (req?.body?.user?.provider === "google") {
-    idUser = req.body.user.googleId;
-  }
+  // TODO check l'endpoint
+  // Comparer les dates avec now en utc
+  //   req?.body?.user?.isLoggedUntil
+  //   req?.body?.user?.isSubscribedUntil;
+  // Si pas logué ou pas abonné, return
 
   const objectToSend = {
     category: req?.body?.categoryID,
