@@ -136,7 +136,7 @@ export default async (req, res) => {
             passphrase: process.env.FRONT_APP_PASSPHRASE,
           };
           axios.post(
-            `${process.env.CENTRAL_API_URL}/api/subscription/update`,
+            `${process.env.CENTRAL_API_URL}/api/subscription/cancel`,
             subscriptionCanceledObject
           );
         } catch (error) {
