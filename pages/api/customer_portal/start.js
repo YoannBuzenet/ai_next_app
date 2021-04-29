@@ -33,10 +33,7 @@ export default async (req, res) => {
       return_url: process.env.NEXTAUTH_URL,
     });
 
-    console.log("log debug", session);
-    console.log("log debug session URL", session.url);
-
-    res.redirect(session.url);
+    res.status(200).send({ url: session.url });
   } catch (e) {
     Bugsnag.notify(new Error(e));
     res.status(500).send();
