@@ -13,7 +13,6 @@ import {
   FormattedDate,
 } from "react-intl";
 import React from "react";
-import PropTypes from "prop-types";
 import AppBar from "@material-ui/core/AppBar";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
@@ -28,6 +27,7 @@ import getStripe from "../services/getStripe";
 import BlueCTA from "../components/Base/BlueCTA";
 import { products } from "../config/products";
 import { langDictionnary } from "../definitions/langDictionnary";
+import notificationContext from "../contexts/notificationsContext";
 
 export async function getServerSideProps(context) {
   const session = await getSession(context);
@@ -54,9 +54,14 @@ export default function MyAccount() {
   const [userTotalConsumption, setUserTotalConsumption] = useState("");
   const [userMonthlyConsumption, setUserMonthlyConsumption] = useState(0);
 
+  const { notificationInfo, setNotificationInfo } = useContext(
+    notificationContext
+  );
+
   const isUserSubd = UserCheck.isUserSubscribed(
     session?.user?.isSubscribedUntil
   );
+  const isLoggedUser = UserCheck.isUserLogged(session?.user?.isLoggedUntil);
 
   const maxWordsUser = !isUserSubd
     ? FREE_LIMIT_NUMBER_OF_WORDS
@@ -70,6 +75,32 @@ export default function MyAccount() {
 
   console.log("session", session);
   console.log("is user subbed", isUserSubd);
+
+  // Translations
+  const translatedSession = intl.formatMessage({
+    id: "page.myAccount.session",
+    defaultMessage: "Session",
+  });
+  const translatedUsage = intl.formatMessage({
+    id: "page.myAccount.useageAndBilling",
+    defaultMessage: "Usage",
+  });
+  const translatedBilling = intl.formatMessage({
+    id: "page.myAccount.Billing",
+    defaultMessage: "Billing",
+  });
+  const translatedPageTitle = intl.formatMessage({
+    id: "page.myAccount.head",
+    defaultMessage: "My Account",
+  });
+  const translatedMustBeLogged = intl.formatMessage({
+    id: "notification.youmustBeLogged",
+    defaultMessage: "You must be logged to access this functionnality.",
+  });
+  const translatedMustBeSubbed = intl.formatMessage({
+    id: "notification.youmustBeSubscribed",
+    defaultMessage: "You must be subscribed to access this functionnality.",
+  });
 
   useEffect(() => {
     setIsLoadingUserData(true);
@@ -167,6 +198,48 @@ export default function MyAccount() {
       });
   };
 
+  const handleCustomerPortal = () => {
+    console.log(
+      "pinging next API endpoint to prepare session and get user id from back end and redirect to stripe portal"
+    );
+    if (!isUserSubd) {
+      setNotificationInfo({
+        ...notificationInfo,
+        alert: {
+          ...notificationInfo.alert,
+          message: translatedMustBeSubbed,
+          severity: "warning",
+        },
+
+        snackbar: {
+          ...notificationInfo.snackbar,
+          isDisplayed: false,
+        },
+      });
+      return;
+    } else if (!isLoggedUser) {
+      setNotificationInfo({
+        ...notificationInfo,
+        alert: {
+          ...notificationInfo.alert,
+          message: translatedMustBeLogged,
+          severity: "warning",
+        },
+
+        snackbar: {
+          ...notificationInfo.snackbar,
+          isDisplayed: false,
+        },
+      });
+      return;
+    }
+
+    const userData = { user: session.user };
+    console.log("user data", userData);
+    axios.post("/api/customer_portal/start", userData);
+    // TO DO .then avec redirection vers le portal
+  };
+
   const useStyles = makeStyles((theme) => ({
     button: {
       color: "white",
@@ -230,20 +303,6 @@ export default function MyAccount() {
     );
   }
 
-  // Translations
-  const translatedSession = intl.formatMessage({
-    id: "page.myAccount.session",
-    defaultMessage: "Session",
-  });
-  const translatedUsageAndBilling = intl.formatMessage({
-    id: "page.myAccount.useageAndBilling",
-    defaultMessage: "Usage and Billing",
-  });
-  const translatedPageTitle = intl.formatMessage({
-    id: "page.myAccount.head",
-    defaultMessage: "My Account",
-  });
-
   return (
     <>
       <Head>
@@ -274,14 +333,21 @@ export default function MyAccount() {
                     >
                       <Tab
                         disableRipple
-                        label={translatedUsageAndBilling}
-                        {...a11yProps(1)}
+                        label={translatedUsage}
+                        {...a11yProps(0)}
                         className={classes.tab}
                       />
                       <Tab
                         disableRipple
+                        label={translatedBilling}
+                        {...a11yProps(1)}
+                        className={classes.tab}
+                        disabled={!isUserSubd}
+                      />
+                      <Tab
+                        disableRipple
                         label={translatedSession}
-                        {...a11yProps(0)}
+                        {...a11yProps(2)}
                         className={classes.tab}
                       />
                       {/* <Tab
@@ -438,6 +504,28 @@ export default function MyAccount() {
                     )}
                   </TabPanel>
                   <TabPanel value={value} index={1}>
+                    <div className={styles.signOutContainer}>
+                      <p>
+                        <FormattedMessage
+                          id="page.myAccount.Billing.handleSubscription"
+                          defaultMessage="Manage my subscription"
+                        />
+                      </p>
+                      <Button
+                        onClick={handleCustomerPortal}
+                        className={classes.button}
+                        variant="contained"
+                        size="large"
+                        disabled={!isUserSubd}
+                      >
+                        <FormattedMessage
+                          id="page.myAccount.Billing.customerPortal"
+                          defaultMessage="Go to Stripe Customer Portal"
+                        />
+                      </Button>
+                    </div>
+                  </TabPanel>
+                  <TabPanel value={value} index={2}>
                     <div className={styles.signOutContainer}>
                       <p>
                         <FormattedMessage

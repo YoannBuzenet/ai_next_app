@@ -36,7 +36,8 @@
   "page.myAccount.logOutLabel": "Log out Account",
   "page.myAccount.logOugButton": "Sign Out",
   "page.myAccount.session": "Session",
-  "page.myAccount.useageAndBilling": "Usage and Billing",
+  "page.myAccount.useageAndBilling": "Usage",
+  "page.myAccount.Billing": "Billing",
   "page.myAccount.useageAndBilling.graph.dailyConsumption": "Day",
   "page.myAccount.useageAndBilling.graph.amount": "Amount",
   "page.myAccount.useageAndBilling.usage.youUsed": "Vous have used ",
@@ -52,6 +53,8 @@
   "page.myAccount.useageAndBilling.reload.CTA": "Buy",
   "page.myAccount.useageAndBilling.reload.ExplainationText": "19 € for a 20,000 extra words",
   "page.myAccount.useageAndBilling.reload.ExplainationText.duration": "Lasts 30 days",
+  "page.myAccount.Billing.handleSubscription": "Manage my subscription",
+  "page.myAccount.Billing.customerPortal": "Go to Stripe Customer Portal",
 
   "page.workplace.inputOutput": "Input & Output Language :",
   "page.workplace.displayCategories": "Display Categories",
@@ -233,6 +236,8 @@
 
   "notification.remainingConsoUnder2000words": "There are less than 2,000 words remaining in your credit this month. If needed, you can purchase additional credits in My Account.",
   "notification.remainingConsoat0": "All your credits have been used this month. If needed, you can purchase additional credits in My Account.",
+  "notification.youmustBeLogged": "You must be logged to access this functionnality.",
+  "notification.youmustBeSubscribed": "You must be subscribed to access this functionnality.",
 
   "footer.copyright": "© 2021 EasyFlow, Inc. All rights reserved.",
   "footer.termsAndConditions": "Terms and Conditions",

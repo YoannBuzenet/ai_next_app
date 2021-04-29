@@ -36,7 +36,8 @@
   "page.myAccount.logOutLabel": "Me déconnecter",
   "page.myAccount.logOugButton": "Déconnexion",
   "page.myAccount.session": "Session",
-  "page.myAccount.useageAndBilling": "Utilisation et factures",
+  "page.myAccount.useageAndBilling": "Utilisation",
+  "page.myAccount.Billing": "Facturation",
   "page.myAccount.useageAndBilling.graph.dailyConsumption": "Jour",
   "page.myAccount.useageAndBilling.graph.amount": "Quantité",
   "page.myAccount.useageAndBilling.usage.youUsed": "Vous avez utilisé ",
@@ -52,6 +53,8 @@
   "page.myAccount.useageAndBilling.reload.CTA": "Acheter",
   "page.myAccount.useageAndBilling.reload.ExplainationText": "19 € pour 20 000 mots",
   "page.myAccount.useageAndBilling.reload.ExplainationText.duration": "Dure 30 jours",
+  "page.myAccount.Billing.handleSubscription": "Gérer mon abonnement",
+  "page.myAccount.Billing.customerPortal": "Aller sur le Portail Client Stripe",
 
   "page.workplace.inputOutput": "Langue Entrée & Sortie : ",
   "page.workplace.displayCategories": "Afficher les thèmes",
@@ -233,6 +236,8 @@
 
   "notification.remainingConsoUnder2000words": "Il vous reste moins de 2 000 mots à utiliser ce mois-ci. Si besoin, vous pouvez acheter une recharge dans la rubrique Mon Compte.",
   "notification.remainingConsoat0": "Vous n'avez plus de mots à utiliser. Si besoin, vous pouvez acheter une recharge dans la rubrique Mon Compte.",
+  "notification.youmustBeLogged": "Vous devez être connecté pour accéder à cette fonctionnalité.",
+  "notification.youmustBeSubscribed": "Vous devez être abonné pour accéder à cette fonctionnalité.",
 
   "footer.copyright": "© 2021 EasyFlow. Tous droits réservés.",
   "footer.termsAndConditions": "Conditions Générales de Vente",

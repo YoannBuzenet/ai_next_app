@@ -1,7 +1,9 @@
 const axios = require("axios");
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+import Bugsnag from "@bugsnag/js";
 import { buffer } from "micro";
 import Cors from "micro-cors";
+Bugsnag.start({ apiKey: process.env.BUGSNAG_KEY });
 
 export const config = {
   api: {
@@ -37,6 +39,7 @@ export default async (req, res) => {
         );
       } catch (err) {
         console.log(`⚠️  Webhook signature verification failed.`, err);
+        Bugsnag.notify(new Error(err));
         return res.status(400);
       }
       // Extract the object from the event.
@@ -74,12 +77,13 @@ export default async (req, res) => {
             `${process.env.CENTRAL_API_URL}/api/stripePurchases/createStripePurchase`,
             objectToSend
           )
-          .catch((error) =>
+          .catch((error) => {
             console.error(
               "error while registering stripe purchase to API",
               error
-            )
-          );
+            );
+            Bugsnag.notify(new Error(error));
+          });
 
         break;
       case "invoice.paid":
@@ -105,12 +109,13 @@ export default async (req, res) => {
             `${process.env.CENTRAL_API_URL}/api/stripePurchases/updateSubscription`,
             objectToSendBackEnd
           )
-          .catch((error) =>
+          .catch((error) => {
             console.error(
               "error while registering stripe purchase to API",
               error
-            )
-          );
+            );
+            Bugsnag.notify(new Error(error));
+          });
         break;
       case "invoice.payment_failed":
         // The payment failed or the customer does not have a valid payment method.
@@ -119,6 +124,25 @@ export default async (req, res) => {
 
         // TO DO when we have nodemailer working : mail customer
         console.log("event PAYMENT FAILED", event);
+        break;
+      case "customer.subscription.updated":
+        console.log("user deleted subscription");
+        // User canceled his subscription
+        try {
+          // call back end-route
+          const custrom_stripe_id = event.data.object.customer;
+          const subscriptionCanceledObject = {
+            customer_id: custrom_stripe_id,
+            passphrase: process.env.FRONT_APP_PASSPHRASE,
+          };
+          axios.post(
+            `${process.env.CENTRAL_API_URL}/api/subscription/cancel`,
+            subscriptionCanceledObject
+          );
+        } catch (error) {
+          Bugsnag.notify(new Error(error));
+        }
+        console.log("event subscription canceled", event);
         break;
       default:
       // Unhandled event type

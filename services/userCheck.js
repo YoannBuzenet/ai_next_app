@@ -5,7 +5,7 @@ const {
 } = require("./utils");
 
 const isUserLogged = (userIsLoggedUntil) => {
-  if (userIsLoggedUntil === undefined) {
+  if (userIsLoggedUntil === undefined || userIsLoggedUntil === null) {
     return false;
   }
   // Creating an UTC timestamp
