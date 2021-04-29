@@ -59,8 +59,8 @@ export default function MyAccount(props) {
   );
 
   const isUserSubd =
-    isUserSubscribed(session?.user?.isSubscribedUntil) ||
-    isUserSubscribed(props?.session?.user?.isSubscribedUntil);
+    UserCheck.isUserSubscribed(session?.user?.isSubscribedUntil) ||
+    UserCheck.isUserSubscribed(props?.session?.user?.isSubscribedUntil);
 
   const isLoggedUser = UserCheck.isUserLogged(session?.user?.isLoggedUntil);
 
