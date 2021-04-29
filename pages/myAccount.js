@@ -245,7 +245,7 @@ export default function MyAccount(props) {
 
     // Calling next API and stripe to get our customized URL for customer portal
     try {
-      const data = axios.post("/api/customer_portal/start", userData);
+      const data = await axios.post("/api/customer_portal/start", userData);
       console.log("data received", data);
 
       setIsLoadingCustomerPortalURL(false);
