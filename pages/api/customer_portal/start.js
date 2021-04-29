@@ -16,17 +16,24 @@ export default async (req, res) => {
     idUser: req?.body?.user?.id,
   };
 
-  // TODO Ping le bon endpoint
-
   try {
     const APIresp = await axios.post(
       `${process.env.CENTRAL_API_URL}/customer_portal/get_stripe_user_id`,
       objectToSend
     );
 
-    // API resp doit contenir le stripe user id
+    const userStripeId = APIresp.data;
 
-    res.status(200).json();
+    // Creating a stripe session to access a customized cutomer portal
+    const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+
+    // Authenticate your user.
+    const session = await stripe.billingPortal.sessions.create({
+      customer: userStripeId,
+      return_url: process.env.NEXTAUTH_URL,
+    });
+
+    res.redirect(session.url);
   } catch (e) {
     Bugsnag.notify(new Error(e));
     res.status(500).send();
