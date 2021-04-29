@@ -128,10 +128,8 @@ export default async (req, res) => {
       case "customer.subscription.updated":
         console.log("user deleted subscription");
         // User canceled his subscription
-        // TO DO when we have nodemailer working : mail customer
         try {
           // call back end-route
-          //post back end
           const custrom_stripe_id = event.data.object.customer;
           const subscriptionCanceledObject = {
             customer_id: custrom_stripe_id,
