@@ -28,6 +28,7 @@ import BlueCTA from "../components/Base/BlueCTA";
 import { products } from "../config/products";
 import { langDictionnary } from "../definitions/langDictionnary";
 import notificationContext from "../contexts/notificationsContext";
+import CircularIndeterminate from "../components/Loader";
 
 export async function getServerSideProps(context) {
   const session = await getSession(context);
@@ -53,6 +54,9 @@ export default function MyAccount(props) {
   const intl = useIntl();
   const [userTotalConsumption, setUserTotalConsumption] = useState("");
   const [userMonthlyConsumption, setUserMonthlyConsumption] = useState(0);
+  const [isLoadingCustomerPortalURL, setIsLoadingCustomerPortalURL] = useState(
+    false
+  );
 
   const { notificationInfo, setNotificationInfo } = useContext(
     notificationContext
@@ -199,7 +203,7 @@ export default function MyAccount(props) {
       });
   };
 
-  const handleCustomerPortal = () => {
+  const handleCustomerPortal = async () => {
     console.log(
       "pinging next API endpoint to prepare session and get user id from back end and redirect to stripe portal"
     );
@@ -237,8 +241,32 @@ export default function MyAccount(props) {
 
     const userData = { user: session.user };
     console.log("user data", userData);
-    axios.post("/api/customer_portal/start", userData);
-    // TO DO .then avec redirection vers le portal
+    setIsLoadingCustomerPortalURL(true);
+
+    // Calling next API and stripe to get our customized URL for customer portal
+    try {
+      const data = axios.post("/api/customer_portal/start", userData);
+      console.log("data received", data);
+
+      setIsLoadingCustomerPortalURL(false);
+      window.location.assign(data?.data?.url);
+    } catch (e) {
+      const messageToDisplay = errorHandling(e);
+
+      setNotificationInfo({
+        ...notificationInfo,
+        alert: {
+          ...notificationInfo.alert,
+          message: messageToDisplay,
+          severity: "error",
+        },
+
+        snackbar: {
+          ...notificationInfo.snackbar,
+          isDisplayed: false,
+        },
+      });
+    }
   };
 
   const useStyles = makeStyles((theme) => ({
@@ -505,7 +533,7 @@ export default function MyAccount(props) {
                     )}
                   </TabPanel>
                   <TabPanel value={value} index={1}>
-                    <div className={styles.signOutContainer}>
+                    <div className={styles.cancelSubscriptionContainer}>
                       <p>
                         <FormattedMessage
                           id="page.myAccount.Billing.handleSubscription"
@@ -524,6 +552,11 @@ export default function MyAccount(props) {
                           defaultMessage="Go to Stripe Customer Portal"
                         />
                       </Button>
+                      <div className={styles.loaderContainer}>
+                        {isLoadingCustomerPortalURL && (
+                          <CircularIndeterminate size={25} />
+                        )}
+                      </div>
                     </div>
                   </TabPanel>
                   <TabPanel value={value} index={2}>
