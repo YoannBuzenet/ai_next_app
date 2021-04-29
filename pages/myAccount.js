@@ -41,11 +41,11 @@ export async function getServerSideProps(context) {
       props: {},
     };
   } else {
-    return { props: {} };
+    return { props: { session } };
   }
 }
 
-export default function MyAccount() {
+export default function MyAccount(props) {
   const [session, loading] = useSession();
   const [isLoadingUserData, setIsLoadingUserData] = useState(false);
   const [value, setValue] = useState(0);
@@ -58,9 +58,10 @@ export default function MyAccount() {
     notificationContext
   );
 
-  const isUserSubd = UserCheck.isUserSubscribed(
-    session?.user?.isSubscribedUntil
-  );
+  const isUserSubd =
+    isUserSubscribed(session?.user?.isSubscribedUntil) ||
+    isUserSubscribed(props?.session?.user?.isSubscribedUntil);
+
   const isLoggedUser = UserCheck.isUserLogged(session?.user?.isLoggedUntil);
 
   const maxWordsUser = !isUserSubd
