@@ -18,6 +18,18 @@
   margin-top: 30px;
   width: 20%;
 }
+.cancelSubscriptionContainer {
+  display: flex;
+  place-items: baseline;
+}
+
+.cancelSubscriptionContainer p {
+  margin-top: 30px;
+  width: 20%;
+}
+.cancelSubscriptionContainer .loaderContainer {
+  padding: 2rem;
+}
 
 .chartContainer {
   height: 550px;
@@ -85,6 +97,15 @@
     margin-top: 30px;
   }
   .signOutContainer p {
+    width: 100%;
+  }
+  .cancelSubscriptionContainer {
+    flex-direction: column;
+  }
+  .cancelSubscriptionContainer button {
+    margin-top: 30px;
+  }
+  .cancelSubscriptionContainer p {
     width: 100%;
   }
   .loaderContainer {
