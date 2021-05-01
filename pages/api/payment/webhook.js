@@ -122,7 +122,20 @@ export default async (req, res) => {
         // The subscription becomes past_due. Notify your customer and send them to the
         // customer portal to update their payment information.
 
-        // TO DO when we have nodemailer working : mail customer
+        try {
+          // call back end-route
+          const custrom_stripe_id = event.data.object.customer;
+          const subscriptionCanceledObject = {
+            customer_id: custrom_stripe_id,
+            passphrase: process.env.FRONT_APP_PASSPHRASE,
+          };
+          axios.post(
+            `${process.env.CENTRAL_API_URL}/api/subscription/error`,
+            subscriptionCanceledObject
+          );
+        } catch (error) {
+          Bugsnag.notify(new Error(error));
+        }
         console.log("event PAYMENT FAILED", event);
         break;
       case "customer.subscription.updated":
