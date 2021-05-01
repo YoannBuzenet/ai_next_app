@@ -62,6 +62,30 @@ export default function TermsAndConditions() {
         </p>
         <h2>
           <FormattedMessage
+            id="page.termsAndConditions.serviceDefinition.Title"
+            defaultMessage="2. SERVICE definition"
+          />
+        </h2>
+        <p>
+          <FormattedMessage
+            id="page.termsAndConditions.serviceDefinition.paragraph1"
+            defaultMessage="EASYFLOW provides users with a SERVICE offering the writing of structured and specialized texts in French and English according to a given text. The user can choose a type of text he wishes to write, indicate a few words, and the SERVICE will offer him several texts written in this sense. The USER can then modify, create new texts if he wishes."
+          />
+        </p>
+        <p>
+          <FormattedMessage
+            id="page.termsAndConditions.serviceDefinition.paragraph2"
+            defaultMessage="Words are counted as they are generated. Monthly access consists of 20,000 words (twenty thousand words). Beyond this limit, the USER can no longer use the SERVICE until renewal of his subscription, which takes place 30 days after his subscription date, or purchase of a top-up."
+          />
+        </p>
+        <p>
+          <FormattedMessage
+            id="page.termsAndConditions.serviceDefinition.paragraph3"
+            defaultMessage="If desired, the USER can increase his word level from time to time by purchasing a 20,000 word refill (twenty thousand words) for 25 euros including tax. This increase is one-off: it lasts 30 days and is not tacitly renewed."
+          />
+        </p>
+        <h2>
+          <FormattedMessage
             id="page.termsAndConditions.article2.title"
             defaultMessage="2. Duration / Cancellation"
           />

@@ -66,6 +66,8 @@ export default function MyAccount(props) {
     UserCheck.isUserSubscribed(session?.user?.isSubscribedUntil) ||
     UserCheck.isUserSubscribed(props?.session?.user?.isSubscribedUntil);
 
+  const isUserOnCompanyAccess = props?.session?.user?.isOnCompanyAccess === 1;
+
   const isLoggedUser = UserCheck.isUserLogged(session?.user?.isLoggedUntil);
 
   const maxWordsUser = !isUserSubd
@@ -92,7 +94,7 @@ export default function MyAccount(props) {
   });
   const translatedBilling = intl.formatMessage({
     id: "page.myAccount.Billing",
-    defaultMessage: "Billing",
+    defaultMessage: "Subscription",
   });
   const translatedPageTitle = intl.formatMessage({
     id: "page.myAccount.head",
@@ -371,7 +373,7 @@ export default function MyAccount(props) {
                         label={translatedBilling}
                         {...a11yProps(1)}
                         className={classes.tab}
-                        disabled={!isUserSubd}
+                        disabled={!isUserSubd && isUserOnCompanyAccess}
                       />
                       <Tab
                         disableRipple
