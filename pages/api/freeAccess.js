@@ -18,7 +18,7 @@ export default async (req, res) => {
 
   try {
     const APIresp = await axios.post(
-      `${process.env.CENTRAL_API_URL}/api/users/EnableFreeAccess`,
+      `${process.env.CENTRAL_API_URL}/api/users/enable-free-access`,
       objectToSend,
       getHeader()
     );

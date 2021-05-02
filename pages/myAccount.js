@@ -432,8 +432,10 @@ export default function MyAccount(props) {
                                 />
                               </p>
                               <p className={styles.wordsCounter}>
-                                {userTotalConsumption || 0} /{" "}
-                                {maxWordsUserAsString}
+                                {isUserSubd
+                                  ? userMonthlyConsumption
+                                  : userTotalConsumption || 0}{" "}
+                                / {maxWordsUserAsString}
                               </p>
                             </div>
                             <div className={styles.progressContainer}>
