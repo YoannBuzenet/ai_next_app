@@ -155,7 +155,7 @@ export default function Home(props) {
                     <p>
                       <FormattedMessage
                         id="page.index.firstLiner.paragraph"
-                        defaultMessage="One click and you're in."
+                        defaultMessage="Generate qualitative and creative text easily"
                       />
                     </p>
                     <div className={styles.ctaMain}>
@@ -188,7 +188,7 @@ export default function Home(props) {
                 <span>
                   <FormattedMessage
                     id="page.index.firstCase.explaination"
-                    defaultMessage="Facebook Ad ? Blog Intro ? Product Description ? We have more than 40 categories."
+                    defaultMessage="Marketing Text ? Facebook Ad ? Blog Intro ? We have more than 20 categories."
                   />
                 </span>
               </div>
@@ -210,13 +210,13 @@ export default function Home(props) {
                 <span className={styles.cardTitle}>
                   <FormattedMessage
                     id="page.index.thirdCase.slogan"
-                    defaultMessage="And just click"
+                    defaultMessage="And let it write"
                   />
                 </span>
                 <span>
                   <FormattedMessage
                     id="page.index.thirdCase.explaination"
-                    defaultMessage="AI generates creative and relevant text based on what you entered. You can directly copy it and use it !"
+                    defaultMessage="AI generates automatically creative and relevant text based on what you entered. You can directly copy it and use it !"
                   />
                 </span>
               </div>
