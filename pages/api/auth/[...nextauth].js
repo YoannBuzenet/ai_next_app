@@ -31,7 +31,7 @@ callbacks.signIn = async function signIn(user, account, metadata) {
 
     const userDataFromAPI = await axios
       .post(
-        `${process.env.CENTRAL_API_URL}/api/users/loginAndRegisterIfNeeded`,
+        `${process.env.CENTRAL_API_URL}/api/users/login-and-register-if-needed`,
         finalUserObject,
         getHeader()
       )
@@ -63,12 +63,9 @@ callbacks.session = async function session(session, token) {
   // refresh user Data
   if (userData.hasOwnProperty("id")) {
     //redefine userData here et assign it into same variable
-    const objectToSend = {
-      userID: userData.id,
-    };
-    let apiResp = await axios.post(
-      `${process.env.CENTRAL_API_URL}/api/users/getById`,
-      objectToSend,
+
+    let apiResp = await axios.get(
+      `${process.env.CENTRAL_API_URL}/api/users/${userData.id}`,
       getHeader()
     );
 
