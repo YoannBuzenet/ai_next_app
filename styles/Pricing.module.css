@@ -238,7 +238,7 @@ div.onePriceDiv3 {
   color: var(--grey-text);
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1450px) {
   .pricesContainer {
     flex-direction: column;
     align-items: center;
