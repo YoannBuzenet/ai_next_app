@@ -4,19 +4,8 @@ Bugsnag.start({ apiKey: process.env.BUGSNAG_KEY });
 import { getHeader } from "../../../services/authHelper";
 
 export default async (req, res) => {
-  let idUser;
-  if (req?.body?.session?.user?.provider === "google") {
-    idUser = req.body.session.user.googleId;
-  }
-
-  const objectToSend = {
-    idUser: idUser,
-    provider: req?.body?.session?.user?.provider,
-  };
-
-  const apiResp = await axios.post(
-    `${process.env.CENTRAL_API_URL}/api/numberOfWords/userTotalConsumption`,
-    objectToSend,
+  const apiResp = await axios.get(
+    `${process.env.CENTRAL_API_URL}/api/numberOfWords/${req?.body?.session?.user?.id}/total-consumption`,
     getHeader()
   );
   try {
