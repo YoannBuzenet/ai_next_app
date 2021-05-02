@@ -1,6 +1,7 @@
 import axios from "axios";
 import Bugsnag from "@bugsnag/js";
 Bugsnag.start({ apiKey: process.env.BUGSNAG_KEY });
+import { getHeader } from "../../../services/authHelper";
 
 export default (req, res) => {
   let userData;
@@ -29,12 +30,12 @@ export default (req, res) => {
             telephone: req.body.telephone,
             mail: req.body.mail,
             message: req.body.message,
-            passphrase: process.env.FRONT_APP_PASSPHRASE,
           };
           try {
             axios.post(
               `${process.env.CENTRAL_API_URL}/api/mail/contact-us`,
-              objectToSend
+              objectToSend,
+              getHeader()
             );
             res.statusCode = 200;
           } catch (e) {

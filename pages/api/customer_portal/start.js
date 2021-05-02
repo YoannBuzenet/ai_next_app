@@ -2,6 +2,7 @@ import axios from "axios";
 import Bugsnag from "@bugsnag/js";
 import { isUserLogged, isUserSubscribed } from "../../../services/userCheck";
 Bugsnag.start({ apiKey: process.env.BUGSNAG_KEY });
+import { getHeader } from "../../../services/authHelper";
 
 export default async (req, res) => {
   if (!isUserLogged(req?.body?.user?.isLoggedUntil)) {
@@ -11,15 +12,11 @@ export default async (req, res) => {
     res.status(401).send();
     return;
   }
-  const objectToSend = {
-    passphrase: process.env.FRONT_APP_PASSPHRASE,
-    idUser: req?.body?.user?.id,
-  };
 
   try {
-    const APIresp = await axios.post(
-      `${process.env.CENTRAL_API_URL}/api/customer_portal/get_stripe_user_id`,
-      objectToSend
+    const APIresp = await axios.get(
+      `${process.env.CENTRAL_API_URL}/api/users/${req?.body?.user?.id}/stripeId`,
+      getHeader()
     );
 
     const userStripeId = APIresp.data;

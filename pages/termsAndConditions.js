@@ -75,13 +75,13 @@ export default function TermsAndConditions() {
         <p>
           <FormattedMessage
             id="page.termsAndConditions.serviceDefinition.paragraph2"
-            defaultMessage="Words are counted as they are generated. Monthly access consists of 20,000 words (twenty thousand words). Beyond this limit, the USER can no longer use the SERVICE until renewal of his subscription, which takes place 30 days after his subscription date, or purchase of a top-up."
+            defaultMessage="Words are counted as they are generated. Monthly access consists of 20,000 words (twenty thousand words). Beyond this limit, the USER can no longer use the SERVICE until renewal of his subscription, which takes place 30 days after his subscription date, or purchase of a service extension."
           />
         </p>
         <p>
           <FormattedMessage
             id="page.termsAndConditions.serviceDefinition.paragraph3"
-            defaultMessage="If desired, the USER can increase his word level from time to time by purchasing a 20,000 word refill (twenty thousand words) for 25 euros including tax. This increase is one-off: it lasts 30 days and is not tacitly renewed."
+            defaultMessage="If desired, the USER can increase his word level from time to time by purchasing a 20,000 word (twenty thousand words) service extension, called refill, for 25 euros including tax. This increase is one-off: it lasts 30 days and is not tacitly renewed."
           />
         </p>
         <h2>

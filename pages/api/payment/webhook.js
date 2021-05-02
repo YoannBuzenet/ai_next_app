@@ -4,6 +4,7 @@ import Bugsnag from "@bugsnag/js";
 import { buffer } from "micro";
 import Cors from "micro-cors";
 Bugsnag.start({ apiKey: process.env.BUGSNAG_KEY });
+import { getHeader } from "../../../services/authHelper";
 
 export const config = {
   api: {
@@ -59,7 +60,6 @@ export default async (req, res) => {
         // Payment is successful and the subscription is created.
         // You should provision the subscription and save the customer ID to your database.
         const objectToSend = {
-          passphrase: process.env.FRONT_APP_PASSPHRASE,
           stripePurchaseObject: {
             session_id: event.data.object.id,
             customer_email: event.data.object.customer_email,
@@ -75,7 +75,8 @@ export default async (req, res) => {
         axios
           .post(
             `${process.env.CENTRAL_API_URL}/api/stripePurchases/createStripePurchase`,
-            objectToSend
+            objectToSend,
+            getHeader()
           )
           .catch((error) => {
             console.error(
@@ -92,7 +93,6 @@ export default async (req, res) => {
         // This approach helps you avoid hitting rate limits.
         console.log("event INVOICE PAID", event);
         const objectToSendBackEnd = {
-          passphrase: process.env.FRONT_APP_PASSPHRASE,
           customerID: event.data.object.customer,
           amount: event.data.object.amount_due,
           billing_reason: event.data.object.billing_reason,
@@ -107,7 +107,8 @@ export default async (req, res) => {
         axios
           .post(
             `${process.env.CENTRAL_API_URL}/api/stripePurchases/updateSubscription`,
-            objectToSendBackEnd
+            objectToSendBackEnd,
+            getHeader()
           )
           .catch((error) => {
             console.error(
@@ -127,11 +128,11 @@ export default async (req, res) => {
           const custrom_stripe_id = event.data.object.customer;
           const subscriptionCanceledObject = {
             customer_id: custrom_stripe_id,
-            passphrase: process.env.FRONT_APP_PASSPHRASE,
           };
           axios.post(
             `${process.env.CENTRAL_API_URL}/api/subscription/error`,
-            subscriptionCanceledObject
+            subscriptionCanceledObject,
+            getHeader()
           );
         } catch (error) {
           Bugsnag.notify(new Error(error));
@@ -146,11 +147,11 @@ export default async (req, res) => {
           const custrom_stripe_id = event.data.object.customer;
           const subscriptionCanceledObject = {
             customer_id: custrom_stripe_id,
-            passphrase: process.env.FRONT_APP_PASSPHRASE,
           };
           axios.post(
             `${process.env.CENTRAL_API_URL}/api/subscription/cancel`,
-            subscriptionCanceledObject
+            subscriptionCanceledObject,
+            getHeader()
           );
         } catch (error) {
           Bugsnag.notify(new Error(error));

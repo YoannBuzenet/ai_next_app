@@ -1,6 +1,7 @@
 const axios = require("axios");
 var Bugsnag = require("@bugsnag/js");
 Bugsnag.start({ apiKey: process.env.BUGSNAG_KEY });
+import { getHeader } from "../../../services/authHelper";
 
 export default async (req, res) => {
   const { session_id, user } = req.body;
@@ -10,7 +11,6 @@ export default async (req, res) => {
   console.log("req.body", req.body);
 
   const objectToSend = {
-    passphrase: process.env.FRONT_APP_PASSPHRASE,
     session: session_id,
     userID: user.id,
   };
@@ -19,7 +19,8 @@ export default async (req, res) => {
     // ping generic API
     const axiosCall = await axios.post(
       `${process.env.CENTRAL_API_URL}/api/stripePurchases/sessionLink`,
-      objectToSend
+      objectToSend,
+      getHeader()
     );
     console.log("axios call", axiosCall);
     res.status(200).send();
