@@ -1,6 +1,7 @@
 import NextAuth from "next-auth";
 import Providers from "next-auth/providers";
 import axios from "axios";
+import { getHeader } from "../../../services/authHelper";
 
 const callbacks = {};
 let userData = "";
@@ -25,14 +26,14 @@ callbacks.signIn = async function signIn(user, account, metadata) {
 
     const finalUserObject = {
       user: googleUser,
-      passphrase: process.env.FRONT_APP_PASSPHRASE,
       provider: "google",
     };
 
     const userDataFromAPI = await axios
       .post(
         `${process.env.CENTRAL_API_URL}/api/users/loginAndRegisterIfNeeded`,
-        finalUserObject
+        finalUserObject,
+        getHeader()
       )
       .catch((err) => console.log("error while pinging API : ", err));
 
@@ -63,12 +64,12 @@ callbacks.session = async function session(session, token) {
   if (userData.hasOwnProperty("id")) {
     //redefine userData here et assign it into same variable
     const objectToSend = {
-      passphrase: process.env.FRONT_APP_PASSPHRASE,
       userID: userData.id,
     };
     let apiResp = await axios.post(
       `${process.env.CENTRAL_API_URL}/api/users/getById`,
-      objectToSend
+      objectToSend,
+      getHeader()
     );
 
     console.log("our new data", apiResp.data);

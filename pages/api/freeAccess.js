@@ -1,5 +1,6 @@
 import axios from "axios";
 import Bugsnag from "@bugsnag/js";
+import { getHeader } from "../../services/authHelper";
 Bugsnag.start({ apiKey: process.env.BUGSNAG_KEY });
 
 export default async (req, res) => {
@@ -11,7 +12,6 @@ export default async (req, res) => {
   }
 
   const objectToSend = {
-    passphrase: process.env.FRONT_APP_PASSPHRASE,
     user: req.body.user,
     provider: req?.body?.user?.provider,
   };
@@ -19,7 +19,8 @@ export default async (req, res) => {
   try {
     const APIresp = await axios.post(
       `${process.env.CENTRAL_API_URL}/api/users/EnableFreeAccess`,
-      objectToSend
+      objectToSend,
+      getHeader()
     );
 
     res.status(200).json(APIresp.data);
