@@ -93,7 +93,7 @@
   "page.pricing.Custom": "Sur Mesure",
   "page.pricing.option5000Free": "5 000 mots gratuits",
   "page.pricing.option10000Free": "10 000 mots gratuits",
-  "page.pricing.mailSupport": "Support par email 24/7",
+  "page.pricing.mailSupport": "Support Email",
   "page.pricing.accessAllCategories": "Accès à toutes les catégories",
   "page.pricing.50000words": "50 000 mots par mois",
   "page.pricing.20000words": "20 000 mots par mois",
@@ -215,6 +215,7 @@
   "compo.text.paidQuotReached": "Montant maximal atteint",
   "compo.text.inputLenghtMin": "Votre texte doit faire au moins un caractère.",
   "compo.text.AllAIoutputFiltered": "Tous les résultats de l'IA ont été filtrés. Cela arrive quand des propos déplacés sont formulés. Merci de veiller à intégrer du contenu politiquement correct. Tout abus pourra amener à une fermeture du compte.",
+  "compo.text.notification.0output": "Oops ! L'IA n'a trouvé aucune idée pertinente. Pourriez-vous essayer d'entrer plus de mots ou de reformuler votre texte ?",
 
   "compo.chart.dailyUse": "Utilisation",
 
@@ -239,7 +240,9 @@
   "navbar.menu.pricing": "Tarifs",
 
   "notification.remainingConsoUnder2000words": "Il vous reste moins de 2 000 mots à utiliser ce mois-ci. Si besoin, vous pouvez acheter une recharge dans la rubrique Mon Compte.",
+  "notification.remainingConsoUnder2000wordsFreeTrial": "Il vous reste moins de 2 000 mots à utiliser ce mois-ci. Si besoin, vous pouvez vous abonner via la page Tarifs.",
   "notification.remainingConsoat0": "Vous n'avez plus de mots à utiliser. Si besoin, vous pouvez acheter une recharge dans la rubrique Mon Compte.",
+  "notification.remainingConsoat0.FreeTrial": "Vous n'avez plus de mots à utiliser. Si le service vous plait, vous pouvez vous abonner via la page Tarifs !",
   "notification.youmustBeLogged": "Vous devez être connecté pour accéder à cette fonctionnalité.",
   "notification.youmustBeSubscribed": "Vous devez être abonné pour accéder à cette fonctionnalité.",
 
@@ -251,6 +254,7 @@
   "general.errorHandling.error401": "Vous n'êtes plus connecté. Merci de vous reconnecter.",
   "general.errorHandling.error403": "Vous n'avez pas accès à cette ressource.",
   "general.errorHandling.error500": "Il y a eu une erreur. Merci de réessayer ultérieurement.",
+  "general.errorHandling.errorUnknown": "Il y a eu une erreur. Merci de réessayer ultérieurement.",
 
   "categories.id1.categorylabel": "Description Produit",
   "categories.id1.label": "Décrivez votre produit",

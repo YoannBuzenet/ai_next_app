@@ -19,6 +19,7 @@ import UserCheck from "../../services/userCheck";
 import { FREE_LIMIT_NUMBER_OF_WORDS } from "../../config/settings";
 import Head from "next/head";
 import errorHandling from "../../services/errorHandling";
+import { useRouter } from "next/router";
 
 export async function getServerSideProps(context) {
   const session = await getSession(context);
@@ -52,9 +53,13 @@ export default function Text(props) {
   const [outputNumber, setOutputNumber] = useState(3);
   const [isLoadingAPIResults, setIsLoadingAPIResults] = useState(false);
   const [session, loading] = useSession();
+  // We add this counter because session is not updated from server as long as the user didn't click on a Link. If he does, state will be reset and session up to date.
+  const [temporaryAddedCount, setTemporaryAddedCount] = useState(0);
   const { userContext, setUserContext } = useContext(UserContext);
   // We will count the number of request on that page with this state
   const [resultSerie, setResultSerie] = useState(0);
+
+  const router = useRouter();
 
   const isSubbed =
     UserCheck.isUserSubscribed(props.session?.user?.isSubscribedUntil) ||
@@ -64,20 +69,17 @@ export default function Text(props) {
     props.session?.user?.isOnFreeAccess === 1 ||
     session?.user?.isOnFreeAccess === 1;
 
-  console.log("session front", session);
-  console.log("is subbed", isSubbed);
-  console.log(
-    "session?.user?.isOnFreeAccess === 1",
-    session?.user?.isOnFreeAccess === 1
+  const userTotalConsumptionSubscribedParsed = parseInt(
+    props?.session?.user?.consumptionThisMonth
   );
-  console.log(
-    "session?.wordsTotalConsumption?.userTotalConsumption",
-    session?.user?.totalWordsConsumption
+  const userTotalConsumptionFreeTrialParsed = parseInt(
+    props?.session?.user?.totalWordsConsumption
   );
-  console.log(
-    "limit dépassée ?",
-    session?.user?.totalWordsConsumption > FREE_LIMIT_NUMBER_OF_WORDS
-  );
+
+  // console.log("session front", session);
+  // console.log("temporary added count", temporaryAddedCount);
+  // console.log("session serv", props.session);
+  // console.log("is subbed", isSubbed);
 
   // TRANSLATIONS
   const translatedInfoLess2000WordsMessage = intl.formatMessage({
@@ -85,10 +87,20 @@ export default function Text(props) {
     defaultMessage:
       "There are less than 2,000 words remaining in your credit this month. If needed, you can purchase additional credits in My Account.",
   });
+  const translatedInfoLess2000WordsMessageFreeTrial = intl.formatMessage({
+    id: "notification.remainingConsoUnder2000wordsFreeTrial",
+    defaultMessage:
+      "You have less than 2,000 words left to use this month. If necessary, you can subscribe via the Pricing page.",
+  });
   const translatedInfonoMoreCreditMessage = intl.formatMessage({
     id: "notification.remainingConsoat0",
     defaultMessage:
       "All your credits have been used this month. If needed, you can purchase additional credits in My Account.",
+  });
+  const translatedInfonoMoreCreditMessageFreeTrial = intl.formatMessage({
+    id: "notification.remainingConsoat0.FreeTrial",
+    defaultMessage:
+      "You have no more words to use. If you like the service, you can subscribe via the Pricing page!",
   });
   const translatedLabelName = intl.formatMessage({
     id: "compo.text.inputOutput",
@@ -115,6 +127,11 @@ export default function Text(props) {
     defaultMessage:
       "All AI results have been filtered. This happens when inappropriate inputs are entered. Please ensure that you include politically correct content. Any abuse may lead to the account being closed.",
   });
+  const translatedInputnoIdea = intl.formatMessage({
+    id: "compo.text.notification.0output",
+    defaultMessage:
+      "Oops ! AI could not find any relevant idea. Could you try to enter more text or rephrase your words ?",
+  });
 
   const translatedHead = intl.formatMessage({
     id: "compo.text.head.title",
@@ -122,20 +139,30 @@ export default function Text(props) {
   });
 
   useEffect(() => {
-    if (!isSubbed) {
+    if (!isSubbed && !isUserOnFreeAccess) {
+      router.push("/");
       return;
     }
+  }, []);
+
+  useEffect(() => {
+    if (!isSubbed && !isUserOnFreeAccess) {
+      router.push("/");
+      return;
+    }
+
+    // User ended free trial
     if (
-      session?.user?.totalMaxWordsUserThisMonth -
-        session?.user?.consumptionThisMonth <=
-      0
+      isUserOnFreeAccess &&
+      FREE_LIMIT_NUMBER_OF_WORDS -
+        (userTotalConsumptionFreeTrialParsed + temporaryAddedCount) <
+        0
     ) {
-      console.log("consommation terminée");
       setNotificationInfo({
         ...notificationInfo,
         alert: {
           ...notificationInfo.alert,
-          message: translatedInfonoMoreCreditMessage,
+          message: translatedInfonoMoreCreditMessageFreeTrial,
           severity: "info",
         },
         snackbar: {
@@ -143,12 +170,33 @@ export default function Text(props) {
           isDisplayed: true,
         },
       });
-    } else if (
-      session?.user?.totalMaxWordsUserThisMonth -
-        session?.user?.consumptionThisMonth <
+    }
+    // User arrives at the end of its free trial
+    else if (
+      isUserOnFreeAccess &&
+      FREE_LIMIT_NUMBER_OF_WORDS -
+        (userTotalConsumptionFreeTrialParsed + temporaryAddedCount) <
+        2000
+    ) {
+      setNotificationInfo({
+        ...notificationInfo,
+        alert: {
+          ...notificationInfo.alert,
+          message: translatedInfoLess2000WordsMessageFreeTrial,
+          severity: "info",
+        },
+        snackbar: {
+          ...notificationInfo.snackbar,
+          isDisplayed: true,
+        },
+      });
+    }
+    // User arrived at less than 2000 words of credit
+    else if (
+      props?.session?.user?.totalMaxWordsUserThisMonth -
+        (userTotalConsumptionSubscribedParsed + temporaryAddedCount) <
       2000
     ) {
-      console.log("consommation presque terminée");
       setNotificationInfo({
         ...notificationInfo,
         alert: {
@@ -161,10 +209,33 @@ export default function Text(props) {
           isDisplayed: true,
         },
       });
-    } else {
-      console.log("consommation ok");
     }
-  }, [session?.user?.monthlyWordsConsumption]);
+    // User arrived at the end of its paid subscription amount
+    else if (
+      props?.session?.user?.totalMaxWordsUserThisMonth -
+        (userTotalConsumptionSubscribedParsed + temporaryAddedCount) <=
+      0
+    ) {
+      setNotificationInfo({
+        ...notificationInfo,
+        alert: {
+          ...notificationInfo.alert,
+          message: translatedInfonoMoreCreditMessage,
+          severity: "info",
+        },
+        snackbar: {
+          ...notificationInfo.snackbar,
+          isDisplayed: true,
+        },
+      });
+    } else {
+      // console.log("consommation ok");
+    }
+  }, [
+    props?.session?.user?.monthlyWordsConsumption,
+    setTemporaryAddedCount,
+    temporaryAddedCount,
+  ]);
 
   const handleOuputNumber = (value) => {
     setOutputNumber(value);
@@ -237,7 +308,7 @@ export default function Text(props) {
           resultSerie,
           indexCreation: index,
         }));
-        const wasAllAIOutputFiltered = resp.data.wasAllInputFiltered;
+        const wasAllAIOutputFiltered = resp.data.wasAllAIOutputFiltered;
 
         // If all AI output has been filtered (user may have entered an inadapted content, for example impolite or politically harmful)
         if (wasAllAIOutputFiltered) {
@@ -253,12 +324,29 @@ export default function Text(props) {
               isDisplayed: true,
             },
           });
+        } else if (
+          Array.isArray(resp?.data?.response) &&
+          resp.data.response.length === 0
+        ) {
+          setNotificationInfo({
+            ...notificationInfo,
+            alert: {
+              ...notificationInfo.alert,
+              message: translatedInputnoIdea,
+              severity: "info",
+            },
+            snackbar: {
+              ...notificationInfo.snackbar,
+              isDisplayed: true,
+            },
+          });
         }
 
         console.log("result with dates", resultsWithDates);
         setAIResults([...resultsWithDates, ...AIResults]);
         setResultSerie(resultSerie + 1);
         setIsLoadingAPIResults(false);
+        setTemporaryAddedCount(resp.data.numberOfWordsUsedInResp);
       })
       .catch((err) => {
         console.log("error after posting to next", err);
@@ -431,10 +519,12 @@ export default function Text(props) {
                     </div>
                     {/* User is subscribed and has words left or user is on free access and has words left*/}
                     {((isUserOnFreeAccess &&
-                      props.session?.user?.totalWordsConsumption <
+                      userTotalConsumptionFreeTrialParsed +
+                        temporaryAddedCount <
                         FREE_LIMIT_NUMBER_OF_WORDS) ||
                       (isSubbed &&
-                        (props.session?.user?.consumptionThisMonth || 0) <=
+                        userTotalConsumptionSubscribedParsed +
+                          temporaryAddedCount <=
                           props.session?.user?.totalMaxWordsUserThisMonth)) && (
                       <div>
                         <Button
@@ -454,7 +544,8 @@ export default function Text(props) {
                     )}
                     {/* User is subscribed but used everything */}
                     {isSubbed &&
-                      (props.session?.user?.consumptionThisMonth || 0) >=
+                      userTotalConsumptionSubscribedParsed +
+                        temporaryAddedCount >=
                         props.session?.user?.totalMaxWordsUserThisMonth && (
                         <div>
                           <Button
@@ -474,7 +565,8 @@ export default function Text(props) {
                       )}
                     {/* User is on Free Access but used everything */}
                     {isUserOnFreeAccess &&
-                      props.session?.user?.totalWordsConsumption >
+                      userTotalConsumptionFreeTrialParsed +
+                        temporaryAddedCount >
                         FREE_LIMIT_NUMBER_OF_WORDS && (
                         <div>
                           <Button

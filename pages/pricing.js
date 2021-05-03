@@ -268,7 +268,7 @@ const Pricing = () => {
                     />
                     <Option
                       idOptionLabel="page.pricing.mailSupport"
-                      defaultOptionLabel="24/7 email support"
+                      defaultOptionLabel="Email support"
                     />
                   </div>
                 </div>
@@ -410,7 +410,7 @@ const Pricing = () => {
                     />
                     <Option
                       idOptionLabel="page.pricing.mailSupport"
-                      defaultOptionLabel="24/7 email support"
+                      defaultOptionLabel="Email support"
                     />
                   </div>
                 </div>
@@ -495,7 +495,7 @@ const Pricing = () => {
                     />
                     <Option
                       idOptionLabel="page.pricing.mailSupport"
-                      defaultOptionLabel="24/7 email support"
+                      defaultOptionLabel="Email support"
                     />
                   </div>
                 </div>

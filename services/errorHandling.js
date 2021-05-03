@@ -27,6 +27,13 @@ function checkErrorStatus(error) {
         defaultMessage={`There has been an error. Please try again later.`}
       />
     );
+  } else {
+    return (
+      <FormattedMessage
+        id="general.errorHandling.errorUnknown"
+        defaultMessage={`There has been an error. Please try again later.`}
+      />
+    );
   }
 
   return false;
