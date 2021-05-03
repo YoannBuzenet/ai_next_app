@@ -240,7 +240,9 @@
   "navbar.menu.pricing": "Pricing",
 
   "notification.remainingConsoUnder2000words": "There are less than 2,000 words remaining in your credit this month. If needed, you can purchase additional credits in My Account.",
+  "notification.remainingConsoUnder2000wordsFreeTrial": "You have less than 2,000 words left to use this month. If necessary, you can subscribe via the Pricing page.",
   "notification.remainingConsoat0": "All your credits have been used this month. If needed, you can purchase additional credits in My Account.",
+  "notification.remainingConsoat0.FreeTrial": "You have no more words to use. If you like the service, you can subscribe via the Pricing page!",
   "notification.youmustBeLogged": "You must be logged to access this functionnality.",
   "notification.youmustBeSubscribed": "You must be subscribed to access this functionnality.",
 

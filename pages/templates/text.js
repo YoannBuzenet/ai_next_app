@@ -85,10 +85,20 @@ export default function Text(props) {
     defaultMessage:
       "There are less than 2,000 words remaining in your credit this month. If needed, you can purchase additional credits in My Account.",
   });
+  const translatedInfoLess2000WordsMessageFreeTrial = intl.formatMessage({
+    id: "notification.remainingConsoUnder2000wordsFreeTrial",
+    defaultMessage:
+      "You have less than 2,000 words left to use this month. If necessary, you can subscribe via the Pricing page.",
+  });
   const translatedInfonoMoreCreditMessage = intl.formatMessage({
     id: "notification.remainingConsoat0",
     defaultMessage:
       "All your credits have been used this month. If needed, you can purchase additional credits in My Account.",
+  });
+  const translatedInfonoMoreCreditMessageFreeTrial = intl.formatMessage({
+    id: "notification.remainingConsoat0.FreeTrial",
+    defaultMessage:
+      "You have no more words to use. If you like the service, you can subscribe via the Pricing page!",
   });
   const translatedLabelName = intl.formatMessage({
     id: "compo.text.inputOutput",
@@ -127,10 +137,49 @@ export default function Text(props) {
   });
 
   useEffect(() => {
-    if (!isSubbed) {
+    if (!isSubbed && !isUserOnFreeAccess) {
       return;
     }
+    // User arrives at the end of its free trial
     if (
+      isUserOnFreeAccess &&
+      FREE_LIMIT_NUMBER_OF_WORDS - props?.session?.user?.totalWordsConsumption <
+        2000
+    ) {
+      setNotificationInfo({
+        ...notificationInfo,
+        alert: {
+          ...notificationInfo.alert,
+          message: translatedInfoLess2000WordsMessageFreeTrial,
+          severity: "info",
+        },
+        snackbar: {
+          ...notificationInfo.snackbar,
+          isDisplayed: true,
+        },
+      });
+    }
+    // User ended free trial
+    else if (
+      isUserOnFreeAccess &&
+      FREE_LIMIT_NUMBER_OF_WORDS - props?.session?.user?.totalWordsConsumption <
+        0
+    ) {
+      setNotificationInfo({
+        ...notificationInfo,
+        alert: {
+          ...notificationInfo.alert,
+          message: translatedInfonoMoreCreditMessageFreeTrial,
+          severity: "info",
+        },
+        snackbar: {
+          ...notificationInfo.snackbar,
+          isDisplayed: true,
+        },
+      });
+    }
+    // User arrived at the end of its paid subscription amount
+    else if (
       props?.session?.user?.totalMaxWordsUserThisMonth -
         props?.session?.user?.consumptionThisMonth <=
       0
@@ -148,7 +197,9 @@ export default function Text(props) {
           isDisplayed: true,
         },
       });
-    } else if (
+    }
+    // User arrived at less than 2000 words of credit
+    else if (
       props?.session?.user?.totalMaxWordsUserThisMonth -
         props?.session?.user?.consumptionThisMonth <
       2000
