@@ -237,7 +237,7 @@ export default function Text(props) {
           resultSerie,
           indexCreation: index,
         }));
-        const wasAllAIOutputFiltered = resp.data.wasAllInputFiltered;
+        const wasAllAIOutputFiltered = resp.data.wasAllAIOutputFiltered;
 
         // If all AI output has been filtered (user may have entered an inadapted content, for example impolite or politically harmful)
         if (wasAllAIOutputFiltered) {

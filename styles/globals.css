@@ -328,6 +328,10 @@ label + .MuiInput-formControl {
 input.MuiInputBase-input.MuiOutlinedInput-input {
   font-size: 20px;
 }
+/* TextZoneField */
+.TextZone input.MuiInputBase-input.MuiOutlinedInput-input {
+  font-size: 1.6rem;
+}
 
 .contactUs .MuiTextField-root label.MuiFormLabel-root.MuiInputLabel-root,
 .contactUs
