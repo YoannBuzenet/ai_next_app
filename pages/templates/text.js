@@ -19,6 +19,7 @@ import UserCheck from "../../services/userCheck";
 import { FREE_LIMIT_NUMBER_OF_WORDS } from "../../config/settings";
 import Head from "next/head";
 import errorHandling from "../../services/errorHandling";
+import { useRouter } from "next/router";
 
 export async function getServerSideProps(context) {
   const session = await getSession(context);
@@ -57,6 +58,8 @@ export default function Text(props) {
   const { userContext, setUserContext } = useContext(UserContext);
   // We will count the number of request on that page with this state
   const [resultSerie, setResultSerie] = useState(0);
+
+  const router = useRouter();
 
   const isSubbed =
     UserCheck.isUserSubscribed(props.session?.user?.isSubscribedUntil) ||
@@ -137,6 +140,14 @@ export default function Text(props) {
 
   useEffect(() => {
     if (!isSubbed && !isUserOnFreeAccess) {
+      router.push("/");
+      return;
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!isSubbed && !isUserOnFreeAccess) {
+      router.push("/");
       return;
     }
 
