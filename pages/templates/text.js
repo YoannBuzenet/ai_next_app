@@ -126,8 +126,8 @@ export default function Text(props) {
       return;
     }
     if (
-      session?.user?.totalMaxWordsUserThisMonth -
-        session?.user?.consumptionThisMonth <=
+      props?.session?.user?.totalMaxWordsUserThisMonth -
+        props?.session?.user?.consumptionThisMonth <=
       0
     ) {
       console.log("consommation terminée");
@@ -144,8 +144,8 @@ export default function Text(props) {
         },
       });
     } else if (
-      session?.user?.totalMaxWordsUserThisMonth -
-        session?.user?.consumptionThisMonth <
+      props?.session?.user?.totalMaxWordsUserThisMonth -
+        props?.session?.user?.consumptionThisMonth <
       2000
     ) {
       console.log("consommation presque terminée");
@@ -164,7 +164,7 @@ export default function Text(props) {
     } else {
       console.log("consommation ok");
     }
-  }, [session?.user?.monthlyWordsConsumption]);
+  }, [props?.session?.user?.monthlyWordsConsumption]);
 
   const handleOuputNumber = (value) => {
     setOutputNumber(value);
