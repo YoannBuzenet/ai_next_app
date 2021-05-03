@@ -115,6 +115,11 @@ export default function Text(props) {
     defaultMessage:
       "All AI results have been filtered. This happens when inappropriate inputs are entered. Please ensure that you include politically correct content. Any abuse may lead to the account being closed.",
   });
+  const translatedInputnoIdea = intl.formatMessage({
+    id: "compo.text.notification.0output",
+    defaultMessage:
+      "Oops ! AI could not find any relevant idea. Could you try to enter more text or rephrase your words ?",
+  });
 
   const translatedHead = intl.formatMessage({
     id: "compo.text.head.title",
@@ -247,6 +252,22 @@ export default function Text(props) {
               ...notificationInfo.alert,
               message: translatedInputCompletelyFiltered,
               severity: "warning",
+            },
+            snackbar: {
+              ...notificationInfo.snackbar,
+              isDisplayed: true,
+            },
+          });
+        } else if (
+          array.isArray(resp?.data?.response) &&
+          resp.data.response.length === 0
+        ) {
+          setNotificationInfo({
+            ...notificationInfo,
+            alert: {
+              ...notificationInfo.alert,
+              message: translatedInputnoIdea,
+              severity: "info",
             },
             snackbar: {
               ...notificationInfo.snackbar,
