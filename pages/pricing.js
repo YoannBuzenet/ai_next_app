@@ -18,6 +18,22 @@ import { langDictionnary } from "../definitions/langDictionnary";
 import getStripe from "../services/getStripe";
 import errorHandling from "../services/errorHandling";
 
+export async function getServerSideProps(context) {
+  const session = await getSession(context);
+  const isLoggedUser = UserCheck.isUserLogged(session?.user?.isLoggedUntil);
+  if (!isLoggedUser) {
+    return {
+      redirect: {
+        destination: "/",
+        permanent: false,
+      },
+      props: {},
+    };
+  } else {
+    return { props: { session } };
+  }
+}
+
 const Pricing = () => {
   const [isAnnual, setIsAnnual] = useState(true);
   const { notificationInfo, setNotificationInfo } = useContext(
@@ -143,13 +159,25 @@ const Pricing = () => {
     }
   };
 
-  const numberOfWordsUsed = session?.user?.totalWordsConsumption;
+  const numberOfWordsUsed = props.session?.user?.totalWordsConsumption;
   const hasUserUsedIsFreeCredit =
     numberOfWordsUsed > FREE_LIMIT_NUMBER_OF_WORDS;
-  const isLoggedUser = UserCheck.isUserLogged(session?.user?.isLoggedUntil);
-  const isSubbed = UserCheck.isUserSubscribed(session?.user?.isSubscribedUntil);
-  const isUserOnFreeAccess = session?.user?.isOnFreeAccess === 1;
-  const isUserOnCompanyAccess = session?.user?.isOnCompanyAccess === 1;
+
+  const isLoggedUser =
+    UserCheck.isUserLogged(session?.user?.isLoggedUntil) ||
+    UserCheck.isUserLogged(props.session?.user?.isLoggedUntil);
+
+  const isSubbed =
+    UserCheck.isUserSubscribed(session?.user?.isSubscribedUntil) ||
+    UserCheck.isUserSubscribed(props.session?.user?.isSubscribedUntil);
+
+  const isUserOnFreeAccess =
+    session?.user?.isOnFreeAccess === 1 ||
+    props.session?.user?.isOnFreeAccess === 1;
+
+  const isUserOnCompanyAccess =
+    session?.user?.isOnCompanyAccess === 1 ||
+    props.session?.user?.isOnCompanyAccess === 1;
 
   console.log("number of words", numberOfWordsUsed);
   console.log("hasUserUsedIsFreeCredit", hasUserUsedIsFreeCredit);
