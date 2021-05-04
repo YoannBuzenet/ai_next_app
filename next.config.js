@@ -8,7 +8,7 @@ module.exports = {
           {
             key: "Content-Security-Policy",
             value:
-              "default-src 'self' *.stripe.com stripe.com google.com *.google.com",
+              "default-src 'self' *.stripe.com stripe.com google.com *.google.com data: 'unsafe-inline' 'unsafe-eval' *",
           },
         ],
       },
