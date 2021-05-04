@@ -3,14 +3,15 @@ module.exports = {
   async headers() {
     return [
       {
-        source: '/:path*',
+        source: "/:path*",
         headers: [
           {
             // // https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
-            key: 'Content-Security-Policy',
-            value:
-              "default-src [your-domains...] 'self' data: 'unsafe-inline'"
-          }
-        ]
-      }
+            key: "Content-Security-Policy",
+            value: "default-src [your-domains...] 'self' data: 'unsafe-inline'",
+          },
+        ],
+      },
+    ];
+  },
 };
