@@ -7,7 +7,8 @@ module.exports = {
         headers: [
           {
             key: "Content-Security-Policy",
-            value: "default-src 'self' * data: 'unsafe-inline' 'unsafe-eval' *",
+            value:
+              "default-src 'self' * 'unsafe-inline' 'unsafe-eval' *;frame-src https://js.stripe.com",
           },
         ],
       },

@@ -6,7 +6,6 @@ import selectedAppLangContext from "../contexts/selectedAppLang";
 import notificationContext from "../contexts/notificationsContext";
 import { useSession, getSession } from "next-auth/client";
 import { langInApp } from "../definitions/langs";
-import { decode } from "html-entities/lib";
 
 import * as Icon from "react-feather";
 import { FormattedMessage, useIntl } from "react-intl";
@@ -128,27 +127,12 @@ export default function Home(props) {
 
   console.log("session", session);
 
-  // Parsing meta tag string to remove html entities
-  const escapeRegExp = /(content|href|src|srcSet)="([^"]+)"/g;
-  const escapeHandle = (match, attribute, value) => {
-    return `${attribute}="${decode(value)}"`;
-  };
-
-  const metaTagEscaped = "default-src * 'self' data: 'unsafe-inline' 'unsafe-eval' *; child-src * 'self' data: 'unsafe-inline' 'unsafe-eval' *; script-src 'unsafe-inline' 'self' https://js.stripe.com/v3".replace(
-    escapeRegExp,
-    escapeHandle
-  );
-
   return (
     <>
       <Head>
         <title>{translatedPageTitle}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link rel="icon" href="/favicon.ico" />
-        {/* <meta
-          http-equiv="Content-Security-Policy"
-          content={metaTagEscaped}
-        ></meta> */}
       </Head>
 
       <main>
