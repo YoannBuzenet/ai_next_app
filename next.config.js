@@ -7,7 +7,8 @@ module.exports = {
         headers: [
           {
             key: "Content-Security-Policy",
-            value: "default-src 'self' * 'unsafe-inline' 'unsafe-eval'",
+            value:
+              "default-src 'self' * 'unsafe-inline' 'unsafe-eval';script-src 'self' * 'unsafe-inline' 'unsafe-eval'; child-src : 'self' * 'unsafe-inline' 'unsafe-eval';frame-src:'self' * 'unsafe-inline' 'unsafe-eval'",
           },
         ],
       },
