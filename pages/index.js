@@ -135,7 +135,7 @@ export default function Home(props) {
         <link rel="icon" href="/favicon.ico" />
         <meta
           http-equiv="Content-Security-Policy"
-          content="default-src easyflow.ai 'self' 'unsafe-inline'; script-src https://js.stripe.com/v3; img-src https://*; child-src 'none';"
+          content="default-src easyflow.ai 'self' 'unsafe-inline'; script-src https://js.stripe.com/v3 'self' easyflow.ai; img-src https://*; child-src 'none';"
         ></meta>
       </Head>
 
