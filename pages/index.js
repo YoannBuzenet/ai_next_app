@@ -135,7 +135,7 @@ export default function Home(props) {
         <link rel="icon" href="/favicon.ico" />
         <meta
           http-equiv="Content-Security-Policy"
-          content="default-src * 'self' data: 'unsafe-inline' 'unsafe-eval' *"
+          content="default-src * 'self' data: 'unsafe-inline' 'unsafe-eval' *; child-src * 'self' data: 'unsafe-inline' 'unsafe-eval' *"
         ></meta>
       </Head>
 
