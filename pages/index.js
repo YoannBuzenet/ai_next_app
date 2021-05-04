@@ -6,7 +6,7 @@ import selectedAppLangContext from "../contexts/selectedAppLang";
 import notificationContext from "../contexts/notificationsContext";
 import { useSession, getSession } from "next-auth/client";
 import { langInApp } from "../definitions/langs";
-import Entities from "html-entities/lib/html5-entities";
+import Entities from "html-entities/lib";
 
 import * as Icon from "react-feather";
 import { FormattedMessage, useIntl } from "react-intl";
