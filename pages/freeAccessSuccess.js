@@ -78,7 +78,7 @@ export default function FreeAccessSuccess(props) {
                 <p>
                   <FormattedMessage
                     id="page.subscribeSuccess.freeAccess.youCanNowUseTheApp"
-                    defaultMessage="You can use the application, with a limit of 10,000 words. If you have any question, please contact us."
+                    defaultMessage="You can use the application, with a limit of 6,000 words. If you have any question, please contact us."
                   />
                 </p>
               </div>
