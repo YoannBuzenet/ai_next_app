@@ -11,8 +11,6 @@ import { decode } from "html-entities/lib";
 import * as Icon from "react-feather";
 import { FormattedMessage, useIntl } from "react-intl";
 
-let metaTagEscaped;
-
 export async function getServerSideProps(context) {
   // We check headers from Request to see languages from user browser
   const { req } = context;
@@ -28,17 +26,6 @@ export async function getServerSideProps(context) {
     language = language.split(",");
     language = language[0];
   }
-
-  // Parsing meta tag string to remove html entities
-  const escapeRegExp = /(content|href|src|srcSet)="([^"]+)"/g;
-  const escapeHandle = (match, attribute, value) => {
-    return `${attribute}="${decode(value)}"`;
-  };
-
-  metaTagEscaped = "default-src * 'self' data: 'unsafe-inline' 'unsafe-eval' *; child-src * 'self' data: 'unsafe-inline' 'unsafe-eval' *; script-src 'unsafe-inline' 'self' https://js.stripe.com/v3".replace(
-    escapeRegExp,
-    escapeHandle
-  );
 
   return {
     props: {
@@ -141,16 +128,27 @@ export default function Home(props) {
 
   console.log("session", session);
 
+  // Parsing meta tag string to remove html entities
+  const escapeRegExp = /(content|href|src|srcSet)="([^"]+)"/g;
+  const escapeHandle = (match, attribute, value) => {
+    return `${attribute}="${decode(value)}"`;
+  };
+
+  const metaTagEscaped = "default-src * 'self' data: 'unsafe-inline' 'unsafe-eval' *; child-src * 'self' data: 'unsafe-inline' 'unsafe-eval' *; script-src 'unsafe-inline' 'self' https://js.stripe.com/v3".replace(
+    escapeRegExp,
+    escapeHandle
+  );
+
   return (
     <>
       <Head>
         <title>{translatedPageTitle}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link rel="icon" href="/favicon.ico" />
-        <meta
+        {/* <meta
           http-equiv="Content-Security-Policy"
           content={metaTagEscaped}
-        ></meta>
+        ></meta> */}
       </Head>
 
       <main>
