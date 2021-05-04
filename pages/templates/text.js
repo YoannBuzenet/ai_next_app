@@ -143,7 +143,7 @@ export default function Text(props) {
       router.push("/");
       return;
     }
-  }, []);
+  }, [props.session?.user?.hasOwnProperty("isLoggedUntil")]);
 
   useEffect(() => {
     if (!isSubbed && !isUserOnFreeAccess) {

@@ -92,6 +92,7 @@
   "page.pricing.Perfectforteams": "Perfect for teams",
   "page.pricing.Custom": "Custom",
   "page.pricing.option5000Free": "5,000 free words",
+  "page.pricing.option6000Free": "6,000 free words",
   "page.pricing.option10000Free": "10,000 free words",
   "page.pricing.mailSupport": "Email support",
   "page.pricing.accessAllCategories": "Access to all categories",
@@ -114,7 +115,7 @@
   "page.subscribeSuccess.subscribed.youCanUseTheApp": "You can use the application. If needed, feel free to contact us.",
   "page.subscribeSuccess.subscribed.followConsumption": "To follow your word use, please check the 'My Account' tab.",
   "page.subscribeSuccess.freeAccess.freeAccess": "You have a free access to EasyFlow !",
-  "page.subscribeSuccess.freeAccess.youCanNowUseTheApp": "You can use the application, with a limit of 5,000 words. If you have any question, please contact us.",
+  "page.subscribeSuccess.freeAccess.youCanNowUseTheApp": "You can use the application, with a limit of 6,000 words. If you have any question, please contact us.",
   "page.subscribeSuccess.freeAccess.followConsumption": "To follow your word use, please check the 'My Account' tab.",
 
   "page.paymentFailed.title": "The payment has failed.",

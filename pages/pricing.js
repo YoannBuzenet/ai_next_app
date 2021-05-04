@@ -20,21 +20,11 @@ import errorHandling from "../services/errorHandling";
 
 export async function getServerSideProps(context) {
   const session = await getSession(context);
-  const isLoggedUser = UserCheck.isUserLogged(session?.user?.isLoggedUntil);
-  if (!isLoggedUser) {
-    return {
-      redirect: {
-        destination: "/",
-        permanent: false,
-      },
-      props: {},
-    };
-  } else {
-    return { props: { session } };
-  }
+
+  return { props: { session } };
 }
 
-const Pricing = () => {
+const Pricing = (props) => {
   const [isAnnual, setIsAnnual] = useState(true);
   const { notificationInfo, setNotificationInfo } = useContext(
     notificationContext
@@ -287,8 +277,8 @@ const Pricing = () => {
                   </div>
                   <div className={styles.optionsContainer}>
                     <Option
-                      idOptionLabel="page.pricing.option10000Free"
-                      defaultOptionLabel="10,000 free words"
+                      idOptionLabel="page.pricing.option6000Free"
+                      defaultOptionLabel="6,000 free words"
                     />
                     <Option
                       idOptionLabel="page.pricing.accessAllCategories"
