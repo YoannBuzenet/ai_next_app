@@ -8,7 +8,7 @@ module.exports = {
           {
             key: "Content-Security-Policy",
             value:
-              "default-src * 'unsafe-inline'; script-src * 'unsafe-inline'",
+              "default-src * 'unsafe-inline'; script-src 'unsafe-inline' *",
           },
         ],
       },
