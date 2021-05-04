@@ -133,10 +133,6 @@ export default function Home(props) {
         <title>{translatedPageTitle}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link rel="icon" href="/favicon.ico" />
-        <meta
-          http-equiv="Content-Security-Policy"
-          content="default-src 'self' 'unsafe-inline'; script-src https://js.stripe.com/v3; img-src https://*; child-src 'none';"
-        ></meta>
       </Head>
 
       <main>
