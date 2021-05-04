@@ -8,7 +8,7 @@ module.exports = {
           {
             // // https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
             key: "Content-Security-Policy",
-            value: "default-src [*] 'self' data: 'unsafe-inline'",
+            value: "default-src 'unsafe-inline' 'self' data: 'unsafe-inline'",
           },
         ],
       },
