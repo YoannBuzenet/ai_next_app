@@ -133,6 +133,11 @@ export default function Home(props) {
         <title>{translatedPageTitle}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link rel="icon" href="/favicon.ico" />
+        {/* To update */}
+        <meta
+          httpEquiv="Content-Security-Policy"
+          content="default-src * 'self' data: 'unsafe-inline' 'unsafe-eval' *"
+        />
       </Head>
 
       <main>
