@@ -135,7 +135,7 @@ export default function Home(props) {
         <link rel="icon" href="/favicon.ico" />
         <meta
           http-equiv="Content-Security-Policy"
-          content="default-src 'unsafe-inline' 'self'; img-src https://*; child-src 'none';"
+          content="default-src 'unsafe-inline' 'self' 'https://js.stripe.com/v3'; img-src https://*; child-src 'none';"
         ></meta>
       </Head>
 
