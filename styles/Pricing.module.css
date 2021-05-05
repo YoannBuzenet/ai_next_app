@@ -239,10 +239,6 @@ div.onePriceDiv3 {
 }
 
 @media only screen and (max-width: 1450px) {
-  .pricesContainer {
-    flex-direction: column;
-    align-items: center;
-  }
   .pricesContainer > div {
     margin: auto;
     margin-top: 50px;
@@ -254,5 +250,12 @@ div.onePriceDiv3 {
   .trianglesPatternContainer,
   .blob1Container {
     display: none;
+  }
+}
+
+@media only screen and (max-width: 1068px) {
+  .pricesContainer {
+    flex-direction: column;
+    align-items: center;
   }
 }
