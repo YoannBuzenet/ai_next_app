@@ -25,7 +25,7 @@ export async function getServerSideProps(context) {
 }
 
 const Pricing = (props) => {
-  const [isAnnual, setIsAnnual] = useState(true);
+  const [isAnnual, setIsAnnual] = useState(false);
   const { notificationInfo, setNotificationInfo } = useContext(
     notificationContext
   );
@@ -223,7 +223,7 @@ const Pricing = (props) => {
               </p> */}
             </div>
           </div>
-          <div className={styles.switchContainer}>
+          {/* <div className={styles.switchContainer}>
             <p className={!isAnnual ? styles.selected : styles.nonSelected}>
               <FormattedMessage
                 id="page.pricing.PayMonthly"
@@ -242,7 +242,7 @@ const Pricing = (props) => {
                 defaultMessage="Pay Annually"
               />
             </p>
-          </div>
+          </div> */}
         </div>
         <div className="container">
           <div className={styles.firstDivContainer}>
@@ -379,7 +379,7 @@ const Pricing = (props) => {
                   </div>
                   <div className={styles.priceInfo}>
                     <div className={styles.price}>
-                      {isAnnual && (
+                      {/* {isAnnual && (
                         <span className={styles.priceNumber}>
                           29 €
                           <span>
@@ -389,20 +389,20 @@ const Pricing = (props) => {
                             />
                           </span>
                         </span>
-                      )}
+                      )} */}
                       {!isAnnual && (
-                        <span className={styles.priceNumber}>39 €</span>
+                        <span className={styles.priceNumber}>29 €</span>
                       )}
                     </div>
                     <div className={styles.subprice}>
-                      {isAnnual && (
+                      {/* {isAnnual && (
                         <span>
                           <FormattedMessage
                             id="page.pricing.420€BilledYearly"
                             defaultMessage="348€ Billed Yearly"
                           />
                         </span>
-                      )}
+                      )} */}
                       {!isAnnual && (
                         <span>
                           <FormattedMessage

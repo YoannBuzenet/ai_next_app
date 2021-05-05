@@ -375,6 +375,7 @@ export default function Text(props) {
     button: {
       color: "white",
       fontWeight: 400,
+      minWidth: "264px",
       fontSize: 16,
       marginLeft: "20px",
       textTransform: "none",
@@ -526,7 +527,7 @@ export default function Text(props) {
                         userTotalConsumptionSubscribedParsed +
                           temporaryAddedCount <=
                           props.session?.user?.totalMaxWordsUserThisMonth)) && (
-                      <div>
+                      <div className={styles.generateButtonContainer}>
                         <Button
                           onClick={(e) => sendDataToBackEnd()}
                           className={classes.button}
