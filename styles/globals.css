@@ -369,7 +369,7 @@ input.MuiInputBase-input.MuiOutlinedInput-input {
     width: 90%;
   }
   .heightContainer {
-    height: 100%;
+    height: auto;
   }
 }
 
