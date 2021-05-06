@@ -368,6 +368,9 @@ input.MuiInputBase-input.MuiOutlinedInput-input {
   .pricing .container {
     width: 90%;
   }
+  .heightContainer {
+    height: 100%;
+  }
 }
 
 @media only screen and (max-width: 768px) {
