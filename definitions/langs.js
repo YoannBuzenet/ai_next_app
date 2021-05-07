@@ -31,4 +31,9 @@ const arrayLangsInApp = [
   },
 ];
 
-module.exports = { langInApp, arrayLangsInApp };
+const expandLocale = {
+  fr: "fr-FR",
+  en: "en-US",
+};
+
+module.exports = { langInApp, arrayLangsInApp, expandLocale };
