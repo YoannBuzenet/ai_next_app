@@ -244,8 +244,6 @@ div.onePriceDiv3 {
 
 @media only screen and (max-width: 1450px) {
   .pricesContainer > div {
-    margin: auto;
-    margin-top: 50px;
   }
   .spaceContainer {
     height: 50px;
