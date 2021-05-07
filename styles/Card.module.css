@@ -51,6 +51,6 @@ p.cardDescription {
 }
 @media only screen and (max-width: 450px) {
   .card {
-    width: 90%;
+    min-width: 90%;
   }
 }
