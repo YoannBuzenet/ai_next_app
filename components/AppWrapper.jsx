@@ -84,7 +84,7 @@ const AppWrapper = ({ children }) => {
     setNotificationInfo(contextSnackBar);
   };
   const handleSetContextCurrentLang = (currentLang) => {
-    if (Object.keys(langInApp).includes(currentLang.locale)) {
+    if (Object.keys(langInApp).includes(currentLang?.locale)) {
       setCurrentLang(currentLang);
     } else {
       setCurrentLang(langInApp["en-US"]);
