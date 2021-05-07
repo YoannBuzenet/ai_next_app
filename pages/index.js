@@ -5,7 +5,7 @@ import { useContext, useEffect } from "react";
 import selectedAppLangContext from "../contexts/selectedAppLang";
 import notificationContext from "../contexts/notificationsContext";
 import { useSession, getSession } from "next-auth/client";
-import { langInApp } from "../definitions/langs";
+import { langInApp, expandLocale } from "../definitions/langs";
 
 import * as Icon from "react-feather";
 import { FormattedMessage, useIntl } from "react-intl";
@@ -41,8 +41,16 @@ export default function Home(props) {
 
   useEffect(() => {
     if (currentLang.hasOwnProperty("isDefault")) {
-      setCurrentLang(langInApp[props?.userLangFromReqHeaders]);
-      window.localStorage.setItem("lang", props?.userLangFromReqHeaders);
+      // Starting from Default language from the Browser
+      // Depending on the browser, lang can be partial or complete, so we check its format
+      let langFromheaders = props?.userLangFromReqHeaders;
+      if (langFromheaders.length === 2) {
+        langFromheaders = expandLocale[langFromheaders];
+      } else {
+        langFromheaders = langInApp[props?.userLangFromReqHeaders];
+      }
+      setCurrentLang(langFromheaders);
+      window.localStorage.setItem("lang", langFromheaders);
     }
   }, []);
 

@@ -86,8 +86,9 @@ const AppWrapper = ({ children }) => {
   const handleSetContextCurrentLang = (currentLang) => {
     if (Object.keys(langInApp).includes(currentLang.locale)) {
       setCurrentLang(currentLang);
+    } else {
+      setCurrentLang(langInApp["en-US"]);
     }
-    return;
   };
   const handleSetAreFlagsDisplayed = (areFlagDisplayed) => {
     setAreFlagsDisplayed(areFlagDisplayed);
