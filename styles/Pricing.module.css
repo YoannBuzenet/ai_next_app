@@ -253,6 +253,9 @@ div.onePriceDiv3 {
   .blob1Container {
     display: none;
   }
+  div.onePriceDiv2 {
+    margin-top: -70px;
+  }
 }
 
 @media only screen and (max-width: 1068px) {
@@ -260,6 +263,11 @@ div.onePriceDiv3 {
     flex-direction: column;
     align-items: center;
   }
+
+  div.onePriceDiv1 {
+    margin-bottom: 12rem;
+  }
+
   .catchPhraseContainer p:first-child {
     font-size: 4rem;
   }

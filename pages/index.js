@@ -196,7 +196,7 @@ export default function Home(props) {
                 <span>
                   <FormattedMessage
                     id="page.index.firstCase.explaination"
-                    defaultMessage="Marketing Text ? Facebook Ad ? Blog Intro ? We have more than 20 categories."
+                    defaultMessage="Blog post ? Marketing Text ? SEO for Google / Facebook Ad ? Blog Intro ? We have more than 20 categories."
                   />
                 </span>
               </div>

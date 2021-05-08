@@ -14,25 +14,25 @@ import Card from "../components/Card";
 import UserCheck from "../services/userCheck";
 import { FormattedMessage, useIntl } from "react-intl";
 
-// export async function getServerSideProps(context) {
-//   const session = await getSession(context);
+export async function getServerSideProps(context) {
+  const session = await getSession(context);
 
-//   const isLoggedUser = UserCheck.isUserLogged(session?.user?.isLoggedUntil);
-//   const isSubbed = UserCheck.isUserSubscribed(session?.user?.isSubscribedUntil);
-//   const isUserOnFreeAccess = session?.user?.isOnFreeAccess === 1;
+  const isLoggedUser = UserCheck.isUserLogged(session?.user?.isLoggedUntil);
+  const isSubbed = UserCheck.isUserSubscribed(session?.user?.isSubscribedUntil);
+  const isUserOnFreeAccess = session?.user?.isOnFreeAccess === 1;
 
-//   if (!isSubbed && !isUserOnFreeAccess) {
-//     return {
-//       redirect: {
-//         destination: "/pricing",
-//         permanent: false,
-//       },
-//       props: {},
-//     };
-//   } else {
-//     return { props: { serverSession: session } };
-//   }
-// }
+  if (!isSubbed && !isUserOnFreeAccess) {
+    return {
+      redirect: {
+        destination: "/pricing",
+        permanent: false,
+      },
+      props: {},
+    };
+  } else {
+    return { props: { serverSession: session } };
+  }
+}
 
 const useStyles = makeStyles((theme) => ({
   root: {
