@@ -31,12 +31,22 @@
 
 @media only screen and (max-width: 768px) {
   .cardsContainer {
-    display: static;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   .roundedButtonsContainer {
     display: flex;
     flex-direction: column;
     margin: 2rem auto;
+  }
+
+  .selectTemplate {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }
