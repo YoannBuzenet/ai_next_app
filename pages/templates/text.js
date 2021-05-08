@@ -465,6 +465,22 @@ export default function Text(props) {
                       </div>
                     );
                   })}
+                  <div>
+                    <div className={styles.tipContainer}>
+                      <p>
+                        <FormattedMessage
+                          id="compo.text.tips.title"
+                          defaultMessage="Tip : "
+                        />
+                      </p>
+                      <p>
+                        <FormattedMessage
+                          id="compo.text.tips.content"
+                          defaultMessage="You can outline the AI to help it understand. Then, you can take back what she offers, modify it, resubmit it."
+                        />
+                      </p>
+                    </div>
+                  </div>
                   <div className={styles.spaceContainer}></div>
                   <div className={styles.buttonContainer}>
                     <div className="selectContainer outputLanguage">
