@@ -47,7 +47,7 @@ export default function Home(props) {
       if (langFromheaders.length === 2) {
         langFromheaders = expandLocale[langFromheaders];
       } else {
-        langFromheaders = langInApp[props?.userLangFromReqHeaders];
+        langFromheaders = langInApp[props?.userLangFromReqHeaders].locale;
       }
       setCurrentLang(langFromheaders);
       window.localStorage.setItem("lang", langFromheaders);
