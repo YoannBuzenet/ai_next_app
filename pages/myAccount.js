@@ -177,7 +177,7 @@ export default function MyAccount(props) {
 
       .post(`/api/numberOfWords/thisMonthConsumption`, { session })
       .then((resp) => {
-        setUserMonthlyConsumption(resp.data?.dataForCurrentMonth.totalAmount);
+        setUserMonthlyConsumption(resp.data?.dataForCurrentMonth);
       });
   }, []);
 
