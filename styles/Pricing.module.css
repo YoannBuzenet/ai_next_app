@@ -152,7 +152,7 @@ div.onePriceDiv1 {
 
 div.onePriceDiv2 {
   height: 470px;
-  margin-top: -100px;
+  margin-top: -70px;
 }
 
 div.onePriceDiv3 {
@@ -254,7 +254,7 @@ div.onePriceDiv3 {
     display: none;
   }
   div.onePriceDiv2 {
-    margin-top: -70px;
+    margin-top: -60px;
   }
 }
 
