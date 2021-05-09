@@ -149,6 +149,15 @@
   font-weight: 600;
 }
 
+@media only screen and (max-width: 1068px) {
+  .buttonContainer {
+    height: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
 @media only screen and (max-width: 768px) {
   .textGeneratorContainer {
     flex-direction: column;
@@ -161,12 +170,6 @@
   .rightDiv {
     width: 100%;
     margin-bottom: 20px;
-  }
-  .buttonContainer {
-    height: auto;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
   }
 
   .buttonContainer > div {
