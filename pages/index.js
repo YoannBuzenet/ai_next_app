@@ -45,12 +45,13 @@ export default function Home(props) {
       // Depending on the browser, lang can be partial or complete, so we check its format
       let langFromheaders = props?.userLangFromReqHeaders;
       if (langFromheaders.length === 2) {
-        langFromheaders = expandLocale[langFromheaders];
+        const langString = expandLocale[langFromheaders];
+        langFromheaders = langInApp[langString];
       } else {
-        langFromheaders = langInApp[props?.userLangFromReqHeaders].locale;
+        langFromheaders = langInApp[props?.userLangFromReqHeaders];
       }
       setCurrentLang(langFromheaders);
-      window.localStorage.setItem("lang", langFromheaders);
+      window.localStorage.setItem("lang", langFromheaders.locale);
     }
   }, []);
 
