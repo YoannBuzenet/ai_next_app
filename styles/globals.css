@@ -195,6 +195,16 @@ p {
   animation: KeyFadeInLeft 500ms ease-in forwards !important;
 }
 
+/* Deactivate animations on side if ugly */
+/* @media only screen and (max-width: 1068px) {
+  .transitionRight {
+    animation: none !important;
+  }
+  .transitionLeft {
+    animation: none !important;
+  }
+} */
+
 .opacity0 {
   opacity: 0;
 }
