@@ -78,7 +78,9 @@ const Pricing = (props) => {
       } else {
         // monthly
         const paymentCall = await axios
-          .post("/api/payment/stripe", { priceId: products.monthly.stripeId })
+          .post("/api/payment/stripe", {
+            priceId: products[langDictionnary[intl.locale]].monthly.stripeId,
+          })
           .then((data) => {
             // Call Stripe.js method to redirect to the new Checkout page
             console.log("datas", data);
