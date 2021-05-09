@@ -11,7 +11,7 @@ const categoriesDefinition = {
         placeholder: {
           id: "categories.id1.placeholder",
           defaultMessage:
-            "Example : Data analytics software for small and medium businesses.",
+            "Example: Data analytics software for small and medium businesses.",
         },
         inputType: "textarea",
       },
@@ -36,11 +36,11 @@ const categoriesDefinition = {
         maxLengthInput: 30,
         label: {
           id: "categories.id2.label",
-          defaultMessage: "What is your company/product name ?",
+          defaultMessage: "What is your company/product name?",
         },
         placeholder: {
           id: "categories.id2.placeholder",
-          defaultMessage: "Example : Uber",
+          defaultMessage: "Example: Uber",
         },
         inputType: "small",
       },
@@ -49,12 +49,12 @@ const categoriesDefinition = {
         maxLengthInput: 70,
         label: {
           id: "categories.id2.label2",
-          defaultMessage: "What is your company about ?",
+          defaultMessage: "What is your company about?",
         },
         placeholder: {
           id: "categories.id2.placeholder2",
           defaultMessage:
-            "Example : We connect drivers to people who wants to go somewhere.",
+            "Example: We connect drivers to people who wants to go somewhere.",
         },
         inputType: "textarea",
       },
@@ -78,11 +78,11 @@ const categoriesDefinition = {
         maxLengthInput: 100,
         label: {
           id: "categories.id3.label",
-          defaultMessage: "What is this blog ticket about ?",
+          defaultMessage: "What is this blog ticket about?",
         },
         placeholder: {
           id: "categories.id3.placeholder",
-          defaultMessage: "Example : Hiking in Netherlands",
+          defaultMessage: "Example: Hiking in Netherlands",
         },
         inputType: "textarea",
       },
@@ -104,12 +104,11 @@ const categoriesDefinition = {
         maxLengthInput: 100,
         label: {
           id: "categories.id5.label",
-          defaultMessage: "What is your blog about ?",
+          defaultMessage: "What is your blog about?",
         },
         placeholder: {
           id: "categories.id5.placeholder",
-          defaultMessage:
-            "Example : My blog is about cooking specific pizzas !",
+          defaultMessage: "Example: My blog is about cooking specific pizzas !",
         },
         inputType: "textarea",
       },
@@ -134,7 +133,7 @@ const categoriesDefinition = {
         },
         placeholder: {
           id: "categories.id6.placeholder",
-          defaultMessage: "What does your product do ?",
+          defaultMessage: "What does your product do?",
         },
         inputType: "textarea",
       },
@@ -159,7 +158,7 @@ const categoriesDefinition = {
         maxLengthInput: 100,
         label: {
           id: "categories.facebookPrimaryText.labelInput1",
-          defaultMessage: "What is your ad about ?",
+          defaultMessage: "What is your ad about?",
         },
         placeholder: {
           id: "categories.facebookPrimaryText.placeholder",
@@ -188,7 +187,7 @@ const categoriesDefinition = {
         maxLengthInput: 100,
         label: {
           id: "categories.googleHeadline.labelInput1",
-          defaultMessage: "What is your website about ?",
+          defaultMessage: "What is your website about?",
         },
         placeholder: {
           id: "categories.googleHeadline.placeholder",
@@ -218,7 +217,7 @@ const categoriesDefinition = {
         maxLengthInput: 100,
         label: {
           id: "categories.googleDescription.labelInput1",
-          defaultMessage: "What is your page or website about ?",
+          defaultMessage: "What is your page or website about?",
         },
         placeholder: {
           id: "categories.googleDescription.placeholder",
@@ -248,7 +247,7 @@ const categoriesDefinition = {
         maxLengthInput: 100,
         label: {
           id: "categories.linkedinAdText.labelInput1",
-          defaultMessage: "What is your ad about ?",
+          defaultMessage: "What is your ad about?",
         },
         placeholder: {
           id: "categories.linkedinAdText.placeholder",
@@ -278,7 +277,7 @@ const categoriesDefinition = {
         maxLengthInput: 100,
         label: {
           id: "categories.blogIdeas.labelInput1",
-          defaultMessage: "What is your blog about ?",
+          defaultMessage: "What is your blog about?",
         },
         placeholder: {
           id: "categories.blogIdeas.placeholder",
@@ -307,7 +306,7 @@ const categoriesDefinition = {
         maxLengthInput: 100,
         label: {
           id: "categories.followUpEmail.labelInput1",
-          defaultMessage: "What did you talk about with your customer ?",
+          defaultMessage: "What did you talk about with your customer?",
         },
         placeholder: {
           id: "categories.followUpEmail.placeholder",
