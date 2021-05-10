@@ -4,7 +4,7 @@ import axios from "axios";
 import { getHeader } from "../../../services/authHelper";
 
 const callbacks = {};
-let userData = "";
+
 callbacks.signIn = async function signIn(user, account, metadata) {
   console.log("user", user);
   console.log("account", account);
@@ -41,17 +41,28 @@ callbacks.signIn = async function signIn(user, account, metadata) {
 
     // fetch data from back end and add it here in user object
     user = { user, ...userDataFromAPI.data };
-
-    userData = userDataFromAPI.data;
     return true;
   }
 
   return false;
 };
 
-callbacks.jwt = async function jwt(token, user) {
+callbacks.redirect = async function redirect(url, baseUrl) {
+  // console.log("redirection has been called");
+  // console.log("redirection", url);
+  // console.log("redirection", baseUrl);
+  return url.startsWith(baseUrl) ? url : baseUrl;
+};
+
+callbacks.jwt = async function jwt(token, user, account, profile, isNewUser) {
+  console.log("jwt did trigger");
+  console.log("jwt token", token);
+  console.log("jwt user", user);
+  console.log("jwt account", account);
+  console.log("jwt profile", profile);
+  console.log("jwt isNewUser", isNewUser);
   if (user) {
-    token = { accessToken: user.accessToken };
+    token = { idUser: account.id };
   }
 
   return token;
@@ -59,23 +70,22 @@ callbacks.jwt = async function jwt(token, user) {
 
 callbacks.session = async function session(session, token) {
   // we can fetch info from back end here to add it to the session
+  console.log("session in session callback", session);
+  console.log("token in session callback", token);
+  // token in session callback { iat: 1620653204, exp: 1623245204, idUser }
 
   // refresh user Data
-  if (userData.hasOwnProperty("id")) {
-    //redefine userData here et assign it into same variable
-
+  if (token.hasOwnProperty("idUser")) {
     let apiResp = await axios.get(
-      `${process.env.CENTRAL_API_URL}/api/users/${userData.id}`,
+      `${process.env.CENTRAL_API_URL}/api/users/googleId/${token.idUser}`,
       getHeader()
     );
 
     console.log("our new data", apiResp.data);
-
-    userData = apiResp.data;
+    session.user = apiResp.data;
   }
 
-  session.user = userData;
-  session.accessToken = token.accessToken;
+  session.idUser = token.idUser;
 
   return session;
 };
