@@ -478,7 +478,7 @@ const categoriesDefinition = {
     inputs: [
       {
         name: "value",
-        maxLengthInput: 200,
+        maxLengthInput: 300,
         label: {
           id: "categories.summarizeIdea.labelInput1",
           defaultMessage:
