@@ -42,15 +42,13 @@ export async function getServerSideProps(context) {
 
 export default function Text(props) {
   const intl = useIntl();
-  const { selectedCategoryID, setSelectedCategoryID } = useContext(
-    SelectedCategoryId
-  );
-  const { notificationInfo, setNotificationInfo } = useContext(
-    notificationContext
-  );
+  const { selectedCategoryID, setSelectedCategoryID } =
+    useContext(SelectedCategoryId);
+  const { notificationInfo, setNotificationInfo } =
+    useContext(notificationContext);
   const [userInputs, setUserInputs] = useState({});
   const [AIResults, setAIResults] = useState([]);
-  const [outputNumber, setOutputNumber] = useState(3);
+  const [outputNumber, setOutputNumber] = useState(5);
   const [isLoadingAPIResults, setIsLoadingAPIResults] = useState(false);
   const [session, loading] = useSession();
   // We add this counter because session is not updated from server as long as the user didn't click on a Link. If he does, state will be reset and session up to date.
@@ -528,6 +526,8 @@ export default function Text(props) {
                           { value: 1, name: 1 },
                           { value: 2, name: 2 },
                           { value: 3, name: 3 },
+                          { value: 4, name: 4 },
+                          { value: 5, name: 5 },
                         ]}
                         label={translatedOutPutLabels}
                         handleChange={handleOuputNumber}
