@@ -361,7 +361,7 @@ const categoriesDefinition = {
     inputs: [
       {
         name: "value",
-        maxLengthInput: 100,
+        maxLengthInput: 200,
         label: {
           id: "categories.sharingMemories.labelInput1",
           defaultMessage:
