@@ -218,7 +218,7 @@
   "compo.text.AllAIoutputFiltered": "Tous les résultats de l'IA ont été filtrés. Cela arrive quand des propos déplacés sont formulés. Merci de veiller à intégrer du contenu politiquement correct. Tout abus pourra amener à une fermeture du compte.",
   "compo.text.notification.0output": "Oops ! L'IA n'a trouvé aucune idée pertinente. Pourriez-vous essayer d'entrer plus de mots ou de reformuler votre texte ?",
   "compo.text.tips.title": "Astuce : ",
-  "compo.text.tips.content": "Vous pouvez indiquer les grandes lignes à l'IA pour l'aider à comprendre. Ensuite, vous pouvez reprendre ce qu'elle propose, le modifier, lui reproposer. Essayez plusieurs combinaisons !",
+  "compo.text.tips.content": "Vous pouvez indiquer les grandes lignes à l'IA pour l'aider à comprendre le contexte. Si les résultats paraissent flous ou évasifs, essayez en reformulant la phrase.",
 
   "compo.chart.dailyUse": "Utilisation",
 

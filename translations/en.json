@@ -218,7 +218,7 @@
   "compo.text.AllAIoutputFiltered": "All AI results have been filtered. This happens when inappropriate inputs are entered. Please ensure that you include politically correct content. Any abuse may lead to the account being closed.",
   "compo.text.notification.0output": "Oops! AI could not find any relevant idea. Could you try to enter more text or rephrase your words?",
   "compo.text.tips.title": "Tip: ",
-  "compo.text.tips.content": "You can outline the AI to help it understand. Then, you can take back what she offers, modify it, resubmit it. Try several combinations!",
+  "compo.text.tips.content": "You can outline the AI to help it understand the context. If the results seem imprecise or evasive, try rephrasing the sentence.",
 
   "compo.chart.dailyUse": "Daily Use",
 

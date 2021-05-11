@@ -6,7 +6,7 @@ import selectedAppLangContext from "../contexts/selectedAppLang";
 import notificationContext from "../contexts/notificationsContext";
 import { useSession, getSession } from "next-auth/client";
 import { langInApp, expandLocale } from "../definitions/langs";
-
+import UserCheck from "../services/userCheck";
 import * as Icon from "react-feather";
 import { FormattedMessage, useIntl } from "react-intl";
 
@@ -35,9 +35,8 @@ export async function getServerSideProps(context) {
 
 export default function Home(props) {
   const { currentLang, setCurrentLang } = useContext(selectedAppLangContext);
-  const { notificationInfo, setNotificationInfo } = useContext(
-    notificationContext
-  );
+  const { notificationInfo, setNotificationInfo } =
+    useContext(notificationContext);
 
   useEffect(() => {
     if (currentLang.hasOwnProperty("isDefault")) {
@@ -126,6 +125,7 @@ export default function Home(props) {
   }, []);
 
   const [session, loading] = useSession();
+  const isLoggedUser = UserCheck.isUserLogged(session?.user?.isLoggedUntil);
 
   const Intl = useIntl();
 
@@ -168,7 +168,7 @@ export default function Home(props) {
                       />
                     </p>
                     <div className={styles.ctaMain}>
-                      <Link href="/login">
+                      <Link href={isLoggedUser ? "/templates" : "/login"}>
                         <a type="button">
                           <FormattedMessage
                             id="page.index.firstLiner.CTA"
@@ -400,7 +400,7 @@ export default function Home(props) {
               </p>
             </div>
             <div id="animated-right" className={styles.finalButton}>
-              <Link href="/login">
+              <Link href={isLoggedUser ? "/templates" : "/login"}>
                 <a className={styles.CTAButton}>
                   <FormattedMessage
                     id="page.index.fifthLiner.button.title"

@@ -419,7 +419,7 @@ const categoriesDefinition = {
     inputs: [
       {
         name: "value",
-        maxLengthInput: 200,
+        maxLengthInput: 400,
         label: {
           id: "categories.ideaRewriter.labelInput1",
           defaultMessage: "What do you want to rephrase?",
@@ -478,7 +478,7 @@ const categoriesDefinition = {
     inputs: [
       {
         name: "value",
-        maxLengthInput: 300,
+        maxLengthInput: 400,
         label: {
           id: "categories.summarizeIdea.labelInput1",
           defaultMessage:
