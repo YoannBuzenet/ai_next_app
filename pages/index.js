@@ -38,13 +38,6 @@ export default function Home(props) {
   const { notificationInfo, setNotificationInfo } =
     useContext(notificationContext);
 
-  if (!"IntersectionObserver" in window) {
-    const list = window.document.querySelectorAll("#animated");
-    list.forEach(function (item) {
-      item.style.opacity = 1;
-    });
-  }
-
   useEffect(() => {
     if (currentLang.hasOwnProperty("isDefault")) {
       // Starting from Default language from the Browser
@@ -127,6 +120,11 @@ export default function Home(props) {
         observerTransitionLeft,
         "#animated-left"
       );
+    } else {
+      const list = window.document.querySelectorAll("#animated");
+      list.forEach(function (item) {
+        item.style.opacity = 1;
+      });
     }
 
     return () => {
