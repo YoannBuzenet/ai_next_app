@@ -15,10 +15,8 @@ const AppLangChoice = ({
   topSelectAppLangFlags = "22",
 }) => {
   const { currentLang, setCurrentLang } = useContext(SelectAppLangContext);
-  const {
-    isTransparentDivDisplayed,
-    setIsTransparentDivDisplayed,
-  } = useContext(transparentDivContext);
+  const { isTransparentDivDisplayed, setIsTransparentDivDisplayed } =
+    useContext(transparentDivContext);
 
   const { areFlagsDisplayed, setAreFlagsDisplayed } = useContext(
     AreFlagsDisplayedContext
@@ -29,13 +27,13 @@ const AppLangChoice = ({
   const handleClick = (event, lang) => {
     setIsTransparentDivDisplayed(false);
     setCurrentLang({
-      locale: lang.locale,
-      translatedText: lang.translatedText,
-      picture: lang.picture,
-      langID: lang.langID,
+      locale: lang?.locale,
+      translatedText: lang?.translatedText,
+      picture: lang?.picture,
+      langID: lang?.langID,
     });
     // setUserContext({ ...userContext, langSelected: lang.locale });
-    window.localStorage.setItem("lang", lang.locale);
+    window.localStorage.setItem("lang", lang?.locale);
   };
 
   const handleClickDisplayFlags = (event) => {

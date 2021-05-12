@@ -74,9 +74,9 @@ export default function Text(props) {
     props?.session?.user?.totalWordsConsumption
   );
 
-  // console.log("session front", session);
+  console.log("session front", session);
   // console.log("temporary added count", temporaryAddedCount);
-  // console.log("session serv", props.session);
+  console.log("session serv", props.session);
   // console.log("is subbed", isSubbed);
 
   // TRANSLATIONS

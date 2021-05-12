@@ -26,9 +26,8 @@ export async function getServerSideProps(context) {
 
 const Pricing = (props) => {
   const [isAnnual, setIsAnnual] = useState(false);
-  const { notificationInfo, setNotificationInfo } = useContext(
-    notificationContext
-  );
+  const { notificationInfo, setNotificationInfo } =
+    useContext(notificationContext);
   const [session, loading] = useSession();
   const intl = useIntl();
 
@@ -49,7 +48,7 @@ const Pricing = (props) => {
         //yearly
         const paymentCall = await axios
           .post("/api/payment/stripe", {
-            priceId: products[langDictionnary[intl.locale]]?.yearly?.stripeId,
+            priceId: products[langDictionnary[intl?.locale]]?.yearly?.stripeId,
           })
           .then((data) => {
             // Call Stripe.js method to redirect to the new Checkout page
@@ -79,7 +78,7 @@ const Pricing = (props) => {
         // monthly
         const paymentCall = await axios
           .post("/api/payment/stripe", {
-            priceId: products[langDictionnary[intl.locale]].monthly.stripeId,
+            priceId: products[langDictionnary[intl?.locale]].monthly.stripeId,
           })
           .then((data) => {
             // Call Stripe.js method to redirect to the new Checkout page

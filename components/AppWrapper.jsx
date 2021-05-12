@@ -27,13 +27,11 @@ const AppWrapper = ({ children }) => {
       onClose: "",
     },
   });
-  const [isResponsiveMenuDisplayed, setIsResponsiveMenuDisplayed] = useState(
-    false
-  );
+  const [isResponsiveMenuDisplayed, setIsResponsiveMenuDisplayed] =
+    useState(false);
   const [allDefinitions, setAllDefinitions] = useState({});
-  const [isTransparentDivDisplayed, setIsTransparentDivDisplayed] = useState(
-    false
-  );
+  const [isTransparentDivDisplayed, setIsTransparentDivDisplayed] =
+    useState(false);
 
   // App Language initialization
 
@@ -58,7 +56,7 @@ const AppWrapper = ({ children }) => {
   const [currentLang, setCurrentLang] = useState(appInitialLang);
 
   const [userContext, setUserContext] = useState({
-    langSelected: currentLang.locale,
+    langSelected: currentLang?.locale,
   });
 
   const handleSetContextUser = (contextData) => {

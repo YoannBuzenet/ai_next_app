@@ -50,7 +50,7 @@ export default function Home(props) {
         langFromheaders = langInApp[props?.userLangFromReqHeaders];
       }
       setCurrentLang(langFromheaders);
-      window.localStorage.setItem("lang", langFromheaders.locale);
+      window.localStorage.setItem("lang", langFromheaders?.locale);
     }
   }, []);
 
