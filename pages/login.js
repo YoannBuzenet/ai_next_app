@@ -9,15 +9,6 @@ import { useIntl, FormattedMessage } from "react-intl";
 export default function Login() {
   const [session, loading] = useSession();
 
-  const isBrowser = () => typeof window !== "undefined";
-
-  if (isBrowser && !"IntersectionObserver" in window) {
-    const list = window.document.querySelectorAll("#animated");
-    list.forEach(function (item) {
-      item.style.opacity = 1;
-    });
-  }
-
   const handleGoogleClick = (e) => {
     e.preventDefault();
     signIn(
@@ -106,6 +97,11 @@ export default function Login() {
         observerTransitionLeft,
         "#animated-left"
       );
+    } else {
+      const list = window.document.querySelectorAll("#animated");
+      list.forEach(function (item) {
+        item.style.opacity = 1;
+      });
     }
 
     return () => {
