@@ -32,67 +32,72 @@ export default function Login() {
   });
 
   useEffect(() => {
-    var elementToTrigger = class ElementToTrigger {
-      constructor(observer, id) {
-        this.observer = observer;
-        this.id = id;
-        this.init();
-      }
+    let keypointsTransitionRight;
+    let keypoints;
+    let keypointsTransitionLeft;
+    if ("IntersectionObserver" in window) {
+      var elementToTrigger = class ElementToTrigger {
+        constructor(observer, id) {
+          this.observer = observer;
+          this.id = id;
+          this.init();
+        }
 
-      init() {
-        const targets = document.querySelectorAll(this.id);
+        init() {
+          const targets = document.querySelectorAll(this.id);
 
-        targets.forEach((li) => {
-          this.observer.observe(li);
+          targets.forEach((li) => {
+            this.observer.observe(li);
+          });
+        }
+      };
+
+      var options = {
+        rootMargin: "0px",
+        threshold: 0.2,
+      };
+
+      function callback(entries, classToAdd) {
+        entries.filter((el) => {
+          if (el.isIntersecting) {
+            el.target.classList.add(classToAdd);
+          }
         });
       }
-    };
 
-    var options = {
-      rootMargin: "0px",
-      threshold: 0.2,
-    };
+      // Classic transition
 
-    function callback(entries, classToAdd) {
-      entries.filter((el) => {
-        if (el.isIntersecting) {
-          el.target.classList.add(classToAdd);
-        }
-      });
+      let observer = new IntersectionObserver(
+        (entries) => callback(entries, "visible"),
+        options
+      );
+
+      keypoints = new elementToTrigger(observer, "#animated");
+
+      // Right transition
+
+      let observerTransitionRight = new IntersectionObserver(
+        (entries) => callback(entries, "transitionRight"),
+        options
+      );
+
+      keypointsTransitionRight = new elementToTrigger(
+        observerTransitionRight,
+        "#animated-right"
+      );
+
+      // Left transition
+
+      let observerTransitionLeft = new IntersectionObserver(
+        (entries) => callback(entries, "transitionLeft"),
+        options
+      );
+
+      keypointsTransitionLeft = new elementToTrigger(
+        observerTransitionLeft,
+        "#animated-left"
+      );
     }
-
-    // Classic transition
-
-    let observer = new IntersectionObserver(
-      (entries) => callback(entries, "visible"),
-      options
-    );
-
-    let keypoints = new elementToTrigger(observer, "#animated");
-
-    // Right transition
-
-    let observerTransitionRight = new IntersectionObserver(
-      (entries) => callback(entries, "transitionRight"),
-      options
-    );
-
-    let keypointsTransitionRight = new elementToTrigger(
-      observerTransitionRight,
-      "#animated-right"
-    );
-
-    // Left transition
-
-    let observerTransitionLeft = new IntersectionObserver(
-      (entries) => callback(entries, "transitionLeft"),
-      options
-    );
-
-    let keypointsTransitionLeft = new elementToTrigger(
-      observerTransitionLeft,
-      "#animated-left"
-    );
 
     return () => {
       keypoints = null;
