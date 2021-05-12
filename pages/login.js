@@ -9,7 +9,9 @@ import { useIntl, FormattedMessage } from "react-intl";
 export default function Login() {
   const [session, loading] = useSession();
 
-  if (!"IntersectionObserver" in window) {
+  const isBrowser = () => typeof window !== "undefined";
+
+  if (isBrowser && !"IntersectionObserver" in window) {
     const list = window.document.querySelectorAll("#animated");
     list.forEach(function (item) {
       item.style.opacity = 1;

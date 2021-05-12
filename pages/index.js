@@ -38,7 +38,9 @@ export default function Home(props) {
   const { notificationInfo, setNotificationInfo } =
     useContext(notificationContext);
 
-  if (!"IntersectionObserver" in window) {
+  const isBrowser = () => typeof window !== "undefined";
+
+  if (isBrowser && !"IntersectionObserver" in window) {
     const list = window.document.querySelectorAll("#animated");
     list.forEach(function (item) {
       item.style.opacity = 1;
