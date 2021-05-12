@@ -120,6 +120,11 @@ export default function Home(props) {
         observerTransitionLeft,
         "#animated-left"
       );
+    } else {
+      const list = window.document.querySelectorAll("#animated");
+      list.forEach(function (item) {
+        item.style.opacity = 1;
+      });
     }
 
     return () => {
