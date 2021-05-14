@@ -1,4 +1,4 @@
-import styles from "../styles/admin/portal.module.css";
+import styles from "../../styles/admin/portal.module.css";
 import { useState, useEffect, useContext } from "react";
 import Head from "next/head";
 import { useIntl, FormattedMessage } from "react-intl";
