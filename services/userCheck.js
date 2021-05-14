@@ -29,5 +29,12 @@ const isUserSubscribed = (userIsSubscribedUntil) => {
 
   return userSubscribeUTC > nowUTC;
 };
+const hasAdminAccess = (rightsCentralAPI) => {
+  if (rightsCentralAPI > 0) {
+    return true;
+  }
 
-module.exports = { isUserLogged, isUserSubscribed };
+  return false;
+};
+
+module.exports = { isUserLogged, isUserSubscribed, hasAdminAccess };

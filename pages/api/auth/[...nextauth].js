@@ -81,7 +81,6 @@ callbacks.session = async function session(session, token) {
       getHeader()
     );
 
-    console.log("our new data", apiResp.data);
     session.user = apiResp.data;
   }
 
