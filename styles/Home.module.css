@@ -161,7 +161,9 @@
 }
 .afterfirstLiner img {
   width: 1200px;
-  margin: auto;
+  margin: 2rem auto;
+  border: 1px solid var(--darker-light-grey-background);
+  border-radius: 6px;
 }
 
 @media only screen and (max-width: 1450px) {
