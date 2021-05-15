@@ -9,6 +9,7 @@ import { langInApp, expandLocale } from "../definitions/langs";
 import UserCheck from "../services/userCheck";
 import * as Icon from "react-feather";
 import { FormattedMessage, useIntl } from "react-intl";
+import { hotjar } from "react-hotjar";
 
 export async function getServerSideProps(context) {
   // We check headers from Request to see languages from user browser
@@ -52,6 +53,10 @@ export default function Home(props) {
       setCurrentLang(langFromheaders);
       window.localStorage.setItem("lang", langFromheaders?.locale);
     }
+  }, []);
+
+  useEffect(() => {
+    hotjar.initialize(2402225, 5);
   }, []);
 
   useEffect(() => {
