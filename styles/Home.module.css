@@ -145,6 +145,36 @@
     font-size: 3rem;
   }
 }
+
+/***AFTER FIRST LINER ***/
+
+.afterfirstLinerContainer {
+  width: 70%;
+  margin: auto;
+}
+
+.afterfirstLiner {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 200px;
+}
+.afterfirstLiner img {
+  width: 1200px;
+  margin: auto;
+}
+
+@media only screen and (max-width: 1450px) {
+  .afterfirstLinerContainer {
+    width: 90%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .afterfirstLiner img {
+    display: none;
+  }
+}
+
 /***SECOND LINER ***/
 
 .secondLiner {

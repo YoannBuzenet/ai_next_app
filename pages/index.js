@@ -194,6 +194,11 @@ export default function Home(props) {
             </div>
           </div>
         </div>
+        <div className={styles.afterfirstLiner}>
+          <div className={styles.afterfirstLinerContainer}>
+            <img src="/pictures/screenshots/fonctionnement2.gif" />
+          </div>
+        </div>
         <div className={styles.secondLiner}>
           <div className="container">
             <div className={styles.cardsContainer}>
