@@ -7,6 +7,7 @@ import ModelAdministration from "../../components/admin/ModelAdministration";
 import Breadcrumb from "../../components/admin/Breadcrumb";
 import { useSession, getSession } from "next-auth/client";
 import UserCheck from "../../services/userCheck";
+import { pathlvl1 } from "../../definitions/breadcrumb";
 
 export async function getServerSideProps(context) {
   const session = await getSession(context);
@@ -48,7 +49,7 @@ export default function Portal(props) {
       <div className="container adminPortal">
         <main className={styles.main}>
           <div className={styles.coloredBackground}>
-            <Breadcrumb />
+            <Breadcrumb listOfPath={pathlvl1} />
             <div className={styles.modelAdminContainer}>
               {listOfMenuEntries.map((category) => (
                 <ModelAdministration

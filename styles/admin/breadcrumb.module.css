@@ -2,8 +2,12 @@
   margin: 2rem auto;
 }
 
-.breadcrumbContainer li {
+.breadcrumbContainer li,
+.breadcrumbContainer p {
   font-size: 1.6rem;
+}
+.breadcrumbContainer p {
+  margin: 0 10px;
 }
 .breadcrumbContainer a:hover {
   text-decoration: underline;
