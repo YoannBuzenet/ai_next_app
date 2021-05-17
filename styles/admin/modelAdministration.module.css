@@ -1,0 +1,20 @@
+.moduleAdminContainer {
+  min-width: 300px;
+  border-radius: 6px;
+  border: 1px solid var(--darker-light-grey-background);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+  min-height: 50px;
+}
+
+.moduleAdminContainer:hover {
+  cursor: pointer;
+  background-color: var(--darker-light-grey-background);
+}
+
+.moduleAdminContainer p {
+  font-size: 14px;
+}

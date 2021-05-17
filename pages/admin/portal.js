@@ -2,7 +2,6 @@ import styles from "../../styles/admin/portal.module.css";
 import { useState, useEffect, useContext } from "react";
 import Head from "next/head";
 import { useIntl, FormattedMessage } from "react-intl";
-import axios from "axios";
 import notificationContext from "../../contexts/notificationsContext";
 import ModelAdministration from "../../components/admin/ModelAdministration";
 import Breadcrumb from "../../components/admin/Breadcrumb";
@@ -47,12 +46,17 @@ export default function Portal(props) {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <div className="container adminPortal">
-        <main>
+        <main className={styles.main}>
           <div className={styles.coloredBackground}>
             <Breadcrumb />
-            {listOfMenuEntries.map((category) => (
-              <ModelAdministration name={category.name} href={category.href} />
-            ))}
+            <div className={styles.modelAdminContainer}>
+              {listOfMenuEntries.map((category) => (
+                <ModelAdministration
+                  name={category.name}
+                  href={category.href}
+                />
+              ))}
+            </div>
           </div>
         </main>
       </div>

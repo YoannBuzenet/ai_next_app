@@ -1,0 +1,15 @@
+.breadcrumbContainer {
+  margin: 2rem auto;
+}
+
+.breadcrumbContainer li {
+  font-size: 1.6rem;
+}
+.breadcrumbContainer a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumbContainer ul {
+  display: flex;
+  list-style: none;
+}
