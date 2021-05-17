@@ -9,6 +9,10 @@
   font-size: 1.8rem;
 }
 
+.list {
+  list-style: inside;
+}
+
 .firstLine {
   display: flex;
 }

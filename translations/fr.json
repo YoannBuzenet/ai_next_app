@@ -342,7 +342,7 @@
   "categories.hookyEmailObject.placeholder": "Logiciel d'intelligence artificielle",
   "categories.hookyEmailObject.labelInput1": "De quel sujet traite votre email ?",
   "categories.bulletPoints.categorylabel": "Les Points Clefs",
-  "categories.bulletPoints.description": "Trouvez des idées de points clefs concernant le sujet de votre choix",
+  "categories.bulletPoints.description": "Trouvez les points clefs concernant le sujet de votre choix",
   "categories.bulletPoints.placeholder": "Logiciel d'intelligence artificielle",
   "categories.bulletPoints.labelInput1": "Quel sujet voulez-vous creuser ?"
 }
