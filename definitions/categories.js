@@ -579,8 +579,8 @@ const categoriesDefinition = {
         inputType: "textarea",
       },
     ],
-    categoryId: 19,
-    urlIcon: "/icons/email.svg",
+    categoryId: 20,
+    urlIcon: "/icons/idea.svg",
     name: {
       id: "categories.bulletPoints.categorylabel",
       defaultMessage: "categories.bulletPoints.categorylabel",
