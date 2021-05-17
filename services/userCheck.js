@@ -30,7 +30,7 @@ const isUserSubscribed = (userIsSubscribedUntil) => {
   return userSubscribeUTC > nowUTC;
 };
 const hasAdminAccess = (rightsCentralAPI) => {
-  if (rightsCentralAPI > 0) {
+  if (rightsCentralAPI > 1) {
     return true;
   }
 

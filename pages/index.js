@@ -55,6 +55,7 @@ export default function Home(props) {
     }
   }, []);
 
+  // Tracking
   useEffect(() => {
     hotjar.initialize(2402225, 5);
   }, []);
