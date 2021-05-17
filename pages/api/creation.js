@@ -28,6 +28,7 @@ export default async (req, res) => {
     res.status(200).json(APIresp.data);
   } catch (e) {
     Bugsnag.notify(new Error(e));
+    console.log("error", e);
     res.status(500).send();
   }
 };

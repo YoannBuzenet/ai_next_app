@@ -640,6 +640,7 @@ export default function Text(props) {
                   resultSerie={result.resultSerie}
                   constructedId={`${result.resultSerie}${result.indexCreation}`}
                   key={`${result.resultSerie}${result.indexCreation}`}
+                  category={selectedCategoryID}
                 />
               ))}
             </div>
