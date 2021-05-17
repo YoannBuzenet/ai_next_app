@@ -563,6 +563,34 @@ const categoriesDefinition = {
     },
     parentCategory: "Email",
   },
+  20: {
+    inputs: [
+      {
+        name: "value",
+        maxLengthInput: 100,
+        label: {
+          id: "categories.bulletPoints.labelInput1",
+          defaultMessage: "What is your topic of interest?",
+        },
+        placeholder: {
+          id: "categories.bulletPoints.placeholder",
+          defaultMessage: "Artificial intelligence software.",
+        },
+        inputType: "textarea",
+      },
+    ],
+    categoryId: 19,
+    urlIcon: "/icons/email.svg",
+    name: {
+      id: "categories.bulletPoints.categorylabel",
+      defaultMessage: "categories.bulletPoints.categorylabel",
+    },
+    description: {
+      id: "categories.bulletPoints.description",
+      defaultMessage: "Find ideas for key points on the topic of your choice",
+    },
+    parentCategory: "Content",
+  },
 };
 
 const transformDictionnaryIntoArray = (dictionnary) => {

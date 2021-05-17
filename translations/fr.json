@@ -340,5 +340,9 @@
   "categories.hookyEmailObject.categorylabel": "Objet de mail accrocheur",
   "categories.hookyEmailObject.description": "Attirez l'oeil de vos prospects avec un objet d'email fait sur mesure.",
   "categories.hookyEmailObject.placeholder": "Logiciel d'intelligence artificielle",
-  "categories.hookyEmailObject.labelInput1": "De quel sujet traite votre email ?"
+  "categories.hookyEmailObject.labelInput1": "De quel sujet traite votre email ?",
+  "categories.bulletPoints.categorylabel": "Les Points Clefs",
+  "categories.bulletPoints.description": "Trouvez des idées de points clefs concernant le sujet de votre choix",
+  "categories.bulletPoints.placeholder": "Logiciel d'intelligence artificielle",
+  "categories.bulletPoints.labelInput1": "Quel sujet voulez-vous creuser ?"
 }

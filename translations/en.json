@@ -340,5 +340,9 @@
   "categories.hookyEmailObject.categorylabel": "Hooky Email Object",
   "categories.hookyEmailObject.description": "Catch the eye of your prospects with a tailor-made email subject line.",
   "categories.hookyEmailObject.placeholder": "Artificial intelligence software.",
-  "categories.hookyEmailObject.labelInput1": "What subject is your email about?"
+  "categories.hookyEmailObject.labelInput1": "What subject is your email about?",
+  "categories.bulletPoints.categorylabel": "Key Bullet Points",
+  "categories.bulletPoints.description": "Find ideas for key points on the topic of your choice",
+  "categories.bulletPoints.placeholder": "Artificial intelligence software",
+  "categories.bulletPoints.labelInput1": "What is your topic of interest?"
 }

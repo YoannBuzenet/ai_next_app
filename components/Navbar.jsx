@@ -5,9 +5,13 @@ import { useSession, getSession } from "next-auth/client";
 import UserCheck from "../services/userCheck";
 import AppLangChoice from "./appSetLang/AppLangChoice";
 import { FormattedMessage } from "react-intl";
+import IconButton from "@material-ui/core/IconButton";
+import SettingsIcon from "@material-ui/icons/Settings";
 
 const Navbar = () => {
   const [session, loading] = useSession();
+
+  const hasAccess = UserCheck.hasAdminAccess(session?.user?.rightsCentralAPI);
 
   return (
     <div>
@@ -77,6 +81,17 @@ const Navbar = () => {
               <div className={styles.navbarFlags}>
                 <AppLangChoice top="13" marginLeft="20" />
               </div>
+              {hasAccess && (
+                <div className={styles.adminAccessDiv}>
+                  <Link href="/admin/portal">
+                    <a>
+                      <IconButton>
+                        <SettingsIcon className={styles.icons} />
+                      </IconButton>
+                    </a>
+                  </Link>
+                </div>
+              )}
             </div>
           </div>
         </div>
