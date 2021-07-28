@@ -27,7 +27,7 @@ const isUserSubscribed = (userIsSubscribedUntil) => {
   const nowUTC = getTodayFromMidnightInUTC();
   const userSubscribeUTC = new Date(userIsSubscribedUntil);
 
-  return userSubscribeUTC > nowUTC;
+  return userSubscribeUTC >= nowUTC;
 };
 const hasAdminAccess = (rightsCentralAPI) => {
   if (rightsCentralAPI > 1) {
